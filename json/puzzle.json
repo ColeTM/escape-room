@@ -5,5 +5,19 @@
     "Solution": "Teapot",
     "attempts": 3,
     "clue": "55f075b7-7fb8-42d7-8088-1d1e8a3cf85f",
-    "hints": "placeholder"
+    "hints": ["2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd"], 
+    "hintsUsed": 0,
+    "isSequential": false
+},
+{
+   "puzzle ID": "e09534ee-6aa7-46eb-aacf-5a364bf67f32",
+    "difficulty": 2,
+    "description": "This puzzle uses morse code to spell out an assortment of letters",
+    "Solution": "ASQERVXC",
+    "attempts": 5,
+    "clue": "cc24244f-e4ff-4759-8453-2d3b614a8061",
+    "hints": "placeholder",
+    "hintsUsed": 1,
+    "maxHints": 4,
+    "isSequential": true 
 }]  
