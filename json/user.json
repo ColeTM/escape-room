@@ -6,7 +6,7 @@
     "password": "bbrown123",
     "skillLevel": "intermediate",
     "avatar": "",
-    "characters": []
+    "characters": ["6d40396b-de3d-4733-af28-ab38e0e31e9e"]
 },
 {
     "userId": "514e70f7-ac13-4f05-83bc-3ae569d0cf94",
@@ -16,5 +16,5 @@
     "password": "Ozzysmith454",
     "skillLevel": "beginner",
     "avatar": "",
-    "characters": []
+    "characters": ["aad0ba00-7e18-40da-a3da-967550deb821"]
 }]
