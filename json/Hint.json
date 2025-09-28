@@ -8,12 +8,17 @@
 },
 {
     "hintID": "b117ccf6-89e1-47af-8cfa-932a63533cc0",
-    "text": "This puzzle requires morse code",
+    "text": "This puzzle requires the morse code refrence sheet.",
     "hasPicture": true,
-    "Picture": "placeholder",
+    "Picture": "Morse-sample.png",
     "level": "Vague",
     "timePenalty":2.5
 },
 {
-    
+    "hintID": "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd",
+    "text": "The first 5 letters are: A, S, Q, E, R",
+    "hasPicture": false,
+    "picture": null,
+    "level": "Direct",
+    "timePenalty": 5.0
 }]
