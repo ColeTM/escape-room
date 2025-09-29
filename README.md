@@ -1,6 +1,6 @@
 # escape-room
 DESCRIPTION:  
- 
-This free-to-play virtual escape room challenges players to put their problem-solving skills to the test as they explore immersive rooms filled with puzzles, hidden clues, and interactive items. Designed for both solo play and friends sharing the same computer, the game encourages teamwork, logic, and creativity as players unlock secrets and progress through each stage. With each solved puzzle, players move closer to escaping while enjoying a fun and brain-teasing adventure.
+
+This project is a virtual escape room designed to be played solo or collaboratively between friends on a single device. It is free-to-play and offers a series of puzzles strung together by an engaging story. With a 30-minute time limit and varying difficulty options, it provides a perfect experience for players of all skill levels. Users are guided from room-to-room in this point-and-click adventure, finding clues and interacting with background items to help them make their escape.
 
 Created by Nick, James, Cole, and Nathan
