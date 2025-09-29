@@ -1,14 +1,14 @@
 [{
-    "roomId": "",
-    "story": "",
+    "roomId": "08ea2518-a310-492c-b925-4d929a398ba4",
+    "story": "A flickering lantern casts long shadows across the dusty library, where a locked chest sits beneath a wall of cryptic symbols waiting to be decoded.",
     "background-image": "",
-    "interactables": "",
-    "puzzles": "",
+    "interactables": "[]",
+    "puzzles": "[efc5f6cb-ff77-4a4e-9207-f27f3fdbb712, e09534ee-6aa7-46eb-aacf-5a364bf67f32]"
 },
 {
-    "roomId": "",
-    "story": "",
+    "roomId": "4044a77c-2a37-4046-8c26-44d69ce726a8",
+    "story": "The clock ticks loudly as a single locked box waits in the center of the room.",
     "background-image": "",
-    "interactables": "",
-    "puzzles": ""
+    "interactables": "[]",
+    "puzzles": "[deebeccb-4472-4544-bc52-c6f4e766eac2, 7f3e2a1e-1f3b-4c5b-8c3d-2e4f5a6b7c8d]"
 }]

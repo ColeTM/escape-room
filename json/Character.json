@@ -4,7 +4,7 @@
     "currentRoom":"placeholder",
     "hintsUsed": 2,
     "puzzlesCompleted": ["efc5f6cb-ff77-4a4e-9207-f27f3fdbb712", true, "e09534ee-6aa7-46eb-aacf-5a364bf67f32", false],
-    "timer": "Timer"
+    "timer": "12.2"
 },
 {
     "characterID": "aad0ba00-7e18-40da-a3da-967550deb821",
@@ -12,5 +12,5 @@
     "currentRoom":"placeholder",
     "hintsUsed": 2,
     "puzzlesCompleted": ["efc5f6cb-ff77-4a4e-9207-f27f3fdbb712", false, "e09534ee-6aa7-46eb-aacf-5a364bf67f32", false],
-    "timer": "Timer"
+    "timer": "30.0"
 }]
