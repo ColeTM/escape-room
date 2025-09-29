@@ -1,12 +1,12 @@
 [{
-    "interactableID": 101,
+    "interactableID": "a100af6e-5dde-4787-86fe-c9309e9a3cff",
     "description": "A dusty old painting on the wall.",
     "isHighlighted": false,
     "soundEffect": "creak_sound.wav",
     "clueText": "The signature in the corner seems oddly familiar."
 },
 {
-    "interactableID": 102,
+    "interactableID": "fc0ea751-c656-4b06-aab6-b8664d6f83fe",
     "description": "A locked wooden chest at the foot of the bed.",
     "isHighlighted": true,
     "soundEffect": "lock_rattle.mp3",
