@@ -1,0 +1,14 @@
+[{
+    "interactableID": 101,
+    "description": "A dusty old painting on the wall.",
+    "isHighlighted": false,
+    "soundEffect": "creak_sound.wav",
+    "clueText": "The signature in the corner seems oddly familiar."
+},
+{
+    "interactableID": 102,
+    "description": "A locked wooden chest at the foot of the bed.",
+    "isHighlighted": true,
+    "soundEffect": "lock_rattle.mp3",
+    "clueText": "It requires a metal key."
+}]
