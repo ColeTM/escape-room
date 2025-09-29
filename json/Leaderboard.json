@@ -1,8 +1,15 @@
 [{
-    "globalEntries": [""],
-    "personalEntries": [""]
+    "globalEntries": ["EscapeRoomMaster - Finished in 5.32 minutes and used 2 hints on 2024-06-15",
+        "JeffTheBest - Finished in 6.45 minutes and used 5 hints on 2025-02-14",
+        "DogLover - Finished in 7.12 minutes and used 1 hint on 2025-06-13"],
+    "personalEntries": ["CowboysFan - Finished in 10.5 minutes and used 3 hints on 2025-11-20"]
 },
 {
-    "globalEntries": [""],
-    "personalEntries": [""]
+    "globalEntries": [
+      "PuzzleQueen - Finished in 4.88 minutes and used 0 hints on 2025-07-08",
+      "LogicMaster - Finished in 6.01 minutes and used 2 hints on 2025-08-12"
+    ],
+    "personalEntries": [
+      "WizardMan - Finished in 9.75 minutes and used 1 hint on 2025-12-05"
+    ]
 }]
