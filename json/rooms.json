@@ -3,7 +3,7 @@
         {
             "roomId": "08ea2518-a310-492c-b925-4d929a398ba4",
             "story": "A flickering lantern casts long shadows across the dusty library, where a locked chest sits beneath a wall of cryptic symbols waiting to be decoded.",
-            "background-image": "spookylibrary.jpg",
+            "background": "spookylibrary.jpg",
             "interactables": [
                 {
                     "interactableID": "a100af6e-5dde-4787-86fe-c9309e9a3cff",
