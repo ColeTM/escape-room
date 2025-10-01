@@ -31,7 +31,11 @@
                     "currentRoom":"placeholder",
                     "hintsUsed": 2,
                     "puzzlesCompleted": ["efc5f6cb-ff77-4a4e-9207-f27f3fdbb712", true, "e09534ee-6aa7-46eb-aacf-5a364bf67f32", false],
-                    "timer": "12.2"
+                    "timer": {
+                        "timeRemaining": 15.2,
+                        "initalTime": 30.0,
+                        "isRunning": true
+}                   
                 }
             ]
         },{
@@ -65,7 +69,11 @@
                     "currentRoom":"placeholder",
                     "hintsUsed": 2,
                     "puzzlesCompleted": ["efc5f6cb-ff77-4a4e-9207-f27f3fdbb712", false, "e09534ee-6aa7-46eb-aacf-5a364bf67f32", false],
-                    "timer": "30.0"
+                    "timer": {
+                        "timeRemaining": 30.0,
+                        "initalTime": 30.0,
+                        "isRunning": false
+                    }
                 }
             ]
             
