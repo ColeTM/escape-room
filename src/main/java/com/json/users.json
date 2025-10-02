@@ -7,7 +7,7 @@
             "email": "bbrowm@gmail.com",
             "password": "bbrown123",
             "skillLevel": "Intermediate",
-            "characters": [
+            "character": [
                 {
                     "characterID": "6d40396b-de3d-4733-af28-ab38e0e31e9e",
                     "inventory": [
@@ -44,7 +44,7 @@
             "email": "asmith@gmail.com",
             "password": "Ozzysmith454",
             "skillLevel": "Beginner",
-            "characters": [
+            "character": [
                 {
                     "characterID": "aad0ba00-7e18-40da-a3da-967550deb821",
                     "inventory": [
