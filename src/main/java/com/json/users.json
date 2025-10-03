@@ -24,7 +24,10 @@
                     ],
                     "currentRoom":"08ea2518-a310-492c-b925-4d929a398ba4",
                     "hintsUsed": 2,
-                    "puzzlesCompleted": ["efc5f6cb-ff77-4a4e-9207-f27f3fdbb712", true, "e09534ee-6aa7-46eb-aacf-5a364bf67f32", false],
+                    "puzzlesCompleted": {
+                        "efc5f6cb-ff77-4a4e-9207-f27f3fdbb712": true,
+                        "e09534ee-6aa7-46eb-aacf-5a364bf67f32": false
+                    },
                     "timer": {
                         "timeRemaining": 15.2,
                         "initalTime": 30.0,
@@ -33,6 +36,7 @@
                 }
             ],
             "personalRecord": {
+                "userID": "d3bbc7e7-5c87-46c2-9d3e-fcccd7ac4246",
                 "time": "26:31",
                 "date": "09-09-2025",
                 "hintsUsed": 4,
@@ -62,7 +66,10 @@
                     ],
                     "currentRoom": "08ea2518-a310-492c-b925-4d929a398ba4",
                     "hintsUsed": 0,
-                    "puzzlesCompleted": ["efc5f6cb-ff77-4a4e-9207-f27f3fdbb712", false, "e09534ee-6aa7-46eb-aacf-5a364bf67f32", false],
+                    "puzzlesCompleted": {
+                        "efc5f6cb-ff77-4a4e-9207-f27f3fdbb712": false,
+                        "e09534ee-6aa7-46eb-aacf-5a364bf67f32": false
+                    },
                     "timer": {
                         "timeRemaining": 30.0,
                         "initalTime": 30.0,
