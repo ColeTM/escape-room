@@ -1,7 +1,7 @@
 {
     "rooms": [
         {
-            "roomId": "08ea2518-a310-492c-b925-4d929a398ba4",
+            "roomID": "08ea2518-a310-492c-b925-4d929a398ba4",
             "story": "A flickering lantern casts long shadows across the dusty library, where a locked chest sits beneath a wall of cryptic symbols waiting to be decoded.",
             "background": "spookylibrary.jpg",
             "interactables": [
@@ -22,10 +22,10 @@
             ],
             "puzzles": [
                 {
-                    "puzzle ID": "efc5f6cb-ff77-4a4e-9207-f27f3fdbb712",
+                    "puzzleID": "efc5f6cb-ff77-4a4e-9207-f27f3fdbb712",
                     "difficulty": 1,
                     "description": "This puzzle is a simple riddle",
-                    "Solution": "Teapot",
+                    "solution": "Teapot",
                     "attempts": 3,
                     "clue": {
                         "clueID": "55f075b7-7fb8-42d7-8088-1d1e8a3cf85f",
@@ -46,10 +46,10 @@
                     "isSequential": false
                 },
                 {
-                    "puzzle ID": "e09534ee-6aa7-46eb-aacf-5a364bf67f32",
+                    "puzzleID": "e09534ee-6aa7-46eb-aacf-5a364bf67f32",
                     "difficulty": 2,
                     "description": "This puzzle uses morse code to spell out an assortment of letters",
-                    "Solution": "ASQERVXC",
+                    "solution": "ASQERVXC",
                     "attempts": 5,
                     "clue": {
                         "clueID": "cc24244f-e4ff-4759-8453-2d3b614a8061",

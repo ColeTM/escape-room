@@ -1,13 +1,14 @@
 {
     "users": [
         {
-            "userId": "d3bbc7e7-5c87-46c2-9d3e-fcccd7ac4246",
+            "userID": "d3bbc7e7-5c87-46c2-9d3e-fcccd7ac4246",
             "firstName": "Bobby",
             "lastName": "Brown",
-            "email": "bbrowm@gmail.com",
+            "email": "bbrown@gmail.com",
+            "username": "KingBobby51",
             "password": "bbrown123",
             "skillLevel": "Intermediate",
-            "character": [
+            "characters": [
                 {
                     "characterID": "6d40396b-de3d-4733-af28-ab38e0e31e9e",
                     "inventory": [
@@ -38,13 +39,14 @@
                 "difficulty": "Beginner"
             }
         },{
-            "userId": "514e70f7-ac13-4f05-83bc-3ae569d0cf94",
+            "userID": "514e70f7-ac13-4f05-83bc-3ae569d0cf94",
             "firstName": "Alice",
             "lastName": "Smith",
             "email": "asmith@gmail.com",
+            "username": "AliceInChains",
             "password": "Ozzysmith454",
             "skillLevel": "Beginner",
-            "character": [
+            "characters": [
                 {
                     "characterID": "aad0ba00-7e18-40da-a3da-967550deb821",
                     "inventory": [
