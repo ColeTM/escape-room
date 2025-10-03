@@ -28,6 +28,12 @@ public abstract class DataConstants {
             protected static final String INITIAL_TIME = "initialTime";
             protected static final String IS_RUNNING = "isRunning";
     protected static final String RECORD = "personalRecord";
+        // data constants for nested personal record JSON
+        protected static final String RECORD_USER_ID = "userID";
+        protected static final String TIME = "time";
+        protected static final String DATE = "date";
+        protected static final String RECORD_HINTS_USED = "hintsUsed";
+        protected static final String RECORD_DIFFICULTY = "difficulty";
 
     // data constants for room
     protected static final String ROOM_FILE_NAME = "src/main/java/com/json/rooms.json";
@@ -44,7 +50,7 @@ public abstract class DataConstants {
     protected static final String PUZZLES = "puzzles";
         // data constants for nested puzzles JSON
         protected static final String PUZZLE_ID = "puzzleID";
-        protected static final String DIFFICULTY = "difficulty";
+        protected static final String PUZZLE_DIFFICULTY = "difficulty";
         protected static final String PUZZLE_DESCRIPTION = "description";
         protected static final String SOLUTION = "solution";
         protected static final String ATTEMPTS = "attempts";
