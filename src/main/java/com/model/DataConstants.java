@@ -8,6 +8,6 @@ public abstract class DataConstants {
     protected static final String EMAIL = "email";
     protected static final String PASSWORD = "password";
     protected static final String SKILL_LEVEL = "skillLevel";
-    protected static final String CARACTER = "character";
+    protected static final String CHARACTER = "character";
     protected static final String RECORD = "personalRecord";
 }
