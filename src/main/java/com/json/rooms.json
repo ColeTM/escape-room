@@ -24,7 +24,6 @@
                 {
                     "puzzleID": "efc5f6cb-ff77-4a4e-9207-f27f3fdbb712",
                     "difficulty": 1,
-                    "description": "This puzzle is a simple riddle",
                     "solution": "Teapot",
                     "attempts": 3,
                     "clue": {
@@ -40,15 +39,24 @@
                             "picture": null,
                             "level": "Vague",
                             "timePenalty": 5.0
+                        }, {
+                            "hintID": "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd",
+                            "text": "T could also refer to tea.",
+                            "hasPicture": false,
+                            "picture": null,
+                            "level": "Vague",
+                            "timePenalty": 5.0
                         }
                     ],
-                    "hintsUsed": 0,
+                    "hintsUsed": {
+                        "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd": true,
+
+                    }
                     "isSequential": false
                 },
                 {
                     "puzzleID": "e09534ee-6aa7-46eb-aacf-5a364bf67f32",
                     "difficulty": 2,
-                    "description": "This puzzle uses morse code to spell out an assortment of letters",
                     "solution": "ASQERVXC",
                     "attempts": 5,
                     "clue": {

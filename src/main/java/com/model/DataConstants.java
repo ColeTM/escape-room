@@ -43,6 +43,7 @@ public abstract class DataConstants {
     protected static final String INTERACTABLES = "interactables";
         // data constants for nested interactables JSON
         protected static final String INTERACTABLE_ID = "interactableID";
+        protected static final String INTERACTABLE_NAME = "interactableName";
         protected static final String INTERACTABLE_DESCRIPTION = "description";
         protected static final String IS_HIGHLIGHTED = "isHighlighted";
         protected static final String SOUND_EFFECT = "soundEffect";
@@ -51,8 +52,6 @@ public abstract class DataConstants {
         // data constants for nested puzzles JSON
         protected static final String PUZZLE_ID = "puzzleID";
         protected static final String PUZZLE_DIFFICULTY = "difficulty";
-        protected static final String PUZZLE_DESCRIPTION = "description";
-        protected static final String SOLUTION = "solution";
         protected static final String ATTEMPTS = "attempts";
         protected static final String CLUE = "clue";
             // data constants for nested clue JSON

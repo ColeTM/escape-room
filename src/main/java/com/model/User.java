@@ -111,11 +111,11 @@ public class User {
         return characters;
     }
 
-    public Leaderboard getPersonalRecord() {
+    public LeaderboardEntry getPersonalRecord() {
         return personalRecord;
     }
 
-    public void setPersonalRecord(Leaderboard personalRecord) {
+    public void setPersonalRecord(LeaderboardEntry personalRecord) {
         this.personalRecord = personalRecord;
     }
 

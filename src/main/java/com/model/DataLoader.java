@@ -11,7 +11,7 @@ import org.json.simple.parser.JSONParser;
 public class DataLoader extends DataConstants {
 
     public static ArrayList<User> getUsers() {
-        ArrayList<User> users = new ArrayList<User>();
+        ArrayList<User> users = new ArrayList<>();
 
         try {
             FileReader reader = new FileReader(USER_FILE_NAME);
@@ -42,7 +42,7 @@ public class DataLoader extends DataConstants {
     }
 
     private static ArrayList<Character> getCharacters(JSONArray charactersJSON) {
-        ArrayList<Character> characters = new ArrayList<Character>();
+        ArrayList<Character> characters = new ArrayList<>();
 
         for(int i = 0; i < charactersJSON.size(); ++i) {
             JSONObject characterJSON = (JSONObject)charactersJSON.get(i);
@@ -62,7 +62,7 @@ public class DataLoader extends DataConstants {
     }
 
     private static ArrayList<Item> getInventory(JSONArray inventoryJSON) {
-        ArrayList<Item> inventory = new ArrayList<Item>();
+        ArrayList<Item> inventory = new ArrayList<>();
 
         for(int i = 0; i < inventoryJSON.size(); ++i) {
             JSONObject itemJSON = (JSONObject)inventoryJSON.get(i);
@@ -104,4 +104,64 @@ public class DataLoader extends DataConstants {
         }
         return puzzlesCompleted;
     }
+
+
+    public static ArrayList<Room> getRooms() {
+        ArrayList<Room> rooms = new ArrayList<>();
+
+        try {
+            FileReader reader = new FileReader(ROOM_FILE_NAME);
+            JSONArray roomsJSON = (JSONArray)new JSONParser().parse(reader);
+
+            for(int i = 0; i < roomsJSON.size(); ++i) {
+                JSONObject roomJSON = (JSONObject)roomsJSON.get(i);
+
+                UUID roomID = UUID.fromString((String)roomJSON.get(ROOM_ID));
+                String story = (String)roomJSON.get(STORY);
+                // background
+                ArrayList<Interactable> interactables = getInteractables((JSONArray)roomJSON.get(INTERACTABLES));
+                ArrayList<Puzzle> puzzles = getPuzzles((JSONArray)roomJSON.get(PUZZLES));
+
+                rooms.add(new Room(roomID, story, background, interactables, puzzles));
+            }
+            return rooms;
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+        return rooms;
+    }
+
+    private static ArrayList<Interactable> getInteractables(JSONArray interactablesJSON) {
+        ArrayList<Interactable> interactables = new ArrayList<>();
+
+        for(int i = 0; i < interactablesJSON.size(); ++i) {
+            JSONObject interactableJSON = (JSONObject)interactablesJSON.get(i);
+
+            UUID interactableID = UUID.fromString((String)interactableJSON.get(INTERACTABLE_ID));
+            String name = (String)interactableJSON.get(INTERACTABLE_NAME);
+            String description = (String)interactableJSON.get(INTERACTABLE_DESCRIPTION);
+            boolean isHighlighted = (boolean)interactableJSON.get(IS_HIGHLIGHTED);
+            String soundEffect = (String)interactableJSON.get(SOUND_EFFECT);
+            String interactableClue = (String)interactableJSON.get(INTERACTABLE_CLUE);
+
+            interactables.add(new Interactable(interactableID, name, description, 
+                                               isHighlighted, soundEffect, interactableClue));
+        }
+        return interactables;
+    }
+
+    private static ArrayList<Puzzle> getPuzzles(JSONArray puzzlesJSON) {
+        ArrayList<Puzzle> puzzles = new ArrayList<>();
+
+        for(int i = 0; i < puzzlesJSON.size(); ++i) {
+            JSONObject puzzleJSON = (JSONObject)puzzlesJSON.get(i);
+
+            UUID puzzleID = UUID.fromString((String)puzzleJSON.get(PUZZLE_ID));
+            Difficulty difficulty = (Difficulty)puzzleJSON.get(PUZZLE_DIFFICULTY);
+
+
+        }
+    }
+
 }
