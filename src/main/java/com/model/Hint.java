@@ -46,4 +46,10 @@ public class Hint
     {
         return this.timePenalty;
     }
+
+    public String toString()
+    {
+        return "Hint: " + text + " (Level: " + level + ", Penalty: " + timePenalty + ")";
+    }
+
 }

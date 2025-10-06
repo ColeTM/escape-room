@@ -51,4 +51,9 @@ public abstract class Puzzle
 
     public abstract boolean solve(Object answer);
 
+    public String toString()
+    {
+        return "Puzzle ID: " + puzzleID + " (Difficulty: " + difficulty + ", Completed: " + isCompleted + ")";
+    }
+
 }
