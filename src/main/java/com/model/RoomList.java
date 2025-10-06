@@ -2,7 +2,7 @@ package com.model;
 
 import java.util.UUID;
 import java.util.ArrayList;
-import java.awt.image.BufferedImage;
+//import java.awt.image.BufferedImage;
 /*
  * author: Nick Hippchen
  * Class that holds a list of rooms
@@ -11,7 +11,7 @@ public class RoomList {
     private ArrayList<Room> rooms;
     private static RoomList roomList;
     
-    public RoomList() {
+    private RoomList() {
         rooms = new ArrayList<Room>();
     }
 
@@ -21,13 +21,41 @@ public class RoomList {
         }
         return roomList;
     }
-
-    public void addRoom(UUID id, BufferedImage background, ArrayList<Interactable> interactables, ArrayList<Puzzle> puzzles) {
+    
+    /*public void addRoom(UUID id, BufferedImage background, ArrayList<Interactable> interactables, ArrayList<Puzzle> puzzles) {
         Room room = new Room(id, background, interactables, puzzles);
         rooms.add(room);
+    }*/
+    
+    //Testing the uuid for the rooms
+    public void addRoom(Room room) {
+        rooms.add(room);
+    }
+
+    public UUID getRoomUUID(Room room) {
+        if (room.getRoomID() != null) {
+            room.setRoomID(UUID.randomUUID());
+        }
+        return room.getRoomID();
     }
 
     public void saveRoom() {
         //save room to datawriter
     }
+
+
+    public static void main(String[] args) {
+    RoomList roomList = RoomList.getInstance();
+
+    Room room1 = new Room("A spooky room");
+    Room room2 = new Room("A abandoned pool");
+    
+    roomList.addRoom(room1);
+    roomList.addRoom(room2);    
+
+    System.out.println("Room 1 UUID: " + roomList.getRoomUUID(room1));
+    System.out.println("Room 2 UUID: " + roomList.getRoomUUID(room2));
+    }
 }
+
+
