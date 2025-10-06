@@ -50,6 +50,7 @@ public abstract class DataConstants {
         protected static final String INTERACTABLE_CLUE = "clueText";
     protected static final String PUZZLES = "puzzles";
         // data constants for nested puzzles JSON
+        protected static final String TYPE = "type";
         protected static final String PUZZLE_ID = "puzzleID";
         protected static final String PUZZLE_DIFFICULTY = "difficulty";
         protected static final String ATTEMPTS = "attempts";
@@ -68,4 +69,11 @@ public abstract class DataConstants {
             protected static final String TIME_PENALTY = "timePenalty";
         protected static final String ROOM_HINTS_USED = "hintsUsed";
         protected static final String IS_SEQUENTIAL = "isSequential";
+        // different content and solution attributes for child classes of puzzle
+        protected static final String TEXT_CONTENT = "textContent";
+        protected static final String TEXT_SOLUTION = "textSolution";
+        protected static final String AUDIO_CONTENT = "audioContent";
+        protected static final String AUDIO_SOLUTION = "audioSolution";
+        protected static final String PICTURE_CONTENT = "pictureContent";
+        protected static final String PICTURE_SOLUTION = "pictureSolution";
 }

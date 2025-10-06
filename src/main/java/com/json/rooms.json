@@ -22,6 +22,7 @@
             ],
             "puzzles": [
                 {
+                    "type": "text",
                     "puzzleID": "efc5f6cb-ff77-4a4e-9207-f27f3fdbb712",
                     "difficulty": 1,
                     "solution": "Teapot",
@@ -34,24 +35,24 @@
                     "hints": [
                         {
                             "hintID": "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd",
-                            "text": "T could also refer to tea.",
+                            "text": "Consider wordplay in the clue.",
                             "hasPicture": false,
                             "picture": null,
                             "level": "Vague",
                             "timePenalty": 5.0
                         }, {
-                            "hintID": "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd",
+                            "hintID": "3a0818c7-b668-458d-924c-3701147f51fc",
                             "text": "T could also refer to tea.",
                             "hasPicture": false,
                             "picture": null,
-                            "level": "Vague",
-                            "timePenalty": 5.0
+                            "level": "Direct",
+                            "timePenalty": 10.0
                         }
                     ],
                     "hintsUsed": {
                         "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd": true,
-
-                    }
+                        "3a0818c7-b668-458d-924c-3701147f51fc": false
+                    },
                     "isSequential": false
                 },
                 {

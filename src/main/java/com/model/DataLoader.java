@@ -159,9 +159,71 @@ public class DataLoader extends DataConstants {
 
             UUID puzzleID = UUID.fromString((String)puzzleJSON.get(PUZZLE_ID));
             Difficulty difficulty = (Difficulty)puzzleJSON.get(PUZZLE_DIFFICULTY);
+            int attempts = ((Long)puzzleJSON.get(ATTEMPTS)).intValue();
+            Clue clue = getClue((JSONObject)puzzleJSON.get(CLUE));
+            ArrayList<Hint> hints = getHints((JSONArray)puzzleJSON.get(HINTS));
+            HashMap<UUID, Boolean> hintsUsed = getHintsUsed((JSONObject)puzzleJSON.get(ROOM_HINTS_USED));
+            boolean isSequential = (boolean)puzzleJSON.get(IS_SEQUENTIAL);
+            String type = (String)puzzleJSON.get(TYPE);
 
-
+            switch(type) {
+                case "text":
+                    String textContent = (String)puzzleJSON.get(TEXT_CONTENT);
+                    String textSolution = (String)puzzleJSON.get(TEXT_SOLUTION);
+                    puzzles.add(new TextPuzzle(puzzleID, difficulty, attempts, clue, hints,
+                                            hintsUsed, isSequential, textContent, textSolution));
+                    break;
+                case "audio":
+                    String audioContent = (String)puzzleJSON.get(AUDIO_CONTENT);
+                    int audioSolution = ((Long)puzzleJSON.get(AUDIO_SOLUTION)).intValue();
+                    puzzles.add(new AudioPuzzle(puzzleID, difficulty, attempts, clue, hints,
+                                            hintsUsed, isSequential, audioContent, audioSolution));
+                    break;
+                case "picture":
+                    // pictureContent
+                    char pictureSolution = (char)puzzleJSON.get(PICTURE_SOLUTION);
+                    puzzles.add(new PicturePuzzle(puzzleID, difficulty, attempts, clue, hints,
+                                            hintsUsed, isSequential, pictureContent, pictureSolution));
+            }
         }
+        return puzzles;
+    }
+
+    private static Clue getClue(JSONObject clueJSON) {
+        UUID clueID = UUID.fromString((String)clueJSON.get(CLUE_ID));
+        String text = (String)clueJSON.get(CLUE_TEXT);
+        // clue picture
+
+        return new Clue(clueID, text, picture);    
+    }
+
+    private static ArrayList<Hint> getHints(JSONArray hintsJSON) {
+        ArrayList<Hint> hints = new ArrayList<>();
+
+        for(int i = 0; i < hintsJSON.size(); ++i) {
+            JSONObject hintJSON = (JSONObject)hintsJSON.get(i);
+
+            UUID hintID = UUID.fromString((String)hintJSON.get(HINT_ID));
+            String text = (String)hintJSON.get(HINT_TEXT);
+            boolean hasPicture = (boolean)hintJSON.get(HAS_PICTURE);
+            // hint picture
+            HintLevel level = (HintLevel)hintJSON.get(HINT_LEVEL);
+            double timePenalty = ((Double)hintJSON.get(TIME_PENALTY)).doubleValue();
+
+            hints.add(new Hint(hintID, text, hasPicture, picture, level, timePenalty));
+        }
+        return hints;
+    }
+
+    private static HashMap<UUID, Boolean> getHintsUsed(JSONObject hintsUsedJSON) {
+        HashMap<UUID, Boolean> hintsUsed = new HashMap<>();
+        for(Object keyObject : hintsUsedJSON.keySet()) {
+            String key = (String)keyObject;
+            UUID hintID = UUID.fromString(key);
+            Boolean used = (Boolean)hintsUsedJSON.get(key);
+            hintsUsed.put(hintID, used);
+        }
+        return hintsUsed;
     }
 
 }
