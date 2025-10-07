@@ -7,9 +7,13 @@ import java.util.UUID;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.Duration;
+
 
 public class DataLoader extends DataConstants {
-
+    
     public static ArrayList<User> getUsers() {
         ArrayList<User> users = new ArrayList<>();
 
@@ -47,7 +51,7 @@ public class DataLoader extends DataConstants {
         for(int i = 0; i < charactersJSON.size(); ++i) {
             JSONObject characterJSON = (JSONObject)charactersJSON.get(i);
 
-            UUID characterID = UUID.fromString((String)characterJSON.get(CHARACTER_ID));
+            String name = (String)characterJSON.get(CHARACTER_NAME);
             ArrayList<Item> inventory = getInventory((JSONArray)characterJSON.get(INVENTORY));
             UUID currentRoom = UUID.fromString((String)characterJSON.get(CURRENT_ROOM));
             int hintsUsed = ((Long)characterJSON.get(USER_HINTS_USED)).intValue();
@@ -55,7 +59,7 @@ public class DataLoader extends DataConstants {
                         = getPuzzlesCompleted((JSONObject)characterJSON.get(PUZZLES_COMPLETED));
             Timer timer = getTimer((JSONObject)characterJSON.get(TIMER));
 
-            characters.add(new Character(characterID, inventory, currentRoom,
+            characters.add(new Character(name, inventory, currentRoom,
                                         hintsUsed, puzzlesCompleted, timer));
         }
         return characters;        
@@ -67,27 +71,26 @@ public class DataLoader extends DataConstants {
         for(int i = 0; i < inventoryJSON.size(); ++i) {
             JSONObject itemJSON = (JSONObject)inventoryJSON.get(i);
 
-            UUID itemID = UUID.fromString((String)itemJSON.get(ITEM_ID));
             String name = (String)itemJSON.get(ITEM_NAME);
             String description = (String)itemJSON.get(ITEM_DESCRIPTION);
 
-            inventory.add(new Item(itemID, name, description));
+            inventory.add(new Item(name, description));
         }
         return inventory;
     }
 
     private static Timer getTimer(JSONObject timerJSON) {
-        double timeRemaining = ((Double)timerJSON.get(TIME_REMAINING)).doubleValue();
-        double initialTime = ((Double)timerJSON.get(INITIAL_TIME)).doubleValue();
+        double timeRemaining = ((Double)timerJSON.get(TIME_REMAINING));
         boolean isRunning = (boolean)timerJSON.get(IS_RUNNING);
         
-        return new Timer(timeRemaining, initialTime, isRunning);
+        return new Timer(timeRemaining, isRunning);
     }
-    
+
+    static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     private static LeaderboardEntry getPersonalRecord(JSONObject recordJSON) {
         UUID userID = UUID.fromString((String)recordJSON.get(RECORD_USER_ID));
-        String time = (String)recordJSON.get(TIME);
-        String date = (String)recordJSON.get(DATE);
+        Duration time = Duration.parse((String)recordJSON.get(TIME));
+        LocalDate date = LocalDate.parse((String)recordJSON.get(DATE), formatter);
         int hintsUsed = ((Long)recordJSON.get(RECORD_HINTS_USED)).intValue();
         Difficulty difficulty = (Difficulty)recordJSON.get(RECORD_DIFFICULTY);
 
@@ -138,15 +141,13 @@ public class DataLoader extends DataConstants {
         for(int i = 0; i < interactablesJSON.size(); ++i) {
             JSONObject interactableJSON = (JSONObject)interactablesJSON.get(i);
 
-            UUID interactableID = UUID.fromString((String)interactableJSON.get(INTERACTABLE_ID));
             String name = (String)interactableJSON.get(INTERACTABLE_NAME);
             String description = (String)interactableJSON.get(INTERACTABLE_DESCRIPTION);
             boolean isHighlighted = (boolean)interactableJSON.get(IS_HIGHLIGHTED);
             String soundEffect = (String)interactableJSON.get(SOUND_EFFECT);
             String interactableClue = (String)interactableJSON.get(INTERACTABLE_CLUE);
 
-            interactables.add(new Interactable(interactableID, name, description, 
-                                               isHighlighted, soundEffect, interactableClue));
+            interactables.add(new Interactable(name, description, isHighlighted, soundEffect, interactableClue));
         }
         return interactables;
     }
@@ -208,7 +209,7 @@ public class DataLoader extends DataConstants {
             boolean hasPicture = (boolean)hintJSON.get(HAS_PICTURE);
             // hint picture
             HintLevel level = (HintLevel)hintJSON.get(HINT_LEVEL);
-            double timePenalty = ((Double)hintJSON.get(TIME_PENALTY)).doubleValue();
+            double timePenalty = (Double)hintJSON.get(TIME_PENALTY);
 
             hints.add(new Hint(hintID, text, hasPicture, picture, level, timePenalty));
         }

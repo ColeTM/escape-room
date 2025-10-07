@@ -14,10 +14,15 @@ public class LeaderboardEntry {
     private int hintsUsed;
     private Difficulty difficulty;
 
-    public LeaderboardEntry(UUID userID, Duration time, LocalDate date) {
+    public LeaderboardEntry(UUID userID, Duration time, LocalDate date, 
+                            int hintsUsed, Difficulty difficulty) {
         this.time = time;
         this.date = date;
+        this.hintsUsed = hintsUsed;
+        this.difficulty = difficulty;
     }
+
+    // need method convert ISO-8601 duration format from json into more readable format
     
     public User getUser() {
         return user;

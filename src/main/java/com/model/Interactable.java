@@ -9,7 +9,6 @@ import java.util.UUID;
 
 public class Interactable
 {
-    private UUID interactableID;
     private String name;
     private String description;
     private boolean isHighlighted;
@@ -17,10 +16,9 @@ public class Interactable
     private String clueText;
 
     //Constructor for creating a new Interactable object
-    public Interactable(UUID interactableID, String name, String description,
-    boolean isHighlighted, String soundEffect, String clueText)
+    public Interactable(String name, String description,
+                boolean isHighlighted, String soundEffect, String clueText)
     {
-        this.interactableID = interactableID;
         this.name = name;
         this.description = description;
         this.isHighlighted = isHighlighted;

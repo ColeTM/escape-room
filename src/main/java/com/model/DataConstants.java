@@ -13,10 +13,9 @@ public abstract class DataConstants {
     protected static final String SKILL_LEVEL = "skillLevel";
     protected static final String CHARACTERS = "characters";
         // data constants for nested characters JSON
-        protected static final String CHARACTER_ID = "characterID";
+        protected static final String CHARACTER_NAME = "name";
         protected static final String INVENTORY = "inventory";
             // data constants for nested inventory JSON
-            protected static final String ITEM_ID = "itemID";
             protected static final String ITEM_NAME = "name";
             protected static final String ITEM_DESCRIPTION = "description";
         protected static final String CURRENT_ROOM = "currentRoom";

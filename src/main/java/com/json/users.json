@@ -10,14 +10,12 @@
             "skillLevel": "Intermediate",
             "characters": [
                 {
-                    "characterID": "6d40396b-de3d-4733-af28-ab38e0e31e9e",
+                    "name": "Bobby",
                     "inventory": [
                         {
-                            "ItemID": "0268722e-9a2d-4b3a-a95a-94a7e130d27e",
                             "name": "Jade key",
                             "description": "A key that opens a jade door."
                         },{
-                            "ItemID": "6dab1708-0dd9-40f8-9c97-b02d72e0eecb",
                             "name": "Bobby pin",
                             "description": "Could be used to unlock a box."
                         }
@@ -37,7 +35,7 @@
             ],
             "personalRecord": {
                 "userID": "d3bbc7e7-5c87-46c2-9d3e-fcccd7ac4246",
-                "time": "26:31",
+                "time": "PT26M31S",
                 "date": "09-09-2025",
                 "hintsUsed": 4,
                 "difficulty": "Beginner"
@@ -52,14 +50,12 @@
             "skillLevel": "Beginner",
             "characters": [
                 {
-                    "characterID": "aad0ba00-7e18-40da-a3da-967550deb821",
+                    "name": "Ozzy",
                     "inventory": [
                         {
-                            "ItemID": "0268722e-9a2d-4b3a-a95a-94a7e130d27e",
                             "name": "Jade key",
                             "description": "A key that opens a jade door."
                         },{
-                            "ItemID": null,
                             "name": null,
                             "description": null
                         }

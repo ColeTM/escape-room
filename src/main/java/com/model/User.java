@@ -32,7 +32,7 @@ public class User {
         this.username = username;
         this.password = password;
         this.skillLevel = Difficulty.Beginner;
-        this.characters = new ArrayList<Character>();
+        this.characters = new ArrayList<>();
     }
 
     // constructor for an existing character being read from data
@@ -117,6 +117,16 @@ public class User {
 
     public void setPersonalRecord(LeaderboardEntry personalRecord) {
         this.personalRecord = personalRecord;
+    }
+
+    @Override
+    public String toString() {
+        return "ID: " + userID.toString() +
+                "\nName: " + firstName + lastName +
+                "\nEmail: " + email +
+                "\nUsername: " + username +
+                "\nPassword: " + password +
+                "\nSkill Level: " + skillLevel;
     }
 
 }

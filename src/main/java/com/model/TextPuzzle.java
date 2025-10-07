@@ -15,7 +15,7 @@ public class TextPuzzle extends Puzzle
     private String textSolution;
 
     public TextPuzzle(UUID puzzleID, Difficulty difficulty, int attempts, Clue clue,
-                      ArrayList<Hint> hints, HashMap<Hint, Boolean> hintsUsed,
+                      ArrayList<Hint> hints, HashMap<UUID, Boolean> hintsUsed,
                       boolean isSequential, String textContent, String textSolution)
     {
         super(puzzleID, difficulty, attempts, clue, hints, hintsUsed, isSequential);
