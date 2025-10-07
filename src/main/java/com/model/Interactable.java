@@ -10,7 +10,6 @@ import javax.sound.sampled.*;
 
 public class Interactable
 {
-    private UUID interactableID;
     private String name;
     private String description;
     private boolean isHighlighted;
@@ -21,11 +20,9 @@ public class Interactable
     public Interactable(String name, String description,
                         boolean isHighlighted, String clueText)
     {
-        this.interactableID = UUID.randomUUID();
         this.name = name;
         this.description = description;
         this.isHighlighted = isHighlighted;
-        
         this.clueText = clueText;
     }
 

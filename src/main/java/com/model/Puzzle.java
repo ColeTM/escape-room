@@ -16,13 +16,13 @@ public abstract class Puzzle
     private int attempts;
     private Clue clue;
     private ArrayList<Hint> hints;
-    private HashMap<Hint, Boolean> hintsUsed;
+    private HashMap<UUID, Boolean> hintsUsed;
     private boolean isSequential;
     private boolean isCompleted;
 
     //Constructor for creating a new Puzzle
     public Puzzle(UUID puzzleID, Difficulty difficulty, int attempts, Clue clue,
-                  ArrayList<Hint> hints, HashMap<Hint, Boolean> hintsUsed, boolean isSequential)
+                  ArrayList<Hint> hints, HashMap<UUID, Boolean> hintsUsed, boolean isSequential)
     {
         this.puzzleID = puzzleID;
         this.difficulty = difficulty;
