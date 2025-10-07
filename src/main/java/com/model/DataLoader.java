@@ -1,6 +1,7 @@
 package com.model;
 
 import java.util.ArrayList;
+import java.awt.Image;
 import java.util.HashMap;
 import java.io.FileReader;
 import java.util.UUID;
@@ -118,11 +119,11 @@ public class DataLoader extends DataConstants {
 
                 UUID roomID = UUID.fromString((String)roomJSON.get(ROOM_ID));
                 String story = (String)roomJSON.get(STORY);
-                // background
+                Image background = (Image)roomJSON.get(BACKGROUND);
                 ArrayList<Interactable> interactables = getInteractables((JSONArray)roomJSON.get(INTERACTABLES));
                 ArrayList<Puzzle> puzzles = getPuzzles((JSONArray)roomJSON.get(PUZZLES));
 
-                rooms.add(new Room(roomID, story, background, interactables, puzzles));
+                rooms.add(new Room(story, null, interactables, puzzles));
             }
             return rooms;
         }
@@ -145,8 +146,7 @@ public class DataLoader extends DataConstants {
             String soundEffect = (String)interactableJSON.get(SOUND_EFFECT);
             String interactableClue = (String)interactableJSON.get(INTERACTABLE_CLUE);
 
-            interactables.add(new Interactable(interactableID, name, description, 
-                                               isHighlighted, soundEffect, interactableClue));
+            interactables.add(new Interactable(name, description, isHighlighted, soundEffect));
         }
         return interactables;
     }
