@@ -23,4 +23,12 @@ public class PicturePuzzle extends Puzzle
         this.pictureSolution = pictureSolution;
     }
     
+    public boolean solve(Object answer)
+    {
+        if (answer instanceof Character)
+        {
+            return Character.toLowerCase(this.pictureSolution) == Character.toLowerCase((Character) answer);
+        }
+        return false;
+    }
 }

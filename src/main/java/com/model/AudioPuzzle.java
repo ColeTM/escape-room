@@ -22,4 +22,13 @@ public class AudioPuzzle extends Puzzle
         this.audioContent = audioContent;
         this.audioSolution = audioSolution;
     }
+
+    public boolean solve(Object answer)
+    {
+        if (answer instanceof Integer)
+        {
+            return this.audioSolution == (Integer) answer;
+        }
+        return false;
+    }
 }

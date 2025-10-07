@@ -47,4 +47,9 @@ public class Interactable
     {
         return this.clueText;
     }
+
+    public String toString()
+    {
+        return name + ": " + description;
+    }
 }

@@ -22,4 +22,13 @@ public class TextPuzzle extends Puzzle
         this.textContent = textContent;
         this.textSolution = textSolution;
     }
+
+    public boolean solve(Object answer)
+    {
+        if (answer instanceof String)
+        {
+            return this.textSolution.equalsIgnoreCase((String) answer);
+        }
+        return false;
+    }
 }
