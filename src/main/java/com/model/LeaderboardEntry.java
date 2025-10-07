@@ -14,9 +14,13 @@ public class LeaderboardEntry {
     private int hintsUsed;
     private Difficulty difficulty;
 
-    public LeaderboardEntry(UUID userID, Duration time, LocalDate date) {
+    public LeaderboardEntry(UUID userID, Duration time, LocalDate date, Difficulty difficulty, int hintsUsed) {
         this.time = time;
         this.date = date;
+        this.hintsUsed = hintsUsed;
+        this.difficulty = difficulty;
+        ;
+
     }
     
     public User getUser() {
@@ -37,6 +41,14 @@ public class LeaderboardEntry {
     
     public Difficulty getDifficulty() {
         return difficulty;
+    }
+
+    public String toString() {
+        return "User: " + user + 
+                ", Time: " + time + 
+                ", Date: " + date + 
+                ", Hints Used: " + hintsUsed + 
+                ", Difficulty: " + difficulty;
     }
 
 }

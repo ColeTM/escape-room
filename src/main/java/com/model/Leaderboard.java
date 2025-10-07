@@ -11,8 +11,8 @@ public class Leaderboard {
     private ArrayList<LeaderboardEntry> personalEntries;
     private static Leaderboard leaderboard;
 
-    public void displayGlobal() {
-
+    public ArrayList<LeaderboardEntry> displayGlobal() {
+        return globalEntries;
     }
 
     public Leaderboard() {
@@ -24,20 +24,22 @@ public class Leaderboard {
             leaderboard = new Leaderboard();
         }
         return leaderboard;
-
     }
 
-    public void displayUser(User user){
+    public ArrayList<LeaderboardEntry> displayUser(User user){
         this.personalEntries = new ArrayList<>();
         for(LeaderboardEntry entry : globalEntries){
             if(entry.getUser() == user){
                 personalEntries.add(entry);
             }
         }
-
+        return personalEntries;
     }
 
     public void addEntry(LeaderboardEntry entry){
         globalEntries.add(entry);
+    }
+    public void sortEntries(){
+        
     }
 }
