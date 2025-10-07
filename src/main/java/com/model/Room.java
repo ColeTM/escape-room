@@ -16,11 +16,10 @@ public class Room {
     private ArrayList<Interactable> interactables;
     private ArrayList<Puzzle> puzzles;
 
-    //correct constructor 
-    public Room(String story, Image background,
+    public Room(UUID roomID, String story, Image background,
                 ArrayList<Interactable> interactables, ArrayList<Puzzle> puzzles) {
 
-        this.roomID = UUID.randomUUID();
+        this.roomID = roomID;
         this.story = story;
         this.background = background;
         this.interactables = interactables;

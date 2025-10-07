@@ -126,7 +126,7 @@ public class DataLoader extends DataConstants {
                 ArrayList<Interactable> interactables = getInteractables((JSONArray)roomJSON.get(INTERACTABLES));
                 ArrayList<Puzzle> puzzles = getPuzzles((JSONArray)roomJSON.get(PUZZLES));
 
-                rooms.add(new Room(story, null, interactables, puzzles));
+                rooms.add(new Room(roomID, story, background, interactables, puzzles));
             }
             return rooms;
         }
@@ -145,14 +145,9 @@ public class DataLoader extends DataConstants {
             String name = (String)interactableJSON.get(INTERACTABLE_NAME);
             String description = (String)interactableJSON.get(INTERACTABLE_DESCRIPTION);
             boolean isHighlighted = (boolean)interactableJSON.get(IS_HIGHLIGHTED);
-            String soundEffect = (String)interactableJSON.get(SOUND_EFFECT);
-            String interactableClue = (String)interactableJSON.get(INTERACTABLE_CLUE);
+            String clue = (String)interactableJSON.get(INTERACTABLE_CLUE);
 
-<<<<<<< HEAD
-            interactables.add(new Interactable(name, description, isHighlighted, soundEffect));
-=======
-            interactables.add(new Interactable(name, description, isHighlighted, soundEffect, interactableClue));
->>>>>>> cole
+            interactables.add(new Interactable(name, description, isHighlighted, clue));
         }
         return interactables;
     }
