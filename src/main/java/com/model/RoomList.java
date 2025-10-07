@@ -32,12 +32,7 @@ public class RoomList {
         rooms.add(room);
     }
 
-    public UUID getRoomUUID(Room room) {
-        if (room.getRoomID() != null) {
-            room.setRoomID(UUID.randomUUID());
-        }
-        return room.getRoomID();
-    }
+    
 
     public void saveRoom() {
         //save room to datawriter
@@ -47,7 +42,10 @@ public class RoomList {
     public static void main(String[] args) {
     RoomList roomList = RoomList.getInstance();
 
-    Room room1 = new Room("A spooky room");
+    Interactable inter1 = new Interactable("A desk", "desk.jpg", "This is a desk");
+    Interactable inter2 = new Interactable("A chair", "chair.jpg", "This is a chair");
+
+    Room room1 = new Room("A spooky room", "roomOne.jpg", );
     Room room2 = new Room("A abandoned pool");
     
     roomList.addRoom(room1);

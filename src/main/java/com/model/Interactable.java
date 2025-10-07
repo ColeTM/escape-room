@@ -1,6 +1,7 @@
 package com.model;
 
 import java.util.UUID;
+import javax.sound.sampled.*;
 
 /**
  * Represents an object in a room that the user can interact with
@@ -13,14 +14,14 @@ public class Interactable
     private String name;
     private String description;
     private boolean isHighlighted;
-    private String soundEffect;
+    private  soundEffect;
     private String clueText;
 
     //Constructor for creating a new Interactable object
-    public Interactable(UUID interactableID, String name, String description,
-    boolean isHighlighted, String soundEffect, String clueText)
+    public Interactable(String name, String description,
+                        boolean isHighlighted,  soundEffect, String clueText)
     {
-        this.interactableID = interactableID;
+        this.interactableID = UUID.randomUUID();
         this.name = name;
         this.description = description;
         this.isHighlighted = isHighlighted;

@@ -17,7 +17,7 @@ public class Room {
     private ArrayList<Puzzle> puzzles;
 
     //correct constructor 
-    public Room(UUID id, String story, Image background,
+    public Room(String story, Image background,
                 ArrayList<Interactable> interactables, ArrayList<Puzzle> puzzles) {
 
         this.roomID = UUID.randomUUID();
@@ -27,15 +27,9 @@ public class Room {
         this.puzzles = puzzles;
     }
     
-    // Constructor for testing purposes only for RoomList
-    /*public Room(String story) {
-        this.roomID = UUID.randomUUID();
-        this.story = story;
-        //this.interactables = new ArrayList<Interactable>();
-        //this.puzzles = new ArrayList<Puzzle>();
-    }*/
 
-    public UUID getRoomID() {
+
+    public UUID getRoomUUID(Room room) {
         return roomID;
     }
 

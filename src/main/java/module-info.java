@@ -1,6 +1,7 @@
 module com.escape {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javax.inject;
     requires json.simple;
     
     requires java.desktop;
