@@ -1,6 +1,6 @@
 package com.model;
 
-import java.awt.image.BufferedImage;
+import java.awt.Image;
 import java.util.UUID;
 
 /**
