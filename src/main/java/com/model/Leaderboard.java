@@ -7,33 +7,37 @@ import java.util.ArrayList;
  * @author Kelly Sullivan
  */
 public class Leaderboard {
-private ArrayList<LeaderboardEntry> globalEntries;
-private ArrayList<LeaderboardEntry> personalEntries;
-private static Leaderboard leaderboard;
+    private ArrayList<LeaderboardEntry> globalEntries;
+    private ArrayList<LeaderboardEntry> personalEntries;
+    private static Leaderboard leaderboard;
 
-public void displayGlobal() {
+    public void displayGlobal() {
 
-}
-
-public Leaderboard() {
-    this.globalEntries = new ArrayList<>();
-    this.personalEntries = new ArrayList<>();
-
-}
-
-public static Leaderboard getInstance() {
-    if(leaderboard == null){
-        leaderboard = new Leaderboard();
     }
-    return leaderboard;
 
-}
+    public Leaderboard() {
+        this.globalEntries = new ArrayList<>();
+    }
 
-public void displayUser(User user){
+    public static Leaderboard getInstance() {
+        if(leaderboard == null){
+            leaderboard = new Leaderboard();
+        }
+        return leaderboard;
 
-}
+    }
 
-public void addEntry(LeaderboardEntry entry){
+    public void displayUser(User user){
+        this.personalEntries = new ArrayList<>();
+        for(LeaderboardEntry entry : globalEntries){
+            if(entry.getUser() == user){
+                personalEntries.add(entry);
+            }
+        }
 
-}
+    }
+
+    public void addEntry(LeaderboardEntry entry){
+        globalEntries.add(entry);
+    }
 }

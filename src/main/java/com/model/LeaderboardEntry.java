@@ -1,6 +1,7 @@
 package com.model;
 import java.time.Duration;
 import java.time.LocalDate;
+import java.util.UUID;
 
 /**
  * this class represensts a single entry on the leaderboard
@@ -13,7 +14,29 @@ public class LeaderboardEntry {
     private int hintsUsed;
     private Difficulty difficulty;
 
-    public LeaderboardEntry(String username, Duration time, LocalDate date) {
-      
+    public LeaderboardEntry(UUID userID, Duration time, LocalDate date) {
+        this.time = time;
+        this.date = date;
     }
+    
+    public User getUser() {
+        return user;
+    }
+
+    public Duration getTime() {
+        return time;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public int getHintsUsed() {
+        return hintsUsed;
+    }
+    
+    public Difficulty getDifficulty() {
+        return difficulty;
+    }
+
 }
