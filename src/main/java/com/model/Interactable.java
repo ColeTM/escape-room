@@ -14,18 +14,18 @@ public class Interactable
     private String name;
     private String description;
     private boolean isHighlighted;
-    private  soundEffect;
+    private static SoundEffect soundEffect;
     private String clueText;
 
     //Constructor for creating a new Interactable object
     public Interactable(String name, String description,
-                        boolean isHighlighted,  soundEffect, String clueText)
+                        boolean isHighlighted, String clueText)
     {
         this.interactableID = UUID.randomUUID();
         this.name = name;
         this.description = description;
         this.isHighlighted = isHighlighted;
-        this.soundEffect = soundEffect;
+        
         this.clueText = clueText;
     }
 
@@ -39,9 +39,9 @@ public class Interactable
 
     }
 
-    public void playSoundEffect()
+    public void playSoundEffect(int num)
     {
-
+        SoundEffect.play(num);
     }
 
     public String getClueText()
@@ -52,5 +52,11 @@ public class Interactable
     public String toString()
     {
         return name + ": " + description;
+    }
+
+    public static void main(String[] args)
+    {
+        Interactable i = new Interactable("a","a",true,"a");
+        i.playSoundEffect(2);
     }
 }

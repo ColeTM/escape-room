@@ -8,20 +8,14 @@ import javax.sound.sampled.Clip;
 
 public class SoundEffect {
 
-    public static void play(boolean warning, int num){
+    public static void play(int num){
         for(int i=0; i < num; i++){
-            honk(warning);
+            honk();
         }
     }
 
-    private static void honk(boolean warning){
-        String fileName = "escape-room/src/main/java/com/sounds/";
-
-        if(warning){
-            fileName += "trumpet.wav";
-        } else {
-            fileName += "fanfare.wav";
-        }
+    private static void honk(){
+        String fileName = "src/main/java/com/sounds/trumpet.wav";
 
         try {
 			File soundFile = new File(fileName);
