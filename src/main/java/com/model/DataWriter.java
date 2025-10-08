@@ -3,10 +3,11 @@ package com.model;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.UUID;
 import java.util.HashMap;
-import org.json.simple.JSONObject;
+import java.util.UUID;
+
 import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 /**
  * writes the data to a json file
@@ -18,13 +19,16 @@ public class DataWriter extends DataConstants{
 
         // start test values
 
-
+        ArrayList<User> userList = new ArrayList<>();
+        User testUser = new User("bobby", "brown", "bobby@gmail.com",
+                                    "kingbobby123", "strongpassword");
+        userList.add(testUser);
 
 
         // end test values
 
         UserList users = UserList.getInstance();
-        ArrayList<User> userList = users.getUsers();
+        //ArrayList<User> userList = users.getUsers();
         JSONArray jsonUsers = new JSONArray();
         for(int i = 0; i < userList.size(); ++i) {
             jsonUsers.add(getUserJSON(userList.get(i)));
@@ -99,6 +103,8 @@ public class DataWriter extends DataConstants{
     }
 
     public static JSONObject writePersonalRecord(User user) {
+        if(user.getPersonalRecord() == null)
+            return null;
         JSONObject recordJSON = new JSONObject();
         recordJSON.put(RECORD_USER_ID, user.getUserID().toString());
         recordJSON.put(TIME, user.getPersonalRecord().getTime().toString());
