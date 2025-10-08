@@ -1,8 +1,8 @@
 package com.model;
 
-import java.util.UUID;
-import java.util.ArrayList;
 import java.awt.Image;
+import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * a specific room in the escape room *needs documentation*
@@ -26,14 +26,17 @@ public class Room {
         this.puzzles = puzzles;
     }
     
-
-
     public UUID getRoomUUID(Room room) {
         return roomID;
     }
 
     public void setRoomID(UUID id) {
         this.roomID = id;
+    }
+
+    public String toString() {
+        return "ID: " + roomID +
+                "\nstory: " + story;
     }
     
 }

@@ -12,9 +12,13 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.Duration;
 
-
+/**
+ * creates all of the user and room classes for the escape room
+ * @author coletm
+ */
 public class DataLoader extends DataConstants {
     
+    @SuppressWarnings({"UseSpecificCatch", "CallToPrintStackTrace"})
     public static ArrayList<User> getUsers() {
         ArrayList<User> users = new ArrayList<>();
 
@@ -31,7 +35,7 @@ public class DataLoader extends DataConstants {
                 String email = (String)userJSON.get(EMAIL);
                 String username = (String)userJSON.get(USERNAME);
                 String password = (String)userJSON.get(PASSWORD);
-                Difficulty skillLevel = (Difficulty)userJSON.get(SKILL_LEVEL);
+                Difficulty skillLevel = Difficulty.valueOf((String)userJSON.get(SKILL_LEVEL));
                 ArrayList<Character> characters = getCharacters((JSONArray)userJSON.get(CHARACTERS));
                 LeaderboardEntry personalRecord = getPersonalRecord((JSONObject)userJSON.get(RECORD));
 
@@ -89,11 +93,13 @@ public class DataLoader extends DataConstants {
 
     static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     private static LeaderboardEntry getPersonalRecord(JSONObject recordJSON) {
+        if(recordJSON == null)
+            return null;
         UUID userID = UUID.fromString((String)recordJSON.get(RECORD_USER_ID));
         Duration time = Duration.parse((String)recordJSON.get(TIME));
         LocalDate date = LocalDate.parse((String)recordJSON.get(DATE), formatter);
         int hintsUsed = ((Long)recordJSON.get(RECORD_HINTS_USED)).intValue();
-        Difficulty difficulty = (Difficulty)recordJSON.get(RECORD_DIFFICULTY);
+        Difficulty difficulty = Difficulty.valueOf((String)recordJSON.get(RECORD_DIFFICULTY));
 
         return new LeaderboardEntry(userID, time, date, hintsUsed, difficulty);
     }
@@ -110,6 +116,7 @@ public class DataLoader extends DataConstants {
     }
 
 
+    @SuppressWarnings({"UseSpecificCatch", "CallToPrintStackTrace"})
     public static ArrayList<Room> getRooms() {
         ArrayList<Room> rooms = new ArrayList<>();
 
@@ -159,7 +166,7 @@ public class DataLoader extends DataConstants {
             JSONObject puzzleJSON = (JSONObject)puzzlesJSON.get(i);
 
             UUID puzzleID = UUID.fromString((String)puzzleJSON.get(PUZZLE_ID));
-            Difficulty difficulty = (Difficulty)puzzleJSON.get(PUZZLE_DIFFICULTY);
+            Difficulty difficulty = Difficulty.valueOf((String)puzzleJSON.get(PUZZLE_DIFFICULTY));
             int attempts = ((Long)puzzleJSON.get(ATTEMPTS)).intValue();
             Clue clue = getClue((JSONObject)puzzleJSON.get(CLUE));
             ArrayList<Hint> hints = getHints((JSONArray)puzzleJSON.get(HINTS));
@@ -208,7 +215,7 @@ public class DataLoader extends DataConstants {
             String text = (String)hintJSON.get(HINT_TEXT);
             boolean hasPicture = (boolean)hintJSON.get(HAS_PICTURE);
             // hint picture
-            HintLevel level = (HintLevel)hintJSON.get(HINT_LEVEL);
+            HintLevel level = HintLevel.valueOf((String)hintJSON.get(HINT_LEVEL));
             double timePenalty = (Double)hintJSON.get(TIME_PENALTY);
 
             hints.add(new Hint(hintID, text, hasPicture, picture, level, timePenalty));
@@ -226,5 +233,18 @@ public class DataLoader extends DataConstants {
         }
         return hintsUsed;
     }
+
+    /* main method for testing
+
+    public static void main(String args[]) {
+        ArrayList<User> users = getUsers();
+        for(User user : users)
+            System.out.println(user);
+
+        ArrayList<Room> rooms = getRooms();
+        for(Room room : rooms)
+            System.out.println(room);
+    }
+    */
 
 }

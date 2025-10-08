@@ -22,7 +22,7 @@ public class LeaderboardEntry {
         this.difficulty = difficulty;
     }
 
-    // need method convert ISO-8601 duration format from json into more readable format
+    // need method to convert ISO-8601 duration format from json into more readable format
     
     public User getUser() {
         return user;

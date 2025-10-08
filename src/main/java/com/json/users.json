@@ -1,79 +1,77 @@
-{
-    "users": [
-        {
-            "userID": "d3bbc7e7-5c87-46c2-9d3e-fcccd7ac4246",
-            "firstName": "Bobby",
-            "lastName": "Brown",
-            "email": "bbrown@gmail.com",
-            "username": "KingBobby51",
-            "password": "bbrown123",
-            "skillLevel": "Intermediate",
-            "characters": [
-                {
-                    "name": "Bobby",
-                    "inventory": [
-                        {
-                            "name": "Jade key",
-                            "description": "A key that opens a jade door."
-                        },{
-                            "name": "Bobby pin",
-                            "description": "Could be used to unlock a box."
-                        }
-                    ],
-                    "currentRoom":"08ea2518-a310-492c-b925-4d929a398ba4",
-                    "hintsUsed": 2,
-                    "puzzlesCompleted": {
-                        "efc5f6cb-ff77-4a4e-9207-f27f3fdbb712": true,
-                        "e09534ee-6aa7-46eb-aacf-5a364bf67f32": false
-                    },
-                    "timer": {
-                        "timeRemaining": 15.2,
-                        "initalTime": 30.0,
-                        "isRunning": true
-}                   
-                }
-            ],
-            "personalRecord": {
-                "userID": "d3bbc7e7-5c87-46c2-9d3e-fcccd7ac4246",
-                "time": "PT26M31S",
-                "date": "09-09-2025",
-                "hintsUsed": 4,
-                "difficulty": "Beginner"
-            }
-        },{
-            "userID": "514e70f7-ac13-4f05-83bc-3ae569d0cf94",
-            "firstName": "Alice",
-            "lastName": "Smith",
-            "email": "asmith@gmail.com",
-            "username": "AliceInChains",
-            "password": "Ozzysmith454",
-            "skillLevel": "Beginner",
-            "characters": [
-                {
-                    "name": "Ozzy",
-                    "inventory": [
-                        {
-                            "name": "Jade key",
-                            "description": "A key that opens a jade door."
-                        },{
-                            "name": null,
-                            "description": null
-                        }
-                    ],
-                    "currentRoom": "08ea2518-a310-492c-b925-4d929a398ba4",
-                    "hintsUsed": 0,
-                    "puzzlesCompleted": {
-                        "efc5f6cb-ff77-4a4e-9207-f27f3fdbb712": false,
-                        "e09534ee-6aa7-46eb-aacf-5a364bf67f32": false
-                    },
-                    "timer": {
-                        "timeRemaining": 30.0,
-                        "initalTime": 30.0,
-                        "isRunning": false
+[
+    {
+        "userID": "d3bbc7e7-5c87-46c2-9d3e-fcccd7ac4246",
+        "firstName": "Bobby",
+        "lastName": "Brown",
+        "email": "bbrown@gmail.com",
+        "username": "KingBobby51",
+        "password": "bbrown123",
+        "skillLevel": "Intermediate",
+        "characters": [
+            {
+                "name": "Bobby",
+                "inventory": [
+                    {
+                        "name": "Jade key",
+                        "description": "A key that opens a jade door."
+                    },{
+                        "name": "Bobby pin",
+                        "description": "Could be used to unlock a box."
                     }
-                }
-            ],
-            "personalRecord": null
+                ],
+                "currentRoom":"08ea2518-a310-492c-b925-4d929a398ba4",
+                "hintsUsed": 2,
+                "puzzlesCompleted": {
+                    "efc5f6cb-ff77-4a4e-9207-f27f3fdbb712": true,
+                    "e09534ee-6aa7-46eb-aacf-5a364bf67f32": false
+                },
+                "timer": {
+                    "timeRemaining": 15.2,
+                    "initalTime": 30.0,
+                    "isRunning": true
+    }                   
+            }
+        ],
+        "personalRecord": {
+            "userID": "d3bbc7e7-5c87-46c2-9d3e-fcccd7ac4246",
+            "time": "PT26M31S",
+            "date": "2025-09-09",
+            "hintsUsed": 4,
+            "difficulty": "Beginner"
         }
-    ]
-}
+    },{
+        "userID": "514e70f7-ac13-4f05-83bc-3ae569d0cf94",
+        "firstName": "Alice",
+        "lastName": "Smith",
+        "email": "asmith@gmail.com",
+        "username": "AliceInChains",
+        "password": "Ozzysmith454",
+        "skillLevel": "Beginner",
+        "characters": [
+            {
+                "name": "Ozzy",
+                "inventory": [
+                    {
+                        "name": "Jade key",
+                        "description": "A key that opens a jade door."
+                    },{
+                        "name": null,
+                        "description": null
+                    }
+                ],
+                "currentRoom": "08ea2518-a310-492c-b925-4d929a398ba4",
+                "hintsUsed": 0,
+                "puzzlesCompleted": {
+                    "efc5f6cb-ff77-4a4e-9207-f27f3fdbb712": false,
+                    "e09534ee-6aa7-46eb-aacf-5a364bf67f32": false
+                },
+                "timer": {
+                    "timeRemaining": 30.0,
+                    "initalTime": 30.0,
+                    "isRunning": false
+                }
+            }
+        ],
+        "personalRecord": null
+    }
+]

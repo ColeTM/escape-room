@@ -32,4 +32,16 @@ public class Timer {
     public boolean isExpired(){
         return timeRemaining <= 0;
     }
+
+    public double getTimeRemaining() {
+        return this.timeRemaining;
+    }
+
+    public double getInitialTime() {
+        return this.initialTime;
+    }
+
+    public boolean getIsRunning() {
+        return this.isRunning;
+    }
 }

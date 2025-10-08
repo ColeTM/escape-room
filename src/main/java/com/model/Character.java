@@ -14,7 +14,7 @@ public class Character
     private ArrayList<Item> inventory;
     private UUID currentRoom;
     private int hintsUsed;
-    private HashMap<Puzzle, Boolean> puzzlesCompleted;
+    private HashMap<UUID, Boolean> puzzlesCompleted;
     private Timer timer;
 
     //Constructor for a new character
@@ -26,7 +26,7 @@ public class Character
     }
 
     public Character(String name, ArrayList<Item> inventory, UUID currentRoom,
-                     int hintsUsed, HashMap<Puzzle, Boolean> puzzlesCompleted, Timer timer)
+                     int hintsUsed, HashMap<UUID, Boolean> puzzlesCompleted, Timer timer)
     {
         this.name = name;
         this.inventory = inventory;
@@ -54,6 +54,30 @@ public class Character
     public void removeFromInventory(Item item)
     {
         this.inventory.remove(item);
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public ArrayList<Item> getInventory() {
+        return this.inventory;
+    }
+
+    public UUID getCurrentRoom() {
+        return this.currentRoom;
+    }
+
+    public int getHintsUsed() {
+        return this.hintsUsed;
+    }
+
+    public HashMap<UUID, Boolean> getPuzzlesCompleted() {
+        return this.puzzlesCompleted;
+    }
+
+    public Timer getTimer() {
+        return this.timer;
     }
 
     public String toString()

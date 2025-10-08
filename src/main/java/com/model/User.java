@@ -122,7 +122,7 @@ public class User {
     @Override
     public String toString() {
         return "ID: " + userID.toString() +
-                "\nName: " + firstName + lastName +
+                "\nName: " + firstName + " " + lastName +
                 "\nEmail: " + email +
                 "\nUsername: " + username +
                 "\nPassword: " + password +
