@@ -1,6 +1,8 @@
 package com.model;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Collections;
 
 /**
  * This class represents the leaderboard for the game
@@ -11,10 +13,6 @@ public class Leaderboard {
     private ArrayList<LeaderboardEntry> personalEntries;
     private static Leaderboard leaderboard;
 
-    public ArrayList<LeaderboardEntry> displayGlobal() {
-        return globalEntries;
-    }
-
     public Leaderboard() {
         this.globalEntries = new ArrayList<>();
     }
@@ -24,6 +22,9 @@ public class Leaderboard {
             leaderboard = new Leaderboard();
         }
         return leaderboard;
+    }
+    public ArrayList<LeaderboardEntry> displayGlobal() {
+        return globalEntries;
     }
 
     public ArrayList<LeaderboardEntry> displayUser(User user){
@@ -38,8 +39,18 @@ public class Leaderboard {
 
     public void addEntry(LeaderboardEntry entry){
         globalEntries.add(entry);
+        sortEntries();
     }
+
     public void sortEntries(){
-        
+        Collections.sort(globalEntries, Comparator.comparing(LeaderboardEntry::getTime));
+    }
+    
+    public String toString(ArrayList<Leaderboard> entries) {
+        StringBuilder leader = new StringBuilder();
+        for (Leaderboard entry : entries) {
+            leader.append(entry.toString()).append("|n");
+        }
+        return "Leaderboard:\n" + leader.toString();
     }
 }

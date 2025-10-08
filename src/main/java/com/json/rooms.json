@@ -1,90 +1,92 @@
-[
-    {
-        "roomID": "08ea2518-a310-492c-b925-4d929a398ba4",
-        "story": "A flickering lantern casts long shadows across the dusty library, where a locked chest sits beneath a wall of cryptic symbols waiting to be decoded.",
-        "background": "spookylibrary.jpg",
-        "interactables": [
-            {
-                "interactableID": "a100af6e-5dde-4787-86fe-c9309e9a3cff",
-                "description": "A dusty old painting on the wall.",
-                "isHighlighted": false,
-                "soundEffect": "creak_sound.wav",
-                "clueText": "The signature in the corner seems oddly familiar."
-            },
-            {
-                "interactableID": "fc0ea751-c656-4b06-aab6-b8664d6f83fe",
-                "description": "A locked wooden chest at the foot of the bed.",
-                "isHighlighted": true,
-                "soundEffect": "lock_rattle.mp3",
-                "clueText": "It requires a metal key."
-            }
-        ],
-        "puzzles": [
-            {
-                "type": "text",
-                "puzzleID": "efc5f6cb-ff77-4a4e-9207-f27f3fdbb712",
-                "difficulty": 1,
-                "solution": "Teapot",
-                "attempts": 3,
-                "clue": {
-                    "clueID": "55f075b7-7fb8-42d7-8088-1d1e8a3cf85f",
-                    "text": "I have T at the beginning, middle, and end. What am I?",
-                    "picture": "Riddle-sample.png"
+{
+    "rooms": [
+        {
+            "roomID": "08ea2518-a310-492c-b925-4d929a398ba4",
+            "story": "A flickering lantern casts long shadows across the dusty library, where a locked chest sits beneath a wall of cryptic symbols waiting to be decoded.",
+            "background": "spookylibrary.jpg",
+            "interactables": [
+                {
+                    "interactableID": "a100af6e-5dde-4787-86fe-c9309e9a3cff",
+                    "description": "A dusty old painting on the wall.",
+                    "isHighlighted": false,
+                    "soundEffect": "creak_sound.wav",
+                    "clueText": "The signature in the corner seems oddly familiar."
                 },
-                "hints": [
-                    {
-                        "hintID": "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd",
-                        "text": "Consider wordplay in the clue.",
-                        "hasPicture": false,
-                        "picture": null,
-                        "level": "Vague",
-                        "timePenalty": 5.0
-                    }, {
-                        "hintID": "3a0818c7-b668-458d-924c-3701147f51fc",
-                        "text": "T could also refer to tea.",
-                        "hasPicture": false,
-                        "picture": null,
-                        "level": "Direct",
-                        "timePenalty": 10.0
-                    }
-                ],
-                "hintsUsed": {
-                    "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd": true,
-                    "3a0818c7-b668-458d-924c-3701147f51fc": false
-                },
-                "isSequential": false
-            },
-            {
-                "puzzleID": "e09534ee-6aa7-46eb-aacf-5a364bf67f32",
-                "difficulty": 2,
-                "solution": "ASQERVXC",
-                "attempts": 5,
-                "clue": {
-                    "clueID": "cc24244f-e4ff-4759-8453-2d3b614a8061",
-                    "text": "Dashes are long, dots are short.",
-                    "picture": "Clue_Sample.png"
-                },
-                "hints": [
-                    {
-                        "hintID": "b117ccf6-89e1-47af-8cfa-932a63533cc0",
-                        "text": "This puzzle requires the morse code refrence sheet.",
-                        "hasPicture": true,
-                        "Picture": "Morse-sample.png",
-                        "level": "Vague",
-                        "timePenalty": 2.5
+                {
+                    "interactableID": "fc0ea751-c656-4b06-aab6-b8664d6f83fe",
+                    "description": "A locked wooden chest at the foot of the bed.",
+                    "isHighlighted": true,
+                    "soundEffect": "lock_rattle.mp3",
+                    "clueText": "It requires a metal key."
+                }
+            ],
+            "puzzles": [
+                {
+                    "type": "text",
+                    "puzzleID": "efc5f6cb-ff77-4a4e-9207-f27f3fdbb712",
+                    "difficulty": 1,
+                    "solution": "Teapot",
+                    "attempts": 3,
+                    "clue": {
+                        "clueID": "55f075b7-7fb8-42d7-8088-1d1e8a3cf85f",
+                        "text": "I have T at the beginning, middle, and end. What am I?",
+                        "picture": "Riddle-sample.png"
                     },
-                    {
-                        "hintID": "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd",
-                        "text": "The first 5 letters are: A, S, Q, E, R",
-                        "hasPicture": false,
-                        "picture": null,
-                        "level": "Direct",
-                        "timePenalty": 5.0
-                    }
-                ],
-                "hintsUsed": 1,
-                "isSequential": true
-            }
-        ]
-    }
-]
+                    "hints": [
+                        {
+                            "hintID": "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd",
+                            "text": "Consider wordplay in the clue.",
+                            "hasPicture": false,
+                            "picture": null,
+                            "level": "Vague",
+                            "timePenalty": 5.0
+                        }, {
+                            "hintID": "3a0818c7-b668-458d-924c-3701147f51fc",
+                            "text": "T could also refer to tea.",
+                            "hasPicture": false,
+                            "picture": null,
+                            "level": "Direct",
+                            "timePenalty": 10.0
+                        }
+                    ],
+                    "hintsUsed": {
+                        "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd": true,
+                        "3a0818c7-b668-458d-924c-3701147f51fc": false
+                    },
+                    "isSequential": false
+                },
+                {
+                    "puzzleID": "e09534ee-6aa7-46eb-aacf-5a364bf67f32",
+                    "difficulty": 2,
+                    "solution": "ASQERVXC",
+                    "attempts": 5,
+                    "clue": {
+                        "clueID": "cc24244f-e4ff-4759-8453-2d3b614a8061",
+                        "text": "Dashes are long, dots are short.",
+                        "picture": "Clue_Sample.png"
+                    },
+                    "hints": [
+                        {
+                            "hintID": "b117ccf6-89e1-47af-8cfa-932a63533cc0",
+                            "text": "This puzzle requires the morse code refrence sheet.",
+                            "hasPicture": true,
+                            "Picture": "Morse-sample.png",
+                            "level": "Vague",
+                            "timePenalty": 2.5
+                        },
+                        {
+                            "hintID": "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd",
+                            "text": "The first 5 letters are: A, S, Q, E, R",
+                            "hasPicture": false,
+                            "picture": null,
+                            "level": "Direct",
+                            "timePenalty": 5.0
+                        }
+                    ],
+                    "hintsUsed": 1,
+                    "isSequential": true
+                }
+            ]
+        }
+    ]
+}

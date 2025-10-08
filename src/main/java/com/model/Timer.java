@@ -6,9 +6,9 @@ public class Timer {
     private boolean isRunning;
 
     public Timer() {
-        this.timeRemaining = 30.00;
+        this.timeRemaining = 0;
         this.initialTime = 0;
-        this.isRunning = isRunning;
+        this.isRunning = false;
     }
     public Timer(double timeRemaining, boolean isRunning){
         this.timeRemaining = timeRemaining;
