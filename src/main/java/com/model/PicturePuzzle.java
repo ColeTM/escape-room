@@ -1,6 +1,6 @@
 package com.model;
 
-import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
@@ -11,12 +11,12 @@ import java.util.UUID;
  */
 public class PicturePuzzle extends Puzzle
 {
-    private BufferedImage pictureContent;
+    private File pictureContent;
     private char pictureSolution;
 
     public PicturePuzzle(UUID puzzleID, Difficulty difficulty, int attempts, Clue clue,
                          ArrayList<Hint> hints, HashMap<UUID, Boolean> hintsUsed,
-                         boolean isSequential, BufferedImage pictureContent, char pictureSolution)
+                         boolean isSequential, File pictureContent, char pictureSolution)
     {
         super(puzzleID, difficulty, attempts, clue, hints, hintsUsed, isSequential);
         this.pictureContent = pictureContent;

@@ -1,16 +1,17 @@
 package com.model;
 
-import java.util.ArrayList;
-import java.awt.Image;
-import java.util.HashMap;
+import java.io.File;
 import java.io.FileReader;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.UUID;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.Duration;
 
 /**
  * creates all of the user and room classes for the escape room
@@ -129,7 +130,7 @@ public class DataLoader extends DataConstants {
 
                 UUID roomID = UUID.fromString((String)roomJSON.get(ROOM_ID));
                 String story = (String)roomJSON.get(STORY);
-                Image background = (Image)roomJSON.get(BACKGROUND);
+                File background = new File((String)roomJSON.get(BACKGROUND));
                 ArrayList<Interactable> interactables = getInteractables((JSONArray)roomJSON.get(INTERACTABLES));
                 ArrayList<Puzzle> puzzles = getPuzzles((JSONArray)roomJSON.get(PUZZLES));
 
@@ -188,7 +189,7 @@ public class DataLoader extends DataConstants {
                                             hintsUsed, isSequential, audioContent, audioSolution));
                     break;
                 case "picture":
-                    // pictureContent
+                    File pictureContent = new File((String)puzzleJSON.get(PICTURE_CONTENT));
                     char pictureSolution = (char)puzzleJSON.get(PICTURE_SOLUTION);
                     puzzles.add(new PicturePuzzle(puzzleID, difficulty, attempts, clue, hints,
                                             hintsUsed, isSequential, pictureContent, pictureSolution));
@@ -200,7 +201,7 @@ public class DataLoader extends DataConstants {
     private static Clue getClue(JSONObject clueJSON) {
         UUID clueID = UUID.fromString((String)clueJSON.get(CLUE_ID));
         String text = (String)clueJSON.get(CLUE_TEXT);
-        // clue picture
+        File picture = new File((String)clueJSON.get(CLUE_PICTURE));
 
         return new Clue(clueID, text, picture);    
     }
@@ -214,7 +215,11 @@ public class DataLoader extends DataConstants {
             UUID hintID = UUID.fromString((String)hintJSON.get(HINT_ID));
             String text = (String)hintJSON.get(HINT_TEXT);
             boolean hasPicture = (boolean)hintJSON.get(HAS_PICTURE);
-            // hint picture
+            File picture;
+            if(hasPicture)
+                picture = new File((String)hintJSON.get(HINT_PICTURE));
+            else
+                picture = null;
             HintLevel level = HintLevel.valueOf((String)hintJSON.get(HINT_LEVEL));
             double timePenalty = (Double)hintJSON.get(TIME_PENALTY);
 
@@ -234,17 +239,17 @@ public class DataLoader extends DataConstants {
         return hintsUsed;
     }
 
-    /* main method for testing
+    
 
     public static void main(String args[]) {
         ArrayList<User> users = getUsers();
         for(User user : users)
-            System.out.println(user);
+            System.out.println(user + "\n");
 
         ArrayList<Room> rooms = getRooms();
         for(Room room : rooms)
             System.out.println(room);
     }
-    */
+
 
 }

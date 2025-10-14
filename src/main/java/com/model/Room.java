@@ -1,6 +1,6 @@
 package com.model;
 
-import java.awt.Image;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -12,11 +12,11 @@ public class Room {
 
     private UUID roomID;
     private String story;
-    private Image background;
+    private File background;
     private ArrayList<Interactable> interactables;
     private ArrayList<Puzzle> puzzles;
 
-    public Room(UUID roomID, String story, Image background,
+    public Room(UUID roomID, String story, File background,
                 ArrayList<Interactable> interactables, ArrayList<Puzzle> puzzles) {
 
         this.roomID = roomID;
