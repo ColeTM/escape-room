@@ -10,7 +10,6 @@ import java.util.Collections;
  */
 public class Leaderboard {
     private ArrayList<LeaderboardEntry> globalEntries;
-    private ArrayList<LeaderboardEntry> personalEntries;
     private static Leaderboard leaderboard;
 
     public Leaderboard() {
@@ -25,16 +24,6 @@ public class Leaderboard {
     }
     public ArrayList<LeaderboardEntry> displayGlobal() {
         return globalEntries;
-    }
-
-    public ArrayList<LeaderboardEntry> displayUser(User user){
-        this.personalEntries = new ArrayList<>();
-        for(LeaderboardEntry entry : globalEntries){
-            if(entry.getUser() == user){
-                personalEntries.add(entry);
-            }
-        }
-        return personalEntries;
     }
 
     public void addEntry(LeaderboardEntry entry){
