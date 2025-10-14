@@ -15,9 +15,10 @@ import org.json.simple.JSONObject;
  */
 public class DataWriter extends DataConstants{
 
+    @SuppressWarnings("unchecked")
     public static void saveUsers() {
 
-        // start test values
+        /* start test values
 
         ArrayList<User> userList = new ArrayList<>();
         User testUser = new User("bobby", "brown", "bobby@gmail.com",
@@ -25,10 +26,9 @@ public class DataWriter extends DataConstants{
         userList.add(testUser);
 
 
-        // end test values
+        end test values */
 
-        UserList users = UserList.getInstance();
-        //ArrayList<User> userList = users.getUsers();
+        ArrayList<User> userList = UserList.getUsers();
         JSONArray jsonUsers = new JSONArray();
         for(int i = 0; i < userList.size(); ++i) {
             jsonUsers.add(getUserJSON(userList.get(i)));
@@ -42,6 +42,7 @@ public class DataWriter extends DataConstants{
         }
     }
     
+    @SuppressWarnings("unchecked")
     public static JSONObject getUserJSON(User user) {
         JSONObject userJSON = new JSONObject();
         userJSON.put(USER_ID, user.getUserID().toString());
@@ -57,6 +58,7 @@ public class DataWriter extends DataConstants{
         return userJSON;
     }
 
+    @SuppressWarnings("unchecked")
     public static JSONArray writeCharacters(User user) {
         JSONArray charactersJSON = new JSONArray();
         for(Character character : user.getCharacters()) {
@@ -72,6 +74,7 @@ public class DataWriter extends DataConstants{
         return charactersJSON;
     }
 
+    @SuppressWarnings("unchecked")
     public static JSONArray writeInventory(Character character) {
         JSONArray inventoryJSON = new JSONArray();
         for(Item item : character.getInventory()) {
@@ -83,6 +86,7 @@ public class DataWriter extends DataConstants{
         return inventoryJSON;
     }
 
+    @SuppressWarnings("unchecked")
     public static JSONObject writePuzzlesCompleted(Character character) {
         JSONObject completedJSON = new JSONObject();
         HashMap<UUID, Boolean> puzzlesCompleted = character.getPuzzlesCompleted();
@@ -94,6 +98,7 @@ public class DataWriter extends DataConstants{
         return completedJSON;
     }
 
+    @SuppressWarnings("unchecked")
     public static JSONObject writeTimer(Character character) {
         JSONObject timerJSON = new JSONObject();
         timerJSON.put(TIME_REMAINING, character.getTimer().getTimeRemaining());
@@ -102,6 +107,7 @@ public class DataWriter extends DataConstants{
         return timerJSON;
     }
 
+    @SuppressWarnings("unchecked")
     public static JSONObject writePersonalRecord(User user) {
         if(user.getPersonalRecord() == null)
             return null;
@@ -116,6 +122,15 @@ public class DataWriter extends DataConstants{
 
 
     public static void main(String args[]) {
+
+        ArrayList<User> users = DataLoader.getUsers();
+        for(User user : users)
+            System.out.println(user + "\n");
+
+        ArrayList<Room> rooms = DataLoader.getRooms();
+        for(Room room : rooms)
+            System.out.println(room);
+
         saveUsers();
     }
     

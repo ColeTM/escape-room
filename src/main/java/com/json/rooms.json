@@ -22,9 +22,10 @@
         "puzzles": [
             {
                 "type": "text",
+                "textContent": "I have T at the beginning, middle, and end. What am I?",
                 "puzzleID": "efc5f6cb-ff77-4a4e-9207-f27f3fdbb712",
-                "difficulty": 1,
-                "solution": "Teapot",
+                "difficulty": "Beginner",
+                "textSolution": "Teapot",
                 "attempts": 3,
                 "clue": {
                     "clueID": "55f075b7-7fb8-42d7-8088-1d1e8a3cf85f",
@@ -55,21 +56,23 @@
                 "isSequential": false
             },
             {
+                "type": "text",
+                "textContent": "Dashes are long, dots are short.",
                 "puzzleID": "e09534ee-6aa7-46eb-aacf-5a364bf67f32",
-                "difficulty": 2,
-                "solution": "ASQERVXC",
+                "difficulty": "Intermediate",
+                "textSolution": "ASQERVXC",
                 "attempts": 5,
                 "clue": {
                     "clueID": "cc24244f-e4ff-4759-8453-2d3b614a8061",
                     "text": "Dashes are long, dots are short.",
-                    "picture": "Clue_Sample.png"
+                    "picture": "src/main/java/com/docs/Clue_Sample.png"
                 },
                 "hints": [
                     {
                         "hintID": "b117ccf6-89e1-47af-8cfa-932a63533cc0",
                         "text": "This puzzle requires the morse code refrence sheet.",
-                        "hasPicture": true,
-                        "Picture": "Morse-sample.png",
+                        "hasPicture": false,
+                        "Picture": "src/main/java/com/docs/Morse-sample.png",
                         "level": "Vague",
                         "timePenalty": 2.5
                     },
@@ -82,7 +85,10 @@
                         "timePenalty": 5.0
                     }
                 ],
-                "hintsUsed": 1,
+                "hintsUsed": {
+                    "b117ccf6-89e1-47af-8cfa-932a63533cc0": false,
+                    "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd": false
+                },
                 "isSequential": true
             }
         ]

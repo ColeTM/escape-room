@@ -1,16 +1,20 @@
 package com.model;
 
-import javafx.awt.image.BufferedImage;
+// import javafx.awt.image.BufferedImage;
+import java.io.File;
+import java.util.UUID;
 /*
  * @author: Nick Hippchen 
  * A clue object that contains a text clue and an image clue
  */
 public class Clue {
     
+    private UUID clueID;
     private String text;
-    private BufferedImage picture;
+    private File picture;
     
-    public Clue(String text, BufferedImage picture) {
+    public Clue(UUID clueID, String text, File picture) {
+        this.clueID = clueID;
         this.text = text;
         this.picture = picture;
     }
