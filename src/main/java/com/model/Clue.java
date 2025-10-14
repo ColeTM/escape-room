@@ -1,6 +1,6 @@
 package com.model;
 
-import javafx.awt.image.BufferedImage;
+import java.awt.image.BufferedImage;
 /*
  * @author: Nick Hippchen 
  * A clue object that contains a text clue and an image clue
