@@ -20,10 +20,9 @@ public class LeaderboardEntry {
         this.date = date;
         this.hintsUsed = hintsUsed;
         this.difficulty = difficulty;
+        this.user = UserList.getInstance().getUserByUUID(userID);
     }
 
-    // need method to convert ISO-8601 duration format from json into more readable format
-    
     public User getUser() {
         return user;
     }
@@ -43,10 +42,23 @@ public class LeaderboardEntry {
     public Difficulty getDifficulty() {
         return difficulty;
     }
+    
+
+    public String getFormatDuration(){
+        String ISO = time.toString();
+        Duration time = Duration.parse(ISO);
+        long hours = time.toHours();
+        long minutes = time.toMinutesPart();
+        long seconds = time.toSecondsPart();
+        if (hours == 0) {
+            return String.format("%02d:%02d", minutes, seconds);
+        }
+        return String.format("%02d:%02d:%02d", hours, minutes, seconds);
+    }
 
     public String toString() {
         return "User: " + user + 
-                ", Time: " + time + 
+                ", Time: " + getFormatDuration() + 
                 ", Date: " + date + 
                 ", Hints Used: " + hintsUsed + 
                 ", Difficulty: " + difficulty;

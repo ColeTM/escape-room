@@ -1,27 +1,51 @@
 package com.model;
+import java.time.Duration;
+import java.time.Instant;
 
+/**
+ * This class represents a timer for the escape room
+ * @author Kelly Sullivan
+ */
 public class Timer {
     private double timeRemaining;
-    private double initialTime;
+    private Instant initialTime;
     private boolean isRunning;
+    private Instant stopTime;
 
     public Timer() {
-        this.timeRemaining = 0;
-        this.initialTime = 0;
+        this.timeRemaining = 1800.0;
         this.isRunning = false;
     }
     public Timer(double timeRemaining, boolean isRunning){
         this.timeRemaining = timeRemaining;
-        this.initialTime = initialTime;
+        this.isRunning = isRunning;
+    }
+    public double getTimeRemaining() {
+        return timeRemaining;
+    }
+    public Instant getInitialTime() {
+        return initialTime;
+    }
+    public boolean getIsRunning() {
+        return isRunning;
+    }
+    public Instant getStopTime() {
+        return stopTime;
     }
     public void start(){
         isRunning = true;
+        initialTime = Instant.now();
     }
     public void pause() {
+        updateTime();
         isRunning = false;
+        stopTime = Instant.now();
     }
     public void resume() {
-        isRunning = true;
+        if (timeRemaining < 0){
+            isRunning = true;
+            initialTime = Instant.now();
+        }
     }
     public void addTime(int seconds){
         timeRemaining += seconds;
@@ -32,16 +56,14 @@ public class Timer {
     public boolean isExpired(){
         return timeRemaining <= 0;
     }
-
-    public double getTimeRemaining() {
-        return this.timeRemaining;
+    private void updateTime(){
+        if (isRunning) {
+            Instant now = Instant.now();
+            Duration passed = Duration.between(initialTime, now);
+            timeRemaining -= passed.toSeconds();
+        } 
+        Duration passed = Duration.between(initialTime, stopTime);
+        timeRemaining -= passed.toSeconds();
     }
 
-    public double getInitialTime() {
-        return this.initialTime;
-    }
-
-    public boolean getIsRunning() {
-        return this.isRunning;
-    }
 }
