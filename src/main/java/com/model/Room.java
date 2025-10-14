@@ -1,0 +1,42 @@
+package com.model;
+
+import java.awt.Image;
+import java.util.ArrayList;
+import java.util.UUID;
+
+/**
+ * a specific room in the escape room *needs documentation*
+ * @author coletm
+ */
+public class Room {
+
+    private UUID roomID;
+    private String story;
+    private Image background;
+    private ArrayList<Interactable> interactables;
+    private ArrayList<Puzzle> puzzles;
+
+    public Room(UUID roomID, String story, Image background,
+                ArrayList<Interactable> interactables, ArrayList<Puzzle> puzzles) {
+
+        this.roomID = roomID;
+        this.story = story;
+        this.background = background;
+        this.interactables = interactables;
+        this.puzzles = puzzles;
+    }
+    
+    public UUID getRoomUUID(Room room) {
+        return roomID;
+    }
+
+    public void setRoomID(UUID id) {
+        this.roomID = id;
+    }
+
+    public String toString() {
+        return "ID: " + roomID +
+                "\nstory: " + story;
+    }
+    
+}

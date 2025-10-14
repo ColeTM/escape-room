@@ -1,0 +1,13 @@
+[
+    {
+        "firstName": "bobby",
+        "lastName": "brown",
+        "characters": [],
+        "password": "strongpassword",
+        "userID": "e495d4fb-965a-43c7-98e1-66c380c01c12",
+        "skillLevel": "Beginner",
+        "email": "bobby@gmail.com",
+        "personalRecord": null,
+        "username": "kingbobby123"
+    }
+]
