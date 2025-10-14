@@ -56,7 +56,7 @@ public class Timer {
     public boolean isExpired(){
         return timeRemaining <= 0;
     }
-    private void updateTime(){
+    public void updateTime(){
         if (isRunning) {
             Instant now = Instant.now();
             Duration passed = Duration.between(initialTime, now);
