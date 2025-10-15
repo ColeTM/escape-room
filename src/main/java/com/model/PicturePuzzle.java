@@ -21,6 +21,15 @@ public class PicturePuzzle extends Puzzle
         super(puzzleID, difficulty, attempts, clue, hints, hintsUsed, isSequential);
         this.pictureContent = pictureContent;
         this.pictureSolution = pictureSolution;
+        this.type = "picture";
+    }
+
+    public Object getContent() {
+        return pictureContent;
+    }
+
+    public Object getSolution() {
+        return pictureSolution;
     }
     
     public boolean solve(Object answer)

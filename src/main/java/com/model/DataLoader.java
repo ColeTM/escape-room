@@ -96,13 +96,13 @@ public class DataLoader extends DataConstants {
     private static LeaderboardEntry getPersonalRecord(JSONObject recordJSON) {
         if(recordJSON == null)
             return null;
-        UUID userID = UUID.fromString((String)recordJSON.get(RECORD_USER_ID));
+        String username = (String)recordJSON.get(USERNAME);
         Duration time = Duration.parse((String)recordJSON.get(TIME));
         LocalDate date = LocalDate.parse((String)recordJSON.get(DATE), formatter);
         int hintsUsed = ((Long)recordJSON.get(RECORD_HINTS_USED)).intValue();
         Difficulty difficulty = Difficulty.valueOf((String)recordJSON.get(RECORD_DIFFICULTY));
 
-        return new LeaderboardEntry(userID, time, date, hintsUsed, difficulty);
+        return new LeaderboardEntry(username, time, date, hintsUsed, difficulty);
     }
 
     private static HashMap<UUID, Boolean> getPuzzlesCompleted(JSONObject completedJSON) {
@@ -150,12 +150,12 @@ public class DataLoader extends DataConstants {
         for(int i = 0; i < interactablesJSON.size(); ++i) {
             JSONObject interactableJSON = (JSONObject)interactablesJSON.get(i);
 
-            String name = (String)interactableJSON.get(INTERACTABLE_NAME);
+            UUID interactableID = UUID.fromString((String)interactableJSON.get(INTERACTABLE_ID));
             String description = (String)interactableJSON.get(INTERACTABLE_DESCRIPTION);
             boolean isHighlighted = (boolean)interactableJSON.get(IS_HIGHLIGHTED);
             String clue = (String)interactableJSON.get(INTERACTABLE_CLUE);
 
-            interactables.add(new Interactable(name, description, isHighlighted, clue));
+            interactables.add(new Interactable(interactableID, description, isHighlighted, clue));
         }
         return interactables;
     }

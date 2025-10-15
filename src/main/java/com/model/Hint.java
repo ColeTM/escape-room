@@ -29,12 +29,16 @@ public class Hint
         this.timePenalty = timePenalty;
     }
 
+    public UUID getHintID() {
+        return hintID;
+    }
+
     public String getText()
     {
         return this.text;
     }
 
-    public boolean hasPicture()
+    public boolean getHasPicture()
     {
         return this.hasPicture;
     }
@@ -42,6 +46,10 @@ public class Hint
     public File getPicture()
     {
         return this.picture;
+    }
+
+    public HintLevel getLevel() {
+        return level;
     }
 
     public double getTimePenalty()

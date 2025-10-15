@@ -8,23 +8,23 @@ import java.util.UUID;
  * @author Kelly Sullivan
  */
 public class LeaderboardEntry {
-    private User user;
+    private String username;
     private Duration time;
     private LocalDate date;
     private int hintsUsed;
     private Difficulty difficulty;
 
-    public LeaderboardEntry(UUID userID, Duration time, LocalDate date, 
+    public LeaderboardEntry(String username, Duration time, LocalDate date, 
                             int hintsUsed, Difficulty difficulty) {
         this.time = time;
         this.date = date;
         this.hintsUsed = hintsUsed;
         this.difficulty = difficulty;
-        this.user = UserList.getInstance().getUserByUUID(userID);
+        this.username = username;
     }
 
-    public User getUser() {
-        return user;
+    public String getUsername() {
+        return username;
     }
 
     public Duration getTime() {
@@ -57,7 +57,7 @@ public class LeaderboardEntry {
     }
 
     public String toString() {
-        return "User: " + user + 
+        return "User: " + username + 
                 ", Time: " + getFormatDuration() + 
                 ", Date: " + date + 
                 ", Hints Used: " + hintsUsed + 

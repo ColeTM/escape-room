@@ -26,13 +26,46 @@ public class Room {
         this.puzzles = puzzles;
     }
     
-    public UUID getRoomUUID(Room room) {
+    public UUID getRoomID() {
         return roomID;
     }
 
     public void setRoomID(UUID id) {
         this.roomID = id;
     }
+
+    public String getStory() {
+        return story;
+    }
+
+    public void setStory(String story) {
+        this.story = story;
+    }
+
+    public File getBackground() {
+        return background;
+    }
+
+    public void setBackground(File background) {
+        this.background = background;
+    }
+
+    public ArrayList<Interactable> getInteractables() {
+        return interactables;
+    }
+
+    public void setInteractables(ArrayList<Interactable> interactables) {
+        this.interactables = interactables;
+    }
+
+    public ArrayList<Puzzle> getPuzzles() {
+        return puzzles;
+    }
+
+    public void setPuzzles(ArrayList<Puzzle> puzzles) {
+        this.puzzles = puzzles;
+    }
+
 
     public String toString() {
         return "ID: " + roomID +

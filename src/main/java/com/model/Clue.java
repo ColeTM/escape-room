@@ -19,4 +19,16 @@ public class Clue {
         this.picture = picture;
     }
 
+    public UUID getClueID() {
+        return clueID;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public File getPicture() {
+        return picture;
+    }
+
 }

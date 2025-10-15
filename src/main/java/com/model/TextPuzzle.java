@@ -21,6 +21,15 @@ public class TextPuzzle extends Puzzle
         super(puzzleID, difficulty, attempts, clue, hints, hintsUsed, isSequential);
         this.textContent = textContent;
         this.textSolution = textSolution;
+        this.type = "text";
+    }
+
+    public Object getContent() {
+        return textContent;
+    }
+
+    public Object getSolution() {
+        return textSolution;
     }
 
     public boolean solve(Object answer)

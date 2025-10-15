@@ -10,9 +10,10 @@ public class UserList {
     private ArrayList<User> users;
     private static UserList userList;
 
-    public UserList() {
-        this.users = new ArrayList<>();
+    private UserList() {
+        users = DataLoader.getUsers();
     }
+
     public static UserList getInstance() {
         if(userList == null){
             userList = new UserList();

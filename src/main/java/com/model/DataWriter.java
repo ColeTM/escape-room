@@ -28,11 +28,11 @@ public class DataWriter extends DataConstants{
 
         end test values */
 
-        ArrayList<User> userList = UserList.getUsers();
+        UserList users = UserList.getInstance();
+        ArrayList<User> userList = users.getUsers();
         JSONArray jsonUsers = new JSONArray();
-        for(int i = 0; i < userList.size(); ++i) {
+        for(int i = 0; i < userList.size(); ++i)
             jsonUsers.add(getUserJSON(userList.get(i)));
-        }
 
         try (FileWriter file = new FileWriter(TEMP_USER_FILE_NAME)) {
             file.write(jsonUsers.toJSONString());
@@ -43,7 +43,7 @@ public class DataWriter extends DataConstants{
     }
     
     @SuppressWarnings("unchecked")
-    public static JSONObject getUserJSON(User user) {
+    private static JSONObject getUserJSON(User user) {
         JSONObject userJSON = new JSONObject();
         userJSON.put(USER_ID, user.getUserID().toString());
         userJSON.put(FIRST_NAME, user.getFirstName());
@@ -59,7 +59,7 @@ public class DataWriter extends DataConstants{
     }
 
     @SuppressWarnings("unchecked")
-    public static JSONArray writeCharacters(User user) {
+    private static JSONArray writeCharacters(User user) {
         JSONArray charactersJSON = new JSONArray();
         for(Character character : user.getCharacters()) {
             JSONObject characterJSON = new JSONObject();
@@ -75,7 +75,7 @@ public class DataWriter extends DataConstants{
     }
 
     @SuppressWarnings("unchecked")
-    public static JSONArray writeInventory(Character character) {
+    private static JSONArray writeInventory(Character character) {
         JSONArray inventoryJSON = new JSONArray();
         for(Item item : character.getInventory()) {
             JSONObject itemJSON = new JSONObject();
@@ -87,19 +87,19 @@ public class DataWriter extends DataConstants{
     }
 
     @SuppressWarnings("unchecked")
-    public static JSONObject writePuzzlesCompleted(Character character) {
+    private static JSONObject writePuzzlesCompleted(Character character) {
         JSONObject completedJSON = new JSONObject();
         HashMap<UUID, Boolean> puzzlesCompleted = character.getPuzzlesCompleted();
         for(HashMap.Entry<UUID, Boolean> entry : puzzlesCompleted.entrySet()) {
             String key = entry.getKey().toString();
-            Boolean value = entry. getValue();
+            Boolean value = entry.getValue();
             completedJSON.put(key, value);
         }
         return completedJSON;
     }
 
     @SuppressWarnings("unchecked")
-    public static JSONObject writeTimer(Character character) {
+    private static JSONObject writeTimer(Character character) {
         JSONObject timerJSON = new JSONObject();
         timerJSON.put(TIME_REMAINING, character.getTimer().getTimeRemaining());
         timerJSON.put(INITIAL_TIME, character.getTimer().getInitialTime());
@@ -108,16 +108,131 @@ public class DataWriter extends DataConstants{
     }
 
     @SuppressWarnings("unchecked")
-    public static JSONObject writePersonalRecord(User user) {
+    private static JSONObject writePersonalRecord(User user) {
         if(user.getPersonalRecord() == null)
             return null;
         JSONObject recordJSON = new JSONObject();
-        recordJSON.put(RECORD_USER_ID, user.getUserID().toString());
+        recordJSON.put(USERNAME, user.getUsername());
         recordJSON.put(TIME, user.getPersonalRecord().getTime().toString());
         recordJSON.put(DATE, user.getPersonalRecord().getDate().toString());
         recordJSON.put(RECORD_HINTS_USED, user.getPersonalRecord().getHintsUsed());
         recordJSON.put(RECORD_DIFFICULTY, user.getPersonalRecord().getDifficulty().toString());
         return recordJSON;
+    }
+
+
+    @SuppressWarnings("unchecked")
+    public static void saveRooms() {
+
+        RoomList rooms = RoomList.getInstance();
+        ArrayList<Room> roomList = rooms.getRooms();
+        JSONArray jsonRooms = new JSONArray();
+        for (int i = 0; i < roomList.size(); ++i)
+            jsonRooms.add(getRoomJSON(roomList.get(i)));
+
+        try (FileWriter file = new FileWriter(TEMP_ROOM_FILE_NAME)) {
+            file.write(jsonRooms.toJSONString());
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    private static JSONObject getRoomJSON(Room room) {
+        JSONObject roomJSON = new JSONObject();
+        roomJSON.put(ROOM_ID, room.getRoomID().toString());
+        roomJSON.put(STORY, room.getStory());
+        roomJSON.put(BACKGROUND, room.getBackground().getName());
+        roomJSON.put(INTERACTABLES, writeInteractables(room));
+        roomJSON.put(PUZZLES, writePuzzles(room));
+        return roomJSON;
+    }
+
+    @SuppressWarnings("unchecked")
+    private static JSONArray writeInteractables(Room room) {
+        JSONArray interactablesJSON = new JSONArray();
+        for (Interactable interactable : room.getInteractables()) {
+            JSONObject interactableJSON = new JSONObject();
+            interactableJSON.put(INTERACTABLE_ID, interactable.getInteractableID().toString());
+            interactableJSON.put(INTERACTABLE_DESCRIPTION, interactable.getDescription());
+            interactableJSON.put(IS_HIGHLIGHTED, interactable.getIsHighlighted());
+            interactableJSON.put(INTERACTABLE_CLUE, interactable.getClueText());
+            interactablesJSON.add(interactableJSON);
+        }
+        return interactablesJSON;
+    }
+
+    @SuppressWarnings("unchecked")
+    private static JSONArray writePuzzles(Room room) {
+        JSONArray puzzlesJSON = new JSONArray();
+        for (Puzzle puzzle : room.getPuzzles()) {
+            JSONObject puzzleJSON = new JSONObject();
+            String type = puzzle.getType();
+            puzzleJSON.put(TYPE, type);
+            puzzleJSON.put(PUZZLE_ID, puzzle.getPuzzleID().toString());
+            puzzleJSON.put(PUZZLE_DIFFICULTY, puzzle.getDifficulty().toString());
+            puzzleJSON.put(ATTEMPTS, puzzle.getAttempts());
+            puzzleJSON.put(CLUE, writeClue(puzzle));
+            puzzleJSON.put(HINTS, writeHints(puzzle));
+            puzzleJSON.put(ROOM_HINTS_USED, writeHintsUsed(puzzle));
+            puzzleJSON.put(IS_SEQUENTIAL, puzzle.getIsSequential());
+            switch(type) {
+                case "text":
+                    puzzleJSON.put(TEXT_CONTENT, puzzle.getContent());
+                    puzzleJSON.put(TEXT_SOLUTION, puzzle.getSolution());
+                    break;
+                case "audio":
+                    puzzleJSON.put(AUDIO_CONTENT, puzzle.getContent());
+                    puzzleJSON.put(AUDIO_SOLUTION, (int)puzzle.getSolution());
+                    break;
+                case "picture":
+                    puzzleJSON.put(PICTURE_CONTENT, puzzle.getContent());
+                    puzzleJSON.put(PICTURE_SOLUTION, (char)puzzle.getSolution());
+            }
+            puzzlesJSON.add(puzzleJSON);
+        }
+        return puzzlesJSON;
+    }
+
+    @SuppressWarnings("unchecked")
+    private static JSONObject writeClue(Puzzle puzzle) {
+        JSONObject clueJSON = new JSONObject();
+        clueJSON.put(CLUE_ID, puzzle.getClue().getClueID().toString());
+        clueJSON.put(CLUE_TEXT, puzzle.getClue().getText());
+        clueJSON.put(CLUE_PICTURE, puzzle.getClue().getPicture().getName());
+        return clueJSON;
+    }
+
+    @SuppressWarnings("unchecked")
+    private static JSONArray writeHints(Puzzle puzzle) {
+        JSONArray hintsJSON = new JSONArray();
+        for(Hint hint : puzzle.getHints()) {
+            JSONObject hintJSON = new JSONObject();
+            hintJSON.put(HINT_ID, hint.getHintID().toString());
+            hintJSON.put(HINT_TEXT, hint.getText());
+            hintJSON.put(HAS_PICTURE, hint.getHasPicture());
+            if(hint.getHasPicture())
+                hintJSON.put(HINT_PICTURE, hint.getPicture().getName());
+            else
+                hintJSON.put(HINT_PICTURE, null);
+            hintJSON.put(HINT_LEVEL, hint.getLevel().toString());
+            hintJSON.put(TIME_PENALTY, hint.getText());
+            hintsJSON.add(hintJSON);
+        }
+        return hintsJSON;
+    }
+
+    @SuppressWarnings("unchecked")
+    private static JSONObject writeHintsUsed(Puzzle puzzle) {
+        JSONObject hintsUsedJSON = new JSONObject();
+        HashMap<UUID, Boolean> hintsUsed = puzzle.getHintsUsed();
+        for(HashMap.Entry<UUID, Boolean> entry : hintsUsed.entrySet()) {
+            String key = entry.getKey().toString();
+            Boolean value = entry.getValue();
+            hintsUsedJSON.put(key, value);
+        }
+        return hintsUsedJSON;
     }
 
 
@@ -132,6 +247,7 @@ public class DataWriter extends DataConstants{
             System.out.println(room);
 
         saveUsers();
+        saveRooms();
     }
     
 }

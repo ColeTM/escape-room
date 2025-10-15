@@ -12,7 +12,7 @@ public class RoomList {
     private static RoomList roomList;
     
     private RoomList() {
-        rooms = new ArrayList<Room>();
+        rooms = DataLoader.getRooms();
     }
 
     public static RoomList getInstance() {
@@ -20,6 +20,10 @@ public class RoomList {
             roomList = new RoomList();
         }
         return roomList;
+    }
+
+    public static ArrayList<Room> getRooms() {
+        return roomList.rooms;
     }
     
     /*public void addRoom(UUID id, BufferedImage background, ArrayList<Interactable> interactables, ArrayList<Puzzle> puzzles) {
@@ -38,7 +42,7 @@ public class RoomList {
         //save room to datawriter
     }
 
-
+/*
     public static void main(String[] args) {
     RoomList roomList = RoomList.getInstance();
 
@@ -54,6 +58,7 @@ public class RoomList {
     System.out.println("Room 1 UUID: " + roomList.getRoomUUID(room1));
     System.out.println("Room 2 UUID: " + roomList.getRoomUUID(room2));
     }
+*/
 }
 
 

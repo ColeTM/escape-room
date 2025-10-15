@@ -68,7 +68,7 @@ public class EscapeRoom {
         return null;
     }
 
-    public ArrayList<LeaderboardEntry> getGobalLeaderboard() {
+    public ArrayList<LeaderboardEntry> getGlobalLeaderboard() {
         return null;
     }
 }

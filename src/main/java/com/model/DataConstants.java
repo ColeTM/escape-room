@@ -36,6 +36,7 @@ public abstract class DataConstants {
         protected static final String RECORD_DIFFICULTY = "difficulty";
 
     // data constants for room
+    protected static final String TEMP_ROOM_FILE_NAME = "src/main/java/com/json/rooms_temp.json";
     protected static final String ROOM_FILE_NAME = "src/main/java/com/json/rooms.json";
     protected static final String ROOM_ID = "roomID";
     protected static final String STORY = "story";

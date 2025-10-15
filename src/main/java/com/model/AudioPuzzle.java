@@ -21,6 +21,15 @@ public class AudioPuzzle extends Puzzle
         super(puzzleID, difficulty, attempts, clue, hints, hintsUsed, isSequential);
         this.audioContent = audioContent;
         this.audioSolution = audioSolution;
+        this.type = "audio";
+    }
+
+    public Object getContent() {
+        return audioContent;
+    }
+
+    public Object getSolution() {
+        return audioSolution;
     }
 
     public boolean solve(Object answer)

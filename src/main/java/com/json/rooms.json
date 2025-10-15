@@ -2,7 +2,7 @@
     {
         "roomID": "08ea2518-a310-492c-b925-4d929a398ba4",
         "story": "A flickering lantern casts long shadows across the dusty library, where a locked chest sits beneath a wall of cryptic symbols waiting to be decoded.",
-        "background": "spookylibrary.jpg",
+        "background": "src/main/java/com/docs/spookylibrary.jpg",
         "interactables": [
             {
                 "interactableID": "a100af6e-5dde-4787-86fe-c9309e9a3cff",
@@ -30,7 +30,7 @@
                 "clue": {
                     "clueID": "55f075b7-7fb8-42d7-8088-1d1e8a3cf85f",
                     "text": "I have T at the beginning, middle, and end. What am I?",
-                    "picture": "Riddle-sample.png"
+                    "picture": "src/main/java/com/docs/Riddle-sample.png"
                 },
                 "hints": [
                     {

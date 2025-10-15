@@ -19,6 +19,7 @@ public abstract class Puzzle
     private HashMap<UUID, Boolean> hintsUsed;
     private boolean isSequential;
     private boolean isCompleted;
+    protected String type;
 
     //Constructor for creating a new Puzzle
     public Puzzle(UUID puzzleID, Difficulty difficulty, int attempts, Clue clue,
@@ -32,6 +33,42 @@ public abstract class Puzzle
         this.hintsUsed = hintsUsed;
         this.isSequential = isSequential;
         this.isCompleted = false;
+    }
+
+    public UUID getPuzzleID() {
+        return puzzleID;
+    }
+
+    public Difficulty getDifficulty() {
+        return difficulty;
+    }
+
+    public int getAttempts() {
+        return attempts;
+    }
+
+    public Clue getClue() {
+        return clue;
+    }
+
+    public ArrayList<Hint> getHints() {
+        return hints;
+    }
+
+    public HashMap<UUID, Boolean> getHintsUsed() {
+        return hintsUsed;
+    }
+
+    public boolean getIsSequential() {
+        return isSequential;
+    }
+
+    public boolean getIsCompleted() {
+        return isCompleted;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public void reset()
@@ -48,6 +85,10 @@ public abstract class Puzzle
     {
         this.attempts++;
     }
+
+    public abstract Object getContent();
+
+    public abstract Object getSolution();
 
     public abstract boolean solve(Object answer);
 

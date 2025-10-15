@@ -10,20 +10,36 @@ import javax.sound.sampled.*;
 
 public class Interactable
 {
-    private String name;
+    private UUID interactableID;
     private String description;
     private boolean isHighlighted;
     private static SoundEffect soundEffect;
     private String clueText;
 
     //Constructor for creating a new Interactable object
-    public Interactable(String name, String description,
+    public Interactable(UUID interactableID, String description,
                         boolean isHighlighted, String clueText)
     {
-        this.name = name;
+        this.interactableID = interactableID;
         this.description = description;
         this.isHighlighted = isHighlighted;
         this.clueText = clueText;
+    }
+
+    public UUID getInteractableID() {
+        return interactableID;
+    } 
+
+    public String getDescription() {
+        return description;
+    }
+
+    public boolean getIsHighlighted() {
+        return isHighlighted;
+    }
+
+    public String getClueText() {
+        return clueText;
     }
 
     public void highlight()
@@ -41,14 +57,9 @@ public class Interactable
         SoundEffect.play(num);
     }
 
-    public String getClueText()
-    {
-        return this.clueText;
-    }
-
     public String toString()
     {
-        return name + ": " + description;
+        return interactableID.toString() + ": " + description;
     }
 
     public static void main(String[] args)
