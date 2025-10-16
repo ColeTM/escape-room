@@ -21,12 +21,8 @@ public class UserList {
         return userList;
     }
 
-    //Took out userID parameter, also need to fix (make sure username is unique) dont think we need to return the arraylist here
-    public ArrayList<User> addUser(String firstName,
-    String lastName, String email, String username, String password){
-        User newUser = new User(firstName, lastName, email, username, password);
+    public void addUser(User newUser){
         users.add(newUser);
-        return users;
     }
 
     public static ArrayList<User> getUsers(){
@@ -39,6 +35,16 @@ public class UserList {
                 return user;
             }
         }
+        return null;
+    }
+
+    public User getUser(String username, String password) {
+        for(User user : users) {
+            if(user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                return user;
+            }
+        }
+        System.out.println("No user found!");
         return null;
     }
     

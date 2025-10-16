@@ -17,7 +17,7 @@ public class EscapeRoom {
     private Timer timer;
 
     public EscapeRoom() {
-
+        
     }
 
     public void startNewGame() {
@@ -32,12 +32,20 @@ public class EscapeRoom {
 
     }
 
-    public void registerUser() {
+    public boolean registerUser(String firstName, String lastName, String email, 
+                                    String username, String password) {
+        User user = new User(firstName, lastName, email, username, password);
+        if(UserList.getInstance().getUser(username, password) != null) {
+            return false;
+        }
+        UserList.getInstance().addUser(user);
+        return true;
 
     }
 
     public boolean login(String username, String password) {
-        return false;
+        User temp = UserList.getInstance().getUser(username, password);
+        return temp != null;
     }
 
     public void logout() {
@@ -71,4 +79,5 @@ public class EscapeRoom {
     public ArrayList<LeaderboardEntry> getGlobalLeaderboard() {
         return null;
     }
+    
 }
