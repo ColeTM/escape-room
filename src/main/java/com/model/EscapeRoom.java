@@ -49,15 +49,15 @@ public class EscapeRoom {
     }
 
     public void logout() {
-
-    }
-
-    public void setDifficulty(Difficulty difficultyLevel) {
         
     }
 
-    public boolean submitPuzzleAnswer(String answer) {
-        return false;
+    public void setDifficulty(Difficulty difficultyLevel) {
+        this.currentDifficulty = difficultyLevel;
+    }
+
+    public boolean submitPuzzleAnswer(Object solution) {
+        return solution.equals(currentPuzzle.getSolution());
     }
 
     public Hint requestHint() {
@@ -70,10 +70,6 @@ public class EscapeRoom {
 
     public double getTimeRemaining() {
         return timer.getTimeRemaining();
-    }
-
-    public ArrayList<LeaderboardEntry> getPersonalLeaderboard() {
-        return null;
     }
 
     public ArrayList<LeaderboardEntry> getGlobalLeaderboard() {

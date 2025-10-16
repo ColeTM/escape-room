@@ -1,8 +1,7 @@
 package com.model;
 
 /**
- * the different levels of helpfullness
- * the hint can provide
+ * the different levels of helpfulness a hint can provide
  * @author ndmcginnis21
  */
 
