@@ -21,7 +21,8 @@ public class UserList {
         return userList;
     }
 
-    public ArrayList<User> addUser(UUID userID, String firstName,
+    //Took out userID parameter, also need to fix (make sure username is unique) dont think we need to return the arraylist here
+    public ArrayList<User> addUser(String firstName,
     String lastName, String email, String username, String password){
         User newUser = new User(firstName, lastName, email, username, password);
         users.add(newUser);
