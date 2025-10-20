@@ -6,6 +6,7 @@
 package com.model;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class EscapeRoom {
     private User user;
@@ -54,6 +55,10 @@ public class EscapeRoom {
 
     public void setDifficulty(Difficulty difficultyLevel) {
         this.currentDifficulty = difficultyLevel;
+    }
+
+    public boolean moveRoom(UUID roomID) {
+        return false;
     }
 
     public boolean submitPuzzleAnswer(Object solution) {
