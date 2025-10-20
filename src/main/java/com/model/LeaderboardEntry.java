@@ -42,11 +42,8 @@ public class LeaderboardEntry {
     public Difficulty getDifficulty() {
         return difficulty;
     }
-    
 
     public String getFormatDuration(){
-        String ISO = time.toString();
-        Duration time = Duration.parse(ISO);
         long hours = time.toHours();
         long minutes = time.toMinutesPart();
         long seconds = time.toSecondsPart();

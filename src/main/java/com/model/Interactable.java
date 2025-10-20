@@ -62,9 +62,10 @@ public class Interactable
         return interactableID.toString() + ": " + description;
     }
 
+    /*
     public static void main(String[] args)
     {
         Interactable i = new Interactable("a","a",true,"a");
         i.playSoundEffect(2);
-    }
+    } */
 }

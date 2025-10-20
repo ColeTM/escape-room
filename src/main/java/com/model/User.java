@@ -78,10 +78,6 @@ public class User {
         this.personalRecord = personalRecord;
     }
 
-    // currently not utilized
-    public boolean checkPassword(String enteredPassword) {
-        return this.password.equals(enteredPassword);
-    }
     /**
      * accessor for user's UUID
      * @return UUID -- the user's UUID
@@ -89,7 +85,7 @@ public class User {
     public UUID getUserID() {
         return userID;
     }
-
+    
     /**
      * accessor for the user's username
      * @return String -- the user's username
@@ -97,7 +93,7 @@ public class User {
     public String getUsername() {
         return username;
     }
-
+    
     /**
      * mutator for the user's username
      * @param username String -- the new username
@@ -105,7 +101,7 @@ public class User {
     public void setUsername(String username) {
         this.username = username;
     }
-
+    
     /**
      * accessor for the user's password
      * @return String -- the account password
@@ -113,13 +109,18 @@ public class User {
     public String getPassword() {
         return password;
     }
-
+    
     /**
      * mutator for the user's password
      * @param password String -- the new password
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+    // currently not utilized
+    public boolean checkPassword(String enteredPassword) {
+        return this.password.equals(enteredPassword);
     }
 
     /**
@@ -179,11 +180,18 @@ public class User {
     }
 
     /**
-     * mutator for the user's skill level
-     * @param skillLevel Difficulty -- the new skill level
+     * if the player completes the game at the difficulty matching their current
+     * skill level, then their skill level moves up. if already pro, stays at pro
+     * @param difficulty Difficulty -- the difficulty level of a completed game
      */
-    public void setSkillLevel(Difficulty skillLevel) {
-        this.skillLevel = skillLevel;
+    public void upgradeSkillLevel(Difficulty difficulty) {
+        if(difficulty.equals(Difficulty.Beginner) && this.skillLevel.equals(Difficulty.Beginner)) {
+            this.skillLevel = Difficulty.Intermediate;
+            System.out.println("Your skill level has been upgraded to intermediate!");
+        } else if(difficulty.equals(Difficulty.Intermediate) && this.skillLevel.equals(Difficulty.Intermediate)) {
+            this.skillLevel = Difficulty.Pro;
+            System.out.println("Your skill level has been upgraded to pro!");
+        }
     }
 
     /**
@@ -192,6 +200,14 @@ public class User {
      */
     public ArrayList<Character> getCharacters() {
         return characters;
+    }
+
+    /**
+     * adds a character to the user's list of saved characters
+     * @param character Character -- the character to be added
+     */
+    public void addCharacter(Character character) {
+        characters.add(character);
     }
 
     /**

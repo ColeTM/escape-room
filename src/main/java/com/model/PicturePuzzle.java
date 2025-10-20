@@ -33,9 +33,10 @@ public class PicturePuzzle extends Puzzle
     
     public boolean solve(Object answer)
     {
-        if (answer instanceof Character)
+        if (answer instanceof java.lang.Character)
         {
-            return Character.toLowerCase(this.pictureSolution) == Character.toLowerCase((Character) answer);
+            return java.lang.Character.toLowerCase(this.pictureSolution) == 
+                    java.lang.Character.toLowerCase((java.lang.Character) answer);
         }
         return false;
     }

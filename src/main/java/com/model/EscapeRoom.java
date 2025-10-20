@@ -7,6 +7,7 @@ package com.model;
 
 import java.util.ArrayList;
 import java.util.UUID;
+import java.time.LocalDate;
 
 public class EscapeRoom {
     private User user;
@@ -14,7 +15,6 @@ public class EscapeRoom {
     private Room currentRoom;
     private Puzzle currentPuzzle;
     private Difficulty currentDifficulty;
-    private String currentAnswer;
     private int totalHints;
     private Timer timer;
 
@@ -23,26 +23,32 @@ public class EscapeRoom {
         currentRoom = null;
         currentPuzzle= null;
         currentDifficulty = Difficulty.Beginner;
-        currentAnswer = "";
         totalHints = 0;
         timer = new Timer();
     }
 
-    public void startNewGame() {
+    public void startNewGame(String characterName) {
+        character = new Character(characterName);
+        user.addCharacter(character);
         if (user != null) {
             currentRoom = RoomList.getInstance().getRooms().get(0);
             currentPuzzle = currentRoom.getPuzzles().get(0);
         }
+        timer.start();
     }
 
     public void saveCurrentGame() {
         UserList.saveUsers();
     }
-
-    // needs rewriting using UserList
+ 
+    // when the user completes the game successfully
     public void endGame() {
-        DataWriter.saveRooms();
-        DataWriter.saveUsers();
+        timer.pause();
+        LeaderboardEntry stats = new LeaderboardEntry(user.getUsername(), Timer.secondsToDuration(timer.getTimeRemaining()), LocalDate.now(), totalHints, currentDifficulty);
+        if (stats.getTime().compareTo(user.getPersonalRecord().getTime()) < 0)
+            user.setPersonalRecord(stats);
+        user.upgradeSkillLevel(currentDifficulty);
+        UserList.saveUsers();
 
     }
 
@@ -75,6 +81,11 @@ public class EscapeRoom {
     }
 
     public boolean moveRoom(UUID roomID) {
+        Room nextRoom = RoomList.getRoomByUUID(roomID);
+        if (nextRoom != null) {
+            currentRoom = nextRoom;
+            return true;
+        }
         return false;
     }
 

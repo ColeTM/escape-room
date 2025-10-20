@@ -66,4 +66,9 @@ public class Timer {
         timeRemaining -= passed.toSeconds();
     }
 
+    public static Duration secondsToDuration(double seconds) {
+        long millis = Math.round(seconds * 1000);
+        return Duration.ofMillis(millis);
+    }
+
 }

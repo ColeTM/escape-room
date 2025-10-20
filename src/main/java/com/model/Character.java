@@ -63,6 +63,7 @@ public class Character
 
     public Hint requestHint() {
 
+        // will have to hard code all hint scenarios
         switch(RoomList.getRoomByUUID(getCurrentRoom()).getName()) {
             
         }
