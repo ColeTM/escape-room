@@ -21,7 +21,7 @@ public class TextPuzzle extends Puzzle
         super(puzzleID, difficulty, attempts, clue, hints, hintsUsed, isSequential);
         this.textContent = textContent;
         this.textSolution = textSolution;
-        this.type = "text";
+        this.type = Type.Text;
     }
 
     public Object getContent() {

@@ -168,8 +168,7 @@ public class DataWriter extends DataConstants{
         JSONArray puzzlesJSON = new JSONArray();
         for (Puzzle puzzle : room.getPuzzles()) {
             JSONObject puzzleJSON = new JSONObject();
-            String type = puzzle.getType();
-            puzzleJSON.put(TYPE, type);
+            puzzleJSON.put(TYPE, puzzle.getType().toString());
             puzzleJSON.put(PUZZLE_ID, puzzle.getPuzzleID().toString());
             puzzleJSON.put(PUZZLE_DIFFICULTY, puzzle.getDifficulty().toString());
             puzzleJSON.put(ATTEMPTS, puzzle.getAttempts());
@@ -177,16 +176,16 @@ public class DataWriter extends DataConstants{
             puzzleJSON.put(HINTS, writeHints(puzzle));
             puzzleJSON.put(ROOM_HINTS_USED, writeHintsUsed(puzzle));
             puzzleJSON.put(IS_SEQUENTIAL, puzzle.getIsSequential());
-            switch(type) {
-                case "text":
+            switch(puzzle.getType()) {
+                case Text:
                     puzzleJSON.put(TEXT_CONTENT, puzzle.getContent());
                     puzzleJSON.put(TEXT_SOLUTION, puzzle.getSolution());
                     break;
-                case "audio":
+                case Audio:
                     puzzleJSON.put(AUDIO_CONTENT, puzzle.getContent());
                     puzzleJSON.put(AUDIO_SOLUTION, (int)puzzle.getSolution());
                     break;
-                case "picture":
+                case Picture:
                     puzzleJSON.put(PICTURE_CONTENT, puzzle.getContent());
                     puzzleJSON.put(PICTURE_SOLUTION, (char)puzzle.getSolution());
             }

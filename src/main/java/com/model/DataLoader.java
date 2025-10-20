@@ -173,22 +173,22 @@ public class DataLoader extends DataConstants {
             ArrayList<Hint> hints = getHints((JSONArray)puzzleJSON.get(HINTS));
             HashMap<UUID, Boolean> hintsUsed = getHintsUsed((JSONObject)puzzleJSON.get(ROOM_HINTS_USED));
             boolean isSequential = (boolean)puzzleJSON.get(IS_SEQUENTIAL);
-            String type = (String)puzzleJSON.get(TYPE);
+            Type type = Type.valueOf((String)puzzleJSON.get(TYPE));
 
             switch(type) {
-                case "text":
+                case Text:
                     String textContent = (String)puzzleJSON.get(TEXT_CONTENT);
                     String textSolution = (String)puzzleJSON.get(TEXT_SOLUTION);
                     puzzles.add(new TextPuzzle(puzzleID, difficulty, attempts, clue, hints,
                                             hintsUsed, isSequential, textContent, textSolution));
                     break;
-                case "audio":
+                case Audio:
                     String audioContent = (String)puzzleJSON.get(AUDIO_CONTENT);
                     int audioSolution = ((Long)puzzleJSON.get(AUDIO_SOLUTION)).intValue();
                     puzzles.add(new AudioPuzzle(puzzleID, difficulty, attempts, clue, hints,
                                             hintsUsed, isSequential, audioContent, audioSolution));
                     break;
-                case "picture":
+                case Picture:
                     File pictureContent = new File((String)puzzleJSON.get(PICTURE_CONTENT));
                     char pictureSolution = (char)puzzleJSON.get(PICTURE_SOLUTION);
                     puzzles.add(new PicturePuzzle(puzzleID, difficulty, attempts, clue, hints,

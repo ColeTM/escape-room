@@ -21,7 +21,7 @@ public class AudioPuzzle extends Puzzle
         super(puzzleID, difficulty, attempts, clue, hints, hintsUsed, isSequential);
         this.audioContent = audioContent;
         this.audioSolution = audioSolution;
-        this.type = "audio";
+        this.type = Type.Audio;
     }
 
     public Object getContent() {

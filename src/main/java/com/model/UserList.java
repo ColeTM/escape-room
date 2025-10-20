@@ -29,6 +29,10 @@ public class UserList {
         return userList.users;
     }
 
+    public static void saveUsers() {
+        DataWriter.saveUsers();
+    }
+
     public User getUserByUUID(UUID userID){
         for(User user : users){
             if(user.getUserID().equals(userID)){

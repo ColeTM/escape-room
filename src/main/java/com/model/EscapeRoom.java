@@ -35,11 +35,10 @@ public class EscapeRoom {
     }
 
     public void saveCurrentGame() {
-        DataWriter.saveRooms();
-        DataWriter.saveUsers();
-
+        UserList.saveUsers();
     }
 
+    // needs rewriting using UserList
     public void endGame() {
         DataWriter.saveRooms();
         DataWriter.saveUsers();
@@ -94,8 +93,8 @@ public class EscapeRoom {
         return timer.getTimeRemaining();
     }
 
-    public ArrayList<LeaderboardEntry> getGlobalLeaderboard() {
-        return Leaderboard.getInstance().displayGlobal();
+    public void displayLeaderboard() {
+        System.out.println(Leaderboard.getInstance().displayGlobal().toString());
     }
     
 }

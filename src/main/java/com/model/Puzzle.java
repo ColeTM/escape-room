@@ -19,7 +19,7 @@ public abstract class Puzzle
     private HashMap<UUID, Boolean> hintsUsed;
     private boolean isSequential;
     private boolean isCompleted;
-    protected String type;
+    protected Type type;
 
     //Constructor for creating a new Puzzle
     public Puzzle(UUID puzzleID, Difficulty difficulty, int attempts, Clue clue,
@@ -67,7 +67,7 @@ public abstract class Puzzle
         return isCompleted;
     }
 
-    public String getType() {
+    public Type getType() {
         return type;
     }
 
