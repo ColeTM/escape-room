@@ -18,18 +18,31 @@ public class EscapeRoom {
     private Timer timer;
 
     public EscapeRoom() {
-        
+        user = null;
+        currentRoom = null;
+        currentPuzzle= null;
+        currentDifficulty = Difficulty.Beginner;
+        currentAnswer = "";
+        totalHints = 0;
+        timer = new Timer();
     }
 
     public void startNewGame() {
-
+        if (user != null) {
+            currentRoom = RoomList.getInstance().getRooms().get(0);
+            currentPuzzle = currentRoom.getPuzzles().get(0);
+        }
     }
 
     public void saveCurrentGame() {
+        DataWriter.saveRooms();
+        DataWriter.saveUsers();
 
     }
 
     public void endGame() {
+        DataWriter.saveRooms();
+        DataWriter.saveUsers();
 
     }
 
@@ -50,7 +63,11 @@ public class EscapeRoom {
     }
 
     public void logout() {
-        
+        timer.pause();
+        saveCurrentGame();
+        user = null;
+
+    
     }
 
     public void setDifficulty(Difficulty difficultyLevel) {
@@ -78,7 +95,7 @@ public class EscapeRoom {
     }
 
     public ArrayList<LeaderboardEntry> getGlobalLeaderboard() {
-        return null;
+        return Leaderboard.getInstance().displayGlobal();
     }
     
 }
