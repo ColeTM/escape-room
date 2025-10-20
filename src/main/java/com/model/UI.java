@@ -16,5 +16,12 @@ public class UI {
         if(scenario.registerUser("Timmy", "Sigg", "tsizzle@hotmail.com", "TommyKnowsBest", "ilovedogs234")) {
             System.out.println("successful registration!");
         }
-    }
+
+        
+        if(scenario.submitPuzzleAnswer("teapot")){
+            System.out.println("correct answer!");
+            System.out.println("You have earned your first key!");
+        } else {
+            System.out.println("wrong answer.");
+        }
 }

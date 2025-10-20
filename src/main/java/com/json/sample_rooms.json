@@ -90,6 +90,50 @@
                     "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd": false
                 },
                 "isSequential": true
+            },
+            {
+                "roomID": "08ea2518-a310-492c-b925-4d929a398ba4",
+                "story": "The player steps into the front-left alcove of the library. Books are strewn across the floor and a crumpled piece of paper peeks from beneath a pile. Faint ink on the paper reads: “The truth is hidden in the tales.",
+                "background": "src/main/java/com/docs/spookylibrary.jpg",
+                "interactables": [
+                    {
+                        "interactableID": "d4f5e6a7-b8c9-4dab-8e0f-1a2b3c4d5e6f",
+                        "description": "A crumbled piece of paper half tucked under pile of books.",
+                        "isHighlighted": true,
+                        "soundEffect": "",
+                        "clueText": "The truth is hidden in the tales."
+                    },
+                    {
+                        "interactableID": "d7e4b3c2-2aa6-4c4f-8f9a-8e2b1a6f9002",
+                        "description": "A green-bound book with a frayed spine.",
+                        "isHighlighted": false,
+                        "soundEffect": "page_flip.mp3",
+                        "clueText": "Its pages are crumbled; someone has underlined multiple lines."
+                    }
+                ],
+                "puzzles": [
+                    {
+                        "textContent": "The truth is hidden in the tales. Arrange the words from the books in the order shown on the crumpled paper and submit the formatted sequence (e.g. [Color, line, word], [Color, line, word], ... ) as your answer.",
+                        "puzzleID": "4d1f9a2e-3c8b-4d6a-9a2f-0b7c8e9d1122",
+                        "difficulty": "Intermediate",
+                        "textSolution": "",
+                        "attempts": 4,
+                        "hint": [
+                            {
+                            "hintID": "7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
+                            "text": "The truth is hidden in the tales. USE THIS TO HELP [Green, 15, 3], [Red, 6, 10], [Blue, 7, 2], [Black, 9, 2]",
+                            "hasPicture": true,
+                            "picture": "src/main/java/com/docs/ ",
+                            "level": "Direct",
+                            "timePenalty": 5.0
+                            }
+                        ],
+                        "hintsUsed": {
+                            "7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b": false
+                        },
+                        "isSequential": false
+                    }
+                ]
             }
         ]
     }
