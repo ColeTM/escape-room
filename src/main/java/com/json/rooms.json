@@ -1,95 +1,405 @@
 [
+    // room #1 -- main hallway
     {
-        "roomID": "08ea2518-a310-492c-b925-4d929a398ba4",
-        "story": "A flickering lantern casts long shadows across the dusty library, where a locked chest sits beneath a wall of cryptic symbols waiting to be decoded.",
-        "background": "src/main/java/com/docs/spookylibrary.jpg",
+        "roomID": "26767fe2-e8b1-47c4-b4eb-5f9aec77fb85",
+        "story": "You find yourself in a long, narrow hallway. On either side of the hall are two doors, and at the end is one large door decorated with four huge padlocks.",
+        "background": "src/main/java/com/docs/Hallway.png",
         "interactables": [
             {
-                "interactableID": "a100af6e-5dde-4787-86fe-c9309e9a3cff",
-                "description": "A dusty old painting on the wall.",
-                "isHighlighted": false,
-                "soundEffect": "creak_sound.wav",
-                "clueText": "The signature in the corner seems oddly familiar."
+                "interactableID": "94c58c23-15e4-442e-8daf-5da61225327f",
+                "description": "The first door on the left.",
+                "isHighlighted": true,
+                "soundEffect": "src/main/java/com/sounds/door.wav",
+                "clueText": "there's probably another room behind this door"
             },
             {
-                "interactableID": "fc0ea751-c656-4b06-aab6-b8664d6f83fe",
-                "description": "A locked wooden chest at the foot of the bed.",
+                "interactableID": "1ff0d563-7b59-4ecd-9fc3-f734aab06715",
+                "description": "The first door on the right.",
                 "isHighlighted": true,
-                "soundEffect": "lock_rattle.mp3",
-                "clueText": "It requires a metal key."
+                "soundEffect": "src/main/java/com/sounds/door.wav",
+                "clueText": "i wonder if this door opens"
+            },
+            {
+                "interactableID": "3f57f059-920c-432a-9fb9-59e016cd4c33",
+                "description": "The second door on the left.",
+                "isHighlighted": true,
+                "soundEffect": "src/main/java/com/sounds/door.wav",
+                "clueText": "what secrets lie within?"
+            },
+            {
+                "interactableID": "6aae8f6b-374e-4cb3-b3fb-f7955a683b32",
+                "description": "The second door on the right.",
+                "isHighlighted": true,
+                "soundEffect": "src/main/java/com/sounds/door.wav",
+                "clueText": "bro why are there so many doors"
+            },
+            {
+                "interactableID": "6aae8f6b-374e-4cb3-b3fb-f7955a683b32",
+                "description": "The large door at the end of the hall.",
+                "isHighlighted": true,
+                "soundEffect": "src/main/java/com/sounds/door.wav",
+                "clueText": "now this is a big door"
+            }
+        ],
+        "puzzles": [
+            {
+                "type":
+                // whatever type of content
+                "puzzleID": 
+                "difficulty": 
+                // whatever type of solution
+                "attempts": 
+                "clue": {
+                    "clueID": 
+                    "text": 
+                    "picture": 
+                },
+                "hints": [
+                    {
+                        "hintID": 
+                        "text": 
+                        "hasPicture":
+                        "Picture":
+                        "level":
+                        "timePenalty":
+                    },
+                    {
+                        "hintID":
+                        "text":
+                        "hasPicture":
+                        "picture":
+                        "level":
+                        "timePenalty":
+                    }
+                ],
+                "hintsUsed": {
+                    
+                },
+                "isSequential":
+            }
+        ]
+    },
+    // room #2 -- library
+    {
+        "roomID": "9aae693f-83a4-427e-9822-b150f44ba171",
+        "story": "Lining the walls of this room are grand bookshelves covered in dusty books. In one corner is a pile of books lying on the floor.",
+        "background": "src/main/java/com/docs/Library.png",
+        "interactables": [
+            {
+                "interactableID": "89f3281d-be82-43ba-ba6d-c25b0d4ce8ff",
+                "description": "a red book",
+                "isHighlighted": false,
+                "soundEffect": "src/main/java/com/sounds/book.wav",
+                "clueText": "placeholder"
+            },
+            {
+                "interactableID": "641c4bc8-b2cb-47f9-a47a-a4777c7a37ce",
+                "description": "a green book",
+                "isHighlighted": false,
+                "soundEffect": "src/main/java/com/sounds/book.wav",
+                "clueText": "placeholder"
+            },
+            {
+                "interactableID": "4e814a90-c637-43d3-8b90-e00c35495739",
+                "description": "a blue book",
+                "isHighlighted": false,
+                "soundEffect": "src/main/java/com/sounds/book.wav",
+                "clueText": "placeholder"
+            },
+            {
+                "interactableID": "649f4a71-e307-43d1-a8e7-84e9a2ac6ec4",
+                "description": "a black book",
+                "isHighlighted": false,
+                "soundEffect": "src/main/java/com/sounds/book.wav",
+                "clueText": "placeholder"
             }
         ],
         "puzzles": [
             {
                 "type": "text",
-                "textContent": "I have T at the beginning, middle, and end. What am I?",
-                "puzzleID": "efc5f6cb-ff77-4a4e-9207-f27f3fdbb712",
+                "textContent": "The truth is hidden in the tales.",
+                "puzzleID": "e50b53c7-6bbf-4849-af1a-350adb9afcf3",
                 "difficulty": "Beginner",
-                "textSolution": "Teapot",
-                "attempts": 3,
+                "textSolution": "placeholder",
+                "attempts": 0,
                 "clue": {
-                    "clueID": "55f075b7-7fb8-42d7-8088-1d1e8a3cf85f",
-                    "text": "I have T at the beginning, middle, and end. What am I?",
-                    "picture": "src/main/java/com/docs/Riddle-sample.png"
+                    "clueID": "205642bd-8cfc-458d-8bc4-d5ff7886e1f4",
+                    "text": "[Green, 5, 15, 3], [Red, 37, 6, 10], [Blue, 17, 7, 2], [Black, 4, 19, 3]",
+                    "picture": "placeholder file path"
                 },
                 "hints": [
                     {
-                        "hintID": "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd",
-                        "text": "Consider wordplay in the clue.",
+                        "hintID": "b18be69b-be68-4fb5-9bc4-2641bd58ce68",
+                        "text": "you'll have to use the stories to piece together a message",
                         "hasPicture": false,
-                        "picture": null,
+                        "Picture": null,
                         "level": "Vague",
-                        "timePenalty": 5.0
-                    }, {
-                        "hintID": "3a0818c7-b668-458d-924c-3701147f51fc",
-                        "text": "T could also refer to tea.",
-                        "hasPicture": false,
-                        "picture": null,
-                        "level": "Direct",
-                        "timePenalty": 10.0
-                    }
-                ],
-                "hintsUsed": {
-                    "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd": true,
-                    "3a0818c7-b668-458d-924c-3701147f51fc": false
-                },
-                "isSequential": false
-            },
-            {
-                "type": "text",
-                "textContent": "Dashes are long, dots are short.",
-                "puzzleID": "e09534ee-6aa7-46eb-aacf-5a364bf67f32",
-                "difficulty": "Intermediate",
-                "textSolution": "ASQERVXC",
-                "attempts": 5,
-                "clue": {
-                    "clueID": "cc24244f-e4ff-4759-8453-2d3b614a8061",
-                    "text": "Dashes are long, dots are short.",
-                    "picture": "src/main/java/com/docs/Clue_Sample.png"
-                },
-                "hints": [
-                    {
-                        "hintID": "b117ccf6-89e1-47af-8cfa-932a63533cc0",
-                        "text": "This puzzle requires the morse code refrence sheet.",
-                        "hasPicture": false,
-                        "Picture": "src/main/java/com/docs/Morse-sample.png",
-                        "level": "Vague",
-                        "timePenalty": 2.5
+                        "timePenalty": 30
                     },
                     {
-                        "hintID": "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd",
-                        "text": "The first 5 letters are: A, S, Q, E, R",
+                        "hintID": "e24d25e1-ee56-47e5-8b8d-d4effbd18d23",
+                        "text": "[book color, page number, line number, word number]",
                         "hasPicture": false,
                         "picture": null,
                         "level": "Direct",
-                        "timePenalty": 5.0
+                        "timePenalty": 60
                     }
                 ],
                 "hintsUsed": {
-                    "b117ccf6-89e1-47af-8cfa-932a63533cc0": false,
-                    "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd": false
+                    "b18be69b-be68-4fb5-9bc4-2641bd58ce68": false,
+                    "e24d25e1-ee56-47e5-8b8d-d4effbd18d23": false
                 },
-                "isSequential": true
+                "isSequential": false
+            }
+        ]
+    },
+    // room #3 -- boxes
+    {
+        "roomID": "a91b9a37-d41d-4d93-b553-895ffd04723a",
+        "story": "This room is eerily empty, containing nothing but sealed cardboard boxes.",
+        "background": "src/main/java/com/docs/BoxRoom.png",
+        "interactables": [
+            {
+                "interactableID": "95611735-deca-46d5-83ae-ec12a5f4cb9e",
+                "description": "box #1",
+                "isHighlighted": true,
+                "soundEffect": "src/main/java/com/sounds/box.wav",
+                "clueText": "placeholder"
+            },
+            {
+                "interactableID": "517b37b4-f36d-4c3e-afcc-72f7def11f96",
+                "description": "box #2",
+                "isHighlighted": true,
+                "soundEffect": "src/main/java/com/sounds/box.wav",
+                "clueText": "placeholder"
+            },
+            {
+                "interactableID": "27804a24-a6e3-4d58-a5a2-c39faced4cca",
+                "description": "box #3",
+                "isHighlighted": true,
+                "soundEffect": "src/main/java/com/sounds/box.wav",
+                "clueText": "placeholder"
+            },
+            {
+                "interactableID": "15790e6d-3759-49e9-b462-e356b414615d",
+                "description": "box #4",
+                "isHighlighted": true,
+                "soundEffect": "src/main/java/com/sounds/box.wav",
+                "clueText": "placeholder"
+            }
+        ],
+        "puzzles": [
+            {
+                "type": "text",
+                "textContent": "placeholder puzzle",
+                "puzzleID": "6c9f6273-be95-470d-8d43-5792c7737c82",
+                "difficulty": "Intermediate",
+                "textSolution": "placeholder solution",
+                "attempts": 0,
+                "clue": {
+                    "clueID": "placeholder clue",
+                    "text": "placedholder text",
+                    "picture": "placeholder file path"
+                },
+                "hints": [
+                    {
+                        "hintID": 
+                        "text": 
+                        "hasPicture":
+                        "Picture":
+                        "level":
+                        "timePenalty":
+                    },
+                    {
+                        "hintID":
+                        "text":
+                        "hasPicture":
+                        "picture":
+                        "level":
+                        "timePenalty":
+                    }
+                ],
+                "hintsUsed": {
+                    
+                },
+                "isSequential":
+            }
+        ]
+    },
+    // room #4
+    {
+        "roomID": "1030c684-0ceb-4f2b-a71e-f5846697d8d7",
+        "story":
+        "background":
+        "interactables": [
+            {
+                "interactableID": 
+                "description":
+                "isHighlighted": 
+                "soundEffect": 
+                "clueText": 
+            },
+            {
+                "interactableID": 
+                "description": 
+                "isHighlighted": 
+                "soundEffect":
+                "clueText":
+            }
+        ],
+        "puzzles": [
+            {
+                "type":
+                // whatever type of content
+                "puzzleID": 
+                "difficulty": 
+                // whatever type of solution
+                "attempts": 
+                "clue": {
+                    "clueID": 
+                    "text": 
+                    "picture": 
+                },
+                "hints": [
+                    {
+                        "hintID": 
+                        "text": 
+                        "hasPicture":
+                        "Picture":
+                        "level":
+                        "timePenalty":
+                    },
+                    {
+                        "hintID":
+                        "text":
+                        "hasPicture":
+                        "picture":
+                        "level":
+                        "timePenalty":
+                    }
+                ],
+                "hintsUsed": {
+                    
+                },
+                "isSequential":
+            }
+        ]
+    },
+    // room #5
+    {
+        "roomID": "c6b98566-e4e9-445c-8da2-9ef6b92ce815",
+        "story":
+        "background":
+        "interactables": [
+            {
+                "interactableID": 
+                "description":
+                "isHighlighted": 
+                "soundEffect": 
+                "clueText": 
+            },
+            {
+                "interactableID": 
+                "description": 
+                "isHighlighted": 
+                "soundEffect":
+                "clueText":
+            }
+        ],
+        "puzzles": [
+            {
+                "type":
+                // whatever type of content
+                "puzzleID": 
+                "difficulty": 
+                // whatever type of solution
+                "attempts": 
+                "clue": {
+                    "clueID": 
+                    "text": 
+                    "picture": 
+                },
+                "hints": [
+                    {
+                        "hintID": 
+                        "text": 
+                        "hasPicture":
+                        "Picture":
+                        "level":
+                        "timePenalty":
+                    },
+                    {
+                        "hintID":
+                        "text":
+                        "hasPicture":
+                        "picture":
+                        "level":
+                        "timePenalty":
+                    }
+                ],
+                "hintsUsed": {
+                    
+                },
+                "isSequential":
+            }
+        ]
+    },
+    // room #6 -- final room
+    {
+        "roomID": "150c985e-0e90-4c28-bd96-e658b4bc1c20",
+        "story":
+        "background":
+        "interactables": [
+            {
+                "interactableID": 
+                "description":
+                "isHighlighted": 
+                "soundEffect": 
+                "clueText": 
+            },
+            {
+                "interactableID": 
+                "description": 
+                "isHighlighted": 
+                "soundEffect":
+                "clueText":
+            }
+        ],
+        "puzzles": [
+            {
+                "type":
+                // whatever type of content
+                "puzzleID": 
+                "difficulty": 
+                // whatever type of solution
+                "attempts": 
+                "clue": {
+                    "clueID": 
+                    "text": 
+                    "picture": 
+                },
+                "hints": [
+                    {
+                        "hintID": 
+                        "text": 
+                        "hasPicture":
+                        "Picture":
+                        "level":
+                        "timePenalty":
+                    },
+                    {
+                        "hintID":
+                        "text":
+                        "hasPicture":
+                        "picture":
+                        "level":
+                        "timePenalty":
+                    }
+                ],
+                "hintsUsed": {
+                    
+                },
+                "isSequential":
             }
         ]
     }
