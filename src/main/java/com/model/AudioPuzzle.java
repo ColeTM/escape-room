@@ -15,10 +15,9 @@ public class AudioPuzzle extends Puzzle
     private int audioSolution;
 
     public AudioPuzzle(UUID puzzleID, Difficulty difficulty, int attempts, Clue clue,
-                       ArrayList<Hint> hints, HashMap<UUID, Boolean> hintsUsed,
-                       boolean isSequential, String audioContent, int audioSolution)
+                       ArrayList<Hint> hints, boolean isSequential, String audioContent, int audioSolution)
     {
-        super(puzzleID, difficulty, attempts, clue, hints, hintsUsed, isSequential);
+        super(puzzleID, difficulty, attempts, clue, hints, isSequential);
         this.audioContent = audioContent;
         this.audioSolution = audioSolution;
         this.type = Type.Audio;

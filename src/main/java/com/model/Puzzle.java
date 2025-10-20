@@ -1,7 +1,6 @@
 package com.model;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.UUID;
 
 /**
@@ -16,21 +15,19 @@ public abstract class Puzzle
     private int attempts;
     private Clue clue;
     private ArrayList<Hint> hints;
-    private HashMap<UUID, Boolean> hintsUsed;
     private boolean isSequential;
     private boolean isCompleted;
     protected Type type;
 
     //Constructor for creating a new Puzzle
     public Puzzle(UUID puzzleID, Difficulty difficulty, int attempts, Clue clue,
-                  ArrayList<Hint> hints, HashMap<UUID, Boolean> hintsUsed, boolean isSequential)
+                  ArrayList<Hint> hints, boolean isSequential)
     {
         this.puzzleID = puzzleID;
         this.difficulty = difficulty;
         this.attempts = attempts;
         this.clue = clue;
         this.hints = hints;
-        this.hintsUsed = hintsUsed;
         this.isSequential = isSequential;
         this.isCompleted = false;
     }
@@ -53,10 +50,6 @@ public abstract class Puzzle
 
     public ArrayList<Hint> getHints() {
         return hints;
-    }
-
-    public HashMap<UUID, Boolean> getHintsUsed() {
-        return hintsUsed;
     }
 
     public boolean getIsSequential() {

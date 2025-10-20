@@ -15,10 +15,9 @@ public class PicturePuzzle extends Puzzle
     private char pictureSolution;
 
     public PicturePuzzle(UUID puzzleID, Difficulty difficulty, int attempts, Clue clue,
-                         ArrayList<Hint> hints, HashMap<UUID, Boolean> hintsUsed,
-                         boolean isSequential, File pictureContent, char pictureSolution)
+                         ArrayList<Hint> hints, boolean isSequential, File pictureContent, char pictureSolution)
     {
-        super(puzzleID, difficulty, attempts, clue, hints, hintsUsed, isSequential);
+        super(puzzleID, difficulty, attempts, clue, hints, isSequential);
         this.pictureContent = pictureContent;
         this.pictureSolution = pictureSolution;
         this.type = Type.Picture;

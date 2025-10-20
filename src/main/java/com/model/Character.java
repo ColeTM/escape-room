@@ -13,7 +13,8 @@ public class Character
     private String name;
     private ArrayList<Item> inventory;
     private UUID currentRoom;
-    private int hintsUsed;
+    private int numHintsUsed;
+    private HashMap<UUID, Boolean> hintsUsed;
     private HashMap<UUID, Boolean> puzzlesCompleted;
     private Timer timer;
 
@@ -22,15 +23,19 @@ public class Character
     {
         this.name = name;
         this.inventory = new ArrayList<>();
+        // need to individually initialize all values for these hash maps
+        this.numHintsUsed = 0;
+        this.hintsUsed = new HashMap<>();
         this.puzzlesCompleted = new HashMap<>();
     }
 
-    public Character(String name, ArrayList<Item> inventory, UUID currentRoom,
-                     int hintsUsed, HashMap<UUID, Boolean> puzzlesCompleted, Timer timer)
+    public Character(String name, ArrayList<Item> inventory, UUID currentRoom, int numHintsUsed, 
+                HashMap<UUID, Boolean> hintsUsed, HashMap<UUID, Boolean> puzzlesCompleted, Timer timer)
     {
         this.name = name;
         this.inventory = inventory;
         this.currentRoom = currentRoom;
+        this.numHintsUsed = numHintsUsed;
         this.hintsUsed = hintsUsed;
         this.puzzlesCompleted = puzzlesCompleted;
         this.timer = timer;
@@ -68,7 +73,11 @@ public class Character
         return this.currentRoom;
     }
 
-    public int getHintsUsed() {
+    public int getNumHintsUsed() {
+        return this.numHintsUsed;
+    }
+
+    public HashMap<UUID, Boolean> getHintsUsed() {
         return this.hintsUsed;
     }
 
