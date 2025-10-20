@@ -85,10 +85,6 @@
                         "timePenalty": 5.0
                     }
                 ],
-                "hintsUsed": {
-                    "b117ccf6-89e1-47af-8cfa-932a63533cc0": false,
-                    "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd": false
-                },
                 "isSequential": true
             },
             {
@@ -128,9 +124,6 @@
                             "timePenalty": 5.0
                             }
                         ],
-                        "hintsUsed": {
-                            "7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b": false
-                        },
                         "isSequential": false
                     }
                 ]

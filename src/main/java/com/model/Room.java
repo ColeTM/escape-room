@@ -11,12 +11,13 @@ import java.util.UUID;
 public class Room {
 
     private UUID roomID;
+    private String name;
     private String story;
     private File background;
     private ArrayList<Interactable> interactables;
     private ArrayList<Puzzle> puzzles;
 
-    public Room(UUID roomID, String story, File background,
+    public Room(UUID roomID, String name, String story, File background,
                 ArrayList<Interactable> interactables, ArrayList<Puzzle> puzzles) {
 
         this.roomID = roomID;
@@ -24,6 +25,14 @@ public class Room {
         this.background = background;
         this.interactables = interactables;
         this.puzzles = puzzles;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
     
     public UUID getRoomID() {

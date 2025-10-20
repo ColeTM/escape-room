@@ -66,7 +66,8 @@ public class DataWriter extends DataConstants{
             characterJSON.put(CHARACTER_NAME, character.getName());
             characterJSON.put(INVENTORY, writeInventory(character));
             characterJSON.put(CURRENT_ROOM, character.getCurrentRoom().toString());
-            characterJSON.put(USER_HINTS_USED, character.getHintsUsed());
+            characterJSON.put(NUM_HINTS_USED, character.getNumHintsUsed());
+            characterJSON.put(HINTS_USED, writeHintsUsed(character));
             characterJSON.put(PUZZLES_COMPLETED, writePuzzlesCompleted(character));
             characterJSON.put(TIMER, writeTimer(character));
             charactersJSON.add(characterJSON);
@@ -84,6 +85,18 @@ public class DataWriter extends DataConstants{
             inventoryJSON.add(itemJSON);
         }
         return inventoryJSON;
+    }
+
+     @SuppressWarnings("unchecked")
+    private static JSONObject writeHintsUsed(Character character) {
+        JSONObject hintsUsedJSON = new JSONObject();
+        HashMap<UUID, Boolean> hintsUsed = character.getHintsUsed();
+        for(HashMap.Entry<UUID, Boolean> entry : hintsUsed.entrySet()) {
+            String key = entry.getKey().toString();
+            Boolean value = entry.getValue();
+            hintsUsedJSON.put(key, value);
+        }
+        return hintsUsedJSON;
     }
 
     @SuppressWarnings("unchecked")
@@ -121,6 +134,7 @@ public class DataWriter extends DataConstants{
     }
 
 
+    // this method may not be necessary
     @SuppressWarnings("unchecked")
     public static void saveRooms() {
 
@@ -142,6 +156,7 @@ public class DataWriter extends DataConstants{
     private static JSONObject getRoomJSON(Room room) {
         JSONObject roomJSON = new JSONObject();
         roomJSON.put(ROOM_ID, room.getRoomID().toString());
+        roomJSON.put(ROOM_NAME, room.getName());
         roomJSON.put(STORY, room.getStory());
         roomJSON.put(BACKGROUND, room.getBackground().getName());
         roomJSON.put(INTERACTABLES, writeInteractables(room));
@@ -174,7 +189,6 @@ public class DataWriter extends DataConstants{
             puzzleJSON.put(ATTEMPTS, puzzle.getAttempts());
             puzzleJSON.put(CLUE, writeClue(puzzle));
             puzzleJSON.put(HINTS, writeHints(puzzle));
-            puzzleJSON.put(ROOM_HINTS_USED, writeHintsUsed(puzzle));
             puzzleJSON.put(IS_SEQUENTIAL, puzzle.getIsSequential());
             switch(puzzle.getType()) {
                 case Text:
@@ -222,17 +236,6 @@ public class DataWriter extends DataConstants{
         return hintsJSON;
     }
 
-    @SuppressWarnings("unchecked")
-    private static JSONObject writeHintsUsed(Puzzle puzzle) {
-        JSONObject hintsUsedJSON = new JSONObject();
-        HashMap<UUID, Boolean> hintsUsed = puzzle.getHintsUsed();
-        for(HashMap.Entry<UUID, Boolean> entry : hintsUsed.entrySet()) {
-            String key = entry.getKey().toString();
-            Boolean value = entry.getValue();
-            hintsUsedJSON.put(key, value);
-        }
-        return hintsUsedJSON;
-    }
 
 
     public static void main(String args[]) {

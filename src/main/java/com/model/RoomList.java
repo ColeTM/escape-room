@@ -36,6 +36,14 @@ public class RoomList {
         rooms.add(room);
     }
 
+    public static Room getRoomByUUID(UUID roomID) {
+        for (Room room : roomList.rooms) {
+            if (room.getRoomID().equals(roomID))
+                return room;
+        }
+        return null;
+    }
+
     
 
     public void saveRoom() {

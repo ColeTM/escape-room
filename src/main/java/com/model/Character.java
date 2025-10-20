@@ -23,7 +23,7 @@ public class Character
     {
         this.name = name;
         this.inventory = new ArrayList<>();
-        // need to individually initialize all values for these hash maps
+        // need to individually initialize all values for these two hash maps
         this.numHintsUsed = 0;
         this.hintsUsed = new HashMap<>();
         this.puzzlesCompleted = new HashMap<>();
@@ -59,6 +59,15 @@ public class Character
     public void removeFromInventory(Item item)
     {
         this.inventory.remove(item);
+    }
+
+    public Hint requestHint() {
+
+        switch(RoomList.getRoomByUUID(getCurrentRoom()).getName()) {
+            
+        }
+
+        return null;
     }
 
     public String getName() {

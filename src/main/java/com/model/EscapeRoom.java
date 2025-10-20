@@ -10,6 +10,7 @@ import java.util.UUID;
 
 public class EscapeRoom {
     private User user;
+    private Character character;
     private Room currentRoom;
     private Puzzle currentPuzzle;
     private Difficulty currentDifficulty;
@@ -81,8 +82,12 @@ public class EscapeRoom {
         return solution.equals(currentPuzzle.getSolution());
     }
 
-    public Hint requestHint() {
-        return null;
+    public void requestHint() {
+        Hint hint = character.requestHint();
+        if (hint != null)
+            System.out.println(hint);
+        else
+            System.out.println("no hint available!");
     }
 
     public int getTotalHintsUsed() {

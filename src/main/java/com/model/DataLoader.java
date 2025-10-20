@@ -60,13 +60,14 @@ public class DataLoader extends DataConstants {
             String name = (String)characterJSON.get(CHARACTER_NAME);
             ArrayList<Item> inventory = getInventory((JSONArray)characterJSON.get(INVENTORY));
             UUID currentRoom = UUID.fromString((String)characterJSON.get(CURRENT_ROOM));
-            int hintsUsed = ((Long)characterJSON.get(USER_HINTS_USED)).intValue();
+            int numHintsUsed = ((Long)characterJSON.get(NUM_HINTS_USED)).intValue();
+            HashMap<UUID, Boolean> hintsUsed = getHintsUsed((JSONObject)characterJSON.get(HINTS_USED));
             HashMap<UUID, Boolean> puzzlesCompleted 
                         = getPuzzlesCompleted((JSONObject)characterJSON.get(PUZZLES_COMPLETED));
             Timer timer = getTimer((JSONObject)characterJSON.get(TIMER));
 
-            characters.add(new Character(name, inventory, currentRoom,
-                                        hintsUsed, puzzlesCompleted, timer));
+            characters.add(new Character(name, inventory, currentRoom, numHintsUsed,
+                                            hintsUsed, puzzlesCompleted, timer));
         }
         return characters;        
     }
@@ -83,6 +84,17 @@ public class DataLoader extends DataConstants {
             inventory.add(new Item(name, description));
         }
         return inventory;
+    }
+
+     private static HashMap<UUID, Boolean> getHintsUsed(JSONObject hintsUsedJSON) {
+        HashMap<UUID, Boolean> hintsUsed = new HashMap<>();
+        for(Object keyObject : hintsUsedJSON.keySet()) {
+            String key = (String)keyObject;
+            UUID hintID = UUID.fromString(key);
+            Boolean used = (Boolean)hintsUsedJSON.get(key);
+            hintsUsed.put(hintID, used);
+        }
+        return hintsUsed;
     }
 
     private static Timer getTimer(JSONObject timerJSON) {
@@ -129,12 +141,13 @@ public class DataLoader extends DataConstants {
                 JSONObject roomJSON = (JSONObject)roomsJSON.get(i);
 
                 UUID roomID = UUID.fromString((String)roomJSON.get(ROOM_ID));
+                String name = (String)roomJSON.get(ROOM_NAME);
                 String story = (String)roomJSON.get(STORY);
                 File background = new File((String)roomJSON.get(BACKGROUND));
                 ArrayList<Interactable> interactables = getInteractables((JSONArray)roomJSON.get(INTERACTABLES));
                 ArrayList<Puzzle> puzzles = getPuzzles((JSONArray)roomJSON.get(PUZZLES));
 
-                rooms.add(new Room(roomID, story, background, interactables, puzzles));
+                rooms.add(new Room(roomID, name, story, background, interactables, puzzles));
             }
             return rooms;
         }
@@ -171,7 +184,6 @@ public class DataLoader extends DataConstants {
             int attempts = ((Long)puzzleJSON.get(ATTEMPTS)).intValue();
             Clue clue = getClue((JSONObject)puzzleJSON.get(CLUE));
             ArrayList<Hint> hints = getHints((JSONArray)puzzleJSON.get(HINTS));
-            HashMap<UUID, Boolean> hintsUsed = getHintsUsed((JSONObject)puzzleJSON.get(ROOM_HINTS_USED));
             boolean isSequential = (boolean)puzzleJSON.get(IS_SEQUENTIAL);
             Type type = Type.valueOf((String)puzzleJSON.get(TYPE));
 
@@ -180,19 +192,19 @@ public class DataLoader extends DataConstants {
                     String textContent = (String)puzzleJSON.get(TEXT_CONTENT);
                     String textSolution = (String)puzzleJSON.get(TEXT_SOLUTION);
                     puzzles.add(new TextPuzzle(puzzleID, difficulty, attempts, clue, hints,
-                                            hintsUsed, isSequential, textContent, textSolution));
+                                                isSequential, textContent, textSolution));
                     break;
                 case Audio:
                     String audioContent = (String)puzzleJSON.get(AUDIO_CONTENT);
                     int audioSolution = ((Long)puzzleJSON.get(AUDIO_SOLUTION)).intValue();
                     puzzles.add(new AudioPuzzle(puzzleID, difficulty, attempts, clue, hints,
-                                            hintsUsed, isSequential, audioContent, audioSolution));
+                                                isSequential, audioContent, audioSolution));
                     break;
                 case Picture:
                     File pictureContent = new File((String)puzzleJSON.get(PICTURE_CONTENT));
                     char pictureSolution = (char)puzzleJSON.get(PICTURE_SOLUTION);
                     puzzles.add(new PicturePuzzle(puzzleID, difficulty, attempts, clue, hints,
-                                            hintsUsed, isSequential, pictureContent, pictureSolution));
+                                                    isSequential, pictureContent, pictureSolution));
             }
         }
         return puzzles;
@@ -226,17 +238,6 @@ public class DataLoader extends DataConstants {
             hints.add(new Hint(hintID, text, hasPicture, picture, level, timePenalty));
         }
         return hints;
-    }
-
-    private static HashMap<UUID, Boolean> getHintsUsed(JSONObject hintsUsedJSON) {
-        HashMap<UUID, Boolean> hintsUsed = new HashMap<>();
-        for(Object keyObject : hintsUsedJSON.keySet()) {
-            String key = (String)keyObject;
-            UUID hintID = UUID.fromString(key);
-            Boolean used = (Boolean)hintsUsedJSON.get(key);
-            hintsUsed.put(hintID, used);
-        }
-        return hintsUsed;
     }
 
     

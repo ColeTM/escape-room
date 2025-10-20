@@ -1,7 +1,7 @@
 [
-    // room #1 -- main hallway
     {
         "roomID": "26767fe2-e8b1-47c4-b4eb-5f9aec77fb85",
+        "name": "Hallway",
         "story": "You find yourself in a long, narrow hallway. On either side of the hall are two doors, and at the end is one large door decorated with four huge padlocks.",
         "background": "src/main/java/com/docs/Hallway.png",
         "interactables": [
@@ -72,16 +72,13 @@
                         "timePenalty":
                     }
                 ],
-                "hintsUsed": {
-                    
-                },
                 "isSequential":
             }
         ]
     },
-    // room #2 -- library
     {
         "roomID": "9aae693f-83a4-427e-9822-b150f44ba171",
+        "name": "Library",
         "story": "Lining the walls of this room are grand bookshelves covered in dusty books. In one corner is a pile of books lying on the floor.",
         "background": "src/main/java/com/docs/Library.png",
         "interactables": [
@@ -145,17 +142,13 @@
                         "timePenalty": 60
                     }
                 ],
-                "hintsUsed": {
-                    "b18be69b-be68-4fb5-9bc4-2641bd58ce68": false,
-                    "e24d25e1-ee56-47e5-8b8d-d4effbd18d23": false
-                },
                 "isSequential": false
             }
         ]
     },
-    // room #3 -- boxes
     {
         "roomID": "a91b9a37-d41d-4d93-b553-895ffd04723a",
+        "name": "Boxes",
         "story": "This room is eerily empty, containing nothing but sealed cardboard boxes.",
         "background": "src/main/java/com/docs/BoxRoom.png",
         "interactables": [
@@ -219,16 +212,13 @@
                         "timePenalty":
                     }
                 ],
-                "hintsUsed": {
-                    
-                },
                 "isSequential":
             }
         ]
     },
-    // room #4
     {
         "roomID": "1030c684-0ceb-4f2b-a71e-f5846697d8d7",
+        "name":
         "story":
         "background":
         "interactables": [
@@ -278,16 +268,13 @@
                         "timePenalty":
                     }
                 ],
-                "hintsUsed": {
-                    
-                },
                 "isSequential":
             }
         ]
     },
-    // room #5
     {
         "roomID": "c6b98566-e4e9-445c-8da2-9ef6b92ce815",
+        "name":
         "story":
         "background":
         "interactables": [
@@ -337,16 +324,13 @@
                         "timePenalty":
                     }
                 ],
-                "hintsUsed": {
-                    
-                },
                 "isSequential":
             }
         ]
     },
-    // room #6 -- final room
     {
         "roomID": "150c985e-0e90-4c28-bd96-e658b4bc1c20",
+        "name":
         "story":
         "background":
         "interactables": [
@@ -396,9 +380,6 @@
                         "timePenalty":
                     }
                 ],
-                "hintsUsed": {
-                    
-                },
                 "isSequential":
             }
         ]

@@ -20,7 +20,8 @@ public abstract class DataConstants {
             protected static final String ITEM_NAME = "name";
             protected static final String ITEM_DESCRIPTION = "description";
         protected static final String CURRENT_ROOM = "currentRoom";
-        protected static final String USER_HINTS_USED = "hintsUsed";
+        protected static final String NUM_HINTS_USED = "hintsUsed";
+        protected static final String HINTS_USED = "hintsUsed";
         protected static final String PUZZLES_COMPLETED = "puzzlesCompleted";
         protected static final String TIMER = "timer";
             // data constants for nested timer JSON
@@ -40,6 +41,7 @@ public abstract class DataConstants {
     protected static final String SAMPLE_ROOM_FILE_NAME = "src/main/java/com/json/sample_rooms.json";
     protected static final String ROOM_FILE_NAME = "src/main/java/com/json/rooms.json";
     protected static final String ROOM_ID = "roomID";
+    protected static final String ROOM_NAME = "name";
     protected static final String STORY = "story";
     protected static final String BACKGROUND = "background";
     protected static final String INTERACTABLES = "interactables";
@@ -69,7 +71,6 @@ public abstract class DataConstants {
             protected static final String HINT_PICTURE = "picture";
             protected static final String HINT_LEVEL = "level";
             protected static final String TIME_PENALTY = "timePenalty";
-        protected static final String ROOM_HINTS_USED = "hintsUsed";
         protected static final String IS_SEQUENTIAL = "isSequential";
         // different content and solution attributes for child classes of puzzle
         protected static final String TEXT_CONTENT = "textContent";
