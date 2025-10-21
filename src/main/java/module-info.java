@@ -3,6 +3,7 @@ module com.escape {
     requires javafx.fxml;
     requires javax.inject;
     requires json.simple;
+    requires freetts;
     
     requires java.desktop;
     opens com.escape to javafx.fxml;
