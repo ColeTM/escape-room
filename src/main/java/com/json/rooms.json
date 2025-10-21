@@ -41,40 +41,7 @@
                 "clueText": "now this is a big door"
             }
         ],
-        "puzzles": [
-            {
-                "type":
-                // whatever type of content
-                "puzzleID": 
-                "difficulty": 
-                // whatever type of solution
-                "attempts": 
-                "clue": {
-                    "clueID": 
-                    "text": 
-                    "picture": 
-                },
-                "hints": [
-                    {
-                        "hintID": 
-                        "text": 
-                        "hasPicture":
-                        "Picture":
-                        "level":
-                        "timePenalty":
-                    },
-                    {
-                        "hintID":
-                        "text":
-                        "hasPicture":
-                        "picture":
-                        "level":
-                        "timePenalty":
-                    }
-                ],
-                "isSequential":
-            }
-        ]
+        "puzzles": []
     },
     {
         "roomID": "9aae693f-83a4-427e-9822-b150f44ba171",
@@ -219,10 +186,9 @@
     //Not a definite room/puzzle
     {
         "roomID": "1030c684-0ceb-4f2b-a71e-f5846697d8d7",
-        "name": "The Dark Chamber",
-        "story": "The user enters a pitch-black room, they are only able to see with their cursor acting as a flashlight. As the user navigates the room with their cursor, they see something written on the wall in BLOOD!",
-        //add pic
-        "background" : " ",
+        "name":
+        "story":
+        "background":
         "interactables": [
             {
                 "interactableID": 
@@ -264,15 +230,15 @@
                         "timePenalty": 60
                     }
                 ],
-                "isSequential": false
+                "isSequential":
             }
         ]
     },
     {
         "roomID": "c6b98566-e4e9-445c-8da2-9ef6b92ce815",
-        "name":
-        "story":
-        "background":
+        "name": "Jigsaw",
+        "story": "On a table in the center of the room lies a pile of what look to be puzzle pieces. On the back wall is a row of pictures, but they all look the same.",
+        "background": "placeholder file path",
         "interactables": [
             {
                 "interactableID": 

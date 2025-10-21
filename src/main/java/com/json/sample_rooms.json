@@ -49,10 +49,6 @@
                         "timePenalty": 10.0
                     }
                 ],
-                "hintsUsed": {
-                    "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd": true,
-                    "3a0818c7-b668-458d-924c-3701147f51fc": false
-                },
                 "isSequential": false
             },
             {
