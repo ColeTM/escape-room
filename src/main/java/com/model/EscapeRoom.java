@@ -21,7 +21,7 @@ public class EscapeRoom {
     public EscapeRoom() {
         user = null;
         currentRoom = null;
-        currentPuzzle= null;
+        currentPuzzle = null;
         currentDifficulty = Difficulty.Beginner;
         totalHints = 0;
         timer = new Timer();
