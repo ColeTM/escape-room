@@ -5,13 +5,18 @@ package com.model;
  * @author Kelly Sullivan
  */
 public class Item {
-    private String name;
+    /**
+     * attributes
+     * name- name of the item
+     * description- description of the item
+     */
+    private String name; 
     private String description;
 
     /**
      * construtor for an item
-     * @param name
-     * @param description
+     * @param name - name of the item
+     * @param description - description of the item
      */
     public Item(String name, String description){
         this.name = name;
@@ -19,26 +24,28 @@ public class Item {
     }
     /**
      * getter for name
-     * @return
+     * @return- string name
      */
     public String getName() {
         return name;
     }
     /**
      * setter for name
+     * @param name - string name
      */
     public void setName(String name) {
         this.name = name;
     }
     /**
      * getter for description
-     * @return
+     * @return - string description
      */
     public String getDescription() {
         return description;
     }
     /**
      * setter for description
+     * @param description - string description
      */
     public void setDescription(String description) {
         this.description = description;
@@ -51,6 +58,10 @@ public class Item {
 
     }
 
+    /**
+     * toString method for item
+     * @return string rep of item
+     */
     public String toString() {
         return name + ": " + description;
     }
