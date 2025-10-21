@@ -26,15 +26,15 @@ public class RoomList {
         return roomList.rooms;
     }
     
-    /*public void addRoom(UUID id, BufferedImage background, ArrayList<Interactable> interactables, ArrayList<Puzzle> puzzles) {
+    public void addRoom(UUID id, BufferedImage background, ArrayList<Interactable> interactables, ArrayList<Puzzle> puzzles) {
         Room room = new Room(id, background, interactables, puzzles);
         rooms.add(room);
-    }*/
+    }
     
     //Testing the uuid for the rooms
-    public void addRoom(Room room) {
+    /*public void addRoom(Room room) {
         rooms.add(room);
-    }
+    }*/
 
     public static Room getRoomByUUID(UUID roomID) {
         for (Room room : roomList.rooms) {
