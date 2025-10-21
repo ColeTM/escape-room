@@ -41,40 +41,7 @@
                 "clueText": "now this is a big door"
             }
         ],
-        "puzzles": [
-            {
-                "type":
-                // whatever type of content
-                "puzzleID": 
-                "difficulty": 
-                // whatever type of solution
-                "attempts": 
-                "clue": {
-                    "clueID": 
-                    "text": 
-                    "picture": 
-                },
-                "hints": [
-                    {
-                        "hintID": 
-                        "text": 
-                        "hasPicture":
-                        "Picture":
-                        "level":
-                        "timePenalty":
-                    },
-                    {
-                        "hintID":
-                        "text":
-                        "hasPicture":
-                        "picture":
-                        "level":
-                        "timePenalty":
-                    }
-                ],
-                "isSequential":
-            }
-        ]
+        "puzzles": []
     },
     {
         "roomID": "9aae693f-83a4-427e-9822-b150f44ba171",
@@ -218,8 +185,8 @@
     },
     {
         "roomID": "1030c684-0ceb-4f2b-a71e-f5846697d8d7",
-        "name":
-        "story":
+        "name": "Minesweeper",
+        "story": "In the middle of this room is a square grid of blank tiles. Behind it in on a table stands a gramophone, which plays a sequence of unintelligible notes.",
         "background":
         "interactables": [
             {
@@ -269,14 +236,46 @@
                     }
                 ],
                 "isSequential":
+            },
+            {
+                "type": "audio",
+                "audioContent": "placeholder file path",
+                "puzzleID": "b0c5e98f-b2da-4250-b551-7b48fecc37fc",
+                "difficulty": "Intermediate",
+                "audioSolution": 4,
+                "attempts": 0,
+                "clue": {
+                    "clueID": "8dee0247-32e8-45bd-9764-ed7aa78f9b03",
+                    "text": "enter the number matching the gramophone's message",
+                    "picture": "src/main/java/com/docs/Morse-sample.png"
+                },
+                "hints": [
+                    {
+                        "hintID": "b117ccf6-89e1-47af-8cfa-932a63533cc0",
+                        "text": "dashes are long, dots are short",
+                        "hasPicture": false,
+                        "Picture": null,
+                        "level": "Vague",
+                        "timePenalty": 10
+                    },
+                    {
+                        "hintID": "2be6e2d8-82c4-4ecf-8505-dbd561e1cdfd",
+                        "text": "This puzzle requires the morse code refrence sheet.",
+                        "hasPicture": false,
+                        "Picture": null,
+                        "level": "Direct",
+                        "timePenalty": 30
+                    }
+                ],
+                "isSequential": true
             }
         ]
     },
     {
         "roomID": "c6b98566-e4e9-445c-8da2-9ef6b92ce815",
-        "name":
-        "story":
-        "background":
+        "name": "Jigsaw",
+        "story": "On a table in the center of the room lies a pile of what look to be puzzle pieces. On the back wall is a row of pictures, but they all look the same.",
+        "background": "placeholder file path",
         "interactables": [
             {
                 "interactableID": 
