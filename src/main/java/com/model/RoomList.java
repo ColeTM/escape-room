@@ -2,7 +2,7 @@ package com.model;
 
 import java.util.UUID;
 import java.util.ArrayList;
-//import java.awt.image.BufferedImage;
+import java.awt.image.BufferedImage;
 /*
  * author: Nick Hippchen
  * Class that holds a list of rooms
@@ -25,6 +25,7 @@ public class RoomList {
     public static ArrayList<Room> getRooms() {
         return roomList.rooms;
     }
+    
     
     public void addRoom(UUID id, BufferedImage background, ArrayList<Interactable> interactables, ArrayList<Puzzle> puzzles) {
         Room room = new Room(id, background, interactables, puzzles);
