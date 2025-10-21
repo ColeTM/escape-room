@@ -216,59 +216,55 @@
             }
         ]
     },
+    //Not a definite room/puzzle
     {
         "roomID": "1030c684-0ceb-4f2b-a71e-f5846697d8d7",
-        "name":
-        "story":
-        "background":
+        "name": "The Dark Chamber",
+        "story": "The user enters a pitch-black room, they are only able to see with their cursor acting as a flashlight. As the user navigates the room with their cursor, they see something written on the wall in BLOOD!",
+        //add pic
+        "background" : " ",
         "interactables": [
             {
                 "interactableID": 
-                "description":
-                "isHighlighted": 
-                "soundEffect": 
-                "clueText": 
+                "description": "Bloody writing on the wall",
+                "isHighlighted": false, 
+                "soundEffect": "Add a ghost voice whispering",
+                "clueText": "placeholder" 
             },
-            {
-                "interactableID": 
-                "description": 
-                "isHighlighted": 
-                "soundEffect":
-                "clueText":
-            }
         ],
         "puzzles": [
             {
-                "type":
+                "type": "text",
                 // whatever type of content
-                "puzzleID": 
-                "difficulty": 
+                "puzzleID": "",
+                "difficulty": "Beginner", 
                 // whatever type of solution
-                "attempts": 
+                //"textSolution": "echo",
+                "attempts": 0, 
                 "clue": {
                     "clueID": 
-                    "text": 
-                    "picture": 
+                    "text": "The ghost's riddle is written across the wall in bloody letters.",
+                    "picture": "Placeholder"
                 },
                 "hints": [
                     {
-                        "hintID": 
-                        "text": 
-                        "hasPicture":
-                        "Picture":
-                        "level":
-                        "timePenalty":
+                        "hintID": "placeholder", 
+                        "text": "What can you hear in an empty room?",
+                        "hasPicture": false,
+                        "Picture": null,
+                        "level": "Vague",
+                        "timePenalty": 30
                     },
                     {
-                        "hintID":
-                        "text":
-                        "hasPicture":
-                        "picture":
-                        "level":
-                        "timePenalty":
+                        "hintID": "placeholder",
+                        "text": "It repeats what you say!",
+                        "hasPicture": false,
+                        "picture": null,
+                        "level": "Direct",
+                        "timePenalty": 60
                     }
                 ],
-                "isSequential":
+                "isSequential": false
             }
         ]
     },
