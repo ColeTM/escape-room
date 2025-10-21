@@ -31,11 +31,6 @@ public class RoomList {
         Room room = new Room(id, background, interactables, puzzles);
         rooms.add(room);
     }
-    
-    //Testing the uuid for the rooms
-    /*public void addRoom(Room room) {
-        rooms.add(room);
-    }*/
 
     public static Room getRoomByUUID(UUID roomID) {
         for (Room room : roomList.rooms) {
@@ -46,10 +41,10 @@ public class RoomList {
     }
 
     
-
+    /* 
     public void saveRoom() {
         //save room to datawriter
-    }
+    }*/
 
 /*
     public static void main(String[] args) {
