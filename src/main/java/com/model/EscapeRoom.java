@@ -89,15 +89,6 @@ public class EscapeRoom {
         this.currentDifficulty = difficultyLevel;
     }
 
-    public boolean moveRoom(UUID roomID) {
-        Room nextRoom = RoomList.getRoomByUUID(roomID);
-        if (nextRoom != null) {
-            currentRoom = nextRoom;
-            return true;
-        }
-        return false;
-    }
-
     public boolean submitPuzzleAnswer(Object solution) {
         return solution.equals(currentPuzzle.getSolution());
     }

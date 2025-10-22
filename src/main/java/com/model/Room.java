@@ -75,6 +75,16 @@ public class Room {
         this.puzzles = puzzles;
     }
 
+    //Brought over from facade EscapeRoom class
+    public boolean moveRoom(UUID roomID) {
+        Room nextRoom = RoomList.getRoomByUUID(roomID);
+        if (nextRoom != null) {
+            //this.setRoomID = nextRoom;
+            return true;
+        }
+        return false;
+    }
+
 
     public String toString() {
         return "ID: " + roomID +
