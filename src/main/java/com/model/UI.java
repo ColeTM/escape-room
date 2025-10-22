@@ -1,5 +1,7 @@
 package com.model;
 
+import java.util.ArrayList;
+
 public class UI {
 
     public void runScenarios() {
@@ -7,6 +9,7 @@ public class UI {
         loginUserNotExist();
         unSuccessfulRegisterUser();
         successfulRegisterUser();
+        successAnswerTextPuzzle();
     }
 
     public void successfulLogin() {
@@ -50,6 +53,34 @@ public class UI {
         }
         
         System.out.println("Successfully registered Timmy");
+    }
+
+    public void successAnswerTextPuzzle() {
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        successfulLogin();
+
+        ArrayList<Character> characters = escapeRoom.getCharacters();
+
+        //loop through and display characters
+        for(Character character : characters) {
+            System.out.println((character));
+        }
+
+        //pick character
+        //escapeRoom.setCurrentCharacter(character(1));
+
+        //ArrayList<Room> rooms = escapeRoom.getRooms();
+
+        //display rooms
+
+        //pick the room
+
+        //display puzzles
+
+        //answer puzzle
+
+        //show new progress
+
     }
 
     public static void main(String[] args) {

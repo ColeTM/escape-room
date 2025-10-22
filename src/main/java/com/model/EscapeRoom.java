@@ -121,5 +121,9 @@ public class EscapeRoom {
     public void displayLeaderboard() {
         System.out.println(Leaderboard.getInstance().displayGlobal().toString());
     }
+
+    public ArrayList<Character> getCharacters() {
+        return user.getCharacters();
+    }
     
 }
