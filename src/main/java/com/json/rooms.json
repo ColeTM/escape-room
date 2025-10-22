@@ -131,21 +131,21 @@
                 "description": "box #2",
                 "isHighlighted": false,
                 "soundEffect": "src/main/java/com/sounds/box.wav",
-                "clueText": "Could this be the box with the key?"
+                "clueText": "Maybe this is the box with the key?"
             },
             {
                 "interactableID": "27804a24-a6e3-4d58-a5a2-c39faced4cca",
                 "description": "box #3",
                 "isHighlighted": false,
                 "soundEffect": "src/main/java/com/sounds/box.wav",
-                "clueText": "Could this be the box with the key?"
+                "clueText": "Is this the box with the key?"
             },
             {
                 "interactableID": "15790e6d-3759-49e9-b462-e356b414615d",
                 "description": "box #4",
                 "isHighlighted": false,
                 "soundEffect": "src/main/java/com/sounds/box.wav",
-                "clueText": "Could this be the box with the key?"
+                "clueText": "Is the key in this box?"
             }
         ],
         "puzzles": [
@@ -200,9 +200,10 @@
         "puzzles": [
             {
                 "type": "text",
+                "textContent": "",
                 "puzzleID": "",
                 "difficulty": "Beginner", 
-                "solution": "echo",
+                "textSolution": "echo",
                 "attempts": 0, 
                 "clue": {
                     "clueID": "467466b3-5298-43c7-a98c-c668da34e69e",
@@ -297,14 +298,15 @@
         ],
         "puzzles": [
             {
-                "type": "auido", 
+                "type": "picture", 
+                "pictureContent": "",
                 "puzzleID": "bee765a8-d881-4d3f-809b-9a91b8ace119",
                 "difficulty": "",
-                "solution": 2,
-                "attempts": "",
+                "pictureSolution": "char of matching picture",
+                "attempts": 0,
                 "clue": {
                     "clueID": "dcb92126-5811-4d35-8151-0656a8ef670a",
-                    "text": "Listen closely to the ",
+                    "text": "Solve the puzzle and select the matching picture on the wall.",
                     "picture": null
                 },
                 "hints": [
@@ -325,18 +327,24 @@
                         "timePenalty": 60
                     }
                 ],
-                "isSequential": true
+                "isSequential": false
             }
         ]
     },
     {
         "roomID": "150c985e-0e90-4c28-bd96-e658b4bc1c20",
-        "name": "MineSweep and Morse Code",
-        "story": "You walk into a room and notice",
+        "name": "Minesweeper and Morse Code",
+        "story": "You walk into a room with a grid on the ground, a gramaphone making strang noises in one corner, and a locked chest on a pedestal in the other. ",
         "background": "",
         "interactables": [
             {
-                
+                "interactableID": "08ebd750-35a5-4d40-8a36-5b8276c76d64",
+                "description": "Gramophone",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "Listen Closely!"
+            },
+            {
                 "interactableID": "14f8117a-5876-441b-b854-feec4c3e1347",
                 "description": "Lock on chest",
                 "isHighlighted": false,
@@ -345,204 +353,205 @@
             },
             {
                 "interactableID": "78461143-42c2-4453-b849-88af35be6ae5",
-                "description": "",
-                "isHighlighted": "",
-                "soundEffect": "",
+                "description": "Morse code manual",
+                "isHighlighted": false,
+                "soundEffect": null,
                 "clueText": ""
             },
             {
                 "interactableID": 11,
-                "description": "tile 1-1 on the array",
+                "description": "tile 1-1 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 12,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 1-2 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 13,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 1-3 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 14, 
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 1-4 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 15,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 1-5 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 21,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 2-1 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 22,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 2-2 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 23,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 2-3 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 24,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 2-4 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 25,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 2-5 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 31,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 3-1 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 32,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 3-2 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 33,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 3-3 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 34,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 3-4 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 35,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 3-5 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },{
                 "interactableID": 41,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 4-1 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 42,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 4-2 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 43,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 4-3 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 44,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 4-4 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 45,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 4-5 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 51,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 5-1 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 52,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 5-2 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 53,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 5-3 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 54,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 5-4 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             },
             {
                 "interactableID": 55,
-                "description": "",
-                "isHighlighted": "",
+                "description": "tile 5-5 on the grid",
+                "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": ""
             }
         ],
         "puzzles": [
             {
-                "type": "picture",
+                "type": "text",
+                "textContent": "The grid ahead of you reminds you of a game of minesweeper...",
                 "puzzleID": "56e5af6b-0295-48a9-b57e-b0670e025379",
                 "difficulty": "Pro",
-                "solution": "",
+                "textSolution": " 1,2; 2,4; 5,4",
                 "attempts": 0,
                 "clue": {
                     "clueID": "5fe791f6-3912-4f2d-9a3d-86f1deaf00ef",
-                    "text": "",
-                    "picture": ""
+                    "text": "Solve the game of minesweep and enter the squares with the mines.",
+                    "picture": null
                 },
                 "hints": [
                     {
                         "hintID": "10d91414-0424-43d1-825e-1a9f095685fd",
                         "text": "",
-                        "hasPicture": true,
-                        "Picture": "",
+                        "hasPicture": false,
+                        "Picture": null,
                         "level": "Vague",
                         "timePenalty": 30
                     },
@@ -558,22 +567,23 @@
                 "isSequential": true
             },
             {
-                "type": "picture",
+                "type": "audio",
+                "audioContent": "",
                 "puzzleID": "56e5af6b-0295-48a9-b57e-b0670e025379",
                 "difficulty": "Pro",
-                "solution": "",
+                "audioSolution": "int",
                 "attempts": 0,
                 "clue": {
                     "clueID": "5fe791f6-3912-4f2d-9a3d-86f1deaf00ef",
-                    "text": "",
-                    "picture": ""
+                    "text": "Use what you have to unlock the lock on chest.",
+                    "picture": null
                 },
                 "hints": [
                     {
                         "hintID": "10d91414-0424-43d1-825e-1a9f095685fd",
                         "text": "",
-                        "hasPicture": true,
-                        "Picture": "",
+                        "hasPicture": false,
+                        "Picture": null,
                         "level": "Vague",
                         "timePenalty": 30
                     },
@@ -589,5 +599,63 @@
                 "isSequential": true
             }
         ]
+    },
+    {
+        "roomID": "dc22b2db-0d7c-4f79-9334-a142ac82dfc7",
+        "name": "",
+        "story": "",
+        "background": "",
+        "interactables": [
+            {
+                "interactableID": "24690859-a83b-4e96-ad61-30d45c86a902",
+                "description": "",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": "1be5e82c-7d1b-4c5d-b9c5-21d335a55005",
+                "description": "",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": ""
+            }
+        ],
+        "puzzles": [
+            {
+                "type": "",
+                "textContent": "",
+                "puzzleID": "82ae3ddb-c089-469d-bc15-0f78805d6d55",
+                "difficulty": "Intermediate",
+                "textSolution": "",
+                "attempts": 0,
+                "clue": {
+                    "clueID": "",
+                    "text": "",
+                    "picture": "placeholder file path"
+                },
+                "hints": [
+                    {
+                        "hintID": "96f94028-c0a9-400e-8a1c-d80a8d034b75",
+                        "text": "", 
+                        "hasPicture": false, 
+                        "Picture": null,
+                        "level": "Vague",
+                        "timePenalty": 30
+                    },
+                    {
+                        "hintID": "8e923f2a-0222-4a84-9861-7855b569cd86",
+                        "text": "",
+                        "hasPicture": false,
+                        "picture": null,
+                        "level": "Direct",
+                        "timePenalty": 60
+                    }
+                ],
+                "isSequential": false
+            }
+        ]
     }
+
 ]
+
