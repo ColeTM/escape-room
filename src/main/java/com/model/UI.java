@@ -18,8 +18,7 @@ public class UI {
             System.out.println("Error: You should have logged in but didn't");
             return;
         } 
-
-        //System.out.println(escapeRoom.getCurrentUser() + " has logged in successfully");
+    System.out.println(escapeRoom.getCurrentUser() + " has logged in successfully");
     }
 
     public void loginUserNotExist() {

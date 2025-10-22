@@ -63,18 +63,15 @@ public class EscapeRoom {
 
     public boolean registerUser(String firstName, String lastName, String email, 
                                     String username, String password) {
-        User user = new User(firstName, lastName, email, username, password);
-        if(UserList.getInstance().getUser(username, password) != null) {
-            return false;
-        }
-        UserList.getInstance().addUser(user);
-        return true;
-
+        return UserList.getInstance().addUser(firstName, lastName, email, username, password);
     }
 
     public boolean login(String username, String password) {
         User temp = UserList.getInstance().getUser(username, password);
-        return temp != null;
+        if (temp != null)
+            return false;
+        user = temp;
+        return true;
     }
 
     public void logout() {
@@ -115,6 +112,10 @@ public class EscapeRoom {
 
     public ArrayList<Character> getCharacters() {
         return user.getCharacters();
+    }
+
+    public User getCurrentUser() {
+        return user;
     }
     
 }

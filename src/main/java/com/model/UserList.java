@@ -10,7 +10,7 @@ public class UserList {
     /**
      * attributes
      * users- list of users
-     * userlist- singleton instnace of userlist
+     * userlist- singleton instance of userlist
      */
     private ArrayList<User> users;
     private static UserList userList;
@@ -24,21 +24,29 @@ public class UserList {
 
     /**
      * getter for userlist singleton instance
-     * @returns instance of userlist
+     * @return instance of userlist
      */
     public static UserList getInstance() {
         if(userList == null){
             userList = new UserList();
-        } 
+        }
         return userList;
     }
 
     /**
-     * method to add a user to the userlist
-     * @param newUser - the user to be added
+     * method to add a user to the userlist if username is not taken
+     * @param firstName String -- user's first name
+     * @param lastName String -- user's last name
+     * @param email String -- email linked to account
+     * @param username String -- account's username
+     * @param password String -- account's password
      */
-    public void addUser(User newUser){
-        users.add(newUser);
+    public boolean addUser(String firstName, String lastName, String email, 
+                                    String username, String password) {
+        if(usernameTaken(username))
+            return false;
+        users.add(new User(firstName, lastName, email, username, password));
+        return true;
     }
 
     /**
@@ -51,7 +59,6 @@ public class UserList {
 
     /**
      * method to save the users to to the json files
-     *  is this supposed to be static?
      */
     public static void saveUsers() {
         DataWriter.saveUsers();
@@ -83,8 +90,20 @@ public class UserList {
                 return user;
             }
         }
-        System.out.println("No user found!");
         return null;
+    }
+
+    /**
+     * method to check whether a username is alrerady taken by an existing account
+     * @return boolean -- true if the username is taken
+     * @param username String -- the username to check
+     */
+    public boolean usernameTaken(String username) {
+        for(User user : users) {
+            if(user.getUsername().equalsIgnoreCase(username))
+                return true;
+        }
+        return false;
     }
     
 }
