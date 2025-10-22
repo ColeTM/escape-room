@@ -17,14 +17,23 @@ public class EscapeRoom {
     private Difficulty currentDifficulty;
     private int totalHints;
     private Timer timer;
+    private static EscapeRoom escapeRoom;
 
-    public EscapeRoom() {
+    private EscapeRoom() {
         user = null;
         currentRoom = null;
         currentPuzzle = null;
         currentDifficulty = Difficulty.Beginner;
         totalHints = 0;
         timer = new Timer();
+    }
+
+    public static EscapeRoom getInstance() {
+        if(escapeRoom == null){
+            escapeRoom = new EscapeRoom();
+        }
+
+        return escapeRoom;
     }
 
     public void startNewGame(String characterName) {
