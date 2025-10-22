@@ -122,93 +122,90 @@
             {
                 "interactableID": "95611735-deca-46d5-83ae-ec12a5f4cb9e",
                 "description": "box #1",
-                "isHighlighted": true,
+                "isHighlighted": false,
                 "soundEffect": "src/main/java/com/sounds/box.wav",
-                "clueText": "placeholder"
+                "clueText": "Could this be the box with the key?"
             },
             {
                 "interactableID": "517b37b4-f36d-4c3e-afcc-72f7def11f96",
                 "description": "box #2",
-                "isHighlighted": true,
+                "isHighlighted": false,
                 "soundEffect": "src/main/java/com/sounds/box.wav",
-                "clueText": "placeholder"
+                "clueText": "Could this be the box with the key?"
             },
             {
                 "interactableID": "27804a24-a6e3-4d58-a5a2-c39faced4cca",
                 "description": "box #3",
-                "isHighlighted": true,
+                "isHighlighted": false,
                 "soundEffect": "src/main/java/com/sounds/box.wav",
-                "clueText": "placeholder"
+                "clueText": "Could this be the box with the key?"
             },
             {
                 "interactableID": "15790e6d-3759-49e9-b462-e356b414615d",
                 "description": "box #4",
-                "isHighlighted": true,
+                "isHighlighted": false,
                 "soundEffect": "src/main/java/com/sounds/box.wav",
-                "clueText": "placeholder"
+                "clueText": "Could this be the box with the key?"
             }
         ],
         "puzzles": [
             {
                 "type": "text",
-                "textContent": "placeholder puzzle",
+                "textContent": "One of the 4 boxes before you contains a key. The other boxes conatin either a rusty candle stick, a old doll, or nothing. Which box is the key in?",
                 "puzzleID": "6c9f6273-be95-470d-8d43-5792c7737c82",
                 "difficulty": "Intermediate",
-                "textSolution": "placeholder solution",
+                "textSolution": "box #3",
                 "attempts": 0,
                 "clue": {
-                    "clueID": "placeholder clue",
-                    "text": "placedholder text",
+                    "clueID": "bf8561c3-ae9b-4e8f-9ff6-7fd36e84547e",
+                    "text": "The candle is immediately to the left of the box with the key. The doll is somewhere to the left of the candle. The empty box is not adjacent to the candle. The key is not in the last box.",
                     "picture": "placeholder file path"
                 },
                 "hints": [
                     {
-                        "hintID": 
-                        "text": 
-                        "hasPicture":
-                        "Picture":
-                        "level":
-                        "timePenalty":
+                        "hintID": "0b63808f-20c5-4755-9cdf-72396bfe205e",
+                        "text": "Box #2 is not empty", 
+                        "hasPicture": false, 
+                        "Picture": null,
+                        "level": "Vague",
+                        "timePenalty": 30
                     },
                     {
-                        "hintID":
-                        "text":
-                        "hasPicture":
-                        "picture":
-                        "level":
-                        "timePenalty":
+                        "hintID": "be0a15dc-bfdb-49f4-807f-bd679a7f5dbd",
+                        "text": "The doll is in box #1",
+                        "hasPicture": false,
+                        "picture": null,
+                        "level": "Direct",
+                        "timePenalty": 60
                     }
                 ],
-                "isSequential":
+                "isSequential": false
             }
         ]
     },
-    //Not a definite room/puzzle
     {
         "roomID": "1030c684-0ceb-4f2b-a71e-f5846697d8d7",
-        "name":
-        "story":
-        "background":
+        "name": "",
+        "story": "",
+        "background": "",
         "interactables": [
             {
-                "interactableID": 
+                "interactableID": "af907c2e-92b7-4d33-8c7a-5185ff444f88",
                 "description": "Bloody writing on the wall",
                 "isHighlighted": false, 
                 "soundEffect": "Add a ghost voice whispering",
                 "clueText": "placeholder" 
-            },
+            }
         ],
         "puzzles": [
             {
                 "type": "text",
-                // whatever type of content
                 "puzzleID": "",
                 "difficulty": "Beginner", 
-                // whatever type of solution
-                //"textSolution": "echo",
+                "solution": "echo",
                 "attempts": 0, 
                 "clue": {
-                    "clueID": 
+                    "clueID": "467466b3-5298-43c7-a98c-c668da34e69e",
                     "text": "The ghost's riddle is written across the wall in bloody letters.",
                     "picture": "Placeholder"
                 },
@@ -222,7 +219,7 @@
                         "timePenalty": 30
                     },
                     {
-                        "hintID": "placeholder",
+                        "hintID": "6ad175b8-c795-4184-9602-5b347d7e0d31",
                         "text": "It repeats what you say!",
                         "hasPicture": false,
                         "picture": null,
@@ -230,7 +227,7 @@
                         "timePenalty": 60
                     }
                 ],
-                "isSequential":
+                "isSequential": false
             }
         ]
     },
@@ -241,108 +238,355 @@
         "background": "placeholder file path",
         "interactables": [
             {
-                "interactableID": 
-                "description":
-                "isHighlighted": 
-                "soundEffect": 
-                "clueText": 
+                "interactableID": "2562d55d-de5b-4462-b8cb-537fbbd37a96",
+                "description": "Puzzle piece 1",
+                "isHighlighted": false,
+                "soundEffect": null, 
+                "clueText": null
             },
             {
-                "interactableID": 
-                "description": 
-                "isHighlighted": 
-                "soundEffect":
-                "clueText":
+                "interactableID": "77e439e7-9a7e-4511-b52d-3c47d17fc761",
+                "description": "Puzzle piece 2",
+                "isHighlighted": false,
+                "soundEffect": null, 
+                "clueText": null
+            },
+            {
+                "interactableID": "c272a105-bbd9-45ef-928e-06c3942c9f1a",
+                "description": "Puzzle piece 3",
+                "isHighlighted": false,
+                "soundEffect": null, 
+                "clueText": null
+            },
+            {
+                "interactableID": "5c94f613-83d0-4cb9-829a-e7648e35ddf5",
+                "description": "Puzzle piece 4",
+                "isHighlighted": false,
+                "soundEffect": null, 
+                "clueText": null
+            },
+            {
+                "interactableID": "f313c82d-ca1b-4a92-be8f-49760a81c559",
+                "description": "Puzzle piece 5",
+                "isHighlighted": false,
+                "soundEffect": null, 
+                "clueText": null
+            },
+            {
+                "interactableID": "e892c6da-3ab2-4730-afa8-c5e6f1c3de9e",
+                "description": "Puzzle piece 6",
+                "isHighlighted": false,
+                "soundEffect": null, 
+                "clueText": null
+            },
+            {
+                "interactableID": "ca05a41e-5917-426b-b63b-ce871f16c399",
+                "description": "Puzzle piece 7",
+                "isHighlighted": false,
+                "soundEffect": null, 
+                "clueText": null
+            },
+            {
+                "interactableID": "ba995de6-025e-4def-837c-0c7544930dae",
+                "description": "Puzzle piece 8",
+                "isHighlighted": false,
+                "soundEffect": null, 
+                "clueText": null
             }
+            
         ],
         "puzzles": [
             {
-                "type":
-                // whatever type of content
-                "puzzleID": 
-                "difficulty": 
-                // whatever type of solution
-                "attempts": 
+                "type": "auido", 
+                "puzzleID": "bee765a8-d881-4d3f-809b-9a91b8ace119",
+                "difficulty": "",
+                "solution": 2,
+                "attempts": "",
                 "clue": {
-                    "clueID": 
-                    "text": 
-                    "picture": 
+                    "clueID": "dcb92126-5811-4d35-8151-0656a8ef670a",
+                    "text": "Listen closely to the ",
+                    "picture": null
                 },
                 "hints": [
                     {
-                        "hintID": 
-                        "text": 
-                        "hasPicture":
-                        "Picture":
-                        "level":
-                        "timePenalty":
+                        "hintID": "298792c8-0160-4c5a-bb16-ca13199c22e6",
+                        "text": "",
+                        "hasPicture": false,
+                        "Picture": null,
+                        "level": "Vague",
+                        "timePenalty": 30
                     },
                     {
-                        "hintID":
-                        "text":
-                        "hasPicture":
-                        "picture":
-                        "level":
-                        "timePenalty":
+                        "hintID": "e759b895-2cd7-4418-a6f2-53bdb3e2a4dc",
+                        "text": "",
+                        "hasPicture": false,
+                        "picture": null,
+                        "level": "Vague",
+                        "timePenalty": 60
                     }
                 ],
-                "isSequential":
+                "isSequential": true
             }
         ]
     },
     {
         "roomID": "150c985e-0e90-4c28-bd96-e658b4bc1c20",
-        "name":
-        "story":
-        "background":
+        "name": "MineSweep and Morse Code",
+        "story": "You walk into a room and notice",
+        "background": "",
         "interactables": [
             {
-                "interactableID": 
-                "description":
-                "isHighlighted": 
-                "soundEffect": 
-                "clueText": 
+                
+                "interactableID": "14f8117a-5876-441b-b854-feec4c3e1347",
+                "description": "Lock on chest",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": ""
             },
             {
-                "interactableID": 
-                "description": 
-                "isHighlighted": 
-                "soundEffect":
-                "clueText":
+                "interactableID": "78461143-42c2-4453-b849-88af35be6ae5",
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 11,
+                "description": "tile 1-1 on the array",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 12,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 13,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 14, 
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 15,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 21,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 22,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 23,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 24,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 25,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 31,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 32,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 33,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 34,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 35,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },{
+                "interactableID": 41,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 42,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 43,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 44,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 45,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 51,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 52,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 53,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 54,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
+            },
+            {
+                "interactableID": 55,
+                "description": "",
+                "isHighlighted": "",
+                "soundEffect": "",
+                "clueText": ""
             }
         ],
         "puzzles": [
             {
-                "type":
-                // whatever type of content
-                "puzzleID": 
-                "difficulty": 
-                // whatever type of solution
-                "attempts": 
+                "type": "picture",
+                "puzzleID": "56e5af6b-0295-48a9-b57e-b0670e025379",
+                "difficulty": "Pro",
+                "solution": "",
+                "attempts": 0,
                 "clue": {
-                    "clueID": 
-                    "text": 
-                    "picture": 
+                    "clueID": "5fe791f6-3912-4f2d-9a3d-86f1deaf00ef",
+                    "text": "",
+                    "picture": ""
                 },
                 "hints": [
                     {
-                        "hintID": 
-                        "text": 
-                        "hasPicture":
-                        "Picture":
-                        "level":
-                        "timePenalty":
+                        "hintID": "10d91414-0424-43d1-825e-1a9f095685fd",
+                        "text": "",
+                        "hasPicture": true,
+                        "Picture": "",
+                        "level": "Vague",
+                        "timePenalty": 30
                     },
                     {
-                        "hintID":
-                        "text":
-                        "hasPicture":
-                        "picture":
-                        "level":
-                        "timePenalty":
+                        "hintID": "e95d1da8-4444-4750-be49-630a5772f98b",
+                        "text": "", 
+                        "hasPicture": false,
+                        "picture": null,
+                        "level": "Direct",
+                        "timePenalty": 60
                     }
                 ],
-                "isSequential":
+                "isSequential": true
+            },
+            {
+                "type": "picture",
+                "puzzleID": "56e5af6b-0295-48a9-b57e-b0670e025379",
+                "difficulty": "Pro",
+                "solution": "",
+                "attempts": 0,
+                "clue": {
+                    "clueID": "5fe791f6-3912-4f2d-9a3d-86f1deaf00ef",
+                    "text": "",
+                    "picture": ""
+                },
+                "hints": [
+                    {
+                        "hintID": "10d91414-0424-43d1-825e-1a9f095685fd",
+                        "text": "",
+                        "hasPicture": true,
+                        "Picture": "",
+                        "level": "Vague",
+                        "timePenalty": 30
+                    },
+                    {
+                        "hintID": "e95d1da8-4444-4750-be49-630a5772f98b",
+                        "text": "", 
+                        "hasPicture": false,
+                        "picture": null,
+                        "level": "Direct",
+                        "timePenalty": 60
+                    }
+                ],
+                "isSequential": true
             }
         ]
     }
