@@ -68,7 +68,7 @@ public class EscapeRoom {
 
     public boolean login(String username, String password) {
         User temp = UserList.getInstance().getUser(username, password);
-        if (temp != null)
+        if (temp == null)
             return false;
         user = temp;
         return true;

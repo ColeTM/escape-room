@@ -79,4 +79,6 @@ public abstract class DataConstants {
         protected static final String AUDIO_SOLUTION = "audioSolution";
         protected static final String PICTURE_CONTENT = "pictureContent";
         protected static final String PICTURE_SOLUTION = "pictureSolution";
+
+    // interactable UUID data constants
 }
