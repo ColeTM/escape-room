@@ -11,12 +11,10 @@ public class Clue {
     
     private UUID clueID;
     private String text;
-    private File picture;
     
-    public Clue(UUID clueID, String text, File picture) {
+    public Clue(UUID clueID, String text) {
         this.clueID = clueID;
         this.text = text;
-        this.picture = picture;
     }
 
     public UUID getClueID() {
@@ -25,10 +23,6 @@ public class Clue {
 
     public String getText() {
         return text;
-    }
-
-    public File getPicture() {
-        return picture;
     }
 
 }

@@ -8,14 +8,12 @@ import javax.sound.sampled.Clip;
 
 public class SoundEffect {
 
-    public static void play(int num){
-        for(int i=0; i < num; i++){
-            honk();
-        }
+    public static void play(String file, long duration){
+		honk(file, duration);
     }
 
-    private static void honk(){
-        String fileName = "src/main/java/com/sounds/trumpet.wav";
+    private static void honk(String file, long duration){
+        String fileName = "src/main/java/com/sounds/" + file;
 
         try {
 			File soundFile = new File(fileName);
@@ -29,9 +27,15 @@ public class SoundEffect {
 			
 			Clip clip = AudioSystem.getClip();
 			clip.open(audioStream);
+			long clipDuration;
 
 			clip.start();
-			long clipDuration = clip.getMicrosecondLength() / 1000; // Duration in milliseconds
+			if(duration == 0) {
+				clipDuration = clip.getMicrosecondLength() / 1000; // Duration in milliseconds
+			} else {
+				clipDuration = duration;
+			}
+			
         	Thread.sleep(clipDuration); // Sleep for the duration of the clip
 
 			clip.close();

@@ -173,6 +173,7 @@ public class DataWriter extends DataConstants{
             interactableJSON.put(INTERACTABLE_DESCRIPTION, interactable.getDescription());
             interactableJSON.put(IS_HIGHLIGHTED, interactable.getIsHighlighted());
             interactableJSON.put(INTERACTABLE_CLUE, interactable.getClueText());
+            interactableJSON.put(IS_ITEM, interactable.getIsItem());
             interactablesJSON.add(interactableJSON);
         }
         return interactablesJSON;
@@ -213,7 +214,6 @@ public class DataWriter extends DataConstants{
         JSONObject clueJSON = new JSONObject();
         clueJSON.put(CLUE_ID, puzzle.getClue().getClueID().toString());
         clueJSON.put(CLUE_TEXT, puzzle.getClue().getText());
-        clueJSON.put(CLUE_PICTURE, puzzle.getClue().getPicture().getName());
         return clueJSON;
     }
 

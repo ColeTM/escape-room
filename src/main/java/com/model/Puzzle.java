@@ -32,26 +32,32 @@ public abstract class Puzzle
         this.isCompleted = false;
     }
 
+    //the UUID for the Puzzle
     public UUID getPuzzleID() {
         return puzzleID;
     }
 
+    //the difficulty of the puzzle (beginner, intermediate, pro)
     public Difficulty getDifficulty() {
         return difficulty;
     }
 
+    //number of attempts the user gets to solve the puzzle
     public int getAttempts() {
         return attempts;
     }
 
+    //clue for the user to know how to do a puzzle
     public Clue getClue() {
         return clue;
     }
 
+    //an array list of hints for a specific puzzle
     public ArrayList<Hint> getHints() {
         return hints;
     }
 
+    //
     public boolean getIsSequential() {
         return isSequential;
     }

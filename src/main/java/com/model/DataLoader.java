@@ -167,8 +167,9 @@ public class DataLoader extends DataConstants {
             String description = (String)interactableJSON.get(INTERACTABLE_DESCRIPTION);
             boolean isHighlighted = (boolean)interactableJSON.get(IS_HIGHLIGHTED);
             String clue = (String)interactableJSON.get(INTERACTABLE_CLUE);
+            boolean isItem = (boolean)interactableJSON.get(IS_ITEM);
 
-            interactables.add(new Interactable(interactableID, description, isHighlighted, clue));
+            interactables.add(new Interactable(interactableID, description, isHighlighted, clue, isItem));
         }
         return interactables;
     }
@@ -213,9 +214,8 @@ public class DataLoader extends DataConstants {
     private static Clue getClue(JSONObject clueJSON) {
         UUID clueID = UUID.fromString((String)clueJSON.get(CLUE_ID));
         String text = (String)clueJSON.get(CLUE_TEXT);
-        File picture = new File((String)clueJSON.get(CLUE_PICTURE));
 
-        return new Clue(clueID, text, picture);    
+        return new Clue(clueID, text);    
     }
 
     private static ArrayList<Hint> getHints(JSONArray hintsJSON) {

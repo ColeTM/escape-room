@@ -16,17 +16,15 @@ public class Hint
     private boolean hasPicture;
     private File picture;
     private HintLevel level;
-    private double timePenalty;
 
     //Constructor for creating a new Hint.
-    public Hint(UUID hintID, String text, boolean hasPicture, File picture, HintLevel level, double timePenalty)
+    public Hint(UUID hintID, String text, boolean hasPicture, File picture, HintLevel level)
     {
         this.hintID = hintID;
         this.text = text;
         this.hasPicture = hasPicture;
         this.picture = picture;
         this.level = level;
-        this.timePenalty = timePenalty;
     }
 
     public UUID getHintID() {
@@ -51,15 +49,11 @@ public class Hint
     public HintLevel getLevel() {
         return level;
     }
-
-    public double getTimePenalty()
-    {
-        return this.timePenalty;
     }
 
     public String toString()
     {
-        return "Hint: " + text + " (Level: " + level + ", Penalty: " + timePenalty + ")";
+        return "Hint: " + text + " (Level: " + level + ")";
     }
 
 }

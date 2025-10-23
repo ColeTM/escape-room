@@ -16,14 +16,14 @@ public class Room {
     private File background;
     private ArrayList<Interactable> interactables;
     private ArrayList<Puzzle> puzzles;
-    /*
+    /**
      * constuctor for a room
-     * @param roomID UUID of the room
-     * @param name String name of the room
-     * @param story String story/description of the room
-     * @param background Image of the room 
-     * @param interactables ArrrayList<Interactable> list of interactables in the room
-     * @param puzzles ArrayList<Puzzle> list of puzzles in the room
+     * @param roomID UUID - UUID of the room
+     * @param name String - name of the room
+     * @param story String - story/description of the room
+     * @param background File - background of the room 
+     * @param interactables ArrrayList<Interactable> - list of interactables in the room
+     * @param puzzles ArrayList<Puzzle> - list of puzzles in the room
      */
     public Room(UUID roomID, String name, String story, File background,
                 ArrayList<Interactable> interactables, ArrayList<Puzzle> puzzles) {
@@ -35,7 +35,7 @@ public class Room {
         this.puzzles = puzzles;
     }
 
-    /*
+    /**
      * Accessor for user's name 
      * @return String name of the user
      */
@@ -43,7 +43,7 @@ public class Room {
         return name;
     }
 
-    /*
+    /**
      * Mutator for user's name
      * @param name String name of the user
      */
@@ -51,7 +51,7 @@ public class Room {
         this.name = name;
     }
     
-    /*
+    /**
      * Accessor for room's UUID
      * @return UUID of the room
      */
@@ -59,7 +59,7 @@ public class Room {
         return roomID;
     }
 
-    /*
+    /**
      * Mutator for room's UUID
      * @param id UUID of the room
      */
@@ -67,7 +67,7 @@ public class Room {
         this.roomID = id;
     }
 
-    /*
+    /**
      * Accessor for room's story/description
      * @return String story/description of the room
      */
@@ -75,7 +75,7 @@ public class Room {
         return story;
     }
 
-    /*
+    /**
      * Mutator for room's story/description
      * @param story String story/description of the room
      */
@@ -83,7 +83,7 @@ public class Room {
         this.story = story;
     }
 
-    /*
+    /**
      * Accessor for room's background image
      * @return File background image of the room
      */
@@ -91,7 +91,7 @@ public class Room {
         return background;
     }
 
-    /*
+    /**
      * Mutator for room's background image
      * @param background File background image of the room
      */
@@ -99,7 +99,7 @@ public class Room {
         this.background = background;
     }
 
-    /*
+    /**
      * Accessor for room's interactables
      * @return ArrayList<Interactable> list of interactables in the room
      */
@@ -107,7 +107,7 @@ public class Room {
         return interactables;
     }
 
-    /*
+    /**
      * Mutator for room's interactables
      * @param interactables ArrayList<Interactable> list of interactables in the room
      */
@@ -115,7 +115,7 @@ public class Room {
         this.interactables = interactables;
     }
 
-    /*
+    /**
      * Accessor for room's puzzles
      * @return ArrayList<Puzzle> list of puzzles in the room
      */
@@ -123,7 +123,7 @@ public class Room {
         return puzzles;
     }
 
-    /*
+    /**
      * Mutator for room's puzzles
      * @param puzzles ArrayList<Puzzle> list of puzzles in the room
      */
@@ -131,7 +131,7 @@ public class Room {
         this.puzzles = puzzles;
     }
 
-    /*
+    /**
      * method to move to another room
      * @param roomID UUID of the room to move to
      * @return boolean true if the room was changed successfully, false otherwise
@@ -145,9 +145,11 @@ public class Room {
         return false;
     }
 
-    
+    /**
+     * to-string method printing the name and story for a room
+     */
     public String toString() {
-        return "ID: " + roomID +
+        return "Name: " + name +
                 "\nstory: " + story;
     }
     

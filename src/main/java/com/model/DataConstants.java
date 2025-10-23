@@ -52,6 +52,7 @@ public abstract class DataConstants {
         protected static final String IS_HIGHLIGHTED = "isHighlighted";
         protected static final String SOUND_EFFECT = "soundEffect";
         protected static final String INTERACTABLE_CLUE = "clueText";
+        protected static final String IS_ITEM = "isItem";
     protected static final String PUZZLES = "puzzles";
         // data constants for nested puzzles JSON
         protected static final String TYPE = "type";
@@ -62,7 +63,6 @@ public abstract class DataConstants {
             // data constants for nested clue JSON
             protected static final String CLUE_ID = "clueID";
             protected static final String CLUE_TEXT = "text";
-            protected static final String CLUE_PICTURE = "picture";
         protected static final String HINTS = "hints";
             // data constants for nested hints JSON
             protected static final String HINT_ID = "hintID";

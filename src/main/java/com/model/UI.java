@@ -10,6 +10,7 @@ public class UI {
         unSuccessfulRegisterUser();
         successfulRegisterUser();
         successAnswerTextPuzzle();
+        startEscapeRoom();
     }
 
     public void successfulLogin() {
@@ -54,6 +55,25 @@ public class UI {
         System.out.println("Successfully registered Timmy");
     }
 
+    public void startEscapeRoom() {
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        SoundEffect.play("Fnaf-ambiance.wav", 0);
+        escapeRoom.startNewGame("Leni");
+        String intro = "You are trick-or-treating on Halloween when you pass by a house you don't recognize. \n"
+                           + "When you enter the house, the door closes behind you; you're trapped! \n"
+                           + "Solve the puzzles in each of the 4 open rooms to unlock the room at the end of the hallway. \n"
+                           + "Solve the final challenge to leave! \n"
+                           + "You have 30 minutes to escape this house of horrors before your soul is stuck here FOREVER!!! \n";
+        System.out.println(intro);
+        Speech.speak(intro);
+
+        ArrayList<Room> rooms = RoomList.getInstance().getRooms();
+        for(Room room : rooms){
+            System.out.println(room.getName() + ": " + room.getStory());
+        }
+    }
+
+
     public void successAnswerTextPuzzle() {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
         successfulLogin();
@@ -80,6 +100,14 @@ public class UI {
 
         //show new progress
 
+    }
+
+    public void logoutAndShowData(){
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        
+        System.out.println("Tommy decides he needs a break and logs out.");
+
+        escapeRoom.logout();
     }
 
     public static void main(String[] args) {
