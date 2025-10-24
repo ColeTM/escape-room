@@ -70,7 +70,7 @@ public class EscapeRoom {
         User temp = UserList.getInstance().getUser(username, password);
         if (temp == null)
             return false;
-        user = temp;
+        setCurrentUser(temp);
         return true;
     }
 
@@ -118,5 +118,7 @@ public class EscapeRoom {
         return user;
     }
     
-    
+    public void setCurrentUser(User user) {
+        this.user = user;
+    }
 }

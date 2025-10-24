@@ -49,7 +49,6 @@ public class Hint
     public HintLevel getLevel() {
         return level;
     }
-    }
 
     public String toString()
     {

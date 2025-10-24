@@ -233,9 +233,8 @@ public class DataLoader extends DataConstants {
             else
                 picture = null;
             HintLevel level = HintLevel.valueOf((String)hintJSON.get(HINT_LEVEL));
-            double timePenalty = (Double)hintJSON.get(TIME_PENALTY);
 
-            hints.add(new Hint(hintID, text, hasPicture, picture, level, timePenalty));
+            hints.add(new Hint(hintID, text, hasPicture, picture, level));
         }
         return hints;
     }

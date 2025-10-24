@@ -6,10 +6,10 @@ public class UI {
 
     public void runScenarios() {
         successfulLogin();
-        loginUserNotExist();
-        unSuccessfulRegisterUser();
-        successfulRegisterUser();
-        successAnswerTextPuzzle();
+        //loginUserNotExist();
+        //unSuccessfulRegisterUser();
+        //successfulRegisterUser();
+        //successAnswerTextPuzzle();
         startEscapeRoom();
     }
 
@@ -57,7 +57,8 @@ public class UI {
 
     public void startEscapeRoom() {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
-        SoundEffect.play("Fnaf-ambiance.wav", 0);
+        successfulLogin();
+        //SoundEffect.play("Fnaf-ambiance.wav", 0);
         escapeRoom.startNewGame("Leni");
         String intro = "You are trick-or-treating on Halloween when you pass by a house you don't recognize. \n"
                            + "When you enter the house, the door closes behind you; you're trapped! \n"
@@ -121,7 +122,5 @@ public class UI {
         } else {
             System.out.println("wrong answer.");
         }*/
-
-        Speech.speak("This is a test.");
     }
 }

@@ -13,7 +13,8 @@ public class SoundEffect {
     }
 
     private static void honk(String file, long duration){
-        String fileName = "src/main/java/com/sounds/" + file;
+        String fileName = "src/sounds/" + file;
+		System.out.println(fileName);
 
         try {
 			File soundFile = new File(fileName);

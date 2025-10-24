@@ -72,8 +72,8 @@ public class Interactable
 
     }
 
-    public void playSoundEffect(int num) {
-        SoundEffect.play(num);
+    public void playSoundEffect(String file, int num) {
+        SoundEffect.play(file, num);
     }
 
     public String toString() {
