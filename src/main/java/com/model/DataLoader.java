@@ -134,7 +134,7 @@ public class DataLoader extends DataConstants {
         ArrayList<Room> rooms = new ArrayList<>();
 
         try {
-            FileReader reader = new FileReader(SAMPLE_ROOM_FILE_NAME);
+            FileReader reader = new FileReader(ROOM_FILE_NAME);
             JSONArray roomsJSON = (JSONArray)new JSONParser().parse(reader);
 
             for(int i = 0; i < roomsJSON.size(); ++i) {
@@ -197,13 +197,13 @@ public class DataLoader extends DataConstants {
                     break;
                 case Audio:
                     String audioContent = (String)puzzleJSON.get(AUDIO_CONTENT);
-                    int audioSolution = ((Long)puzzleJSON.get(AUDIO_SOLUTION)).intValue();
+                    String audioSolution = ((String)puzzleJSON.get(AUDIO_SOLUTION));
                     puzzles.add(new AudioPuzzle(puzzleID, difficulty, attempts, clue, hints,
                                                 isSequential, audioContent, audioSolution));
                     break;
                 case Picture:
                     File pictureContent = new File((String)puzzleJSON.get(PICTURE_CONTENT));
-                    char pictureSolution = (char)puzzleJSON.get(PICTURE_SOLUTION);
+                    String pictureSolution = (String)puzzleJSON.get(PICTURE_SOLUTION);
                     puzzles.add(new PicturePuzzle(puzzleID, difficulty, attempts, clue, hints,
                                                     isSequential, pictureContent, pictureSolution));
             }

@@ -13,7 +13,7 @@ public class AudioPuzzle extends Puzzle
 {
 
     private String audioContent;
-    private int audioSolution;
+    private String audioSolution;
     /**
      * Constructor for AudioPuzzle
      * @param puzzleID The unique identifier for the puzzle
@@ -26,7 +26,7 @@ public class AudioPuzzle extends Puzzle
      * @param audioSolution The solution to the audio puzzle
      */
     public AudioPuzzle(UUID puzzleID, Difficulty difficulty, int attempts, Clue clue,
-                       ArrayList<Hint> hints, boolean isSequential, String audioContent, int audioSolution)
+                       ArrayList<Hint> hints, boolean isSequential, String audioContent, String audioSolution)
     {
         super(puzzleID, difficulty, attempts, clue, hints, isSequential);
         this.audioContent = audioContent;
@@ -57,9 +57,9 @@ public class AudioPuzzle extends Puzzle
      */
     public boolean solve(Object answer)
     {
-        if (answer instanceof Integer)
+       if (answer instanceof String)
         {
-            return this.audioSolution == (Integer) answer;
+            return this.audioSolution.equalsIgnoreCase((String) answer);
         }
         return false;
     }

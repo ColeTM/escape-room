@@ -38,7 +38,6 @@ public class EscapeRoom {
         user.addCharacter(character);
         if (user != null) {
             currentRoom = RoomList.getInstance().getRooms().get(0);
-            currentPuzzle = currentRoom.getPuzzles().get(0);
         }
         timer.start();
     }

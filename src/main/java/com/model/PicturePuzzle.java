@@ -13,7 +13,7 @@ import java.util.UUID;
 public class PicturePuzzle extends Puzzle
 {
     private File pictureContent;
-    private char pictureSolution;
+    private String pictureSolution;
 
     /**
      * Constructs a new PicturePuzzle.
@@ -27,7 +27,7 @@ public class PicturePuzzle extends Puzzle
      * @param pictureSolution The correct character solution to the puzzle.
      */
     public PicturePuzzle(UUID puzzleID, Difficulty difficulty, int attempts, Clue clue,
-                         ArrayList<Hint> hints, boolean isSequential, File pictureContent, char pictureSolution)
+                         ArrayList<Hint> hints, boolean isSequential, File pictureContent, String pictureSolution)
     {
         super(puzzleID, difficulty, attempts, clue, hints, isSequential);
         this.pictureContent = pictureContent;
@@ -58,10 +58,9 @@ public class PicturePuzzle extends Puzzle
      */
     public boolean solve(Object answer)
     {
-        if (answer instanceof java.lang.Character)
+        if (answer instanceof String)
         {
-            return java.lang.Character.toLowerCase(this.pictureSolution) == 
-                    java.lang.Character.toLowerCase((java.lang.Character) answer);
+            return this.pictureSolution.equalsIgnoreCase((String) answer);
         }
         return false;
     }

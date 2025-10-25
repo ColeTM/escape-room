@@ -43,8 +43,9 @@ public class UI {
     public void enterEscapeRoom() {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
         successfulLogin();
-        //SoundEffect.play("Fnaf-ambiance.wav", 0);
+        SoundEffect.play("Fnaf-ambiance.wav", 1000);
         escapeRoom.startNewGame("Leni");
+
         String intro = "You are trick-or-treating on Halloween when you pass by a house you don't recognize. \n"
                            + "When you enter the house, the door closes behind you; you're trapped! \n"
                            + "Solve the puzzles in each of the 4 open rooms to unlock the room at the end of the hallway. \n"

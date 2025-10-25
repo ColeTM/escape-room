@@ -105,7 +105,7 @@
         ],
         "puzzles": [
             {
-                "type": "text",
+                "type": "Text",
                 "textContent": "The truth is hidden in the tales.",
                 "puzzleID": "e50b53c7-6bbf-4849-af1a-350adb9afcf3",
                 "difficulty": "Beginner",
@@ -184,7 +184,7 @@
         ],
         "puzzles": [
             {
-                "type": "text",
+                "type": "Text",
                 "textContent": "One of the 4 boxes before you contains a key. The other boxes conatin either a rusty candle stick, a old doll, or nothing. Which box is the key in?",
                 "puzzleID": "6c9f6273-be95-470d-8d43-5792c7737c82",
                 "difficulty": "Intermediate",
@@ -239,7 +239,7 @@
         ],
         "puzzles": [
             {
-                "type": "text",
+                "type": "Text",
                 "textContent": "",
                 "puzzleID": "f6a8b2fa-a3f7-41ef-a622-dc116aa4a9bd",
                 "difficulty": "Beginner", 
@@ -351,10 +351,10 @@
         ],
         "puzzles": [
             {
-                "type": "picture", 
+                "type": "Picture", 
                 "pictureContent": "",
                 "puzzleID": "bee765a8-d881-4d3f-809b-9a91b8ace119",
-                "difficulty": "",
+                "difficulty": "Intermediate",
                 "pictureSolution": "char of matching picture",
                 "attempts": 0,
                 "clue": {
@@ -613,7 +613,7 @@
         ],
         "puzzles": [
             {
-                "type": "text",
+                "type": "Text",
                 "textContent": "The grid ahead of you reminds you of a game of minesweeper...",
                 "puzzleID": "56e5af6b-0295-48a9-b57e-b0670e025379",
                 "difficulty": "Pro",
@@ -642,7 +642,7 @@
                 "isSequential": true
             },
             {
-                "type": "audio",
+                "type": "Audio",
                 "audioContent": "",
                 "puzzleID": "0d5e7f35-f314-425d-9c0c-072295edee1e",
                 "difficulty": "Pro",
