@@ -5,10 +5,10 @@ import java.io.File;
 import java.util.UUID;
 
 /**
- * This class represents a hint for a puzzle
+ * Represents a hint that can be provided to the player for a puzzle.
+ * Each hint has a unique ID, text content, an optional picture, a level of directness, and a time penalty.
  * @author ndmcginnis21
  */
-
 public class Hint
 {
     private UUID hintID;
@@ -17,9 +17,16 @@ public class Hint
     private File picture;
     private HintLevel level;
 
-    //Constructor for creating a new Hint.
-    public Hint(UUID hintID, String text, boolean hasPicture, File picture, HintLevel level)
-    {
+    /**
+     * Constructs a new Hint.
+     * @param hintID The unique ID for the hint.
+     * @param text The text content of the hint.
+     * @param hasPicture True if the hint includes a picture, false otherwise.
+     * @param picture The image file for the hint (can be null).
+     * @param level The hint's level of directness.
+     * @param timePenalty The time penalty for using the hint.
+     */    
+    public Hint(UUID hintID, String text, boolean hasPicture, File picture, HintLevel level) {
         this.hintID = hintID;
         this.text = text;
         this.hasPicture = hasPicture;
@@ -27,29 +34,50 @@ public class Hint
         this.level = level;
     }
 
+    /**
+     * Gets the unique ID of the hint.
+     * @return The UUID of the hint.
+     */
     public UUID getHintID() {
         return hintID;
     }
 
-    public String getText()
-    {
+    /**
+     * Gets the text of the hint.
+     * @return The hint's text.
+     */
+    public String getText() {
         return this.text;
     }
 
-    public boolean getHasPicture()
-    {
+    /**
+     * Checks if the hint has an associated picture.
+     * @return true if there is a picture, false otherwise.
+     */
+    public boolean getHasPicture() {
         return this.hasPicture;
     }
 
-    public File getPicture()
-    {
+    /**
+     * Gets the picture for the hint.
+     * @return The hint's image file.
+     */
+    public File getPicture() {
         return this.picture;
     }
 
+    /**
+     * Gets the level of the hint.
+     * @return The hint's level (Vague or Direct).
+     */
     public HintLevel getLevel() {
         return level;
     }
 
+    /**
+     * Returns a string representation of the hint.
+     * @return A string containing the hint's text, level, and time penalty.
+     */
     public String toString()
     {
         return "Hint: " + text + " (Level: " + level + ")";

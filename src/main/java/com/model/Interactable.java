@@ -4,10 +4,10 @@ import java.util.UUID;
 import javax.sound.sampled.*;
 
 /**
- * Represents an object in a room that the user can interact with
+ * Represents an object in a room that the user can interact with.
+ * Each interactable has a unique ID, a description, a highlight status, an optional sound effect, and can provide a clue to the player.
  * @author ndmcginnis21
  */
-
 public class Interactable
 {
     private UUID interactableID;
@@ -17,8 +17,13 @@ public class Interactable
     private String clueText;
     private boolean isItem;
 
-    //Constructor for creating a new Interactable object
-    public Interactable(UUID interactableID, String description,
+    /**
+     * Constructs a new Interactable object.
+     * @param interactableID The unique ID for the interactable.
+     * @param description A text description of the object.
+     * @param isHighlighted A boolean indicating if the object is highlighted.
+     * @param clueText The clue text associated with the object.
+     */    public Interactable(UUID interactableID, String description,
                         boolean isHighlighted, String clueText, boolean isItem) {
         this.interactableID = interactableID;
         this.description = description;
@@ -27,55 +32,80 @@ public class Interactable
         this.isItem = isItem;
     }
 
-    //the UUID for the interactable object
+    /**
+     * Gets the unique ID of the interactable object.
+     * @return The UUID of this interactable.
+     */
     public UUID getInteractableID() {
         return interactableID;
     } 
 
-    //a description of the object (ex: "a blue book")
+    /**
+     * Gets the description of the interactable object.
+     * @return The description of this interactable.
+     */ 
     public String getDescription() {
         return description;
     }
 
     /**
-    * true/false if the interactable object will be highlighted for the user
-    * (easier to spot or hidden in the room)
-    */
+     * Checks if the interactable object is currently highlighted.
+     * @return true if the object is highlighted, false otherwise.
+     */
     public boolean getIsHighlighted() {
         return isHighlighted;
     }
 
     /**
-     * clues the user on what the interactable is used for
-     * ex: "One of the keys to the final room!"
+     * Gets the clue text associated with this interactable object.
+     * @return The clue text.
      */
     public String getClueText() {
         return clueText;
     }
 
     /**
-     * true/false if the interactable object is an item that can be stored in the user's inventory
+     * Checks if this interactable object represents an item that can be picked up.
+     * @return true if it is an item, false otherwise.
      */
     public boolean getIsItem() {
         return isItem;
     }
 
+    /**
+     * Sets whether this interactable object represents an item.
+     * @param isItem true if it should be an item, false otherwise.
+     */
     public void setIsItem(boolean isItem) {
         this.isItem = isItem;
     }
 
+    /**
+     * Highlights the interactable object.
+     */
     public void highlight() {
     
     }
 
+    /**
+     * Performs the primary interaction with the object.
+     */
     public void interact() {
 
     }
 
+    /**
+     * Plays a sound effect a specified number of times.
+     * @param num The number of times to play the sound effect.
+     */
     public void playSoundEffect(String file, int num) {
         SoundEffect.play(file, num);
     }
 
+    /**
+     * Returns a string representation of the interactable object.
+     * @return A string containing the interactable's ID and description.
+     */
     public String toString() {
         return interactableID.toString() + ": " + description;
     }
