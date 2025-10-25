@@ -1,13 +1,13 @@
 
-/**
- * author: James Efird
- * facade for the escape room
- */
 package com.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * author: James Efird
+ * facade for the escape room
+ */
 public class EscapeRoom {
     private User user;
     private Character character;
@@ -17,6 +17,9 @@ public class EscapeRoom {
     private Timer timer;
     private static EscapeRoom escapeRoom;
 
+    /** 
+     * Private constructor for singleton pattern
+     */
     private EscapeRoom() {
         user = null;
         currentRoom = null;
@@ -25,6 +28,10 @@ public class EscapeRoom {
         timer = new Timer();
     }
 
+    /*
+     * Gets and returns the singleton instance of EscapeRoom
+     * @return The singleton instance of EscapeRoom
+     */
     public static EscapeRoom getInstance() {
         if(escapeRoom == null){
             escapeRoom = new EscapeRoom();
@@ -33,6 +40,10 @@ public class EscapeRoom {
         return escapeRoom;
     }
 
+    /*
+     * Starts a new game for the current user with the specified character 
+     * @param characterName The name of the character to be used in the game    
+     */
     public void startNewGame(String characterName) {
         character = new Character(characterName);
         user.addCharacter(character);
@@ -42,11 +53,17 @@ public class EscapeRoom {
         timer.start();
     }
 
+    /*
+     * Saves the current game state for the user
+     */
     public void saveCurrentGame() {
         UserList.saveUsers();
     }
  
     // when the user completes the game successfully
+    /*
+     * Ends the current game and updates the user's statistics
+     */
     public void endGame() {
         timer.pause();
         LeaderboardEntry stats = new LeaderboardEntry(user.getUsername(), Timer.secondsToDuration(timer.getTimeRemaining()),
@@ -58,11 +75,26 @@ public class EscapeRoom {
 
     }
 
+    /*
+     * Registers a new user with the provided information
+     * @param firstName The first name of the user
+     * @param lastName The last name of the user
+     * @param email The email of the user
+     * @param username The username of the user
+     * @param password The password of the user
+     * @return True if the user was successfully registered, false otherwise
+     */
     public boolean registerUser(String firstName, String lastName, String email, 
                                     String username, String password) {
         return UserList.getInstance().addUser(firstName, lastName, email, username, password);
     }
 
+    /*
+     * Logs in a user with the provided username and password
+     * @param username The username of the user 
+     * @param password The password of the user
+     * @return True if the user was successfully logged in, false otherwise
+     */
     public boolean login(String username, String password) {
         User temp = UserList.getInstance().getUser(username, password);
         if (temp == null)
@@ -71,6 +103,9 @@ public class EscapeRoom {
         return true;
     }
 
+    /*
+     * Logs out the current user
+     */
     public void logout() {
         timer.pause();
         saveCurrentGame();
@@ -79,14 +114,27 @@ public class EscapeRoom {
     
     }
 
+    /*
+     * Sets the current difficulty level for the game
+     * @param difficultyLevel The difficulty level to be set
+     */
     public void setDifficulty(Difficulty difficultyLevel) {
         this.currentDifficulty = difficultyLevel;
     }
 
+    /*
+     * Submits an answer for the current puzzle
+     * @param solution The solution to be submitted
+     * @return True if the answer is correct, false otherwise
+     */
     public boolean submitPuzzleAnswer(Object solution) {
         return solution.equals(currentPuzzle.getSolution());
     }
 
+    /*
+     * Requests a hint for the current puzzle
+     * @return The hint requested
+     */
     public void requestHint() {
         Hint hint = character.requestHint();
         if (hint != null)
@@ -95,22 +143,41 @@ public class EscapeRoom {
             System.out.println("no hint available!");
     }
 
+    /*
+     * Gets and returns the time remaining in the game
+     * @return The time remaining in the game
+     */
     public double getTimeRemaining() {
         return timer.getTimeRemaining();
     }
 
+    /*
+     * Displays the global leaderboard
+     */
     public void displayLeaderboard() {
         System.out.println(Leaderboard.getInstance().displayGlobal().toString());
     }
 
+    /*
+     * Gets and returns the list of characters for the current user
+     * @return The list of characters for the current user
+     */
     public ArrayList<Character> getCharacters() {
         return user.getCharacters();
     }
 
+    /*
+     * Gets and returns the current user
+     * @return The current user
+     */
     public User getCurrentUser() {
         return user;
     }
     
+    /*
+     * Sets the current user
+     * @param user The user to be set as the current user
+     */
     public void setCurrentUser(User user) {
         this.user = user;
     }
