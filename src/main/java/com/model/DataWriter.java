@@ -18,15 +18,19 @@ public class DataWriter extends DataConstants{
     @SuppressWarnings("unchecked")
     public static void saveUsers() {
 
-        /* start test values
+        /*
+        //start test values
 
         ArrayList<User> userList = new ArrayList<>();
         User testUser = new User("bobby", "brown", "bobby@gmail.com",
                                     "kingbobby123", "strongpassword");
+        testUser.addCharacter(new Character("bob"));
+        testUser.getCharacters().get(0).setCurrentRoom(UUID.fromString("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85"));
         userList.add(testUser);
 
 
-        end test values */
+        //end test values
+        */
 
         UserList users = UserList.getInstance();
         ArrayList<User> userList = users.getUsers();
@@ -239,17 +243,19 @@ public class DataWriter extends DataConstants{
 
 
     public static void main(String args[]) {
-
-        ArrayList<User> users = DataLoader.getUsers();
+        
+       DataLoader.getUsers();
+        /*
         for(User user : users)
-            System.out.println(user + "\n");
-
+        System.out.println(user + "\n");
+        
         ArrayList<Room> rooms = DataLoader.getRooms();
         for(Room room : rooms)
             System.out.println(room);
+        */
 
         saveUsers();
-        saveRooms();
+        //saveRooms();
     }
     
 }

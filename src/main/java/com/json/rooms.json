@@ -49,7 +49,7 @@
                 "interactableID": "c6a006dc-a3c4-436f-b149-5d732a953d2d",
                 "description": "A flashlight",
                 "isHighlighted": false,
-                "soundEffect": "src/sounds/door.wav",
+                "soundEffect": "src/sounds/flashlight.wav",
                 "clueText": "Will you need a flashlight?",
                 "isItem": true
             }
@@ -241,7 +241,7 @@
             {
                 "type": "text",
                 "textContent": "",
-                "puzzleID": "",
+                "puzzleID": "f6a8b2fa-a3f7-41ef-a622-dc116aa4a9bd",
                 "difficulty": "Beginner", 
                 "textSolution": "echo",
                 "attempts": 0, 
@@ -251,7 +251,7 @@
                 },
                 "hints": [
                     {
-                        "hintID": "placeholder", 
+                        "hintID": "9345822d-d48e-4f13-9d8c-dfbd70094050", 
                         "text": "What can you hear in an empty room?",
                         "hasPicture": false,
                         "Picture": null,
@@ -644,24 +644,24 @@
             {
                 "type": "audio",
                 "audioContent": "",
-                "puzzleID": "56e5af6b-0295-48a9-b57e-b0670e025379",
+                "puzzleID": "0d5e7f35-f314-425d-9c0c-072295edee1e",
                 "difficulty": "Pro",
                 "audioSolution": "int",
                 "attempts": 0,
                 "clue": {
-                    "clueID": "5fe791f6-3912-4f2d-9a3d-86f1deaf00ef",
+                    "clueID": "57a166eb-d537-4f35-a18b-ea1bf9df86f3",
                     "text": "Use what you have to unlock the lock on chest."
                 },
                 "hints": [
                     {
-                        "hintID": "10d91414-0424-43d1-825e-1a9f095685fd",
+                        "hintID": "a40f6444-51e6-46da-bf39-f7d86c730586",
                         "text": "",
                         "hasPicture": false,
                         "Picture": null,
                         "level": "Vague"
                     },
                     {
-                        "hintID": "e95d1da8-4444-4750-be49-630a5772f98b",
+                        "hintID": "c2d4454b-8ce9-48d4-9734-49eee6168b23",
                         "text": "", 
                         "hasPicture": false,
                         "picture": null,

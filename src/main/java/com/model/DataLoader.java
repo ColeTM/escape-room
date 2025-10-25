@@ -242,9 +242,7 @@ public class DataLoader extends DataConstants {
     
 
     public static void main(String args[]) {
-        ArrayList<User> users = getUsers();
-        for(User user : users)
-            System.out.println(user + "\n");
+        getUsers();
 
         ArrayList<Room> rooms = getRooms();
         for(Room room : rooms)

@@ -5,57 +5,42 @@ import java.util.ArrayList;
 public class UI {
 
     public void runScenarios() {
-        successfulLogin();
+        //duplicateUser();
+        successfulRegister();
+        enterEscapeRoom();
+
         //loginUserNotExist();
         //unSuccessfulRegisterUser();
         //successfulRegisterUser();
         //successAnswerTextPuzzle();
-        startEscapeRoom();
     }
 
-    public void successfulLogin() {
+    public void duplicateUser() {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
-        if(!escapeRoom.login("KingBobby51", "bbrown123")) {
-            System.out.println("Error: You should have logged in but didn't");
-            return;
-        } 
-    System.out.println(escapeRoom.getCurrentUser() + " has logged in successfully");
-    }
-
-    public void loginUserNotExist() {
-        EscapeRoom escapeRoom = EscapeRoom.getInstance();
-
-        if(escapeRoom.login("KingBilly11", "bbrown222")) {
-            System.out.println("Error: A user not in the system managed to login");
+        if (!escapeRoom.registerUser("Leni", "Rivers", "lenirivers@gmail.com", 
+                            "lrivers123", "ihopethisworks")) {
+            System.out.println("Account creation failed -- this username is already taken!");
             return;
         }
-
-        System.out.println("The user couldn't login because they aren't in the system.");
+        System.out.println("Account creation success (this should not have worked)");
     }
 
-    public void unSuccessfulRegisterUser() {
+    public void successfulRegister() {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
-
-        if(escapeRoom.registerUser("Bobby", "Brown", "bbrown@gmail.com", "KingBobby51", "bbrown123")) {
-            System.out.println("Error: Bobby shouldn't have been able to register");
+        if (!escapeRoom.registerUser("Leni", "Rivers", "lenirivers@gmail.com", 
+                            "leniriv123", "mybrotherisannoying")) {
+            System.out.println("Error: You should have been able to register but couldn't");
             return;
         }
-
-        System.out.println("Successfully couldn't register Bobby Brown");
-    }
-
-    public void successfulRegisterUser() {
-        EscapeRoom escapeRoom = EscapeRoom.getInstance();
-
-        if(!escapeRoom.registerUser("Timmy", "Sigg", "tsizzle@hotmail.com", "TommyKnowsBest", "ilovedogs234")) {
-            System.out.println("Error: Timmy should have been able to register");
+        System.out.println("Successfully registered!");
+        if (!escapeRoom.login("leniriv123", "mybrotherisannoying")){
+            System.out.println("Error: you should have been able to log in but couldn't");
             return;
         }
-        
-        System.out.println("Successfully registered Timmy");
+        System.out.println(escapeRoom.getCurrentUser().getUsername() + " has logged in successfully");
     }
-
-    public void startEscapeRoom() {
+    
+    public void enterEscapeRoom() {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
         successfulLogin();
         //SoundEffect.play("Fnaf-ambiance.wav", 0);
@@ -73,6 +58,35 @@ public class UI {
             System.out.println(room.getName() + ": " + room.getStory());
         }
     }
+
+    public void successfulLogin() {
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        escapeRoom.login("leniriv123", "mybrotherisannoying");
+        System.out.println(escapeRoom.getCurrentUser().getUsername() + " has logged in successfully");
+    }
+
+    public void loginUserNotExist() {
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+
+        if(escapeRoom.login("KingBilly11", "bbrown222")) {
+            System.out.println("Error: A user not in the system managed to login");
+            return;
+        }
+
+        System.out.println("The user couldn't login because they aren't in the system.");
+    }
+
+    public void successfulRegisterUser() {
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+
+        if(!escapeRoom.registerUser("Timmy", "Sigg", "tsizzle@hotmail.com", "TommyKnowsBest", "ilovedogs234")) {
+            System.out.println("Error: Timmy should have been able to register");
+            return;
+        }
+        
+        System.out.println("Successfully registered Timmy");
+    }
+
 
 
     public void successAnswerTextPuzzle() {
