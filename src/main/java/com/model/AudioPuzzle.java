@@ -5,7 +5,8 @@ import java.util.HashMap;
 import java.util.UUID;
 
 /**
- * An audio-based puzzle.
+ * Represents an audio-based puzzle in the escape room.
+ * This type of puzzle requires the player to solve a challenge based on an audio clip and submit an integer as the answer.
  * @author ndmcginnis21
  */
 public class AudioPuzzle extends Puzzle
@@ -13,7 +14,7 @@ public class AudioPuzzle extends Puzzle
 
     private String audioContent;
     private int audioSolution;
-    /*
+    /**
      * Constructor for AudioPuzzle
      * @param puzzleID The unique identifier for the puzzle
      * @param difficulty The difficulty level of the puzzle
@@ -33,7 +34,7 @@ public class AudioPuzzle extends Puzzle
         this.type = Type.Audio;
     }
 
-    /*
+    /**
      * Gets and returns the audio content
      * @return The audio content of the puzzle
      */
@@ -41,7 +42,7 @@ public class AudioPuzzle extends Puzzle
         return audioContent;
     }
 
-    /*
+    /**
      * Gets and returns the solution to the audio puzzle
      * @return The solution to the audio puzzle
      */
@@ -49,7 +50,7 @@ public class AudioPuzzle extends Puzzle
         return audioSolution;
     }
 
-    /*
+    /**
      * Checks if the provided answer is correct
      * @param answer, The users answer 
      * @return True if the answer is correct, false otherwise
