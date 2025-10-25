@@ -5,9 +5,8 @@
  */
 package com.model;
 
-import java.util.ArrayList;
-import java.util.UUID;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class EscapeRoom {
     private User user;
@@ -15,7 +14,6 @@ public class EscapeRoom {
     private Room currentRoom;
     private Puzzle currentPuzzle;
     private Difficulty currentDifficulty;
-    private int totalHints;
     private Timer timer;
     private static EscapeRoom escapeRoom;
 
@@ -24,7 +22,6 @@ public class EscapeRoom {
         currentRoom = null;
         currentPuzzle = null;
         currentDifficulty = Difficulty.Beginner;
-        totalHints = 0;
         timer = new Timer();
     }
 
@@ -53,7 +50,8 @@ public class EscapeRoom {
     // when the user completes the game successfully
     public void endGame() {
         timer.pause();
-        LeaderboardEntry stats = new LeaderboardEntry(user.getUsername(), Timer.secondsToDuration(timer.getTimeRemaining()), LocalDate.now(), totalHints, currentDifficulty);
+        LeaderboardEntry stats = new LeaderboardEntry(user.getUsername(), Timer.secondsToDuration(timer.getTimeRemaining()),
+                                                        LocalDate.now(), character.getNumHintsUsed(), currentDifficulty);
         if (stats.getTime().compareTo(user.getPersonalRecord().getTime()) < 0)
             user.setPersonalRecord(stats);
         user.upgradeSkillLevel(currentDifficulty);
@@ -96,10 +94,6 @@ public class EscapeRoom {
             System.out.println(hint);
         else
             System.out.println("no hint available!");
-    }
-
-    public int getTotalHintsUsed() {
-        return totalHints;
     }
 
     public double getTimeRemaining() {

@@ -6,11 +6,11 @@ public class UI {
 
     public void runScenarios() {
         successfulLogin();
-        //loginUserNotExist();
+        loginUserNotExist();
         //unSuccessfulRegisterUser();
         //successfulRegisterUser();
         //successAnswerTextPuzzle();
-        startEscapeRoom();
+        //startEscapeRoom();
     }
 
     public void successfulLogin() {
@@ -18,8 +18,8 @@ public class UI {
         if(!escapeRoom.login("KingBobby51", "bbrown123")) {
             System.out.println("Error: You should have logged in but didn't");
             return;
-        } 
-    System.out.println(escapeRoom.getCurrentUser() + " has logged in successfully");
+        }
+    System.out.println(escapeRoom.getCurrentUser().getUsername() + " has logged in successfully");
     }
 
     public void loginUserNotExist() {
