@@ -64,6 +64,7 @@ public class UI {
 
     public void solvingPuzzles() {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        int roomindex = 0;
         successfulLogin();
         SoundEffect.play("Fnaf-ambiance.wav", 1000);
         if(!escapeRoom.startNewGame("Leni")) {
@@ -74,8 +75,21 @@ public class UI {
         for(Room room : rooms){
             System.out.println(room.getName() + ": " + room.getStory());
         }
-        escapeRoom.setRoom(rooms.get(0).getRoomID());
-        ArrayList<Interactable> interactables = rooms.get(0).getInteractables();
+        escapeRoom.setRoom(rooms.get(roomindex).getRoomID());
+        ArrayList<Interactable> interactables = rooms.get(roomindex).getInteractables();
+        ArrayList<Puzzle> puzzles = rooms.get(roomindex).getPuzzles();
+        Puzzle puzzle = rooms.get(roomindex).getPuzzles().get(0);
+        switch(puzzle.getType()){
+            case text:
+                System.out.println(textContent);
+            case audio:
+                System.out.println(audioContent);
+            case picture:
+                System.out.println(pictureContent);
+            break;
+        }
+        puzzle.getClue().getText();
+        if(puzzle.getIsCompleted()) {
             for(Interactable interactable : interactables) {
                 System.out.println(interactable.getDescription());
                 interactable.interact();
@@ -83,22 +97,9 @@ public class UI {
                     escapeRoom.getCurrentUser().getCharacter("leni").addToInventory(new Item(interactable.getName(), interactable.getDescription()));
                 }
             }
-        ArrayList<Puzzle> puzzles = rooms.get(0).getPuzzles();
-        for (Puzzle puzzle : puzzles)
-            /*switch(puzzle.getType()){
-                case text:
-                    System.out.println(textContent);
-                case audio:
-                    System.out.println(audioContent);
-                case picture:
-                    System.out.println(pictureContent);
-                break;
-            }*/
-
-            puzzle.getClue().getText();
-
-            
+        }
         escapeRoom.requestHint();
+        escapeRoom.submitPuzzleAnswer("this is a puzzle answer");
 
     }
 
