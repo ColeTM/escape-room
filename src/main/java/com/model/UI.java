@@ -9,7 +9,8 @@ public class UI {
         //successfulRegister();
         //enterEscapeRoom();
         //completingPuzzles();
-        dataPersistence();
+        //dataPersistence();
+        finishGame();
 
         //loginUserNotExist();
         //unSuccessfulRegisterUser();
@@ -70,6 +71,12 @@ public class UI {
         escapeRoom.login("AliceInChains", "Ozzysmith454");
         escapeRoom.resumeGame("Ozzy");
         escapeRoom.showProgress();
+    }
+
+    public void finishGame() {
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        escapeRoom.login("leniriv123", "mybrotherisannoying");
+        
     }
 
 

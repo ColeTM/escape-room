@@ -113,8 +113,9 @@ public class DataLoader extends DataConstants {
         LocalDate date = LocalDate.parse((String)recordJSON.get(DATE), formatter);
         int hintsUsed = ((Long)recordJSON.get(RECORD_HINTS_USED)).intValue();
         Difficulty difficulty = Difficulty.valueOf((String)recordJSON.get(RECORD_DIFFICULTY));
+        double score = ((Double)recordJSON.get(SCORE));
 
-        return new LeaderboardEntry(username, time, date, hintsUsed, difficulty);
+        return new LeaderboardEntry(username, time, date, hintsUsed, difficulty, score);
     }
 
     private static HashMap<UUID, Boolean> getPuzzlesCompleted(JSONObject completedJSON) {

@@ -14,12 +14,14 @@ public class LeaderboardEntry {
      * date - the date of the entry
      * hintsUsed - the number of hints used in that entry
      * difficulty - the difficulty level of that entry
+     * score - the score for the entry
      */
     private String username;
     private Duration time;
     private LocalDate date;
     private int hintsUsed;
     private Difficulty difficulty;
+    private double score;
 
     /**
      * constructor for a leaderboard entry
@@ -30,12 +32,13 @@ public class LeaderboardEntry {
      * @param difficulty - the difficulty level of that entry
      */
     public LeaderboardEntry(String username, Duration time, LocalDate date, 
-                            int hintsUsed, Difficulty difficulty) {
+                            int hintsUsed, Difficulty difficulty, double score) {
         this.time = time;
         this.date = date;
         this.hintsUsed = hintsUsed;
         this.difficulty = difficulty;
         this.username = username;
+        this.score = score;
     }
 
     /**
@@ -79,6 +82,14 @@ public class LeaderboardEntry {
     }
 
     /**
+     * accessor for score
+     * @return double - the score
+     */
+    public double getScore() {
+        return score;
+    }
+
+    /**
      * method to convert duration in IS08601 format to readable hh:mm:ss format
      * @return time in string hh:mm:ss format
      */
@@ -101,7 +112,8 @@ public class LeaderboardEntry {
                 ", Time: " + getFormatDuration() + 
                 ", Date: " + date + 
                 ", Hints Used: " + hintsUsed + 
-                ", Difficulty: " + difficulty;
+                ", Difficulty: " + difficulty +
+                ", Score: " + score;
     }
 
 }

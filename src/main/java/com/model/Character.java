@@ -3,6 +3,8 @@ package com.model;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
+import java.io.FileWriter;
+import java.io.File;
 
 /**
  * Represents the player's in-game character, holding their progress and inventory.
@@ -251,5 +253,43 @@ public class Character
             }
         }
         return ret;
+    }
+
+    /**
+     * calculates the score for a completed game. 
+     * score is time remaining in seconds, times 2 or 3 if the game difficulty
+     * is intermediate or pro respectively, minus 5% for each hint used.
+     * @param difficulty Difficulty -- the difficulty the game was beaten in
+     * @return double -- the final score
+     */
+    public double calculateScore(Difficulty difficulty) {
+        double score = timer.getTimeRemaining();
+        if (difficulty.equals(Difficulty.Intermediate))
+            score *= 2;
+        else if (difficulty.equals(Difficulty.Pro))
+            score *= 3;
+        score *= 1 - (numHintsUsed * 0.05);
+        return score;
+    }
+
+    /**
+     * creates a certificate of completion for the player when they complete the game.
+     * certificate is printed to a file called "certificate.txt"
+     * @param difficulty Difficulty - the difficulty at which the game was completed
+     */
+    public void certificateOfCompletion(Difficulty difficulty) {
+        try {
+            FileWriter output = new FileWriter(new File("certificate.txt"));
+            output.write("Escape Room - Certificate of Completion\n");
+            output.write("\nThe Halloween ghosts hereby begrudgingly congratulate\n" + getName()  
+                            + " for evading their clutches...\nbut they ask that you do not"
+                            + " dare to return.\nEscaping alive won't be as easy next time.\n");
+            output.write("\nHints Used: " + getNumHintsUsed());
+            output.write("\nDifficulty: " + difficulty.toString());
+            output.write("\nFinal Score: " + calculateScore(difficulty));
+            output.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

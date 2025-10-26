@@ -138,109 +138,6 @@ public class DataWriter extends DataConstants{
     }
 
 
-    // this method may not be necessary
-    @SuppressWarnings("unchecked")
-    public static void saveRooms() {
-
-        RoomList rooms = RoomList.getInstance();
-        ArrayList<Room> roomList = rooms.getRooms();
-        JSONArray jsonRooms = new JSONArray();
-        for (int i = 0; i < roomList.size(); ++i)
-            jsonRooms.add(getRoomJSON(roomList.get(i)));
-
-        try (FileWriter file = new FileWriter(TEMP_ROOM_FILE_NAME)) {
-            file.write(jsonRooms.toJSONString());
-            file.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @SuppressWarnings("unchecked")
-    private static JSONObject getRoomJSON(Room room) {
-        JSONObject roomJSON = new JSONObject();
-        roomJSON.put(ROOM_ID, room.getRoomID().toString());
-        roomJSON.put(ROOM_NAME, room.getName());
-        roomJSON.put(STORY, room.getStory());
-        roomJSON.put(BACKGROUND, room.getBackground().getName());
-        roomJSON.put(INTERACTABLES, writeInteractables(room));
-        roomJSON.put(PUZZLES, writePuzzles(room));
-        return roomJSON;
-    }
-
-    @SuppressWarnings("unchecked")
-    private static JSONArray writeInteractables(Room room) {
-        JSONArray interactablesJSON = new JSONArray();
-        for (Interactable interactable : room.getInteractables()) {
-            JSONObject interactableJSON = new JSONObject();
-            interactableJSON.put(INTERACTABLE_ID, interactable.getInteractableID().toString());
-            interactableJSON.put(INTERACTABLE_DESCRIPTION, interactable.getDescription());
-            interactableJSON.put(IS_HIGHLIGHTED, interactable.getIsHighlighted());
-            interactableJSON.put(INTERACTABLE_CLUE, interactable.getClueText());
-            interactableJSON.put(IS_ITEM, interactable.getIsItem());
-            interactablesJSON.add(interactableJSON);
-        }
-        return interactablesJSON;
-    }
-
-    @SuppressWarnings("unchecked")
-    private static JSONArray writePuzzles(Room room) {
-        JSONArray puzzlesJSON = new JSONArray();
-        for (Puzzle puzzle : room.getPuzzles()) {
-            JSONObject puzzleJSON = new JSONObject();
-            puzzleJSON.put(TYPE, puzzle.getType().toString());
-            puzzleJSON.put(PUZZLE_ID, puzzle.getPuzzleID().toString());
-            puzzleJSON.put(PUZZLE_DIFFICULTY, puzzle.getDifficulty().toString());
-            puzzleJSON.put(ATTEMPTS, puzzle.getAttempts());
-            puzzleJSON.put(CLUE, writeClue(puzzle));
-            puzzleJSON.put(HINTS, writeHints(puzzle));
-            puzzleJSON.put(IS_SEQUENTIAL, puzzle.getIsSequential());
-            switch(puzzle.getType()) {
-                case Text:
-                    puzzleJSON.put(TEXT_CONTENT, puzzle.getContent());
-                    puzzleJSON.put(TEXT_SOLUTION, puzzle.getSolution());
-                    break;
-                case Audio:
-                    puzzleJSON.put(AUDIO_CONTENT, puzzle.getContent());
-                    puzzleJSON.put(AUDIO_SOLUTION, (int)puzzle.getSolution());
-                    break;
-                case Picture:
-                    puzzleJSON.put(PICTURE_CONTENT, puzzle.getContent());
-                    puzzleJSON.put(PICTURE_SOLUTION, (char)puzzle.getSolution());
-            }
-            puzzlesJSON.add(puzzleJSON);
-        }
-        return puzzlesJSON;
-    }
-
-    @SuppressWarnings("unchecked")
-    private static JSONObject writeClue(Puzzle puzzle) {
-        JSONObject clueJSON = new JSONObject();
-        clueJSON.put(CLUE_ID, puzzle.getClue().getClueID().toString());
-        clueJSON.put(CLUE_TEXT, puzzle.getClue().getText());
-        return clueJSON;
-    }
-
-    @SuppressWarnings("unchecked")
-    private static JSONArray writeHints(Puzzle puzzle) {
-        JSONArray hintsJSON = new JSONArray();
-        for(Hint hint : puzzle.getHints()) {
-            JSONObject hintJSON = new JSONObject();
-            hintJSON.put(HINT_ID, hint.getHintID().toString());
-            hintJSON.put(HINT_TEXT, hint.getText());
-            hintJSON.put(HAS_PICTURE, hint.getHasPicture());
-            if(hint.getHasPicture())
-                hintJSON.put(HINT_PICTURE, hint.getPicture().getName());
-            else
-                hintJSON.put(HINT_PICTURE, null);
-            hintJSON.put(HINT_LEVEL, hint.getLevel().toString());
-            hintJSON.put(TIME_PENALTY, hint.getText());
-            hintsJSON.add(hintJSON);
-        }
-        return hintsJSON;
-    }
-
-
 
     public static void main(String args[]) {
         
@@ -255,7 +152,6 @@ public class DataWriter extends DataConstants{
         */
 
         saveUsers();
-        //saveRooms();
     }
     
 }
