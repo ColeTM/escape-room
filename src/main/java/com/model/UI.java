@@ -8,7 +8,7 @@ public class UI {
         //duplicateUser();
         //successfulRegister();
         //enterEscapeRoom();
-        //completingPuzzles();
+        //solvingPuzzles();
         //dataPersistence();
         //finishGame();
 
@@ -80,7 +80,7 @@ public class UI {
                 System.out.println(interactable.getDescription());
                 interactable.interact();
                 if(interactable.getIsItem()){
-                    escapeRoom.getCurrentUser().getCharacter("leni").addToInventory(Item.Item(interactable.getName(), interactable.getDescription()));
+                    escapeRoom.getCurrentUser().getCharacter("leni").addToInventory(new Item(interactable.getName(), interactable.getDescription()));
                 }
             }
         ArrayList<Puzzle> puzzles = rooms.get(0).getPuzzles();
@@ -141,8 +141,7 @@ public class UI {
             rank++;
         }
 
-        User currectUser = escapeRoom.getCurrentUser();
-        Character character = currectUser.getCharacter("Leni");
+        Character character = escapeRoom.getCurrentUser().getCharacter("Leni");
 
         if(character != null){
             Difficulty difficulty = character.getDifficulty();

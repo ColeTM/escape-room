@@ -7,7 +7,7 @@
         "interactables": [
             {
                 "interactableID": "94c58c23-15e4-442e-8daf-5da61225327f",
-                "name": null,
+                "name": "door",
                 "description": "The first door on the left.",
                 "isHighlighted": true,
                 "soundEffect": "src/sounds/door.wav",
@@ -16,7 +16,7 @@
             },
             {
                 "interactableID": "1ff0d563-7b59-4ecd-9fc3-f734aab06715",
-                "name": null,
+                "name": "door",
                 "description": "The first door on the right.",
                 "isHighlighted": true,
                 "soundEffect": "src/sounds/door.wav",
@@ -25,7 +25,7 @@
             },
             {
                 "interactableID": "3f57f059-920c-432a-9fb9-59e016cd4c33",
-                "name": null,
+                "name": "door",
                 "description": "The second door on the left.",
                 "isHighlighted": true,
                 "soundEffect": "src/sounds/door.wav",
@@ -34,7 +34,7 @@
             },
             {
                 "interactableID": "6aae8f6b-374e-4cb3-b3fb-f7955a683b32",
-                "name": null,
+                "name": "door",
                 "description": "The second door on the right.",
                 "isHighlighted": true,
                 "soundEffect": "src/sounds/door.wav",
@@ -43,7 +43,7 @@
             },
             {
                 "interactableID": "ca27fb04-ac8d-4410-8986-84564c729734",
-                "name": null,
+                "name": "door",
                 "description": "The large door at the end of the hall.",
                 "isHighlighted": true,
                 "soundEffect": "src/sounds/door.wav",
@@ -74,7 +74,7 @@
                 "description": "a red book",
                 "isHighlighted": false,
                 "soundEffect": "src/sounds/book.wav",
-                "clueText": "placeholder",
+                "clueText": "",
                 "isItem": false
             },
             {
@@ -83,7 +83,7 @@
                 "description": "a green book",
                 "isHighlighted": false,
                 "soundEffect": "src/sounds/book.wav",
-                "clueText": "placeholder",
+                "clueText": "",
                 "isItem": false
             },
             {
@@ -92,7 +92,7 @@
                 "description": "a blue book",
                 "isHighlighted": false,
                 "soundEffect": "src/sounds/book.wav",
-                "clueText": "placeholder",
+                "clueText": "",
                 "isItem": false
             },
             {
@@ -101,7 +101,7 @@
                 "description": "a black book",
                 "isHighlighted": false,
                 "soundEffect": "src/sounds/book.wav",
-                "clueText": "placeholder",
+                "clueText": "",
                 "isItem": false
             },
             {
@@ -155,7 +155,7 @@
         "interactables": [
             {
                 "interactableID": "95611735-deca-46d5-83ae-ec12a5f4cb9e",
-                "name": null,
+                "name": "box",
                 "description": "box #1",
                 "isHighlighted": false,
                 "soundEffect": "src/sounds/box.wav",
@@ -164,7 +164,7 @@
             },
             {
                 "interactableID": "517b37b4-f36d-4c3e-afcc-72f7def11f96",
-                "name": null,
+                "name": "box",
                 "description": "box #2",
                 "isHighlighted": false,
                 "soundEffect": "src/sounds/box.wav",
@@ -173,7 +173,7 @@
             },
             {
                 "interactableID": "27804a24-a6e3-4d58-a5a2-c39faced4cca",
-                "name": null,
+                "name": "box",
                 "description": "box #3",
                 "isHighlighted": false,
                 "soundEffect": "src/sounds/box.wav",
@@ -182,7 +182,7 @@
             },
             {
                 "interactableID": "15790e6d-3759-49e9-b462-e356b414615d",
-                "name": null,
+                "name": "box",
                 "description": "box #4",
                 "isHighlighted": false,
                 "soundEffect": "src/sounds/box.wav",
@@ -240,83 +240,83 @@
         "interactables": [
             {
                 "interactableID": "2562d55d-de5b-4462-b8cb-537fbbd37a96",
-                "name": null,
+                "name": "puzzle piece",
                 "description": "Puzzle piece 1",
                 "isHighlighted": false,
                 "soundEffect": null, 
-                "clueText": null,
+                "clueText": "",
                 "isItem": false
             },
             {
                 "interactableID": "77e439e7-9a7e-4511-b52d-3c47d17fc761",
-                "name": null,
+                "name": "puzzle piece",
                 "description": "Puzzle piece 2",
                 "isHighlighted": false,
                 "soundEffect": null, 
-                "clueText": null,
+                "clueText": "",
                 "isItem": false
             },
             {
                 "interactableID": "c272a105-bbd9-45ef-928e-06c3942c9f1a",
-                "name": null,
+                "name": "puzzle piece",
                 "description": "Puzzle piece 3",
                 "isHighlighted": false,
                 "soundEffect": null, 
-                "clueText": null,
+                "clueText": "",
                 "isItem": false
             },
             {
                 "interactableID": "5c94f613-83d0-4cb9-829a-e7648e35ddf5",
-                "name": null,
+                "name": "puzzle piece",
                 "description": "Puzzle piece 4",
                 "isHighlighted": false,
                 "soundEffect": null, 
-                "clueText": null,
+                "clueText": "",
                 "isItem": false
             },
             {
                 "interactableID": "f313c82d-ca1b-4a92-be8f-49760a81c559",
-                "name": null,
+                "name": "puzzle piece",
                 "description": "Puzzle piece 5",
                 "isHighlighted": false,
                 "soundEffect": null, 
-                "clueText": null,
+                "clueText": "",
                 "isItem": false
             },
             {
                 "interactableID": "e892c6da-3ab2-4730-afa8-c5e6f1c3de9e",
-                "name": null,
+                "name": "puzzle piece",
                 "description": "Puzzle piece 6",
                 "isHighlighted": false,
                 "soundEffect": null, 
-                "clueText": null,
+                "clueText": "",
                 "isItem": false
             },
             {
                 "interactableID": "ca05a41e-5917-426b-b63b-ce871f16c399",
-                "name": null,
+                "name": "puzzle piece",
                 "description": "Puzzle piece 7",
                 "isHighlighted": false,
                 "soundEffect": null, 
-                "clueText": null,
+                "clueText": "",
                 "isItem": false
             },
             {
                 "interactableID": "ba995de6-025e-4def-837c-0c7544930dae",
-                "name": null,
+                "name": "puzzle piece",
                 "description": "Puzzle piece 8",
                 "isHighlighted": false,
                 "soundEffect": null, 
-                "clueText": null,
+                "clueText": "",
                 "isItem": false
             },
             {
                 "interactableID": "298792c8-0160-4c5a-bb16-ca13199c22e6",
-                "name": null,
+                "name": "puzzle piece",
                 "description": "Puzzle piece 9",
                 "isHighlighted": false,
                 "soundEffect": null, 
-                "clueText": null,
+                "clueText": "",
                 "isItem": false
             },
             {
@@ -351,13 +351,13 @@
     {
         "roomID": "150c985e-0e90-4c28-bd96-e658b4bc1c20",
         "name": "Minesweeper and Morse Code",
-        "story": "You walk into a room with a grid on the ground, a gramaphone making strang noises in one corner, and a locked chest on a pedestal in the other. ",
+        "story": "You walk into a room with a grid on the ground, a gramophone making strange noises in one corner, and a locked chest on a pedestal in the other.",
         "background": "",
         "interactables": [
             {
                 "interactableID": "08ebd750-35a5-4d40-8a36-5b8276c76d64",
-                "name": null,
-                "description": "Gramophone",
+                "name": "gramophone",
+                "description": "A gramophone",
                 "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": "Listen Closely!",
@@ -365,8 +365,8 @@
             },
             {
                 "interactableID": "14f8117a-5876-441b-b854-feec4c3e1347",
-                "name": null,
-                "description": "Lock on chest",
+                "name": "lock",
+                "description": "a lock on a chest",
                 "isHighlighted": false,
                 "soundEffect": "",
                 "clueText": "",
@@ -374,7 +374,7 @@
             },
             {
                 "interactableID": "78461143-42c2-4453-b849-88af35be6ae5",
-                "name": null,
+                "name": "paper",
                 "description": "Morse code manual",
                 "isHighlighted": false,
                 "soundEffect": null,
@@ -383,7 +383,7 @@
             },
             {
                 "interactableID": "dd181ca5-36ae-4d17-a01c-3f63e684608c",
-                "name": null,
+                "name": "tile",
                 "description": "tile 1-1 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -392,7 +392,7 @@
             },
             {
                 "interactableID": "f248685b-31e8-4995-b4ee-75355fcafb05",
-                "name": null,
+                "name": "tile",
                 "description": "tile 1-2 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -401,7 +401,7 @@
             },
             {
                 "interactableID": "48747f3c-9fe0-41c2-9e34-1d7fbcb887eb",
-                "name": null,
+                "name": "tile",
                 "description": "tile 1-3 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -410,7 +410,7 @@
             },
             {
                 "interactableID": "54d8c806-ec5b-4358-bf84-3f6b43692394",
-                "name": null,
+                "name": "tile",
                 "description": "tile 1-4 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -419,7 +419,7 @@
             },
             {
                 "interactableID": "dda9b4a5-ad9a-4bd2-b204-41c297d5dfc2",
-                "name": null,
+                "name": "tile",
                 "description": "tile 1-5 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -428,7 +428,7 @@
             },
             {
                 "interactableID": "f0e3a8a1-b8a1-42ec-b24f-6ac7f55b4c19",
-                "name": null,
+                "name": "tile",
                 "description": "tile 2-1 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -437,7 +437,7 @@
             },
             {
                 "interactableID": "ae148a29-2d27-42ad-90d7-d771731f8a84",
-                "name": null,
+                "name": "tile",
                 "description": "tile 2-2 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -446,7 +446,7 @@
             },
             {
                 "interactableID": "5c1b68c0-8e0d-4da7-96af-a42ccde63e60",
-                "name": null,
+                "name": "tile",
                 "description": "tile 2-3 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -455,7 +455,7 @@
             },
             {
                 "interactableID": "5e49ac82-ed70-4f1c-8f6a-4f600fe9cfea",
-                "name": null,
+                "name": "tile",
                 "description": "tile 2-4 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -464,7 +464,7 @@
             },
             {
                 "interactableID": "0bdc53e6-0627-4643-b825-615e54c5156d",
-                "name": null,
+                "name": "tile",
                 "description": "tile 2-5 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -473,7 +473,7 @@
             },
             {
                 "interactableID": "cf09a53a-d4c3-407e-a2dd-9114b8408f66",
-                "name": null,
+                "name": "tile",
                 "description": "tile 3-1 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -482,7 +482,7 @@
             },
             {
                 "interactableID": "8f98bf0b-f3bf-42d9-9c71-efa25b586fa1",
-                "name": null,
+                "name": "tile",
                 "description": "tile 3-2 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -491,7 +491,7 @@
             },
             {
                 "interactableID": "b57abcae-cbde-455d-801d-3fb93016db26",
-                "name": null,
+                "name": "tile",
                 "description": "tile 3-3 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -500,7 +500,7 @@
             },
             {
                 "interactableID": "8fbc2aa7-4925-4090-bf47-6b382504c67c",
-                "name": null,
+                "name": "tile",
                 "description": "tile 3-4 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -509,7 +509,7 @@
             },
             {
                 "interactableID": "9aff2db8-bb43-4c70-a830-9545747059da",
-                "name": null,
+                "name": "tile",
                 "description": "tile 3-5 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -517,7 +517,7 @@
                 "isItem": false
             },{
                 "interactableID": "736c30c2-18b3-4870-8cec-c3f8920e64a9",
-                "name": null,
+                "name": "tile",
                 "description": "tile 4-1 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -526,7 +526,7 @@
             },
             {
                 "interactableID": "97422126-024c-416a-ae6c-125d9ccbbd54",
-                "name": null,
+                "name": "tile",
                 "description": "tile 4-2 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -535,7 +535,7 @@
             },
             {
                 "interactableID": "11da1bf6-6d4e-4813-a2cd-1444ddb56068",
-                "name": null,
+                "name": "tile",
                 "description": "tile 4-3 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -544,7 +544,7 @@
             },
             {
                 "interactableID": "bb25fefe-2c02-449a-8bb1-45ed9155140e",
-                "name": null,
+                "name": "tile",
                 "description": "tile 4-4 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -553,7 +553,7 @@
             },
             {
                 "interactableID": "c9257363-eadc-4214-8a7b-ab51f244ee13",
-                "name": null,
+                "name": "tile",
                 "description": "tile 4-5 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -562,7 +562,7 @@
             },
             {
                 "interactableID": "6577da6d-ad3d-4078-9631-a928596aa7c9",
-                "name": null,
+                "name": "tile",
                 "description": "tile 5-1 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -571,7 +571,7 @@
             },
             {
                 "interactableID": "1dbf276e-97df-4b0e-8122-9eb40830afea",
-                "name": null,
+                "name": "tile",
                 "description": "tile 5-2 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -580,7 +580,7 @@
             },
             {
                 "interactableID": "8580b2a5-eecb-42ca-810d-86be936d4ec8",
-                "name": null,
+                "name": "tile",
                 "description": "tile 5-3 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -589,7 +589,7 @@
             },
             {
                 "interactableID": "a3b88c69-871f-4b0f-90f7-070ab970018c",
-                "name": null,
+                "name": "tile",
                 "description": "tile 5-4 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -598,7 +598,7 @@
             },
             {
                 "interactableID": "0b22894e-0245-4d06-bbf0-7c3ec8f78f59",
-                "name": null,
+                "name": "tile",
                 "description": "tile 5-5 on the grid",
                 "isHighlighted": false,
                 "soundEffect": "",
@@ -677,11 +677,11 @@
         "interactables": [
             {
                 "interactableID": "af907c2e-92b7-4d33-8c7a-5185ff444f88",
-                "name": null,
+                "name": "message",
                 "description": "Bloody writing on the wall",
                 "isHighlighted": false, 
                 "soundEffect": "Add a ghost voice whispering",
-                "clueText": "placeholder",
+                "clueText": "",
                 "isItem": false 
             },
             {

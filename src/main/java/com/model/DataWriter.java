@@ -74,6 +74,7 @@ public class DataWriter extends DataConstants{
             characterJSON.put(HINTS_USED, writeHintsUsed(character));
             characterJSON.put(PUZZLES_COMPLETED, writePuzzlesCompleted(character));
             characterJSON.put(TIMER, writeTimer(character));
+            characterJSON.put(CHARACTER_DIFFICULTY, character.getDifficulty().toString());
             charactersJSON.add(characterJSON);
         }
         return charactersJSON;

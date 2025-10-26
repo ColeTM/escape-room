@@ -22,7 +22,7 @@ public class Character
     private Timer timer;
     private Difficulty difficulty;
 
-/**
+    /**
      * Constructs a new character with a given name.
      * Initializes inventory, hints used, and puzzles completed to empty states.
      * @param name The name of the character.
@@ -79,7 +79,7 @@ public class Character
         
     }
 
-    /*
+    /**
      * Gets and returns the difficulty of the character's game.
      * @return The difficulty level of the game
      */
@@ -87,7 +87,7 @@ public class Character
         return this.difficulty;
     }
 
-    /*
+    /**
      * Sets the difficulty of the character's game.
      * @param difficulty The difficulty level to set
      */

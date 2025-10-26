@@ -65,7 +65,7 @@ public class DataLoader extends DataConstants {
             HashMap<UUID, Boolean> puzzlesCompleted 
                         = getPuzzlesCompleted((JSONObject)characterJSON.get(PUZZLES_COMPLETED));
             Timer timer = getTimer((JSONObject)characterJSON.get(TIMER));
-            Difficulty difficulty = Difficulty.valueOf((String)characterJSON.get(Difficulty));
+            Difficulty difficulty = Difficulty.valueOf((String)characterJSON.get(CHARACTER_DIFFICULTY));
 
             characters.add(new Character(name, inventory, currentRoom, numHintsUsed,
                                             hintsUsed, puzzlesCompleted, timer, difficulty));
@@ -166,12 +166,13 @@ public class DataLoader extends DataConstants {
             JSONObject interactableJSON = (JSONObject)interactablesJSON.get(i);
 
             UUID interactableID = UUID.fromString((String)interactableJSON.get(INTERACTABLE_ID));
+            String name = (String)interactableJSON.get(INTERACTABLE_NAME);
             String description = (String)interactableJSON.get(INTERACTABLE_DESCRIPTION);
             boolean isHighlighted = (boolean)interactableJSON.get(IS_HIGHLIGHTED);
             String clue = (String)interactableJSON.get(INTERACTABLE_CLUE);
             boolean isItem = (boolean)interactableJSON.get(IS_ITEM);
 
-            interactables.add(new Interactable(interactableID, description, isHighlighted, clue, isItem));
+            interactables.add(new Interactable(interactableID, name, description, isHighlighted, clue, isItem));
         }
         return interactables;
     }

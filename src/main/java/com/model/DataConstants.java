@@ -24,6 +24,7 @@ public abstract class DataConstants {
         protected static final String HINTS_USED = "hintsUsed";
         protected static final String PUZZLES_COMPLETED = "puzzlesCompleted";
         protected static final String TIMER = "timer";
+        protected static final String CHARACTER_DIFFICULTY = "difficulty";
             // data constants for nested timer JSON
             protected static final String TIME_REMAINING = "timeRemaining";
             protected static final String INITIAL_TIME = "initialTime";

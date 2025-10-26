@@ -41,7 +41,8 @@
                     "f6a8b2fa-a3f7-41ef-a622-dc116aa4a9bd": false,
                     "56e5af6b-0295-48a9-b57e-b0670e025379": false,
                     "bee765a8-d881-4d3f-809b-9a91b8ace119": false
-                }
+                },
+                "difficulty": "Intermediate"
             }
         ],
         "password": "strongpassword",
@@ -100,7 +101,8 @@
                     "f6a8b2fa-a3f7-41ef-a622-dc116aa4a9bd": false,
                     "56e5af6b-0295-48a9-b57e-b0670e025379": false,
                     "bee765a8-d881-4d3f-809b-9a91b8ace119": false
-                }
+                },
+                "difficulty": "Pro"
             }
         ],
         "password": "bbrown123",
@@ -155,7 +157,8 @@
                     "f6a8b2fa-a3f7-41ef-a622-dc116aa4a9bd": false,
                     "56e5af6b-0295-48a9-b57e-b0670e025379": false,
                     "bee765a8-d881-4d3f-809b-9a91b8ace119": false
-                }
+                },
+                "difficulty": "Beginner"
             }
         ],
         "password": "Ozzysmith454",

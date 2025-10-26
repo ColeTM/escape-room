@@ -75,14 +75,7 @@ public class EscapeRoom {
         }
         character = user.getCharacter(characterName);
         currentRoom = RoomList.getRoomByUUID(character.getCurrentRoom());
-        if (user.getSkillLevel().equals(Difficulty.Beginner)) {
-            if (user.getPersonalRecord() == null)
-                currentDifficulty = Difficulty.Beginner;
-            else
-                currentDifficulty = Difficulty.Intermediate;
-        } else {
-            currentDifficulty = Difficulty.Pro;
-        }
+        currentDifficulty = character.getDifficulty();
         timer = character.getTimer();
         timer.resume();
         return true;
@@ -96,8 +89,8 @@ public class EscapeRoom {
     }
  
     /**
-     * When a player wins, ends the game, updates the user's record, and
-     * creates a text file containing a certificate of completionf for the player
+     * When a player wins, this method ends the game, updates the user's record, and
+     * creates a text file containing a certificate of completion for the player
      */
     public void endGame() {
         timer.pause();
