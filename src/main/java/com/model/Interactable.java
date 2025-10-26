@@ -11,6 +11,7 @@ import javax.sound.sampled.*;
 public class Interactable
 {
     private UUID interactableID;
+    private String name;
     private String description;
     private boolean isHighlighted;
     private static SoundEffect soundEffect;
@@ -23,13 +24,21 @@ public class Interactable
      * @param description A text description of the object.
      * @param isHighlighted A boolean indicating if the object is highlighted.
      * @param clueText The clue text associated with the object.
-     */    public Interactable(UUID interactableID, String description,
+     */    public Interactable(UUID interactableID, String name, String description,
                         boolean isHighlighted, String clueText, boolean isItem) {
         this.interactableID = interactableID;
+        this.name = name;
         this.description = description;
         this.isHighlighted = isHighlighted;
         this.clueText = clueText;
         this.isItem = isItem;
+    }
+    /**
+     * getter for interactable name
+     * @return name
+     */
+    public String getName() {
+        return name;
     }
 
     /**
@@ -107,6 +116,6 @@ public class Interactable
      * @return A string containing the interactable's ID and description.
      */
     public String toString() {
-        return interactableID.toString() + ": " + description;
+        return name + ": " + description;
     }
 }

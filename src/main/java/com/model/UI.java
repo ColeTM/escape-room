@@ -75,17 +75,28 @@ public class UI {
             System.out.println(room.getName() + ": " + room.getStory());
         }
         escapeRoom.setRoom(rooms.get(0).getRoomID());
+        ArrayList<Interactable> interactables = rooms.get(0).getInteractables();
+            for(Interactable interactable : interactables) {
+                System.out.println(interactable.getDescription());
+                interactable.interact();
+                if(interactable.getIsItem()){
+                    escapeRoom.getCurrentUser().getCharacter("leni").addToInventory(Item.Item(interactable.getName(), interactable.getDescription()));
+                }
+            }
         ArrayList<Puzzle> puzzles = rooms.get(0).getPuzzles();
         for (Puzzle puzzle : puzzles)
-            switch(puzzle.getType()){
+            /*switch(puzzle.getType()){
                 case text:
                     System.out.println(textContent);
                 case audio:
                     System.out.println(audioContent);
                 case picture:
                     System.out.println(pictureContent);
-                }
-            System.puzzle.getClue().getText();
+                break;
+            }*/
+
+            puzzle.getClue().getText();
+
             
         escapeRoom.requestHint();
 
