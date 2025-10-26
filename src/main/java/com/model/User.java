@@ -202,6 +202,14 @@ public class User {
         return characters;
     }
 
+    public Character getCharacter(String name) {
+        for (Character character : characters) {
+            if (character.getName().equalsIgnoreCase(name))
+                return character;
+        }
+        return null;
+    }
+
     /**
      * adds a character to the user's list of saved characters
      * @param character Character -- the character to be added

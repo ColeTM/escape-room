@@ -213,7 +213,7 @@ public class Character
             if (entry.getValue())
                 completed++;
         }
-        return completed / 6.0;
+        return (completed / 6.0) * 100.0;
     }
 
     /**
@@ -223,7 +223,6 @@ public class Character
     public String questionsAnswered() {
         String ret = "Puzzles Completed:\n";
         for (Room room : RoomList.getRooms()) {
-            ret += room.getName() + ":\n";
             for (Puzzle puzzle : room.getPuzzles()) {
                 ret += puzzle.getName() + ": ";
                 if (getPuzzlesCompleted().get(puzzle.getPuzzleID()))
@@ -248,7 +247,7 @@ public class Character
                     if (getHintsUsed().get(hint.getHintID()))
                         completed++;
                 }
-                ret += puzzle.getName() + ": " + completed + "/" + puzzle.getHints().size() + "used\n";
+                ret += puzzle.getName() + ": " + completed + "/" + puzzle.getHints().size() + " used\n";
             }
         }
         return ret;

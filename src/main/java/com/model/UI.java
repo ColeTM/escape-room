@@ -68,6 +68,7 @@ public class UI {
             return;
         }
         escapeRoom.login("AliceInChains", "Ozzysmith454");
+        escapeRoom.resumeGame("Ozzy");
         escapeRoom.showProgress();
     }
 
@@ -107,7 +108,7 @@ public class UI {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
         successfulLogin();
 
-        ArrayList<Character> characters = escapeRoom.getCharacters();
+        ArrayList<Character> characters = escapeRoom.getCurrentUser().getCharacters();
 
         //loop through and display characters
         for(Character character : characters) {

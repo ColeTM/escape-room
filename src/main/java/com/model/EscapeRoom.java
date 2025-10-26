@@ -36,7 +36,6 @@ public class EscapeRoom {
         if(escapeRoom == null){
             escapeRoom = new EscapeRoom();
         }
-
         return escapeRoom;
     }
 
@@ -61,6 +60,19 @@ public class EscapeRoom {
     }
 
     /**
+     * sets the current character to passed character
+     * @param characterName String -- name of the character to play
+     * @return boolean -- true if the character was set successfully
+     */
+    public boolean resumeGame(String characterName) {
+        if (user.getCharacter(characterName) == null) {
+            return false;
+        }
+        character = user.getCharacter(characterName);
+        return true;
+    }
+
+    /**
      * Saves the current game state for the user
      */
     public void saveCurrentGame() {
@@ -79,7 +91,6 @@ public class EscapeRoom {
             user.setPersonalRecord(stats);
         user.upgradeSkillLevel(currentDifficulty);
         UserList.saveUsers();
-
     }
 
     /**
@@ -115,9 +126,11 @@ public class EscapeRoom {
      * @return boolean -- whether the logout was successful
      */
     public boolean logout() {
-        timer.pause();
         saveCurrentGame();
-        escapeRoom = null;
+        user = null;
+        currentRoom = null;
+        currentPuzzle = null;
+        
         return user == null;
     }
 
@@ -166,14 +179,6 @@ public class EscapeRoom {
     }
 
     /**
-     * Gets and returns the list of characters for the current user
-     * @return The list of characters for the current user
-     */
-    public ArrayList<Character> getCharacters() {
-        return user.getCharacters();
-    }
-
-    /**
      * Gets and returns the current user
      * @return The current user
      */
@@ -194,7 +199,7 @@ public class EscapeRoom {
      * which puzzles they have completed, and which hints they have used
      */
     public void showProgress() {
-        System.out.println(character.getPercentage());
+        System.out.println("Game progress: " + character.getPercentage() + "%\n");
         System.out.println(character.questionsAnswered());
         System.out.println(character.hintsUsed());
     }

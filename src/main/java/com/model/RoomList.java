@@ -34,6 +34,7 @@ public class RoomList {
      * @return ArrayList<Room> list of rooms
      */
     public static ArrayList<Room> getRooms() {
+        getInstance();
         return roomList.rooms;
     }
     
