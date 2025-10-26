@@ -63,6 +63,31 @@ public class UI {
     }
 
     public void solvingPuzzles() {
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        successfulLogin();
+        SoundEffect.play("Fnaf-ambiance.wav", 1000);
+        if(!escapeRoom.startNewGame("Leni")) {
+            System.out.println("Error: unable to create new save");
+            return;
+        }
+        ArrayList<Room> rooms = RoomList.getRooms();
+        for(Room room : rooms){
+            System.out.println(room.getName() + ": " + room.getStory());
+        }
+        escapeRoom.setRoom(rooms.get(0).getRoomID());
+        ArrayList<Puzzle> puzzles = rooms.get(0).getPuzzles();
+        for (Puzzle puzzle : puzzles)
+            switch(puzzle.getType()){
+                case text:
+                    System.out.println(textContent);
+                case audio:
+                    System.out.println(audioContent);
+                case picture:
+                    System.out.println(pictureContent);
+                }
+            System.puzzle.getClue().getText();
+            
+        escapeRoom.requestHint();
 
     }
 
