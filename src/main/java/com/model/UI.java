@@ -7,7 +7,7 @@ public class UI {
     public void runScenarios() {
         //duplicateUser();
         //successfulRegister();
-        enterEscapeRoom();
+        //enterEscapeRoom();
         //completingPuzzles();
         //dataPersistence();
         //finishGame();
@@ -127,6 +127,7 @@ public class UI {
         for(User user : UserList.getUsers()) {
             if(user.getPersonalRecord() != null) {
                 leaderboard.addEntry(user.getPersonalRecord());
+            }
         }
 
         ArrayList<LeaderboardEntry> entries = leaderboard.displayGlobal();
@@ -139,6 +140,15 @@ public class UI {
                                " | Difficulty: " + entry.getDifficulty());
             rank++;
         }
+
+        User currectUser = escapeRoom.getCurrentUser();
+        Character character = currectUser.getCharacter("Leni");
+
+        if(character != null){
+            Difficulty difficulty = character.getDifficulty();
+            character.certificateOfCompletion(difficulty);
+        }else{
+            System.out.println("Error: Certificate did not generate!");
         }
 
     }

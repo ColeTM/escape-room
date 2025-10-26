@@ -65,9 +65,10 @@ public class DataLoader extends DataConstants {
             HashMap<UUID, Boolean> puzzlesCompleted 
                         = getPuzzlesCompleted((JSONObject)characterJSON.get(PUZZLES_COMPLETED));
             Timer timer = getTimer((JSONObject)characterJSON.get(TIMER));
+            Difficulty difficulty = Difficulty.valueOf((String)characterJSON.get(Difficulty));
 
             characters.add(new Character(name, inventory, currentRoom, numHintsUsed,
-                                            hintsUsed, puzzlesCompleted, timer));
+                                            hintsUsed, puzzlesCompleted, timer, difficulty));
         }
         return characters;        
     }
