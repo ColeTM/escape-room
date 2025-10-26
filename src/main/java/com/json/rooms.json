@@ -2,7 +2,7 @@
     {
         "roomID": "26767fe2-e8b1-47c4-b4eb-5f9aec77fb85",
         "name": "Hallway",
-        "story": "You find yourself in a long, narrow hallway. On either side of the hall are two doors, and at the end is one large door decorated with four huge padlocks.",
+        "story": "You find yourself in a long, narrow hallway. On either side of the hall are two doors, \nand at the end is one large door decorated with four huge padlocks.",
         "background": "src/docs/Hallway.png",
         "interactables": [
             {

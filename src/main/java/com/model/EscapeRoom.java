@@ -3,6 +3,7 @@ package com.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * author: James Efird
@@ -41,22 +42,26 @@ public class EscapeRoom {
 
     /**
      * Starts a new game for the current user with the specified character 
-     * @param characterName The name of the character to be used in the game    
+     * @param characterName The name of the character to be used in the game  
+     * @return boolean -- whether a new save was successfully created  
      */
-    public void startNewGame(String characterName) {
+    public boolean startNewGame(String characterName) {
+        if(user.getCharacter(characterName) != null) {
+            System.out.println("You've already used this character name!");
+            return false;
+        }
         character = new Character(characterName);
         user.addCharacter(character);
-        if (user != null) {
-            currentRoom = RoomList.getInstance().getRooms().get(0);
-        }
+        
         String intro = "You are trick-or-treating on Halloween when you pass by a house you don't recognize. \n"
                            + "When you enter the house, the door closes behind you; you're trapped! \n"
                            + "Solve the puzzles in each of the 4 open rooms to unlock the room at the end of the hallway. \n"
                            + "Solve the final challenge to leave! \n"
                            + "You have 30 minutes to escape this house of horrors before your soul is stuck here FOREVER!!! \n";
         System.out.println(intro);
-        Speech.speak(intro);
+        //Speech.speak(intro);
         timer.start();
+        return true;
     }
 
     /**
@@ -69,6 +74,17 @@ public class EscapeRoom {
             return false;
         }
         character = user.getCharacter(characterName);
+        currentRoom = RoomList.getRoomByUUID(character.getCurrentRoom());
+        if (user.getSkillLevel().equals(Difficulty.Beginner)) {
+            if (user.getPersonalRecord() == null)
+                currentDifficulty = Difficulty.Beginner;
+            else
+                currentDifficulty = Difficulty.Intermediate;
+        } else {
+            currentDifficulty = Difficulty.Pro;
+        }
+        timer = character.getTimer();
+        timer.resume();
         return true;
     }
 
@@ -204,5 +220,15 @@ public class EscapeRoom {
         System.out.println("Game progress: " + character.getPercentage() + "%\n");
         System.out.println(character.questionsAnswered());
         System.out.println(character.hintsUsed());
+    }
+
+    /**
+     * mutator for the current room. also calls mutator for character class
+     * @param roomID UUID - the room's UUID
+     */
+    public void setRoom(UUID roomID) {
+        currentRoom = RoomList.getRoomByUUID(roomID);
+        character.setCurrentRoom(roomID);
+        System.out.println(currentRoom.getStory());
     }
 }

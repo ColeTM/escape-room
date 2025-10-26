@@ -7,10 +7,10 @@ public class UI {
     public void runScenarios() {
         //duplicateUser();
         //successfulRegister();
-        //enterEscapeRoom();
+        enterEscapeRoom();
         //completingPuzzles();
         //dataPersistence();
-        finishGame();
+        //finishGame();
 
         //loginUserNotExist();
         //unSuccessfulRegisterUser();
@@ -41,20 +41,25 @@ public class UI {
             return;
         }
         System.out.println(escapeRoom.getCurrentUser().getUsername() + " has logged in successfully");
+        escapeRoom.saveCurrentGame();
     }
     
     public void enterEscapeRoom() {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
         successfulLogin();
         SoundEffect.play("Fnaf-ambiance.wav", 1000);
-        escapeRoom.startNewGame("Leni");
-
+        if(!escapeRoom.startNewGame("Leni")) {
+            System.out.println("Error: unable to create new save");
+            return;
+        }
         
-
         ArrayList<Room> rooms = RoomList.getRooms();
+        /*
         for(Room room : rooms){
             System.out.println(room.getName() + ": " + room.getStory());
-        }
+            } */
+        escapeRoom.setRoom(rooms.get(0).getRoomID());
+        escapeRoom.saveCurrentGame();
     }
 
     public void solvingPuzzles() {
@@ -76,7 +81,7 @@ public class UI {
     public void finishGame() {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
         escapeRoom.login("leniriv123", "mybrotherisannoying");
-        
+        escapeRoom.resumeGame("Leni");
     }
 
 

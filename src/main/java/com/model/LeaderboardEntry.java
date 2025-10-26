@@ -108,12 +108,11 @@ public class LeaderboardEntry {
      * @return string of entry
      */
     public String toString() {
-        return "User: " + username + 
-                ", Time: " + getFormatDuration() + 
+        return username + ": " + score +
+                "\nTime: " + getFormatDuration() + 
                 ", Date: " + date + 
                 ", Hints Used: " + hintsUsed + 
-                ", Difficulty: " + difficulty +
-                ", Score: " + score;
+                ", Difficulty: " + difficulty;
     }
 
 }

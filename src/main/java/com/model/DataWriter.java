@@ -134,6 +134,7 @@ public class DataWriter extends DataConstants{
         recordJSON.put(DATE, user.getPersonalRecord().getDate().toString());
         recordJSON.put(RECORD_HINTS_USED, user.getPersonalRecord().getHintsUsed());
         recordJSON.put(RECORD_DIFFICULTY, user.getPersonalRecord().getDifficulty().toString());
+        recordJSON.put(SCORE, user.getPersonalRecord().getScore());
         return recordJSON;
     }
 
