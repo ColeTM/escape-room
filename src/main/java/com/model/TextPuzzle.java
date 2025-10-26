@@ -40,6 +40,7 @@ public class TextPuzzle extends Puzzle
      * @return The text content of the puzzle.
      */
     public Object getContent() {
+        System.out.println(textContent);
         return textContent;
     }
 

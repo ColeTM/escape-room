@@ -40,6 +40,7 @@ public class AudioPuzzle extends Puzzle
      * @return The audio content of the puzzle
      */
     public Object getContent() {
+        SoundEffect.play("fanfare.wav", 0);
         return audioContent;
     }
 
