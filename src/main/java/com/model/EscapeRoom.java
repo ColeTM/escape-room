@@ -50,7 +50,7 @@ public class EscapeRoom {
             System.out.println("You've already used this character name!");
             return false;
         }
-        character = new Character(characterName);
+        character = new Character(characterName, currentDifficulty);
         user.addCharacter(character);
         
         String intro = "You are trick-or-treating on Halloween when you pass by a house you don't recognize. \n"

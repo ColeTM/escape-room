@@ -20,13 +20,15 @@ public class Character
     private HashMap<UUID, Boolean> hintsUsed;
     private HashMap<UUID, Boolean> puzzlesCompleted;
     private Timer timer;
+    private Difficulty difficulty;
 
 /**
      * Constructs a new character with a given name.
      * Initializes inventory, hints used, and puzzles completed to empty states.
      * @param name The name of the character.
+     * @param difficulty The difficulty level of the game.
      */    
-    public Character(String name) {
+    public Character(String name, Difficulty difficulty) {
         this.name = name;
         this.inventory = new ArrayList<>();
         this.numHintsUsed = 0;
@@ -35,6 +37,7 @@ public class Character
         this.hintsUsed = initializeHints();
         this.puzzlesCompleted = initializePuzzles();
         this.timer = new Timer();
+        this.difficulty = difficulty;
     }
 
     /**
@@ -47,9 +50,10 @@ public class Character
      * @param hintsUsed A map of used hints.
      * @param puzzlesCompleted A map of completed puzzles.
      * @param timer The character's timer state.
+     * @param difficulty The difficulty level of the game.
      */
     public Character(String name, ArrayList<Item> inventory, UUID currentRoom, int numHintsUsed, 
-                HashMap<UUID, Boolean> hintsUsed, HashMap<UUID, Boolean> puzzlesCompleted, Timer timer) {
+                HashMap<UUID, Boolean> hintsUsed, HashMap<UUID, Boolean> puzzlesCompleted, Timer timer, Difficulty difficulty) {
         this.name = name;
         this.inventory = inventory;
         this.currentRoom = currentRoom;
@@ -57,6 +61,7 @@ public class Character
         this.hintsUsed = hintsUsed;
         this.puzzlesCompleted = puzzlesCompleted;
         this.timer = timer;
+        this.difficulty = difficulty;
     }
 
     /**
@@ -72,6 +77,22 @@ public class Character
      */
     public void interact(Interactable interactable) {
         
+    }
+
+    /*
+     * Gets and returns the difficulty of the character's game.
+     * @return The difficulty level of the game
+     */
+    public Difficulty getDifficulty() {
+        return this.difficulty;
+    }
+
+    /*
+     * Sets the difficulty of the character's game.
+     * @param difficulty The difficulty level to set
+     */
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
     }
 
     /**
