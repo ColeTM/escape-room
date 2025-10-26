@@ -29,6 +29,7 @@ public class Room {
                 ArrayList<Interactable> interactables, ArrayList<Puzzle> puzzles) {
 
         this.roomID = roomID;
+        this.name = name;
         this.story = story;
         this.background = background;
         this.interactables = interactables;

@@ -6,8 +6,10 @@ public class UI {
 
     public void runScenarios() {
         //duplicateUser();
-        successfulRegister();
-        enterEscapeRoom();
+        //successfulRegister();
+        //enterEscapeRoom();
+        //completingPuzzles();
+        dataPersistence();
 
         //loginUserNotExist();
         //unSuccessfulRegisterUser();
@@ -46,19 +48,30 @@ public class UI {
         SoundEffect.play("Fnaf-ambiance.wav", 1000);
         escapeRoom.startNewGame("Leni");
 
-        String intro = "You are trick-or-treating on Halloween when you pass by a house you don't recognize. \n"
-                           + "When you enter the house, the door closes behind you; you're trapped! \n"
-                           + "Solve the puzzles in each of the 4 open rooms to unlock the room at the end of the hallway. \n"
-                           + "Solve the final challenge to leave! \n"
-                           + "You have 30 minutes to escape this house of horrors before your soul is stuck here FOREVER!!! \n";
-        System.out.println(intro);
-        Speech.speak(intro);
+        
 
-        ArrayList<Room> rooms = RoomList.getInstance().getRooms();
+        ArrayList<Room> rooms = RoomList.getRooms();
         for(Room room : rooms){
             System.out.println(room.getName() + ": " + room.getStory());
         }
     }
+
+    public void solvingPuzzles() {
+
+    }
+
+    public void dataPersistence() {
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        escapeRoom.login("AliceInChains", "Ozzysmith454");
+        if (!escapeRoom.logout()) {
+            System.out.println("Error: Failed to log out!");
+            return;
+        }
+        escapeRoom.login("AliceInChains", "Ozzysmith454");
+        escapeRoom.showProgress();
+    }
+
+
 
     public void successfulLogin() {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();

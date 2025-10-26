@@ -106,6 +106,7 @@
         "puzzles": [
             {
                 "type": "Text",
+                "name": "Library",
                 "textContent": "The truth is hidden in the tales.",
                 "puzzleID": "e50b53c7-6bbf-4849-af1a-350adb9afcf3",
                 "difficulty": "Beginner",
@@ -185,6 +186,7 @@
         "puzzles": [
             {
                 "type": "Text",
+                "name": "Boxes",
                 "textContent": "One of the 4 boxes before you contains a key. The other boxes conatin either a rusty candle stick, a old doll, or nothing. Which box is the key in?",
                 "puzzleID": "6c9f6273-be95-470d-8d43-5792c7737c82",
                 "difficulty": "Intermediate",
@@ -205,61 +207,6 @@
                     {
                         "hintID": "be0a15dc-bfdb-49f4-807f-bd679a7f5dbd",
                         "text": "The doll is in box #1",
-                        "hasPicture": false,
-                        "picture": null,
-                        "level": "Direct"
-                    }
-                ],
-                "isSequential": false
-            }
-        ]
-    },
-    {
-        "roomID": "1030c684-0ceb-4f2b-a71e-f5846697d8d7",
-        "name": "Wall Message",
-        "story": "",
-        "background": "",
-        "interactables": [
-            {
-                "interactableID": "af907c2e-92b7-4d33-8c7a-5185ff444f88",
-                "description": "Bloody writing on the wall",
-                "isHighlighted": false, 
-                "soundEffect": "Add a ghost voice whispering",
-                "clueText": "placeholder",
-                "isItem": false 
-            },
-            {
-                "interactableID": "7b6f26e3-4c60-48c5-819e-62350f5d46f4",
-                "description": "Key 3",
-                "isHighlighted": false,
-                "soundEffect": "src/sounds/door.wav",
-                "clueText": "One of the keys to the final room!",
-                "isItem": true
-            }
-        ],
-        "puzzles": [
-            {
-                "type": "Text",
-                "textContent": "",
-                "puzzleID": "f6a8b2fa-a3f7-41ef-a622-dc116aa4a9bd",
-                "difficulty": "Beginner", 
-                "textSolution": "echo",
-                "attempts": 0, 
-                "clue": {
-                    "clueID": "467466b3-5298-43c7-a98c-c668da34e69e",
-                    "text": "The ghost's riddle is written across the wall in bloody letters."
-                },
-                "hints": [
-                    {
-                        "hintID": "9345822d-d48e-4f13-9d8c-dfbd70094050", 
-                        "text": "What can you hear in an empty room?",
-                        "hasPicture": false,
-                        "Picture": null,
-                        "level": "Vague"
-                    },
-                    {
-                        "hintID": "6ad175b8-c795-4184-9602-5b347d7e0d31",
-                        "text": "It repeats what you say!",
                         "hasPicture": false,
                         "picture": null,
                         "level": "Direct"
@@ -340,6 +287,14 @@
                 "isItem": false
             },
             {
+            "interactableID": "298792c8-0160-4c5a-bb16-ca13199c22e6",
+                "description": "Puzzle piece 9",
+                "isHighlighted": false,
+                "soundEffect": null, 
+                "clueText": null,
+                "isItem": false
+            },
+            {
                 "interactableID": "b8e057b3-ff03-42f7-835a-58e0299866b9",
                 "description": "Key 3",
                 "isHighlighted": false,
@@ -352,6 +307,7 @@
         "puzzles": [
             {
                 "type": "Picture", 
+                "name": "Jigsaw Puzzle",
                 "pictureContent": "",
                 "puzzleID": "bee765a8-d881-4d3f-809b-9a91b8ace119",
                 "difficulty": "Intermediate",
@@ -361,22 +317,7 @@
                     "clueID": "dcb92126-5811-4d35-8151-0656a8ef670a",
                     "text": "Solve the puzzle and select the matching picture on the wall."
                 },
-                "hints": [
-                    {
-                        "hintID": "298792c8-0160-4c5a-bb16-ca13199c22e6",
-                        "text": "",
-                        "hasPicture": false,
-                        "Picture": null,
-                        "level": "Vague"
-                    },
-                    {
-                        "hintID": "e759b895-2cd7-4418-a6f2-53bdb3e2a4dc",
-                        "text": "",
-                        "hasPicture": false,
-                        "picture": null,
-                        "level": "Vague"
-                    }
-                ],
+                "hints": [],
                 "isSequential": false
             }
         ]
@@ -614,6 +555,7 @@
         "puzzles": [
             {
                 "type": "Text",
+                "name": "Minesweeper",
                 "textContent": "The grid ahead of you reminds you of a game of minesweeper...",
                 "puzzleID": "56e5af6b-0295-48a9-b57e-b0670e025379",
                 "difficulty": "Pro",
@@ -643,6 +585,7 @@
             },
             {
                 "type": "Audio",
+                "name": "Gramophone",
                 "audioContent": "",
                 "puzzleID": "0d5e7f35-f314-425d-9c0c-072295edee1e",
                 "difficulty": "Pro",
@@ -663,6 +606,62 @@
                     {
                         "hintID": "c2d4454b-8ce9-48d4-9734-49eee6168b23",
                         "text": "", 
+                        "hasPicture": false,
+                        "picture": null,
+                        "level": "Direct"
+                    }
+                ],
+                "isSequential": true
+            }
+        ]
+    },
+    {
+        "roomID": "1030c684-0ceb-4f2b-a71e-f5846697d8d7",
+        "name": "Wall Message",
+        "story": "",
+        "background": "",
+        "interactables": [
+            {
+                "interactableID": "af907c2e-92b7-4d33-8c7a-5185ff444f88",
+                "description": "Bloody writing on the wall",
+                "isHighlighted": false, 
+                "soundEffect": "Add a ghost voice whispering",
+                "clueText": "placeholder",
+                "isItem": false 
+            },
+            {
+                "interactableID": "7b6f26e3-4c60-48c5-819e-62350f5d46f4",
+                "description": "Key 3",
+                "isHighlighted": false,
+                "soundEffect": "src/sounds/door.wav",
+                "clueText": "One of the keys to the final room!",
+                "isItem": true
+            }
+        ],
+        "puzzles": [
+            {
+                "type": "Text",
+                "name": "Finale",
+                "textContent": "What can you hear in an empty room?",
+                "puzzleID": "f6a8b2fa-a3f7-41ef-a622-dc116aa4a9bd",
+                "difficulty": "Beginner", 
+                "textSolution": "echo",
+                "attempts": 0, 
+                "clue": {
+                    "clueID": "467466b3-5298-43c7-a98c-c668da34e69e",
+                    "text": "The ghost's riddle is written across the wall in bloody letters."
+                },
+                "hints": [
+                    {
+                        "hintID": "9345822d-d48e-4f13-9d8c-dfbd70094050", 
+                        "text": "What can you hear in an empty room?",
+                        "hasPicture": false,
+                        "Picture": null,
+                        "level": "Vague"
+                    },
+                    {
+                        "hintID": "6ad175b8-c795-4184-9602-5b347d7e0d31",
+                        "text": "It repeats what you say!",
                         "hasPicture": false,
                         "picture": null,
                         "level": "Direct"

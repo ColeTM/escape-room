@@ -18,6 +18,7 @@ public class TextPuzzle extends Puzzle
     /**
      * Constructs a new TextPuzzle.
      * @param puzzleID The unique ID of the puzzle.
+     * @param name the name of the puzzle
      * @param difficulty The difficulty level of the puzzle.
      * @param attempts The number of attempts the player has made.
      * @param clue The clue associated with the puzzle.
@@ -26,9 +27,9 @@ public class TextPuzzle extends Puzzle
      * @param textContent The main text content of the puzzle.
      * @param textSolution The correct text solution to the puzzle.
      */
-    public TextPuzzle(UUID puzzleID, Difficulty difficulty, int attempts, Clue clue,
+    public TextPuzzle(UUID puzzleID, String name, Difficulty difficulty, int attempts, Clue clue,
                       ArrayList<Hint> hints, boolean isSequential, String textContent, String textSolution) {
-        super(puzzleID, difficulty, attempts, clue, hints, isSequential);
+        super(puzzleID, name, difficulty, attempts, clue, hints, isSequential);
         this.textContent = textContent;
         this.textSolution = textSolution;
         this.type = Type.Text;

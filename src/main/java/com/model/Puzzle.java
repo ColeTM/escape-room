@@ -11,6 +11,7 @@ import java.util.UUID;
 public abstract class Puzzle
 {
     private UUID puzzleID;
+    private String name;
     private Difficulty difficulty;
     private int attempts;
     private Clue clue;
@@ -22,15 +23,17 @@ public abstract class Puzzle
     /**
      * Constructs a new Puzzle.
      * @param puzzleID The unique ID of the puzzle.
+     * @param name the name of the puzzle
      * @param difficulty The difficulty level of the puzzle.
      * @param attempts The initial number of attempts (usually 0).
      * @param clue The clue for the puzzle.
      * @param hints A list of hints for the puzzle.
      * @param isSequential True if the puzzle is sequential, false otherwise.
      */    
-    public Puzzle(UUID puzzleID, Difficulty difficulty, int attempts, Clue clue,
-                  ArrayList<Hint> hints, boolean isSequential) {
+    public Puzzle(UUID puzzleID, String name, Difficulty difficulty, int attempts,
+                    Clue clue, ArrayList<Hint> hints, boolean isSequential) {
         this.puzzleID = puzzleID;
+        this.name = name;
         this.difficulty = difficulty;
         this.attempts = attempts;
         this.clue = clue;
@@ -45,6 +48,14 @@ public abstract class Puzzle
      */   
     public UUID getPuzzleID() {
         return puzzleID;
+    }
+
+    /**
+     * accessor for the puzzle's name
+     * @return the name of the puzzle
+     */
+    public String getName() {
+        return name;
     }
 
     /**

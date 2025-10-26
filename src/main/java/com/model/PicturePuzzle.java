@@ -18,6 +18,7 @@ public class PicturePuzzle extends Puzzle
     /**
      * Constructs a new PicturePuzzle.
      * @param puzzleID The unique ID of the puzzle.
+     * @param name the name of the puzzle
      * @param difficulty The difficulty level of the puzzle.
      * @param attempts The number of attempts the player has made.
      * @param clue The clue associated with the puzzle.
@@ -26,10 +27,10 @@ public class PicturePuzzle extends Puzzle
      * @param pictureContent The image file for the puzzle.
      * @param pictureSolution The correct character solution to the puzzle.
      */
-    public PicturePuzzle(UUID puzzleID, Difficulty difficulty, int attempts, Clue clue,
+    public PicturePuzzle(UUID puzzleID, String name, Difficulty difficulty, int attempts, Clue clue,
                          ArrayList<Hint> hints, boolean isSequential, File pictureContent, String pictureSolution)
     {
-        super(puzzleID, difficulty, attempts, clue, hints, isSequential);
+        super(puzzleID, name, difficulty, attempts, clue, hints, isSequential);
         this.pictureContent = pictureContent;
         this.pictureSolution = pictureSolution;
         this.type = Type.Picture;

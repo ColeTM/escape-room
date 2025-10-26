@@ -171,6 +171,9 @@ public class Character
         return "Character: " + name + " (Hints Used: " + hintsUsed + ")";
     }
 
+    /**
+     * initializes the hints used hash map with all false values for a new character
+     */
     private HashMap<UUID, Boolean> initializeHints() {
         HashMap<UUID, Boolean> hintsUsed = new HashMap<>();
         hintsUsed.put(UUID.fromString("b18be69b-be68-4fb5-9bc4-2641bd58ce68"), false);
@@ -179,8 +182,6 @@ public class Character
         hintsUsed.put(UUID.fromString("be0a15dc-bfdb-49f4-807f-bd679a7f5dbd"), false);
         hintsUsed.put(UUID.fromString("9345822d-d48e-4f13-9d8c-dfbd70094050"), false);
         hintsUsed.put(UUID.fromString("6ad175b8-c795-4184-9602-5b347d7e0d31"), false);
-        hintsUsed.put(UUID.fromString("298792c8-0160-4c5a-bb16-ca13199c22e6"), false);
-        hintsUsed.put(UUID.fromString("e759b895-2cd7-4418-a6f2-53bdb3e2a4dc"), false);
         hintsUsed.put(UUID.fromString("10d91414-0424-43d1-825e-1a9f095685fd"), false);
         hintsUsed.put(UUID.fromString("e95d1da8-4444-4750-be49-630a5772f98b"), false);
         hintsUsed.put(UUID.fromString("a40f6444-51e6-46da-bf39-f7d86c730586"), false);
@@ -188,6 +189,9 @@ public class Character
         return hintsUsed;
     }
 
+    /**
+     * initializes the puzzles completed hash map with all false values for a new character
+     */
     private HashMap<UUID, Boolean> initializePuzzles() {
         HashMap<UUID, Boolean> puzzleMap = new HashMap<>();
         puzzleMap.put(UUID.fromString("e50b53c7-6bbf-4849-af1a-350adb9afcf3"), false);
@@ -197,5 +201,56 @@ public class Character
         puzzleMap.put(UUID.fromString("56e5af6b-0295-48a9-b57e-b0670e025379"), false);
         puzzleMap.put(UUID.fromString("0d5e7f35-f314-425d-9c0c-072295edee1e"), false);
         return puzzleMap;
+    }
+
+    /**
+     * gives game progress as a percentage based on how many puzzles have been completed
+     * @return double -- the percentage fo the game completed
+     */
+    public double getPercentage() {
+        int completed = 0;
+        for (HashMap.Entry<UUID, Boolean> entry : this.puzzlesCompleted.entrySet()) {
+            if (entry.getValue())
+                completed++;
+        }
+        return completed / 6.0;
+    }
+
+    /**
+     * creates a string saying which puzzles have been completed
+     * @return String -- each puzzle per room and whether it has been completed
+     */
+    public String questionsAnswered() {
+        String ret = "Puzzles Completed:\n";
+        for (Room room : RoomList.getRooms()) {
+            ret += room.getName() + ":\n";
+            for (Puzzle puzzle : room.getPuzzles()) {
+                ret += puzzle.getName() + ": ";
+                if (getPuzzlesCompleted().get(puzzle.getPuzzleID()))
+                    ret += "Complete\n";
+                else
+                    ret += "Incomplete\n";
+            }
+        }
+        return ret;
+    }
+
+    /**
+     * creates a string saying which hints have been used
+     * @return String -- a list of how many hints have been used for each puzzle
+     */
+    public String hintsUsed() {
+        String ret = "Hints used:\n";
+        for (Room room : RoomList.getRooms()) {
+            for (Puzzle puzzle : room.getPuzzles()) {
+                int completed = 0;
+                for (Hint hint : puzzle.getHints()) {
+                    if (getHintsUsed().get(hint.getHintID()))
+                        completed++;
+                }
+                ret += puzzle.getName() + ": " + completed + "/" + puzzle.getHints().size() + "used\n";
+            }
+        }
+        return ret;
     }
 }

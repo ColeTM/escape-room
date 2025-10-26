@@ -56,6 +56,7 @@ public abstract class DataConstants {
     protected static final String PUZZLES = "puzzles";
         // data constants for nested puzzles JSON
         protected static final String TYPE = "type";
+        protected static final String PUZZLE_NAME = "name";
         protected static final String PUZZLE_ID = "puzzleID";
         protected static final String PUZZLE_DIFFICULTY = "difficulty";
         protected static final String ATTEMPTS = "attempts";

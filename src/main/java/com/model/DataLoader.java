@@ -24,7 +24,7 @@ public class DataLoader extends DataConstants {
         ArrayList<User> users = new ArrayList<>();
 
         try {
-            FileReader reader = new FileReader(USER_FILE_NAME);
+            FileReader reader = new FileReader(TEMP_USER_FILE_NAME);
             JSONArray usersJSON = (JSONArray)new JSONParser().parse(reader);
 
             for(int i = 0; i < usersJSON.size(); ++i) {
@@ -181,6 +181,7 @@ public class DataLoader extends DataConstants {
             JSONObject puzzleJSON = (JSONObject)puzzlesJSON.get(i);
 
             UUID puzzleID = UUID.fromString((String)puzzleJSON.get(PUZZLE_ID));
+            String name = (String)puzzleJSON.get(PUZZLE_NAME);
             Difficulty difficulty = Difficulty.valueOf((String)puzzleJSON.get(PUZZLE_DIFFICULTY));
             int attempts = ((Long)puzzleJSON.get(ATTEMPTS)).intValue();
             Clue clue = getClue((JSONObject)puzzleJSON.get(CLUE));
@@ -192,19 +193,19 @@ public class DataLoader extends DataConstants {
                 case Text:
                     String textContent = (String)puzzleJSON.get(TEXT_CONTENT);
                     String textSolution = (String)puzzleJSON.get(TEXT_SOLUTION);
-                    puzzles.add(new TextPuzzle(puzzleID, difficulty, attempts, clue, hints,
+                    puzzles.add(new TextPuzzle(puzzleID, name, difficulty, attempts, clue, hints,
                                                 isSequential, textContent, textSolution));
                     break;
                 case Audio:
                     String audioContent = (String)puzzleJSON.get(AUDIO_CONTENT);
                     String audioSolution = ((String)puzzleJSON.get(AUDIO_SOLUTION));
-                    puzzles.add(new AudioPuzzle(puzzleID, difficulty, attempts, clue, hints,
+                    puzzles.add(new AudioPuzzle(puzzleID, name, difficulty, attempts, clue, hints,
                                                 isSequential, audioContent, audioSolution));
                     break;
                 case Picture:
                     File pictureContent = new File((String)puzzleJSON.get(PICTURE_CONTENT));
                     String pictureSolution = (String)puzzleJSON.get(PICTURE_SOLUTION);
-                    puzzles.add(new PicturePuzzle(puzzleID, difficulty, attempts, clue, hints,
+                    puzzles.add(new PicturePuzzle(puzzleID, name, difficulty, attempts, clue, hints,
                                                     isSequential, pictureContent, pictureSolution));
             }
         }

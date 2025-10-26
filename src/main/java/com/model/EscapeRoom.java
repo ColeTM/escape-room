@@ -28,7 +28,7 @@ public class EscapeRoom {
         timer = new Timer();
     }
 
-    /*
+    /**
      * Gets and returns the singleton instance of EscapeRoom
      * @return The singleton instance of EscapeRoom
      */
@@ -40,7 +40,7 @@ public class EscapeRoom {
         return escapeRoom;
     }
 
-    /*
+    /**
      * Starts a new game for the current user with the specified character 
      * @param characterName The name of the character to be used in the game    
      */
@@ -50,10 +50,17 @@ public class EscapeRoom {
         if (user != null) {
             currentRoom = RoomList.getInstance().getRooms().get(0);
         }
+        String intro = "You are trick-or-treating on Halloween when you pass by a house you don't recognize. \n"
+                           + "When you enter the house, the door closes behind you; you're trapped! \n"
+                           + "Solve the puzzles in each of the 4 open rooms to unlock the room at the end of the hallway. \n"
+                           + "Solve the final challenge to leave! \n"
+                           + "You have 30 minutes to escape this house of horrors before your soul is stuck here FOREVER!!! \n";
+        System.out.println(intro);
+        Speech.speak(intro);
         timer.start();
     }
 
-    /*
+    /**
      * Saves the current game state for the user
      */
     public void saveCurrentGame() {
@@ -61,7 +68,7 @@ public class EscapeRoom {
     }
  
     // when the user completes the game successfully
-    /*
+    /**
      * Ends the current game and updates the user's statistics
      */
     public void endGame() {
@@ -75,7 +82,7 @@ public class EscapeRoom {
 
     }
 
-    /*
+    /**
      * Registers a new user with the provided information
      * @param firstName The first name of the user
      * @param lastName The last name of the user
@@ -89,7 +96,7 @@ public class EscapeRoom {
         return UserList.getInstance().addUser(firstName, lastName, email, username, password);
     }
 
-    /*
+    /**
      * Logs in a user with the provided username and password
      * @param username The username of the user 
      * @param password The password of the user
@@ -103,18 +110,18 @@ public class EscapeRoom {
         return true;
     }
 
-    /*
+    /**
      * Logs out the current user
+     * @return boolean -- whether the logout was successful
      */
-    public void logout() {
+    public boolean logout() {
         timer.pause();
         saveCurrentGame();
-        user = null;
-
-    
+        escapeRoom = null;
+        return user == null;
     }
 
-    /*
+    /**
      * Sets the current difficulty level for the game
      * @param difficultyLevel The difficulty level to be set
      */
@@ -122,7 +129,7 @@ public class EscapeRoom {
         this.currentDifficulty = difficultyLevel;
     }
 
-    /*
+    /**
      * Submits an answer for the current puzzle
      * @param solution The solution to be submitted
      * @return True if the answer is correct, false otherwise
@@ -131,7 +138,7 @@ public class EscapeRoom {
         return solution.equals(currentPuzzle.getSolution());
     }
 
-    /*
+    /**
      * Requests a hint for the current puzzle
      * @return The hint requested
      */
@@ -143,7 +150,7 @@ public class EscapeRoom {
             System.out.println("no hint available!");
     }
 
-    /*
+    /**
      * Gets and returns the time remaining in the game
      * @return The time remaining in the game
      */
@@ -151,14 +158,14 @@ public class EscapeRoom {
         return timer.getTimeRemaining();
     }
 
-    /*
+    /**
      * Displays the global leaderboard
      */
     public void displayLeaderboard() {
         System.out.println(Leaderboard.getInstance().displayGlobal().toString());
     }
 
-    /*
+    /**
      * Gets and returns the list of characters for the current user
      * @return The list of characters for the current user
      */
@@ -166,7 +173,7 @@ public class EscapeRoom {
         return user.getCharacters();
     }
 
-    /*
+    /**
      * Gets and returns the current user
      * @return The current user
      */
@@ -174,11 +181,21 @@ public class EscapeRoom {
         return user;
     }
     
-    /*
+    /**
      * Sets the current user
      * @param user The user to be set as the current user
      */
     public void setCurrentUser(User user) {
         this.user = user;
+    }
+
+    /**
+     * prints out what percentage of the game a player has completed,
+     * which puzzles they have completed, and which hints they have used
+     */
+    public void showProgress() {
+        System.out.println(character.getPercentage());
+        System.out.println(character.questionsAnswered());
+        System.out.println(character.hintsUsed());
     }
 }

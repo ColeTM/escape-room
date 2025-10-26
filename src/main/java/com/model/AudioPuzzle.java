@@ -17,6 +17,7 @@ public class AudioPuzzle extends Puzzle
     /**
      * Constructor for AudioPuzzle
      * @param puzzleID The unique identifier for the puzzle
+     * @param name the name of the puzzle
      * @param difficulty The difficulty level of the puzzle
      * @param attempts The number of attempts allowed to solve the puzzle
      * @param clue The clue associated with the puzzle
@@ -25,10 +26,10 @@ public class AudioPuzzle extends Puzzle
      * @param audioContent The audio content of the puzzle
      * @param audioSolution The solution to the audio puzzle
      */
-    public AudioPuzzle(UUID puzzleID, Difficulty difficulty, int attempts, Clue clue,
+    public AudioPuzzle(UUID puzzleID, String name, Difficulty difficulty, int attempts, Clue clue,
                        ArrayList<Hint> hints, boolean isSequential, String audioContent, String audioSolution)
     {
-        super(puzzleID, difficulty, attempts, clue, hints, isSequential);
+        super(puzzleID, name, difficulty, attempts, clue, hints, isSequential);
         this.audioContent = audioContent;
         this.audioSolution = audioSolution;
         this.type = Type.Audio;
