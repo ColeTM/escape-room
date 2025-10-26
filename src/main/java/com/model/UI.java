@@ -82,6 +82,29 @@ public class UI {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
         escapeRoom.login("leniriv123", "mybrotherisannoying");
         escapeRoom.resumeGame("Leni");
+
+        escapeRoom.endGame();
+        System.out.println("Leni has finished the game!");
+
+        Leaderboard leaderboard = Leaderboard.getInstance();
+
+        for(User user : UserList.getUsers()) {
+            if(user.getPersonalRecord() != null) {
+                leaderboard.addEntry(user.getPersonalRecord());
+        }
+
+        ArrayList<LeaderboardEntry> entries = leaderboard.displayGlobal();
+        
+        int rank = 1;
+        for(LeaderboardEntry entry : entries) {
+            System.out.println(rank + ". " + entry.getUsername() + 
+                               " | Time: " + entry.getScore() + 
+                               " | Hints: " + entry.getHintsUsed() + 
+                               " | Difficulty: " + entry.getDifficulty());
+            rank++;
+        }
+        }
+
     }
 
 
@@ -142,14 +165,6 @@ public class UI {
 
         //show new progress
 
-    }
-
-    public void logoutAndShowData(){
-        EscapeRoom escapeRoom = EscapeRoom.getInstance();
-        
-        System.out.println("Tommy decides he needs a break and logs out.");
-
-        escapeRoom.logout();
     }
 
     public static void main(String[] args) {
