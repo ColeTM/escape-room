@@ -13,8 +13,6 @@ public class UI {
         //finishGame();
 
         //loginUserNotExist();
-        //unSuccessfulRegisterUser();
-        //successfulRegisterUser();
         //successAnswerTextPuzzle();
     }
 
@@ -47,51 +45,40 @@ public class UI {
     public void enterEscapeRoom() {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
         successfulLogin();
-        SoundEffect.play("Fnaf-ambiance.wav", 1000);
+        SoundEffect.play("Fnaf-ambiance.wav", 5000);
         if(!escapeRoom.startNewGame("Leni")) {
             System.out.println("Error: unable to create new save");
             return;
         }
         
         ArrayList<Room> rooms = RoomList.getRooms();
-        /*
-        for(Room room : rooms){
-            System.out.println(room.getName() + ": " + room.getStory());
-            } */
         escapeRoom.setRoom(rooms.get(0).getRoomID());
         escapeRoom.saveCurrentGame();
     }
 
     public void solvingPuzzles() {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
-        successfulLogin();
-        SoundEffect.play("Fnaf-ambiance.wav", 1000);
-        if(!escapeRoom.startNewGame("Leni")) {
-            System.out.println("Error: unable to create new save");
-            return;
-        }
+        enterEscapeRoom();
         ArrayList<Room> rooms = RoomList.getRooms();
-        for(Room room : rooms){
-            System.out.println(room.getName() + ": " + room.getStory());
-        }
         for(int i = 0; i < 3; i++) {
             escapeRoom.setRoom(rooms.get(i).getRoomID());
             ArrayList<Interactable> interactables = rooms.get(i).getInteractables();
+            for(Interactable interactable : interactables) {
+                    System.out.println(interactable.getDescription());
+                    interactable.interact();
+                }
             Puzzle puzzle = rooms.get(i).getPuzzles().get(0);
             puzzle.getContent();
             puzzle.getClue().getText();
-            if(puzzle.getIsCompleted()) {
+            escapeRoom.requestHint();
+            escapeRoom.submitPuzzleAnswer("this is a puzzle answer");
+            if(escapeRoom.submitPuzzleAnswer("this is a puzzle answer")) {
                 for(Interactable interactable : interactables) {
-                    System.out.println(interactable.getDescription());
-                    interactable.interact();
                     if(interactable.getIsItem()){
                         escapeRoom.getCurrentUser().getCharacter("leni").addToInventory(new Item(interactable.getName(), interactable.getDescription()));
                     }
                 }
             }
-        escapeRoom.requestHint();
-        escapeRoom.submitPuzzleAnswer("this is a puzzle answer");
-
         }
     }
 
@@ -162,31 +149,7 @@ public class UI {
         }
 
         System.out.println("The user couldn't login because they aren't in the system.");
-    }
-
-    public void successfulRegisterUser() {
-        EscapeRoom escapeRoom = EscapeRoom.getInstance();
-
-        if(!escapeRoom.registerUser("Timmy", "Sigg", "tsizzle@hotmail.com", "TommyKnowsBest", "ilovedogs234")) {
-            System.out.println("Error: Timmy should have been able to register");
-            return;
-        }
-        
-        System.out.println("Successfully registered Timmy");
-    }
-
-
-
-    public void successAnswerTextPuzzle() {
-        EscapeRoom escapeRoom = EscapeRoom.getInstance();
-        successfulLogin();
-
-        ArrayList<Character> characters = escapeRoom.getCurrentUser().getCharacters();
-
-        //loop through and display characters
-        for(Character character : characters) {
-            System.out.println((character));
-        }
+    }        }
 
         //pick character
         //escapeRoom.setCurrentCharacter(character(1));

@@ -32,8 +32,6 @@ public class Character
         this.name = name;
         this.inventory = new ArrayList<>();
         this.numHintsUsed = 0;
-        // need to individually initialize all values for these two hash maps
-        this.numHintsUsed = 0;
         this.hintsUsed = initializeHints();
         this.puzzlesCompleted = initializePuzzles();
         this.timer = new Timer();

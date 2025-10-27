@@ -135,9 +135,6 @@
                     {
                         "name": "Jade key",
                         "description": "A key that opens a jade door."
-                    },{
-                        "name": null,
-                        "description": null
                     }
                 ],
                 "currentRoom": "08ea2518-a310-492c-b925-4d929a398ba4",
