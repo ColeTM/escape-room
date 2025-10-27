@@ -224,4 +224,7 @@ public class EscapeRoom {
         character.setCurrentRoom(roomID);
         System.out.println(currentRoom.getStory());
     }
+    public void setCurrentPuzzle(Puzzle puzzle){
+        currentPuzzle = puzzle;
+    }
 }

@@ -95,6 +95,7 @@ public class UI {
                 interactable.interact();
             }
         Puzzle puzzle1 = rooms.get(i+1).getPuzzles().get(0);
+        escapeRoom.setCurrentPuzzle(puzzle1);
         puzzle1.getContent();
         puzzle1.getClue().getText();
         escapeRoom.requestHint();
