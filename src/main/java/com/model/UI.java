@@ -45,7 +45,7 @@ public class UI {
     public void enterEscapeRoom() {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
         successfulLogin();
-        SoundEffect.play("Fnaf-ambiance.wav", 5000);
+        //SoundEffect.play("Fnaf-ambiance.wav", 5000);
         if(!escapeRoom.startNewGame("Leni")) {
             System.out.println("Error: unable to create new save");
             return;
@@ -61,14 +61,15 @@ public class UI {
         successfulLogin();
         escapeRoom.resumeGame("Leni");
         ArrayList<Room> rooms = RoomList.getRooms();
-        for(int i = 0; i < 3; i++) {
+        int i = 0;
+        /*for(int i = 1; i < 4; i++) {
             escapeRoom.setRoom(rooms.get(i).getRoomID());
             ArrayList<Interactable> interactables = rooms.get(i).getInteractables();
             for(Interactable interactable : interactables) {
                     System.out.println(interactable.getDescription());
                     interactable.interact();
                 }
-            Puzzle puzzle = rooms.get(i).getPuzzles().get(0);
+            Puzzle puzzle = rooms.get(i).getPuzzles().get(1);
             puzzle.getContent();
             puzzle.getClue().getText();
             escapeRoom.requestHint();
@@ -80,7 +81,71 @@ public class UI {
                     }
                 }
             }
+        }*/
+        escapeRoom.setRoom(rooms.get(i).getRoomID());
+        ArrayList<Interactable> interactables = rooms.get(i).getInteractables();
+        for(Interactable interactable : interactables) {
+                System.out.println(interactable.getDescription());
+                interactable.interact();
+            }
+        escapeRoom.setRoom(rooms.get(i+1).getRoomID());
+        ArrayList<Interactable> interactables1 = rooms.get(i+1).getInteractables();
+        for(Interactable interactable : interactables1) {
+                System.out.println(interactable.getDescription());
+                interactable.interact();
+            }
+        Puzzle puzzle1 = rooms.get(i+1).getPuzzles().get(0);
+        puzzle1.getContent();
+        puzzle1.getClue().getText();
+        escapeRoom.requestHint();
+        escapeRoom.submitPuzzleAnswer("this is a puzzle answer");
+        if(escapeRoom.submitPuzzleAnswer("this is a puzzle answer")) {
+            for(Interactable interactable : interactables) {
+                if(interactable.getIsItem()){
+                    escapeRoom.getCurrentUser().getCharacter("leni").addToInventory(new Item(interactable.getName(), interactable.getDescription()));
+                }
+            }
         }
+        //next puzzle 
+        escapeRoom.setRoom(rooms.get(i+2).getRoomID());
+        ArrayList<Interactable> interactables2 = rooms.get(i+2).getInteractables();
+        for(Interactable interactable : interactables2) {
+                System.out.println(interactable.getDescription());
+                interactable.interact();
+            }
+        Puzzle puzzle2 = rooms.get(i+2).getPuzzles().get(0);
+        puzzle2.getContent();
+        puzzle2.getClue().getText();
+        escapeRoom.requestHint();
+        escapeRoom.submitPuzzleAnswer("this is a puzzle answer");
+        if(escapeRoom.submitPuzzleAnswer("this is a puzzle answer")) {
+            for(Interactable interactable : interactables) {
+                if(interactable.getIsItem()){
+                    escapeRoom.getCurrentUser().getCharacter("leni").addToInventory(new Item(interactable.getName(), interactable.getDescription()));
+                }
+            }
+        }
+        //next puzzle
+        escapeRoom.setRoom(rooms.get(i+3).getRoomID());
+        ArrayList<Interactable> interactables3 = rooms.get(i+3).getInteractables();
+        for(Interactable interactable : interactables3) {
+                System.out.println(interactable.getDescription());
+                interactable.interact();
+            }
+        Puzzle puzzle3 = rooms.get(i+3).getPuzzles().get(0);
+        puzzle3.getContent();
+        puzzle3.getClue().getText();
+        escapeRoom.requestHint();
+        escapeRoom.submitPuzzleAnswer("this is a puzzle answer");
+        if(escapeRoom.submitPuzzleAnswer("this is a puzzle answer")) {
+            for(Interactable interactable : interactables) {
+                if(interactable.getIsItem()){
+                    escapeRoom.getCurrentUser().getCharacter("leni").addToInventory(new Item(interactable.getName(), interactable.getDescription()));
+                }
+            }
+        }
+
+
     }
 
     public void dataPersistence() {
