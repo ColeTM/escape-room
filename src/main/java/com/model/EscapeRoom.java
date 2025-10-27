@@ -93,11 +93,17 @@ public class EscapeRoom {
      * creates a text file containing a certificate of completion for the player
      */
     public void endGame() {
-        timer.pause();
-        if (character.calculateScore(currentDifficulty) > user.getPersonalRecord().getScore())
+        //timer.pause();
+        if(user.getPersonalRecord() != null) {
+            if (character.calculateScore(currentDifficulty) > user.getPersonalRecord().getScore())
         user.setPersonalRecord(new LeaderboardEntry(user.getUsername(), Timer.secondsToDuration(timer.getTimeRemaining()), 
                                                         LocalDate.now(), character.getNumHintsUsed(), currentDifficulty,
                                                         character.calculateScore(currentDifficulty)));
+        }else {
+            user.setPersonalRecord(new LeaderboardEntry(user.getUsername(), Timer.secondsToDuration(timer.getTimeRemaining()), 
+                                                        LocalDate.now(), character.getNumHintsUsed(), currentDifficulty,
+                                                        character.calculateScore(currentDifficulty)));
+        }
         user.upgradeSkillLevel(currentDifficulty);
         UserList.saveUsers();
         character.certificateOfCompletion(currentDifficulty);

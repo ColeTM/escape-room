@@ -9,8 +9,8 @@ public class UI {
         successfulRegister();
         enterEscapeRoom();
         solvingPuzzles();
-        //dataPersistence();
-        //finishGame();
+        dataPersistence();
+        finishGame();
 
         //loginUserNotExist();
         //successAnswerTextPuzzle();
@@ -45,7 +45,7 @@ public class UI {
     public void enterEscapeRoom() {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
         successfulLogin();
-        //SoundEffect.play("Fnaf-ambiance.wav", 5000);
+        SoundEffect.play("Fnaf-ambiance.wav", 5000);
         if(!escapeRoom.startNewGame("Leni")) {
             System.out.println("Error: unable to create new save");
             return;
@@ -62,26 +62,6 @@ public class UI {
         escapeRoom.resumeGame("Leni");
         ArrayList<Room> rooms = RoomList.getRooms();
         int i = 0;
-        /*for(int i = 1; i < 4; i++) {
-            escapeRoom.setRoom(rooms.get(i).getRoomID());
-            ArrayList<Interactable> interactables = rooms.get(i).getInteractables();
-            for(Interactable interactable : interactables) {
-                    System.out.println(interactable.getDescription());
-                    interactable.interact();
-                }
-            Puzzle puzzle = rooms.get(i).getPuzzles().get(1);
-            puzzle.getContent();
-            puzzle.getClue().getText();
-            escapeRoom.requestHint();
-            escapeRoom.submitPuzzleAnswer("this is a puzzle answer");
-            if(escapeRoom.submitPuzzleAnswer("this is a puzzle answer")) {
-                for(Interactable interactable : interactables) {
-                    if(interactable.getIsItem()){
-                        escapeRoom.getCurrentUser().getCharacter("leni").addToInventory(new Item(interactable.getName(), interactable.getDescription()));
-                    }
-                }
-            }
-        }*/
         escapeRoom.setRoom(rooms.get(i).getRoomID());
         ArrayList<Interactable> interactables = rooms.get(i).getInteractables();
         for(Interactable interactable : interactables) {
