@@ -6,22 +6,11 @@ public class UI {
 
     public void runScenarios() {
         duplicateUser();
-<<<<<<< HEAD
-        successfulRegister();
-        enterEscapeRoom();
-        solvingPuzzles();
-        dataPersistence();
-        finishGame();
-=======
         //successfulRegister();
         //enterEscapeRoom();
         //solvingPuzzles();
         //dataPersistence();
         //finishGame();
->>>>>>> 4235346bb39e032e627e03edd0c922eb107ec5e7
-
-        //loginUserNotExist();
-        //successAnswerTextPuzzle();
     }
 
     public void duplicateUser() {
