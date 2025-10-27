@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class UI {
 
     public void runScenarios() {
-        //duplicateUser();
-        successfulRegister();
-        enterEscapeRoom();
-        solvingPuzzles();
-        dataPersistence();
-        finishGame();
+        duplicateUser();
+        //successfulRegister();
+        //enterEscapeRoom();
+        //solvingPuzzles();
+        //dataPersistence();
+        //finishGame();
 
         //loginUserNotExist();
         //successAnswerTextPuzzle();
