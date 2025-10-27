@@ -115,6 +115,7 @@ public class EscapeRoom {
      */
     public boolean registerUser(String firstName, String lastName, String email, 
                                     String username, String password) {
+        user = UserList.getInstance().getUser(username, password);
         return UserList.getInstance().addUser(firstName, lastName, email, username, password);
     }
 
@@ -224,6 +225,7 @@ public class EscapeRoom {
         character.setCurrentRoom(roomID);
         System.out.println(currentRoom.getStory());
     }
+
     public void setCurrentPuzzle(Puzzle puzzle){
         currentPuzzle = puzzle;
     }
