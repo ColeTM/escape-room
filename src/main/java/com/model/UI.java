@@ -6,8 +6,8 @@ public class UI {
 
     public void runScenarios() {
         //duplicateUser();
-        //successfulRegister();
-        //enterEscapeRoom();
+        successfulRegister();
+        enterEscapeRoom();
         solvingPuzzles();
         //dataPersistence();
         //finishGame();
@@ -58,7 +58,8 @@ public class UI {
 
     public void solvingPuzzles() {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
-        enterEscapeRoom();
+        successfulLogin();
+        escapeRoom.resumeGame("Leni");
         ArrayList<Room> rooms = RoomList.getRooms();
         for(int i = 0; i < 3; i++) {
             escapeRoom.setRoom(rooms.get(i).getRoomID());
@@ -149,7 +150,7 @@ public class UI {
         }
 
         System.out.println("The user couldn't login because they aren't in the system.");
-    }        }
+    }      
 
         //pick character
         //escapeRoom.setCurrentCharacter(character(1));
@@ -165,8 +166,7 @@ public class UI {
         //answer puzzle
 
         //show new progress
-
-    }
+        
 
     public static void main(String[] args) {
         
