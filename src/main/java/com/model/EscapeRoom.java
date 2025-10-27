@@ -59,7 +59,7 @@ public class EscapeRoom {
                            + "Solve the final challenge to leave! \n"
                            + "You have 30 minutes to escape this house of horrors before your soul is stuck here FOREVER!!! \n";
         System.out.println(intro);
-        //Speech.speak(intro);
+        Speech.speak(intro);
         timer.start();
         return true;
     }
