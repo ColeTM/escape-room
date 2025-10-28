@@ -4,6 +4,7 @@ module com.escape {
     requires javax.inject;
     requires json.simple;
     requires freetts;
+    requires junit;
     
     requires java.desktop;
     opens com.escape to javafx.fxml;
