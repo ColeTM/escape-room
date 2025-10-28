@@ -1,7 +1,6 @@
 package com.model;
 
 import java.util.UUID;
-import javax.sound.sampled.*;
 
 /**
  * Represents an object in a room that the user can interact with.
@@ -14,7 +13,6 @@ public class Interactable
     private String name;
     private String description;
     private boolean isHighlighted;
-    private static SoundEffect soundEffect;
     private String clueText;
     private boolean isItem;
 
