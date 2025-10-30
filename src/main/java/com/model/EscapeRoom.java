@@ -172,14 +172,9 @@ public class EscapeRoom {
 
     /**
      * Requests a hint for the current puzzle
-     * @return The hint requested
      */
     public void requestHint() {
-        Hint hint = character.requestHint();
-        if (hint != null)
-            System.out.println(hint);
-        else
-            System.out.println("no hint available!");
+        character.requestHint();
     }
 
     /**
