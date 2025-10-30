@@ -105,9 +105,5 @@ public class UserList {
         }
         return false;
     }
-
-    public void clear() {
-        DataLoader.
-    }
     
 }

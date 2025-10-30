@@ -2,7 +2,6 @@
 package com.model;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.UUID;
 
 /**
@@ -11,6 +10,7 @@ import java.util.UUID;
  */
 public class EscapeRoom {
     private User user;
+    private UserList userList = UserList.getInstance();
     private Character character;
     private Room currentRoom;
     private Puzzle currentPuzzle;
@@ -23,6 +23,7 @@ public class EscapeRoom {
      */
     private EscapeRoom() {
         user = null;
+        userList.getUsers();
         currentRoom = null;
         currentPuzzle = null;
         currentDifficulty = Difficulty.Beginner;
@@ -85,7 +86,7 @@ public class EscapeRoom {
      * Saves the current game state for the user
      */
     public void saveCurrentGame() {
-        UserList.saveUsers();
+        userList.saveUsers();
     }
  
     /**
@@ -105,7 +106,7 @@ public class EscapeRoom {
                                                         character.calculateScore(currentDifficulty)));
         }
         user.upgradeSkillLevel(currentDifficulty);
-        UserList.saveUsers();
+        userList.saveUsers();
         character.certificateOfCompletion(currentDifficulty);
         displayLeaderboard();
     }

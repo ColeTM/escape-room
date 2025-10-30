@@ -1,7 +1,8 @@
 package com.model;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.*;
 import java.util.ArrayList;
 
@@ -10,7 +11,7 @@ public class DatabaseTests {
     private ArrayList<User> users = userList.getUsers();
     
     //Creates three new Users inside the test jsons
-    @BeforeEach 
+    @BeforeEach
     public void setup() {
         users.clear();
         userList.addUser("James", "Adams", "jadams@gmail.com", "Puzzler", "password");
@@ -23,5 +24,11 @@ public class DatabaseTests {
     public void tearDown() {
         UserList.getInstance().getUsers().clear();
         DataWriter.saveUsers();
+    }
+
+    @Test
+    public void testFirst() {
+        User firstUser = userList.getUser("Puzzler", "password");
+        assertEquals(firstUser, users.get(0));
     }
 }

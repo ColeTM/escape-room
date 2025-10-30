@@ -140,6 +140,7 @@ public class UI {
 
     public void finishGame() {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        UserList userList = UserList.getInstance();
         escapeRoom.login("leniriv123", "mybrotherisannoying");
         escapeRoom.resumeGame("Leni");
 
@@ -148,7 +149,7 @@ public class UI {
 
         Leaderboard leaderboard = Leaderboard.getInstance();
 
-        for(User user : UserList.getUsers()) {
+        for(User user : userList.getUsers()) {
             if(user.getPersonalRecord() != null) {
                 leaderboard.addEntry(user.getPersonalRecord());
             }
