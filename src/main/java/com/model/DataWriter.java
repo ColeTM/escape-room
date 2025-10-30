@@ -18,28 +18,14 @@ public class DataWriter extends DataConstants{
     @SuppressWarnings("unchecked")
     public static void saveUsers() {
 
-        /*
-        //start test values
-
-        ArrayList<User> userList = new ArrayList<>();
-        User testUser = new User("bobby", "brown", "bobby@gmail.com",
-                                    "kingbobby123", "strongpassword");
-        testUser.addCharacter(new Character("bob"));
-        testUser.getCharacters().get(0).setCurrentRoom(UUID.fromString("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85"));
-        userList.add(testUser);
-
-
-        //end test values
-        */
-
         UserList users = UserList.getInstance();
         ArrayList<User> userList = users.getUsers();
         JSONArray jsonUsers = new JSONArray();
         for(int i = 0; i < userList.size(); ++i)
             jsonUsers.add(getUserJSON(userList.get(i)));
 
-        try (FileWriter file = new FileWriter(TEMP_USER_FILE_NAME)) {
-            file.write(jsonUsers.toJSONString());
+        try (FileWriter file = new FileWriter(USER_FILE_NAME_JUNIT)) {
+            file.append(jsonUsers.toJSONString());
             file.flush();
         } catch (IOException e) {
             e.printStackTrace();

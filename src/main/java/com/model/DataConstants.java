@@ -5,6 +5,7 @@ public abstract class DataConstants {
     // data constants for user
     protected static final String TEMP_USER_FILE_NAME = "src/main/java/com/json/users_temp.json";
     protected static final String USER_FILE_NAME = "src/main/java/com/json/users.json";
+    protected static final String USER_FILE_NAME_JUNIT = "src/main/test/java/recources/data/Test/testUsers.json";
     protected static final String USER_ID = "userID";
     protected static final String FIRST_NAME = "firstName";
     protected static final String LAST_NAME = "lastName";
@@ -39,9 +40,8 @@ public abstract class DataConstants {
         protected static final String SCORE = "score";
 
     // data constants for room
-    protected static final String TEMP_ROOM_FILE_NAME = "src/main/java/com/json/rooms_temp.json";
-    protected static final String SAMPLE_ROOM_FILE_NAME = "src/main/java/com/json/sample_rooms.json";
     protected static final String ROOM_FILE_NAME = "src/main/java/com/json/rooms.json";
+    protected static final String ROOM_FILE_JUNIT = "src/main/test/java/recources/data/TestRooms.json";
     protected static final String ROOM_ID = "roomID";
     protected static final String ROOM_NAME = "name";
     protected static final String STORY = "story";

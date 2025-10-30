@@ -53,14 +53,14 @@ public class UserList {
      * getter for the list of users
      * @return list of users
      */
-    public static ArrayList<User> getUsers(){
+    public ArrayList<User> getUsers(){
         return userList.users;
     }
 
     /**
      * method to save the users to to the json files
      */
-    public static void saveUsers() {
+    public void saveUsers() {
         DataWriter.saveUsers();
     }
 
@@ -104,6 +104,10 @@ public class UserList {
                 return true;
         }
         return false;
+    }
+
+    public void clear() {
+        DataLoader.
     }
     
 }
