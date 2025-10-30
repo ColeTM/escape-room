@@ -1,0 +1,730 @@
+[
+    {
+        "roomID": "26767fe2-e8b1-47c4-b4eb-5f9aec77fb85",
+        "name": "Hallway",
+        "story": "You find yourself in a long, narrow hallway. On either side of the hall are two doors, \nand at the end is one large door decorated with four huge padlocks.",
+        "background": "src/docs/Hallway.png",
+        "interactables": [
+            {
+                "interactableID": "94c58c23-15e4-442e-8daf-5da61225327f",
+                "name": "door",
+                "description": "The first door on the left.",
+                "isHighlighted": true,
+                "soundEffect": "src/sounds/door.wav",
+                "clueText": "there's probably another room behind this door",
+                "isItem": false
+            },
+            {
+                "interactableID": "1ff0d563-7b59-4ecd-9fc3-f734aab06715",
+                "name": "door",
+                "description": "The first door on the right.",
+                "isHighlighted": true,
+                "soundEffect": "src/sounds/door.wav",
+                "clueText": "i wonder if this door opens",
+                "isItem": false
+            },
+            {
+                "interactableID": "3f57f059-920c-432a-9fb9-59e016cd4c33",
+                "name": "door",
+                "description": "The second door on the left.",
+                "isHighlighted": true,
+                "soundEffect": "src/sounds/door.wav",
+                "clueText": "what secrets lie within?",
+                "isItem": false
+            },
+            {
+                "interactableID": "6aae8f6b-374e-4cb3-b3fb-f7955a683b32",
+                "name": "door",
+                "description": "The second door on the right.",
+                "isHighlighted": true,
+                "soundEffect": "src/sounds/door.wav",
+                "clueText": "bro why are there so many doors",
+                "isItem": false
+            },
+            {
+                "interactableID": "ca27fb04-ac8d-4410-8986-84564c729734",
+                "name": "door",
+                "description": "The large door at the end of the hall.",
+                "isHighlighted": true,
+                "soundEffect": "src/sounds/door.wav",
+                "clueText": "now this is a big door",
+                "isItem": false
+            },
+            {
+                "interactableID": "c6a006dc-a3c4-436f-b149-5d732a953d2d",
+                "name": "flashlight",
+                "description": "A flashlight",
+                "isHighlighted": false,
+                "soundEffect": "src/sounds/flashlight.wav",
+                "clueText": "Will you need a flashlight?",
+                "isItem": true
+            }
+        ],
+        "puzzles": []
+    },
+    {
+        "roomID": "9aae693f-83a4-427e-9822-b150f44ba171",
+        "name": "Library",
+        "story": "Lining the walls of this room are grand bookshelves covered in dusty books. In one corner is a pile of books lying on the floor.",
+        "background": "src/docs/Library.png",
+        "interactables": [
+            {
+                "interactableID": "89f3281d-be82-43ba-ba6d-c25b0d4ce8ff",
+                "name": "book",
+                "description": "a red book",
+                "isHighlighted": false,
+                "soundEffect": "src/sounds/book.wav",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "641c4bc8-b2cb-47f9-a47a-a4777c7a37ce",
+                "name": "book",
+                "description": "a green book",
+                "isHighlighted": false,
+                "soundEffect": "src/sounds/book.wav",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "4e814a90-c637-43d3-8b90-e00c35495739",
+                "name": "book",
+                "description": "a blue book",
+                "isHighlighted": false,
+                "soundEffect": "src/sounds/book.wav",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "649f4a71-e307-43d1-a8e7-84e9a2ac6ec4",
+                "name": "book",
+                "description": "a black book",
+                "isHighlighted": false,
+                "soundEffect": "src/sounds/book.wav",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "9a314754-c54f-4a23-868c-f6478a0c5df2",
+                "name": "key",
+                "description": "Key 1",
+                "isHighlighted": false,
+                "soundEffect": "src/sounds/door.wav",
+                "clueText": "One of the keys to the final room!",
+                "isItem": true
+            }
+        ],
+        "puzzles": [
+            {
+                "type": "Text",
+                "name": "Library",
+                "textContent": "The truth is hidden in the tales.",
+                "puzzleID": "e50b53c7-6bbf-4849-af1a-350adb9afcf3",
+                "difficulty": "Beginner",
+                "textSolution": "this is a puzzle answer",
+                "attempts": 0,
+                "clue": {
+                    "clueID": "205642bd-8cfc-458d-8bc4-d5ff7886e1f4",
+                    "text": "[Green, 5, 15, 3], [Red, 37, 6, 10], [Blue, 17, 7, 2], [Black, 4, 19, 3]"
+                },
+                "hints": [
+                    {
+                        "hintID": "b18be69b-be68-4fb5-9bc4-2641bd58ce68",
+                        "text": "you'll have to use the stories to piece together a message",
+                        "hasPicture": false,
+                        "Picture": null,
+                        "level": "Vague"
+                    },
+                    {
+                        "hintID": "e24d25e1-ee56-47e5-8b8d-d4effbd18d23",
+                        "text": "[book color, page number, line number, word number]",
+                        "hasPicture": false,
+                        "picture": null,
+                        "level": "Direct"
+                    }
+                ],
+                "isSequential": false
+            }
+        ]
+    },
+    {
+        "roomID": "a91b9a37-d41d-4d93-b553-895ffd04723a",
+        "name": "Boxes",
+        "story": "This room is eerily empty, containing nothing but sealed cardboard boxes.",
+        "background": "src/docs/BoxRoom.png",
+        "interactables": [
+            {
+                "interactableID": "95611735-deca-46d5-83ae-ec12a5f4cb9e",
+                "name": "box",
+                "description": "box #1",
+                "isHighlighted": false,
+                "soundEffect": "src/sounds/box.wav",
+                "clueText": "Could this be the box with the key?",
+                "isItem": false
+            },
+            {
+                "interactableID": "517b37b4-f36d-4c3e-afcc-72f7def11f96",
+                "name": "box",
+                "description": "box #2",
+                "isHighlighted": false,
+                "soundEffect": "src/sounds/box.wav",
+                "clueText": "Maybe this is the box with the key?",
+                "isItem": false
+            },
+            {
+                "interactableID": "27804a24-a6e3-4d58-a5a2-c39faced4cca",
+                "name": "box",
+                "description": "box #3",
+                "isHighlighted": false,
+                "soundEffect": "src/sounds/box.wav",
+                "clueText": "Is this the box with the key?",
+                "isItem": false
+            },
+            {
+                "interactableID": "15790e6d-3759-49e9-b462-e356b414615d",
+                "name": "box",
+                "description": "box #4",
+                "isHighlighted": false,
+                "soundEffect": "src/sounds/box.wav",
+                "clueText": "Is the key in this box?",
+                "isItem": false
+            },
+            {
+                "interactableID": "2bba7c74-ca56-4b8e-9176-3808a3b70804",
+                "name": "key",
+                "description": "Key 2",
+                "isHighlighted": false,
+                "soundEffect": "src/sounds/door.wav",
+                "clueText": "One of the keys to the final room!",
+                "isItem": true
+            }
+        ],
+        "puzzles": [
+            {
+                "type": "Text",
+                "name": "Boxes",
+                "textContent": "One of the 4 boxes before you contains a key. The other boxes conatin either a rusty candle stick, a old doll, or nothing. Which box is the key in?",
+                "puzzleID": "6c9f6273-be95-470d-8d43-5792c7737c82",
+                "difficulty": "Intermediate",
+                "textSolution": "box #3",
+                "attempts": 0,
+                "clue": {
+                    "clueID": "bf8561c3-ae9b-4e8f-9ff6-7fd36e84547e",
+                    "text": "The candle is immediately to the left of the box with the key. The doll is somewhere to the left of the candle. The empty box is not adjacent to the candle. The key is not in the last box."
+                },
+                "hints": [
+                    {
+                        "hintID": "0b63808f-20c5-4755-9cdf-72396bfe205e",
+                        "text": "Box #2 is not empty", 
+                        "hasPicture": false, 
+                        "Picture": null,
+                        "level": "Vague"
+                    },
+                    {
+                        "hintID": "be0a15dc-bfdb-49f4-807f-bd679a7f5dbd",
+                        "text": "The doll is in box #1",
+                        "hasPicture": false,
+                        "picture": null,
+                        "level": "Direct"
+                    }
+                ],
+                "isSequential": false
+            }
+        ]
+    },
+    {
+        "roomID": "c6b98566-e4e9-445c-8da2-9ef6b92ce815",
+        "name": "Jigsaw",
+        "story": "On a table in the center of the room lies a pile of what look to be puzzle pieces. On the back wall is a row of pictures, but they all look the same.",
+        "background": "placeholder file path",
+        "interactables": [
+            {
+                "interactableID": "2562d55d-de5b-4462-b8cb-537fbbd37a96",
+                "name": "puzzle piece",
+                "description": "Puzzle piece 1",
+                "isHighlighted": false,
+                "soundEffect": null, 
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "77e439e7-9a7e-4511-b52d-3c47d17fc761",
+                "name": "puzzle piece",
+                "description": "Puzzle piece 2",
+                "isHighlighted": false,
+                "soundEffect": null, 
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "c272a105-bbd9-45ef-928e-06c3942c9f1a",
+                "name": "puzzle piece",
+                "description": "Puzzle piece 3",
+                "isHighlighted": false,
+                "soundEffect": null, 
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "5c94f613-83d0-4cb9-829a-e7648e35ddf5",
+                "name": "puzzle piece",
+                "description": "Puzzle piece 4",
+                "isHighlighted": false,
+                "soundEffect": null, 
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "f313c82d-ca1b-4a92-be8f-49760a81c559",
+                "name": "puzzle piece",
+                "description": "Puzzle piece 5",
+                "isHighlighted": false,
+                "soundEffect": null, 
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "e892c6da-3ab2-4730-afa8-c5e6f1c3de9e",
+                "name": "puzzle piece",
+                "description": "Puzzle piece 6",
+                "isHighlighted": false,
+                "soundEffect": null, 
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "ca05a41e-5917-426b-b63b-ce871f16c399",
+                "name": "puzzle piece",
+                "description": "Puzzle piece 7",
+                "isHighlighted": false,
+                "soundEffect": null, 
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "ba995de6-025e-4def-837c-0c7544930dae",
+                "name": "puzzle piece",
+                "description": "Puzzle piece 8",
+                "isHighlighted": false,
+                "soundEffect": null, 
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "298792c8-0160-4c5a-bb16-ca13199c22e6",
+                "name": "puzzle piece",
+                "description": "Puzzle piece 9",
+                "isHighlighted": false,
+                "soundEffect": null, 
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "b8e057b3-ff03-42f7-835a-58e0299866b9",
+                "name": "key",
+                "description": "Key 3",
+                "isHighlighted": false,
+                "soundEffect": "src/sounds/key.wav",
+                "clueText": "One of the keys to the final room!",
+                "isItem": true
+            }
+            
+        ],
+        "puzzles": [
+            {
+                "type": "Picture", 
+                "name": "Jigsaw Puzzle",
+                "pictureContent": "",
+                "puzzleID": "bee765a8-d881-4d3f-809b-9a91b8ace119",
+                "difficulty": "Intermediate",
+                "pictureSolution": "char of matching picture",
+                "attempts": 0,
+                "clue": {
+                    "clueID": "dcb92126-5811-4d35-8151-0656a8ef670a",
+                    "text": "Solve the puzzle and select the matching picture on the wall."
+                },
+                "hints": [],
+                "isSequential": false
+            }
+        ]
+    },
+    {
+        "roomID": "150c985e-0e90-4c28-bd96-e658b4bc1c20",
+        "name": "Minesweeper and Morse Code",
+        "story": "You walk into a room with a grid on the ground, a gramophone making strange noises in one corner, and a locked chest on a pedestal in the other.",
+        "background": "",
+        "interactables": [
+            {
+                "interactableID": "08ebd750-35a5-4d40-8a36-5b8276c76d64",
+                "name": "gramophone",
+                "description": "A gramophone",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "Listen Closely!",
+                "isItem": false
+            },
+            {
+                "interactableID": "14f8117a-5876-441b-b854-feec4c3e1347",
+                "name": "lock",
+                "description": "a lock on a chest",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "78461143-42c2-4453-b849-88af35be6ae5",
+                "name": "paper",
+                "description": "Morse code manual",
+                "isHighlighted": false,
+                "soundEffect": null,
+                "clueText": "",
+                "isItem": true
+            },
+            {
+                "interactableID": "dd181ca5-36ae-4d17-a01c-3f63e684608c",
+                "name": "tile",
+                "description": "tile 1-1 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "f248685b-31e8-4995-b4ee-75355fcafb05",
+                "name": "tile",
+                "description": "tile 1-2 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "48747f3c-9fe0-41c2-9e34-1d7fbcb887eb",
+                "name": "tile",
+                "description": "tile 1-3 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "54d8c806-ec5b-4358-bf84-3f6b43692394",
+                "name": "tile",
+                "description": "tile 1-4 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "dda9b4a5-ad9a-4bd2-b204-41c297d5dfc2",
+                "name": "tile",
+                "description": "tile 1-5 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "f0e3a8a1-b8a1-42ec-b24f-6ac7f55b4c19",
+                "name": "tile",
+                "description": "tile 2-1 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "ae148a29-2d27-42ad-90d7-d771731f8a84",
+                "name": "tile",
+                "description": "tile 2-2 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "5c1b68c0-8e0d-4da7-96af-a42ccde63e60",
+                "name": "tile",
+                "description": "tile 2-3 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "5e49ac82-ed70-4f1c-8f6a-4f600fe9cfea",
+                "name": "tile",
+                "description": "tile 2-4 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "0bdc53e6-0627-4643-b825-615e54c5156d",
+                "name": "tile",
+                "description": "tile 2-5 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "cf09a53a-d4c3-407e-a2dd-9114b8408f66",
+                "name": "tile",
+                "description": "tile 3-1 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "8f98bf0b-f3bf-42d9-9c71-efa25b586fa1",
+                "name": "tile",
+                "description": "tile 3-2 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "b57abcae-cbde-455d-801d-3fb93016db26",
+                "name": "tile",
+                "description": "tile 3-3 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "8fbc2aa7-4925-4090-bf47-6b382504c67c",
+                "name": "tile",
+                "description": "tile 3-4 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "9aff2db8-bb43-4c70-a830-9545747059da",
+                "name": "tile",
+                "description": "tile 3-5 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },{
+                "interactableID": "736c30c2-18b3-4870-8cec-c3f8920e64a9",
+                "name": "tile",
+                "description": "tile 4-1 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "97422126-024c-416a-ae6c-125d9ccbbd54",
+                "name": "tile",
+                "description": "tile 4-2 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "11da1bf6-6d4e-4813-a2cd-1444ddb56068",
+                "name": "tile",
+                "description": "tile 4-3 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "bb25fefe-2c02-449a-8bb1-45ed9155140e",
+                "name": "tile",
+                "description": "tile 4-4 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "c9257363-eadc-4214-8a7b-ab51f244ee13",
+                "name": "tile",
+                "description": "tile 4-5 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "6577da6d-ad3d-4078-9631-a928596aa7c9",
+                "name": "tile",
+                "description": "tile 5-1 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "1dbf276e-97df-4b0e-8122-9eb40830afea",
+                "name": "tile",
+                "description": "tile 5-2 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "8580b2a5-eecb-42ca-810d-86be936d4ec8",
+                "name": "tile",
+                "description": "tile 5-3 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "a3b88c69-871f-4b0f-90f7-070ab970018c",
+                "name": "tile",
+                "description": "tile 5-4 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            },
+            {
+                "interactableID": "0b22894e-0245-4d06-bbf0-7c3ec8f78f59",
+                "name": "tile",
+                "description": "tile 5-5 on the grid",
+                "isHighlighted": false,
+                "soundEffect": "",
+                "clueText": "",
+                "isItem": false
+            }
+        ],
+        "puzzles": [
+            {
+                "type": "Text",
+                "name": "Minesweeper",
+                "textContent": "The grid ahead of you reminds you of a game of minesweeper...",
+                "puzzleID": "56e5af6b-0295-48a9-b57e-b0670e025379",
+                "difficulty": "Pro",
+                "textSolution": " 1,2; 2,4; 5,4",
+                "attempts": 0,
+                "clue": {
+                    "clueID": "5fe791f6-3912-4f2d-9a3d-86f1deaf00ef",
+                    "text": "Solve the game of minesweeper and enter the squares with the mines."
+                },
+                "hints": [
+                    {
+                        "hintID": "10d91414-0424-43d1-825e-1a9f095685fd",
+                        "text": "",
+                        "hasPicture": false,
+                        "Picture": null,
+                        "level": "Vague"
+                    },
+                    {
+                        "hintID": "e95d1da8-4444-4750-be49-630a5772f98b",
+                        "text": "", 
+                        "hasPicture": false,
+                        "picture": null,
+                        "level": "Direct"
+                    }
+                ],
+                "isSequential": true
+            },
+            {
+                "type": "Audio",
+                "name": "Gramophone",
+                "audioContent": "",
+                "puzzleID": "0d5e7f35-f314-425d-9c0c-072295edee1e",
+                "difficulty": "Pro",
+                "audioSolution": "int",
+                "attempts": 0,
+                "clue": {
+                    "clueID": "57a166eb-d537-4f35-a18b-ea1bf9df86f3",
+                    "text": "Use what you have to unlock the lock on chest."
+                },
+                "hints": [
+                    {
+                        "hintID": "a40f6444-51e6-46da-bf39-f7d86c730586",
+                        "text": "",
+                        "hasPicture": false,
+                        "Picture": null,
+                        "level": "Vague"
+                    },
+                    {
+                        "hintID": "c2d4454b-8ce9-48d4-9734-49eee6168b23",
+                        "text": "", 
+                        "hasPicture": false,
+                        "picture": null,
+                        "level": "Direct"
+                    }
+                ],
+                "isSequential": true
+            }
+        ]
+    },
+    {
+        "roomID": "1030c684-0ceb-4f2b-a71e-f5846697d8d7",
+        "name": "Wall Message",
+        "story": "",
+        "background": "",
+        "interactables": [
+            {
+                "interactableID": "af907c2e-92b7-4d33-8c7a-5185ff444f88",
+                "name": "message",
+                "description": "Bloody writing on the wall",
+                "isHighlighted": false, 
+                "soundEffect": "Add a ghost voice whispering",
+                "clueText": "",
+                "isItem": false 
+            },
+            {
+                "interactableID": "7b6f26e3-4c60-48c5-819e-62350f5d46f4",
+                "name": "key",
+                "description": "Key 3",
+                "isHighlighted": false,
+                "soundEffect": "src/sounds/door.wav",
+                "clueText": "One of the keys to the final room!",
+                "isItem": true
+            }
+        ],
+        "puzzles": [
+            {
+                "type": "Text",
+                "name": "Finale",
+                "textContent": "What can you hear in an empty room?",
+                "puzzleID": "f6a8b2fa-a3f7-41ef-a622-dc116aa4a9bd",
+                "difficulty": "Beginner", 
+                "textSolution": "echo",
+                "attempts": 0, 
+                "clue": {
+                    "clueID": "467466b3-5298-43c7-a98c-c668da34e69e",
+                    "text": "The ghost's riddle is written across the wall in bloody letters."
+                },
+                "hints": [
+                    {
+                        "hintID": "9345822d-d48e-4f13-9d8c-dfbd70094050", 
+                        "text": "What can you hear in an empty room?",
+                        "hasPicture": false,
+                        "Picture": null,
+                        "level": "Vague"
+                    },
+                    {
+                        "hintID": "6ad175b8-c795-4184-9602-5b347d7e0d31",
+                        "text": "It repeats what you say!",
+                        "hasPicture": false,
+                        "picture": null,
+                        "level": "Direct"
+                    }
+                ],
+                "isSequential": true
+            }
+        ]
+    }
+]
