@@ -64,6 +64,7 @@ public class Character
 
     /**
      * Saves the character's current state.
+     * probably not a necessary method
      */
     public void saveCharacter() {
 
