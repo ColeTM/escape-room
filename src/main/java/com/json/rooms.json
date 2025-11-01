@@ -652,14 +652,14 @@
                 "hints": [
                     {
                         "hintID": "a40f6444-51e6-46da-bf39-f7d86c730586",
-                        "text": "",
+                        "text": "dots are short; dashes are long",
                         "hasPicture": false,
                         "Picture": null,
                         "level": "Vague"
                     },
                     {
                         "hintID": "c2d4454b-8ce9-48d4-9734-49eee6168b23",
-                        "text": "", 
+                        "text": "the gramophone is playing a message in Morse code", 
                         "hasPicture": false,
                         "picture": null,
                         "level": "Direct"

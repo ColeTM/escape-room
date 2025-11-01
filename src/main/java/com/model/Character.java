@@ -1,10 +1,10 @@
 package com.model;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
-import java.io.FileWriter;
-import java.io.File;
 
 /**
  * Represents the player's in-game character, holding their progress and inventory.
@@ -64,6 +64,7 @@ public class Character
 
     /**
      * Saves the character's current state.
+     * probably not a necessary method
      */
     public void saveCharacter() {
 
@@ -114,14 +115,65 @@ public class Character
      * (This method is a stub and needs to be implemented.)
      * @return A Hint object if a hint is available, otherwise null.
      */
-    public Hint requestHint() {
+    public void requestHint() {
 
         // will have to hard code all hint scenarios
         switch(RoomList.getRoomByUUID(getCurrentRoom()).getName()) {
-            
+            case "Hallway":
+                System.out.println("no hint available!");
+                break;
+            case "Library":
+                if (!hintsUsed.get(UUID.fromString("205642bd-8cfc-458d-8bc4-d5ff7886e1f4"))) {
+                    System.out.println("You'll have to use the stories to piece together a message");
+                    hintsUsed.put(UUID.fromString("205642bd-8cfc-458d-8bc4-d5ff7886e1f4"), true);
+                } else if (!hintsUsed.get(UUID.fromString("e24d25e1-ee56-47e5-8b8d-d4effbd18d23"))) {
+                    System.out.println("[book color, page number, line number, word number]");
+                    hintsUsed.put(UUID.fromString("e24d25e1-ee56-47e5-8b8d-d4effbd18d23"), true);
+                } else {
+                    System.out.println("no hints available!");
+                }
+                break;
+            case "Boxes":
+                if (!hintsUsed.get(UUID.fromString("0b63808f-20c5-4755-9cdf-72396bfe205e"))) {
+                    System.out.println("Box #2 is not empty");
+                    hintsUsed.put(UUID.fromString("0b63808f-20c5-4755-9cdf-72396bfe205e"), true);
+                } else if (!hintsUsed.get(UUID.fromString("be0a15dc-bfdb-49f4-807f-bd679a7f5dbd"))) {
+                    System.out.println("The doll is in box #1");
+                    hintsUsed.put(UUID.fromString("be0a15dc-bfdb-49f4-807f-bd679a7f5dbd"), true);
+                } else {
+                    System.out.println("no hints available!");
+                }
+                break;
+            case "Jigsaw":
+                System.out.println("no hints available!");
+                break;
+            case "Minesweeper and Morse Code":
+                if (!puzzlesCompleted.get(UUID.fromString("56e5af6b-0295-48a9-b57e-b0670e025379"))) {
+                    System.out.println("no hints available!");
+                } else {
+                    if (!hintsUsed.get(UUID.fromString("a40f6444-51e6-46da-bf39-f7d86c730586"))) {
+                        System.out.println("dots are short; dashes are long");
+                        hintsUsed.put(UUID.fromString("a40f6444-51e6-46da-bf39-f7d86c730586"), true);
+                    } else if (!hintsUsed.get(UUID.fromString("c2d4454b-8ce9-48d4-9734-49eee6168b23"))) {
+                        System.out.println("the gramophone is playing a message in Morse code");
+                        hintsUsed.put(UUID.fromString("c2d4454b-8ce9-48d4-9734-49eee6168b23"), true);
+                    } else {
+                        System.out.println("no hints available!");
+                    }
+                }
+                break;
+            case "Wall Message":
+                if (!hintsUsed.get(UUID.fromString("9345822d-d48e-4f13-9d8c-dfbd70094050"))) {
+                    System.out.println("What can you hear in an empty room?");
+                    hintsUsed.put(UUID.fromString("9345822d-d48e-4f13-9d8c-dfbd70094050"), true);
+                } else if (!hintsUsed.get(UUID.fromString("6ad175b8-c795-4184-9602-5b347d7e0d31"))) {
+                    System.out.println("It repeats what you say!");
+                    hintsUsed.put(UUID.fromString("6ad175b8-c795-4184-9602-5b347d7e0d31"), true);
+                } else {
+                    System.out.println("no hints available!");
+                }
+                break;
         }
-
-        return null;
     }
 
     /**
