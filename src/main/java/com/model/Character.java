@@ -14,12 +14,12 @@ import java.util.UUID;
 public class Character
 {
     private String name;
-    private ArrayList<Item> inventory;
+    private final ArrayList<Item> inventory;
     private UUID currentRoom;
     private int numHintsUsed;
-    private HashMap<UUID, Boolean> hintsUsed;
-    private HashMap<UUID, Boolean> puzzlesCompleted;
-    private Timer timer;
+    private final HashMap<UUID, Boolean> hintsUsed;
+    private final HashMap<UUID, Boolean> puzzlesCompleted;
+    private final Timer timer;
     private Difficulty difficulty;
 
     /**
@@ -62,13 +62,6 @@ public class Character
         this.difficulty = difficulty;
     }
 
-    /**
-     * Saves the character's current state.
-     * probably not a necessary method
-     */
-    public void saveCharacter() {
-
-    }
 
     /**
      * Allows the character to interact with an object in the room.
@@ -118,14 +111,16 @@ public class Character
     public void requestHint() {
 
         // will have to hard code all hint scenarios
-        switch(RoomList.getRoomByUUID(getCurrentRoom()).getName()) {
-            case "Hallway":
+        switch(currentRoom.toString()) {
+            // hallway
+            case "26767fe2-e8b1-47c4-b4eb-5f9aec77fb85":
                 System.out.println("no hint available!");
                 break;
-            case "Library":
-                if (!hintsUsed.get(UUID.fromString("205642bd-8cfc-458d-8bc4-d5ff7886e1f4"))) {
+            // library
+            case "9aae693f-83a4-427e-9822-b150f44ba171":
+                if (!hintsUsed.get(UUID.fromString("b18be69b-be68-4fb5-9bc4-2641bd58ce68"))) {
                     System.out.println("You'll have to use the stories to piece together a message");
-                    hintsUsed.put(UUID.fromString("205642bd-8cfc-458d-8bc4-d5ff7886e1f4"), true);
+                    hintsUsed.put(UUID.fromString("b18be69b-be68-4fb5-9bc4-2641bd58ce68"), true);
                 } else if (!hintsUsed.get(UUID.fromString("e24d25e1-ee56-47e5-8b8d-d4effbd18d23"))) {
                     System.out.println("[book color, page number, line number, word number]");
                     hintsUsed.put(UUID.fromString("e24d25e1-ee56-47e5-8b8d-d4effbd18d23"), true);
@@ -133,7 +128,8 @@ public class Character
                     System.out.println("no hints available!");
                 }
                 break;
-            case "Boxes":
+            // boxes
+            case "a91b9a37-d41d-4d93-b553-895ffd04723a":
                 if (!hintsUsed.get(UUID.fromString("0b63808f-20c5-4755-9cdf-72396bfe205e"))) {
                     System.out.println("Box #2 is not empty");
                     hintsUsed.put(UUID.fromString("0b63808f-20c5-4755-9cdf-72396bfe205e"), true);
@@ -144,10 +140,12 @@ public class Character
                     System.out.println("no hints available!");
                 }
                 break;
-            case "Jigsaw":
+            // jigsaw
+            case "c6b98566-e4e9-445c-8da2-9ef6b92ce815":
                 System.out.println("no hints available!");
                 break;
-            case "Minesweeper and Morse Code":
+            // minesweeper and morse code
+            case "150c985e-0e90-4c28-bd96-e658b4bc1c20":
                 if (!puzzlesCompleted.get(UUID.fromString("56e5af6b-0295-48a9-b57e-b0670e025379"))) {
                     System.out.println("no hints available!");
                 } else {
@@ -162,7 +160,8 @@ public class Character
                     }
                 }
                 break;
-            case "Wall Message":
+            // wall message
+            case "1030c684-0ceb-4f2b-a71e-f5846697d8d7":
                 if (!hintsUsed.get(UUID.fromString("9345822d-d48e-4f13-9d8c-dfbd70094050"))) {
                     System.out.println("What can you hear in an empty room?");
                     hintsUsed.put(UUID.fromString("9345822d-d48e-4f13-9d8c-dfbd70094050"), true);
@@ -182,6 +181,14 @@ public class Character
      */
     public String getName() {
         return this.name;
+    }
+
+    /**
+     * mutator for character name
+     * @param name String -- the new character name
+     */
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
@@ -240,6 +247,7 @@ public class Character
      * Returns a string representation of the character.
      * @return A string containing the character's name and the number of hints used.
      */
+    @Override
     public String toString() {
         return "Character: " + name + " (Hints Used: " + hintsUsed + ")";
     }
@@ -253,12 +261,10 @@ public class Character
         hintsUsed.put(UUID.fromString("e24d25e1-ee56-47e5-8b8d-d4effbd18d23"), false);
         hintsUsed.put(UUID.fromString("0b63808f-20c5-4755-9cdf-72396bfe205e"), false);
         hintsUsed.put(UUID.fromString("be0a15dc-bfdb-49f4-807f-bd679a7f5dbd"), false);
-        hintsUsed.put(UUID.fromString("9345822d-d48e-4f13-9d8c-dfbd70094050"), false);
-        hintsUsed.put(UUID.fromString("6ad175b8-c795-4184-9602-5b347d7e0d31"), false);
-        hintsUsed.put(UUID.fromString("10d91414-0424-43d1-825e-1a9f095685fd"), false);
-        hintsUsed.put(UUID.fromString("e95d1da8-4444-4750-be49-630a5772f98b"), false);
         hintsUsed.put(UUID.fromString("a40f6444-51e6-46da-bf39-f7d86c730586"), false);
         hintsUsed.put(UUID.fromString("c2d4454b-8ce9-48d4-9734-49eee6168b23"), false);
+        hintsUsed.put(UUID.fromString("9345822d-d48e-4f13-9d8c-dfbd70094050"), false);
+        hintsUsed.put(UUID.fromString("6ad175b8-c795-4184-9602-5b347d7e0d31"), false);
         return hintsUsed;
     }
 
@@ -269,10 +275,10 @@ public class Character
         HashMap<UUID, Boolean> puzzleMap = new HashMap<>();
         puzzleMap.put(UUID.fromString("e50b53c7-6bbf-4849-af1a-350adb9afcf3"), false);
         puzzleMap.put(UUID.fromString("6c9f6273-be95-470d-8d43-5792c7737c82"), false);
-        puzzleMap.put(UUID.fromString("f6a8b2fa-a3f7-41ef-a622-dc116aa4a9bd"), false);
         puzzleMap.put(UUID.fromString("bee765a8-d881-4d3f-809b-9a91b8ace119"), false);
         puzzleMap.put(UUID.fromString("56e5af6b-0295-48a9-b57e-b0670e025379"), false);
         puzzleMap.put(UUID.fromString("0d5e7f35-f314-425d-9c0c-072295edee1e"), false);
+        puzzleMap.put(UUID.fromString("f6a8b2fa-a3f7-41ef-a622-dc116aa4a9bd"), false);
         return puzzleMap;
     }
 

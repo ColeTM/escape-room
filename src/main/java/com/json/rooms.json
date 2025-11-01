@@ -619,22 +619,7 @@
                     "clueID": "5fe791f6-3912-4f2d-9a3d-86f1deaf00ef",
                     "text": "Solve the game of minesweeper and enter the squares with the mines."
                 },
-                "hints": [
-                    {
-                        "hintID": "10d91414-0424-43d1-825e-1a9f095685fd",
-                        "text": "",
-                        "hasPicture": false,
-                        "Picture": null,
-                        "level": "Vague"
-                    },
-                    {
-                        "hintID": "e95d1da8-4444-4750-be49-630a5772f98b",
-                        "text": "", 
-                        "hasPicture": false,
-                        "picture": null,
-                        "level": "Direct"
-                    }
-                ],
+                "hints": [],
                 "isSequential": true
             },
             {
