@@ -80,5 +80,48 @@ public class DatabaseTests {
         assertFalse(er.registerUser(" ", " ", "LDalane@outlook.com", "Linky", "DRANER111"));
     }
 
-    
+    @Test
+    public void testCharcterInit() {
+        EscapeRoom er = EscapeRoom.getInstance();
+        er.login("Puzzler","password");
+        assertTrue(er.startNewGame("Puzzler"));
+    }
+
+    @Test
+    public void testNullCharcter() {
+        EscapeRoom er = EscapeRoom.getInstance();
+        er.login("Puzzler","password");
+        assertFalse(er.startNewGame(null));
+    }
+
+    @Test
+    public void testEmptyCharcter() {
+        EscapeRoom er = EscapeRoom.getInstance();
+        er.login("Puzzler","password");
+        assertFalse(er.startNewGame(" "));
+    }
+
+    @Test
+    public void testResumeCharacter() {
+        EscapeRoom er = EscapeRoom.getInstance();
+        er.login("Puzzler","password");
+        er.startNewGame("Puzzler");
+        assertTrue(er.resumeGame("Puzzler"));
+    }
+
+    @Test
+    public void testResumeNull() {
+        EscapeRoom er = EscapeRoom.getInstance();
+        er.login("Puzzler","password");
+        er.startNewGame("Puzzler");
+        assertFalse(er.resumeGame(null));
+    }
+
+    @Test
+    public void testResumeEmpty() {
+        EscapeRoom er = EscapeRoom.getInstance();
+        er.login("Puzzler","password");
+        er.startNewGame("Puzzler");
+        assertFalse(er.resumeGame(null));
+    }
 }
