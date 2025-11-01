@@ -124,4 +124,36 @@ public class DatabaseTests {
         er.startNewGame("Puzzler");
         assertFalse(er.resumeGame(null));
     }
+
+    @Test
+    public void writeUser() {
+        userList.addUser("Link", "Dalene", "LDalane@outlook.com", "Linky", "DRANER111");
+        DataWriter.saveUsers();
+        assertEquals("Link", DataLoader.getUsers().get(3).getFirstName());
+    }
+
+    @Test
+    public void writeMultiple() {
+        userList.addUser("Link", "Dalene", "LDalane@outlook.com", "Linky", "DRANER111");
+        userList.addUser("Blink", "Dalene", "LDalane@outlook.com", "Blinky", "DRANER111");
+        userList.addUser("Clink", "Dalene", "LDalane@outlook.com", "Clinky", "DRANER111");
+        DataWriter.saveUsers();
+        assertEquals("Blink", DataLoader.getUsers().get(4).getFirstName());
+    }
+
+    @Test
+    public void writeNull() {
+        userList.addUser(null, "Dalene", "LDalane@outlook.com", "Linky", "DRANER111");
+        DataWriter.saveUsers();
+        assertEquals("Link", DataLoader.getUsers().get(3).getFirstName());
+    }
+
+    @Test
+    public void writeEmpty() {
+        userList.addUser(" ", "Dalene", "LDalane@outlook.com", "Linky", "DRANER111");
+        DataWriter.saveUsers();
+        assertEquals(" ", DataLoader.getUsers().get(3).getFirstName());
+    }
+    
+    
 }
