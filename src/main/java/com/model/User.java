@@ -117,11 +117,6 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    // currently not utilized
-    public boolean checkPassword(String enteredPassword) {
-        return this.password.equals(enteredPassword);
-    }
 
     /**
      * accessor for the user's first name
