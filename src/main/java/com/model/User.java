@@ -12,7 +12,7 @@ import java.util.UUID;
 public class User {
 
     /** UUID for this user */
-    private UUID userID;
+    private final UUID userID;
     /** the user's first name */
     private String firstName;
     /** the user's last name */
@@ -26,7 +26,7 @@ public class User {
     /** the player's skill level (Beginner, Intermediate, or Pro) */
     private Difficulty skillLevel;
     /** list of the user's saved in-progress games */
-    private ArrayList<Character> characters;
+    private final ArrayList<Character> characters;
     /** the player's entry on the leaderboard */
     private LeaderboardEntry personalRecord;
 
