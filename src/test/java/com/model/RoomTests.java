@@ -2,6 +2,7 @@ package com.model;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach; 
 import static org.junit.jupiter.api.Assertions.*;
 import java.io.File;
 import java.util.ArrayList;
@@ -86,7 +87,7 @@ public class RoomTests {
     //Test on Name 
 
     @Test 
-    public void TestValidName(){
+    public void testValidName(){
         testRoom.setName("Boxes");
         assertEquals("Boxes", testRoom.getName());
     }
@@ -122,5 +123,37 @@ public class RoomTests {
         testRoom.setRoomID(null);
         assertNull(testRoom.getRoomID());
     }
+
+    //Test MoveRoom
+    @Test
+    public void MoveRoomWithValidID(){
+        UUID validRoomID = UUID.fromString("9aae693f-83a4-427e-9822-b150f44ba171");
+        boolean result = testRoom.moveRoom(validRoomID);
+        assertTrue(result);
+    }
+
+    @Test
+    public void MoveRoomWithInvalidID(){
+        UUID invalidRoomID = UUID.fromString("00000000-0000-0000-0000-000000000000");
+        boolean result = testRoom.moveRoom(invalidRoomID);
+        assertFalse(result);
+    }
+
+    @Test 
+    public void MoveRoomWithNullID(){
+        boolean result = testRoom.moveRoom(null);
+        assertFalse(result);
+    }
+
+    @Test 
+    public void MoveMultipleRooms(){
+        UUID firstRoomID = UUID.fromString("9aae693f-83a4-427e-9822-b150f44ba171");
+        UUID secondRoomID = UUID.fromString("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85");
+
+        testRoom.moveRoom(firstRoomID);
+        boolean result = testRoom.moveRoom(secondRoomID);
+        assertTrue(result);
+    }
+
 
 }
