@@ -111,6 +111,13 @@ public class RoomTests {
         testRoom.setName("   ");
         assertEquals("   ", testRoom.getName());
     }
+
+    @Test 
+    public void TestNameWithSpecialCharacters(){
+        testRoom.setName("Room#&$&$*@");
+        assertEquals("Room#&$&$*@", testRoom.getName());
+    }
+
     //Test RoomID
 
     @Test
@@ -126,7 +133,143 @@ public class RoomTests {
         assertNull(testRoom.getRoomID());
     }
 
+    //Test Story 
+
+    @Test
+    public void TestValidStory(){
+        testRoom.setStory("This is a test story for the room.");
+        assertEquals("This is a test story for the room.", testRoom.getStory());
+    }
+
+    @Test
+    public void TestStoryWithNull(){
+        testRoom.setStory(null);
+        assertNull(testRoom.getStory());
+    }   
+
+    @Test
+    public void TestStoryWithEmptyString(){
+        testRoom.setStory("");
+        assertEquals("", testRoom.getStory());
+    }
+
+    @Test
+    public void TestStoryWithSpaces(){
+        testRoom.setStory("     ");
+        assertEquals("     ", testRoom.getStory());
+    }
+
+    @Test
+    public void TestStoryWithSpecialCharacters(){
+        testRoom.setStory("Story!@#$%^&*()_+");
+        assertEquals("Story!@#$%^&*()_+", testRoom.getStory());
+    }
+
+    @Test
+    public void TestStoryLongerThanExpected(){
+        String longStory = "This is a very long story. ".repeat(50);
+        testRoom.setStory(longStory);
+        assertEquals(longStory, testRoom.getStory());
+    }
+
+    @Test 
+    public void TestStoryWithNewLines(){
+        String storyWithNewLines = "This is line one.\nThis is line two.\nThis is line three.";
+        testRoom.setStory(storyWithNewLines);
+        assertEquals(storyWithNewLines, testRoom.getStory());
+    }
+
+    //Test Background
+
+    @Test
+    public void TestValidBackground(){
+        File newBackground = new File("src/docs/Library.png");
+        testRoom.setBackground(newBackground);
+        assertEquals(newBackground, testRoom.getBackground());
+    }
+
+    @Test
+    public void TestBackgroundWithNull(){
+        testRoom.setBackground(null);
+        assertNull(testRoom.getBackground());
+    }
+
+    @Test 
+    public void TestBackgroundWithNonExistentFile(){
+        File nonExistentFile = new File("src/docs/NonExistent.png");
+        testRoom.setBackground(nonExistentFile);
+        assertEquals(nonExistentFile, testRoom.getBackground());
+    }
+
+    @Test 
+    public void TestMultipleBackgroundChanges(){
+        File firstBackground = new File("src/docs/First.png");
+        File secondBackground = new File("src/docs/Second.png");
+        testRoom.setBackground(firstBackground);
+        assertEquals(firstBackground, testRoom.getBackground());
+        testRoom.setBackground(secondBackground);
+        assertEquals(secondBackground, testRoom.getBackground());
+    }
+
+    //Test Interactables
+    @Test
+    public void TestInteractablesWithValidList(){
+        ArrayList<Interactable> interactables = new ArrayList<>();
+        UUID interactableID = UUID.randomUUID();
+        Interactable item = new Interactable(interactableID, "key", "A golden key", true, null, true);
+        interactables.add(item);
+        testRoom.setInteractables(interactables);
+        assertEquals(1, testRoom.getInteractables().size());
+    }
+
+    @Test
+    public void TestInteractablesWithNull(){
+        testRoom.setInteractables(null);
+        assertNull(testRoom.getInteractables());
+    }
+
+    @Test
+    public void TestInteractablesWithEmptyList(){
+        ArrayList<Interactable> interactables = new ArrayList<>();
+        testRoom.setInteractables(interactables);
+        assertEquals(0, testRoom.getInteractables().size());
+    }
+
+    @Test
+    public void TestInteractablesWithMultipleItems(){
+        ArrayList<Interactable> interactables = new ArrayList<>();
+        interactables.add(new Interactable(UUID.randomUUID(), "key", "A golden key", true, null, true));
+        interactables.add(new Interactable(UUID.randomUUID(), "book", "An old book", false,"The book seems ancient.", false));
+        testRoom.setInteractables(interactables);
+        assertEquals(2, testRoom.getInteractables().size());
+    }
+
+    //Test Puzzles
+    @Test
+    public void TestPuzzlesWithValidList(){
+        ArrayList<Puzzle> puzzles = new ArrayList<>();
+        Puzzle puzzle = new TextPuzzle(UUID.randomUUID(), "Test Puzzle", Difficulty.Beginner, 0, null, new ArrayList<>(), true, "What is 2+2?", "4"); 
+        puzzles.add(puzzle);
+        testRoom.setPuzzles(puzzles);
+        assertEquals(1, testRoom.getPuzzles().size());
+
+    }
+
+    @Test
+    public void TestPuzzlesWithNull(){
+        testRoom.setPuzzles(null);
+        assertNull(testRoom.getPuzzles());
+    }
+
+    @Test
+    public void TestPuzzlesWithEmptyList(){
+        ArrayList<Puzzle> puzzles = new ArrayList<>();
+        testRoom.setPuzzles(puzzles);
+        assertEquals(0, testRoom.getPuzzles().size());
+    }
+
     //Test MoveRoom
+    //Running into NullPointerException error when testing moveRoom
     @Test
     public void MoveRoomWithValidID(){
         UUID validRoomID = UUID.fromString("9aae693f-83a4-427e-9822-b150f44ba171");
