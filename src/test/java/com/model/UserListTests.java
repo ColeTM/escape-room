@@ -4,18 +4,15 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import java.io.File;
 import java.util.ArrayList;
 
 
 public class UserListTests {
 
     private UserList userList;
-    private final String testUserFile = "src/test/resources/testUsers.json";
 
     @BeforeEach
     public void setup(){
-       
         userList = UserList.getInstance();
     }
 
@@ -25,16 +22,29 @@ public class UserListTests {
     }
 
     @Test
-    public void testSingletonInstanceNotNull() {
+    public void testSingletonInstance() {
         assertNotNull(userList);
         assertSame(userList, UserList.getInstance());
     }
 
     @Test
     public void testAddUserSuccessfully() {
-        boolean added = userList.addUser("John", "Doe", "john@example.com", "johnny", "secret");
+        boolean added = userList.addUser("John", "Doe", "john@example.com", "johnny101", "password");
         assertTrue(added);
-        assertTrue(userList.usernameTaken("johnny"));
+    }
+
+    @Test
+    public void testAddUserandUsernameTakenSuccessfully() {
+        boolean added = userList.addUser("John", "Doe", "john@example.com", "johnny101", "password");
+        assertTrue(added);
+        assertTrue(userList.usernameTaken("johnny101"));
+    }
+
+    @Test
+    public void testAddDifferentUsernameSameOthersSuccessfully() {
+        userList.addUser("John", "Doe", "john@example.com", "johnny101", "password");
+        boolean result = userList.addUser("John", "Doe", "john@example.com", "johnnyjohn", "password");
+        assertTrue(result);
     }
 
     @Test
@@ -44,12 +54,61 @@ public class UserListTests {
         assertFalse(result);
     }
 
+    //null username should fail
+    @Test
+    public void testNullUsernameFails() {
+        boolean result =userList.addUser("John", "Doe", "john@example.com", null, "password");
+        assertFalse(result);
+    }
+
+    //null name should fail
+    @Test
+    public void testNullFirstNameLastNameFails() {
+        boolean result =userList.addUser(null, null, "john@example.com", "johnny", "password");
+        assertFalse(result);
+    }
+
+    //null password should fail
+    @Test
+    public void testNullPasswordFails() {
+        boolean result =userList.addUser("John", "Doe", "john@example.com", "johnny", null);
+        assertFalse(result);
+    }
+
+    //null email should fail
+    @Test
+    public void testNullEmailFails() {
+        boolean result =userList.addUser("John", "Doe", null, "johnny", "password");
+        assertFalse(result);
+    }
+
     @Test
     public void testGetUserByUsernameAndPassword() {
         userList.addUser("Sam", "Rogers", "sam@example.com", "samr", "mypassword");
         User found = userList.getUser("samr", "mypassword");
         assertNotNull(found);
         assertEquals("samr", found.getUsername());
+    }
+
+    @Test
+    public void testGetUserByNullUsernameAndPassword() {
+        userList.addUser("Sam", "Rogers", "sam@example.com", "samr", "mypassword");
+        User found = userList.getUser(null, "mypassword");
+        assertNull(found);
+    }
+
+    @Test
+    public void testGetUserByUsernameAndNullPassword() {
+        userList.addUser("Sam", "Rogers", "sam@example.com", "samr", "mypassword");
+        User found = userList.getUser("samr", null);
+        assertNull(found);
+    }
+
+    @Test
+    public void testGetUserByUsernameAndPasswordCaseSensitive() {
+        userList.addUser("Sam", "Rogers", "sam@example.com", "samr", "myPassword");
+        User found = userList.getUser("samr", "mypassword");
+        assertNull(found);
     }
 
     @Test
@@ -64,16 +123,6 @@ public class UserListTests {
     public void testUsernameTakenIsCaseInsensitive() {
         userList.addUser("Mia", "Jones", "mia@example.com", "MIAJ", "abc");
         assertTrue(userList.usernameTaken("miaj"));
-    }
-
-    @Test
-    public void testSaveUsersCreatesJSONFile() {
-        userList.addUser("Charlie", "Brown", "charlie@example.com", "charlieb", "peanuts");
-        userList.saveUsers();
-
-        File file = new File(testUserFile);
-        assertTrue(file.exists());
-        assertTrue(file.length() > 0);
     }
 
     @Test

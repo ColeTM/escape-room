@@ -36,6 +36,11 @@ public class PicturePuzzle extends Puzzle
         this.type = Type.Picture;
     }
 
+    public PicturePuzzle(UUID randomUUID, Difficulty pro, int i, Clue clue, ArrayList<Hint> arrayList, boolean b,
+            File file, char c) {
+        //TODO Auto-generated constructor stub
+    }
+
     /**
      * Gets the content of the puzzle.
      * @return The picture file of the puzzle.

@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import java.time.Duration;
+import java.time.Instant;
 
 public class TimerTest {
 
@@ -19,12 +20,13 @@ public class TimerTest {
         assertEquals(1800.0, timer.getTimeRemaining());
         assertFalse(timer.getIsRunning());
         assertNull(timer.getInitialTime());
+        assertNull(timer.getStopTime());
     }
 
     @Test
-    public void testParameterizedConstructorSetsFields() {
+    public void testParameterizedConstructor() {
         Timer paramTimer = new Timer(600.0, true);
-        assertEquals(600.0, paramTimer.getTimeRemaining(), 0.001);
+        assertEquals(600.0, paramTimer.getTimeRemaining());
         assertTrue(paramTimer.getIsRunning());
     }
 
@@ -35,7 +37,7 @@ public class TimerTest {
         assertNotNull(timer.getInitialTime());
     }
 
-    //error in timer logic- 
+    //error in timer logic
     @Test
     public void testPauseStopsTimerAndSetsStopTime() {
         timer.start();
@@ -48,7 +50,7 @@ public class TimerTest {
     public void testAddTimeIncreasesTimeRemaining() {
         double before = timer.getTimeRemaining();
         timer.addTime(60);
-        assertEquals(before + 60, timer.getTimeRemaining(), 0.001);
+        assertEquals(before + 60, timer.getTimeRemaining());
     }
 
     @Test
@@ -64,9 +66,22 @@ public class TimerTest {
         assertEquals(Duration.ofMillis(90500), duration);
     }
 
+    //error in timer logic
     @Test
     public void testIsExpiredReturnsFalseInitially() {
+        timer.start();
         assertFalse(timer.isExpired());
+    }
+
+    @Test
+    public void testisExpiredDoesNotThrowIfNotStarted() {
+        assertDoesNotThrow(() -> timer.isExpired());
+    }
+
+    @Test
+    public void testisExpiredDoesNotThrowIfStarted() {
+        timer.start();
+        assertDoesNotThrow(() -> timer.isExpired());
     }
 
     @Test
@@ -74,6 +89,31 @@ public class TimerTest {
         assertDoesNotThrow(() -> timer.updateTime());
     }
 
+     @Test
+    public void testUpdateTimeDoesNotThrowIfStarted() {
+        timer.start();
+        assertDoesNotThrow(() -> timer.updateTime());
+    }
+
+     @Test
+    public void testPauseTimeDoesNotThrowIfNotStarted() {
+        assertDoesNotThrow(() -> timer.pause());
+    }
+
+     @Test
+    public void testPauseTimeDoesNotThrowIfStarted() {
+        timer.start();
+        assertDoesNotThrow(() -> timer.pause());
+    }
+
+    @Test
+    public void testResumeDoesNotChangeInitialTimeifNeverPaused() {
+        timer.start();
+        Instant init = timer.getInitialTime();
+        timer.resume();
+        assertEquals(init, timer.getInitialTime());
+    }
+    
     @Test
     public void testResumeStartsIfTimeRemainingNegative() {
         Timer t = new Timer(-5, false);
@@ -82,14 +122,15 @@ public class TimerTest {
         assertNotNull(t.getInitialTime());
     }
 
+    //issue with timer logic
     @Test
-    public void testUpdateTimeReducesTimeWhenRunning() throws InterruptedException {
+    public void testUpdateTimeReducesTimeWhenRunning() {
         timer.start();
-        Thread.sleep(1000); // wait 1 second
         timer.updateTime();
         assertTrue(timer.getTimeRemaining() < 1800.0);
     }
 
+    //issue with timer logic
     @Test
     public void testIsExpiredTrueAfterSubtractingAllTime() {
         timer.subtractTime(1800);
