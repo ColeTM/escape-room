@@ -145,7 +145,7 @@ public class DatabaseTests {
     public void writeNull() {
         userList.addUser(null, "Dalene", "LDalane@outlook.com", "Linky", "DRANER111");
         DataWriter.saveUsers();
-        assertEquals("Link", DataLoader.getUsers().get(3).getFirstName());
+        assertEquals(null, DataLoader.getUsers().get(3).getFirstName());
     }
 
     @Test
@@ -155,5 +155,10 @@ public class DatabaseTests {
         assertEquals(" ", DataLoader.getUsers().get(3).getFirstName());
     }
     
-    
+    @Test
+    public void testEmptyList() {
+        UserList.getInstance().getUsers().clear();
+        DataWriter.saveUsers();
+        assertEquals(0, DataLoader.getUsers().size());
+    }
 }
