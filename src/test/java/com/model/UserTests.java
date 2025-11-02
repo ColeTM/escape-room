@@ -85,6 +85,12 @@ public class UserTests {
     }
 
     @Test
+    public void emptyUsername() {
+        User user = new User("", "Clark", "bobclark@gmail.com", "bobby123", "apassword1");
+        assertNotEquals("", user.getUsername());
+    }
+
+    @Test
     public void invalidUsernameTooLong() {
         User user = new User("Bob", "Clark", "bobclark@gmail.com", "bobbybobbybobbybobbybobbybobbybobby", "apassword1");
         assertNotEquals("bobbybobbybobbybobbybobbybobbybobby", user.getUsername());
