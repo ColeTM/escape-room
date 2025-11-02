@@ -35,6 +35,11 @@ public class AudioPuzzle extends Puzzle
         this.type = Type.Audio;
     }
 
+    public AudioPuzzle(UUID randomUUID, Difficulty intermediate, int i, Clue clue, ArrayList<Hint> arrayList, boolean b,
+            String string, int j) {
+        //TODO Auto-generated constructor stub
+    }
+
     /**
      * Gets and returns the audio content
      * @return The audio content of the puzzle
