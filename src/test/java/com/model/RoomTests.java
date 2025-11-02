@@ -17,16 +17,18 @@ public class RoomTests {
     private ArrayList<Interactable> testInteractables;
     private ArrayList<Puzzle> testPuzzles;
 
+    @BeforeEach
     public void setup() {
         testRoomID = UUID.fromString("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85");
         testRoomName = "Hallway";
         testStory = "You find yourself in a long, narrow hallway.";
-        testBackground = new File("scr/docs/Hallway.png");
+        testBackground = new File("src/docs/Hallway.png");
         testInteractables = new ArrayList<>();
         testPuzzles = new ArrayList<>();
         testRoom = new Room(testRoomID, testRoomName, testStory, testBackground, testInteractables, testPuzzles);
     }
 
+    @AfterEach
     public void tearDown() {
         testRoom = null;
         testInteractables = null;

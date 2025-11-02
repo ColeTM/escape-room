@@ -1,1 +1,1 @@
-[]
+[{"firstName":"Charlie","lastName":"Brown","characters":[],"password":"peanuts","userID":"8ed544dc-d330-41df-9930-97813f32a0e6","skillLevel":"Beginner","email":"charlie@example.com","personalRecord":null,"username":"charlieb"},{"firstName":"Alex","lastName":"Turner","characters":[],"password":"beatles","userID":"123a060c-b527-4659-b58b-a0e76a110cbf","skillLevel":"Beginner","email":"alex@example.com","personalRecord":null,"username":"alext"}]
