@@ -68,26 +68,8 @@ public class RoomList {
     
     /* 
     public void saveRoom() {
-        //save room to datawriter
-    }*/
-
-/*
-    public static void main(String[] args) {
-    RoomList roomList = RoomList.getInstance();
-
-    Interactable inter1 = new Interactable("A desk", "desk.jpg", "This is a desk");
-    Interactable inter2 = new Interactable("A chair", "chair.jpg", "This is a chair");
-
-    Room room1 = new Room("A spooky room", "roomOne.jpg", );
-    Room room2 = new Room("A abandoned pool");
     
-    roomList.addRoom(room1);
-    roomList.addRoom(room2);    
-
-    System.out.println("Room 1 UUID: " + roomList.getRoomUUID(room1));
-    System.out.println("Room 2 UUID: " + roomList.getRoomUUID(room2));
-    }
-*/
+    }*/
 }
 
 
