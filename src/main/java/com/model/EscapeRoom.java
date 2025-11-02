@@ -60,9 +60,10 @@ public class EscapeRoom {
                            + "Solve the final challenge to leave! \n"
                            + "You have 30 minutes to escape this house of horrors before your soul is stuck here FOREVER!!! \n";
         System.out.println(intro);
-        Speech.speak(intro);
+        //Speech.speak(intro);
         timer.start();
         currentRoom = RoomList.getInstance().getRoomByUUID(UUID.fromString("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85"));
+        character.setCurrentRoom(UUID.fromString("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85"));
         return true;
     }
 

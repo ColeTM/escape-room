@@ -1,22 +1,30 @@
 package com.model;
 
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.*;
+import org.junit.*;
+import java.util.ArrayList;
 
 public class EscapeRoomTests {
+    private EscapeRoom escapeRoom;
+    private final ArrayList<User> users = UserList.getInstance().getUsers();
 
-    @BeforeEach
+    @Before
     public void setup() {
-
+        escapeRoom = EscapeRoom.getInstance();
     }
 
-    @AfterEach
+    @After
     public void tearDown() {
 
     }
 
 
     // startNewGame(String characterName)
+
+    @Test
+    public void validStartNewGame() {
+
+    }
 
     // resumeGame(String characterName)
 
