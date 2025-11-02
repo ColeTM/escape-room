@@ -143,4 +143,12 @@ public class Timer {
         return Duration.ofMillis(millis);
     }
 
+
+    /**
+     * mutator for time remaining. only used for testing. we will not keep this method.
+     */
+    public void setTimeRemaining(double seconds) {
+        this.timeRemaining = seconds;
+    }
+
 }

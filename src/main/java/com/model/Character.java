@@ -121,9 +121,11 @@ public class Character
                 if (!hintsUsed.get(UUID.fromString("b18be69b-be68-4fb5-9bc4-2641bd58ce68"))) {
                     System.out.println("You'll have to use the stories to piece together a message");
                     hintsUsed.put(UUID.fromString("b18be69b-be68-4fb5-9bc4-2641bd58ce68"), true);
+                    ++numHintsUsed;
                 } else if (!hintsUsed.get(UUID.fromString("e24d25e1-ee56-47e5-8b8d-d4effbd18d23"))) {
                     System.out.println("[book color, page number, line number, word number]");
                     hintsUsed.put(UUID.fromString("e24d25e1-ee56-47e5-8b8d-d4effbd18d23"), true);
+                    ++numHintsUsed;
                 } else {
                     System.out.println("no hints available!");
                 }
@@ -133,9 +135,11 @@ public class Character
                 if (!hintsUsed.get(UUID.fromString("0b63808f-20c5-4755-9cdf-72396bfe205e"))) {
                     System.out.println("Box #2 is not empty");
                     hintsUsed.put(UUID.fromString("0b63808f-20c5-4755-9cdf-72396bfe205e"), true);
+                    ++numHintsUsed;
                 } else if (!hintsUsed.get(UUID.fromString("be0a15dc-bfdb-49f4-807f-bd679a7f5dbd"))) {
                     System.out.println("The doll is in box #1");
                     hintsUsed.put(UUID.fromString("be0a15dc-bfdb-49f4-807f-bd679a7f5dbd"), true);
+                    ++numHintsUsed;
                 } else {
                     System.out.println("no hints available!");
                 }
@@ -152,9 +156,11 @@ public class Character
                     if (!hintsUsed.get(UUID.fromString("a40f6444-51e6-46da-bf39-f7d86c730586"))) {
                         System.out.println("dots are short; dashes are long");
                         hintsUsed.put(UUID.fromString("a40f6444-51e6-46da-bf39-f7d86c730586"), true);
+                        ++numHintsUsed;
                     } else if (!hintsUsed.get(UUID.fromString("c2d4454b-8ce9-48d4-9734-49eee6168b23"))) {
                         System.out.println("the gramophone is playing a message in Morse code");
                         hintsUsed.put(UUID.fromString("c2d4454b-8ce9-48d4-9734-49eee6168b23"), true);
+                        ++numHintsUsed;
                     } else {
                         System.out.println("no hints available!");
                     }
@@ -165,9 +171,11 @@ public class Character
                 if (!hintsUsed.get(UUID.fromString("9345822d-d48e-4f13-9d8c-dfbd70094050"))) {
                     System.out.println("What can you hear in an empty room?");
                     hintsUsed.put(UUID.fromString("9345822d-d48e-4f13-9d8c-dfbd70094050"), true);
+                    ++numHintsUsed;
                 } else if (!hintsUsed.get(UUID.fromString("6ad175b8-c795-4184-9602-5b347d7e0d31"))) {
                     System.out.println("It repeats what you say!");
                     hintsUsed.put(UUID.fromString("6ad175b8-c795-4184-9602-5b347d7e0d31"), true);
+                    ++numHintsUsed;
                 } else {
                     System.out.println("no hints available!");
                 }
