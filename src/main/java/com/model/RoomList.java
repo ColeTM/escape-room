@@ -58,6 +58,7 @@ public class RoomList {
      * @return Room room with the given UUID, or null if not found
      */
     public static Room getRoomByUUID(UUID roomID) {
+        getInstance();
         for (Room room : roomList.rooms) {
             if (room.getRoomID().equals(roomID))
                 return room;
