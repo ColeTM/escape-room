@@ -77,6 +77,26 @@ public class LeaderboardEntryTest {
         assertEquals("00:08", formatted);
     }
 
+    //should throw
+    @Test
+    public void testGetFormatDuration_NullTime() {
+        LeaderboardEntry shorterEntry = new LeaderboardEntry("Lola", null, LocalDate.now(), 0, Difficulty.Beginner, 500.0);
+        assertDoesNotThrow(() -> shorterEntry.getFormatDuration());
+    }
+
+    @Test
+    public void testGetFormatDuration_NoTime() {
+        LeaderboardEntry shorterEntry = new LeaderboardEntry("Lola", Duration.ofSeconds(0), LocalDate.now(), 0, Difficulty.Beginner, 500.0);
+        assertDoesNotThrow(() -> shorterEntry.getFormatDuration());
+    }
+
+    @Test
+    public void testGetFormatDuration_NoTimeSuccess() {
+    LeaderboardEntry shorterEntry = new LeaderboardEntry("Lola", Duration.ofSeconds(0), LocalDate.now(), 0, Difficulty.Beginner, 500.0);
+        String formatted = shorterEntry.getFormatDuration();
+        assertEquals("00:00", formatted);
+    }
+
     @Test
     public void testToStringIncludesAllFields() {
         String output = entry.toString();

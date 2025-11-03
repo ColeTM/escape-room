@@ -31,10 +31,28 @@ public class TimerTest {
     }
 
     @Test
-    public void testStartSetsInitialTimeAndRunningTrue() {
+    public void testStartSetsInitialTime() {
+        timer.start();
+        assertNotNull(timer.getInitialTime());
+    }
+    @Test
+    public void testStartRunningTrue() {
         timer.start();
         assertTrue(timer.getIsRunning());
-        assertNotNull(timer.getInitialTime());
+    }
+
+    @Test
+    public void testResumeRunningTrue() {
+        timer.resume();
+        assertTrue(timer.getIsRunning());
+    }
+
+    //error in timer logic
+    @Test
+    public void testPauseRunningFalse() {
+        timer.start();
+        timer.pause();
+        assertFalse(timer.getIsRunning());
     }
 
     //error in timer logic
@@ -104,6 +122,22 @@ public class TimerTest {
     public void testPauseTimeDoesNotThrowIfStarted() {
         timer.start();
         assertDoesNotThrow(() -> timer.pause());
+    }
+
+     @Test
+    public void testStartTimeDoesNotThrow() {
+        assertDoesNotThrow(() -> timer.start());
+    }
+
+     @Test
+    public void testResumeTimeDoesNotThrow() {
+        assertDoesNotThrow(() -> timer.resume());
+    }
+
+     @Test
+    public void testResumeTimeDoesNotThrowifStarted() {
+        timer.start();
+        assertDoesNotThrow(() -> timer.resume());
     }
 
     @Test
