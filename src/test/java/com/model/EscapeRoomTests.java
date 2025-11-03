@@ -21,7 +21,6 @@ public class EscapeRoomTests {
 
     // startNewGame(String characterName)
 
-    @Test
     public void validStartNewGame() {
 
     }
