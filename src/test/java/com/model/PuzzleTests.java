@@ -10,32 +10,36 @@ import java.util.UUID;
 public class PuzzleTests {
 
     private Puzzle mockPuzzle;
+    private Puzzle emptySolutionPuzzle;
+    private Puzzle nullSolutionPuzzle;
     private Clue testClue;
     private ArrayList<Hint> testHints;
     private UUID puzzleID = UUID.randomUUID();
 
     private class MockPuzzle extends Puzzle {
+        private final String mockSolution;
+
         public MockPuzzle(UUID puzzleID, Difficulty difficulty, int attempts, Clue clue,
-                          ArrayList<Hint> hints, boolean isSequential) {
-            super(puzzleID, null, difficulty, attempts, clue, hints, isSequential);
+                          ArrayList<Hint> hints, boolean isSequential, String solution) {
+            super(puzzleID, solution, difficulty, attempts, clue, hints, isSequential);
+            this.mockSolution = solution;
         }
 
         @Override
         public Object getContent() { return "mock content"; }
 
         @Override
-        public Object getSolution() { return "mock solution"; }
+        public Object getSolution() { return mockSolution; }
 
         @Override
         public boolean solve(Object answer) {
-            boolean solved = answer.equals("mock solution");
-            /**
-             * need to finish this part of the tests
-             */
-            if (solved) {
-                
+            if (mockSolution == null) {
+                return answer == null;
             }
-            return solved;
+            if (answer instanceof String) {
+                return mockSolution.equalsIgnoreCase((String) answer);
+            }
+            return false;
         }
     }
 
@@ -43,7 +47,9 @@ public class PuzzleTests {
     public void setUp() {
         testClue = new Clue(UUID.randomUUID(), "A mock clue");
         testHints = new ArrayList<>();
-        mockPuzzle = new MockPuzzle(puzzleID, Difficulty.Beginner, 0, testClue, testHints, false);
+        mockPuzzle = new MockPuzzle(puzzleID, Difficulty.Beginner, 0, testClue, testHints, false, "Solution");
+        emptySolutionPuzzle = new MockPuzzle(UUID.randomUUID(), Difficulty.Beginner, 0, testClue, testHints, false, "");
+        nullSolutionPuzzle = new MockPuzzle(UUID.randomUUID(), Difficulty.Beginner, 0, testClue, testHints, false, null);
     }
 
     @Test
@@ -71,5 +77,30 @@ public class PuzzleTests {
         assertFalse(mockPuzzle.isCompleted(), "Puzzle is incomplete initially.");
         mockPuzzle.reset();
         assertFalse(mockPuzzle.isCompleted(), "Puzzle should still be incomplete after reset.");
+    }
+
+    @Test
+    public void testSolveWithCorrectCapitalization() {
+        assertTrue(mockPuzzle.solve("Solution"), "Should return true for an exact match.");
+    }
+
+    @Test
+    public void testSolveWithIncorrectCapitalization() {
+        assertTrue(mockPuzzle.solve("solution"), "Solve should be case-insensitive and return true.");
+        assertTrue(mockPuzzle.solve("SOLUTION"), "Solve should be case-insensitive and return true.");
+    }
+
+    @Test
+    public void testSolveWithEmptySolution() {
+        assertTrue(emptySolutionPuzzle.solve(""), "Should return true when the answer is an empty string and the solution is empty.");
+        assertFalse(emptySolutionPuzzle.solve("a"), "Should return false for non-empty answer to an empty solution.");
+        assertFalse(emptySolutionPuzzle.solve(null), "Should return false for null answer to an empty solution.");
+    }
+
+    @Test
+    public void testSolveWithNullSolution() {
+        assertTrue(nullSolutionPuzzle.solve(null), "Should return true when the answer and solution are both null.");
+        assertFalse(nullSolutionPuzzle.solve(""), "Should return false for empty string answer to a null solution.");
+        assertFalse(nullSolutionPuzzle.solve("null"), "Should return false for the string 'null' answer to a null solution.");
     }
 }
