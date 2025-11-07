@@ -47,6 +47,25 @@ public class EscapeRoom {
      * @return boolean -- whether a new save was successfully created  
      */
     public boolean startNewGame(String characterName) {
+
+        // conditions validation
+        if (user == null) {
+            System.out.println("error: no user currently logged in!");
+            return false;
+        }
+        if (characterName == null) {
+            System.out.println("error: character name cannot be null");
+            return false;
+        }
+        if (characterName.trim().isEmpty()) {
+            System.out.println("error: no character name chosen");
+            return false;
+        }
+        if (currentDifficulty == null) {
+            System.out.println("error: cannot start game with null difficulty");
+            return false;
+        }
+
         if(user.getCharacter(characterName) != null) {
             System.out.println("You've already used this character name!");
             return false;
@@ -73,6 +92,10 @@ public class EscapeRoom {
      * @return boolean -- true if the character was set successfully
      */
     public boolean resumeGame(String characterName) {
+        if (user == null) {
+            System.out.println("error: no user logged in");
+            return false;
+        }
         if (user.getCharacter(characterName) == null) {
             return false;
         }
@@ -135,6 +158,10 @@ public class EscapeRoom {
      * @return True if the user was successfully logged in, false otherwise
      */
     public boolean login(String username, String password) {
+        if (user != null) {
+            System.out.println("already logged into an account! please log out before logging in");
+            return false;
+        }
         User temp = UserList.getInstance().getUser(username, password);
         if (temp == null)
             return false;
@@ -147,6 +174,10 @@ public class EscapeRoom {
      * @return boolean -- whether the logout was successful
      */
     public boolean logout() {
+        if (user == null) {
+            System.out.println("already logged out");
+            return false;
+        }
         saveCurrentGame();
         user = null;
         currentRoom = null;
@@ -169,7 +200,11 @@ public class EscapeRoom {
      * @return True if the answer is correct, false otherwise
      */
     public boolean submitPuzzleAnswer(Object solution) {
-        return solution.equals(currentPuzzle.getSolution());
+        if (solution == null) {
+            System.out.println("error: solution cannot be null");
+            return false;
+        }
+        return currentPuzzle.solve(solution);
     }
 
     /**

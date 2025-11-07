@@ -86,7 +86,7 @@ public class UserList {
      */
     public User getUser(String username, String password) {
         for(User user : users) {
-            if(user.getUsername().equals(username) && user.getPassword().equals(password)) {
+            if(user.getUsername().equalsIgnoreCase(username) && user.getPassword().equals(password)) {
                 return user;
             }
         }

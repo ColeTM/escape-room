@@ -1,6 +1,5 @@
 package com.model;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -14,11 +13,6 @@ public class EscapeRoomTests {
     @Before
     public void setup() {
         escapeRoom = EscapeRoom.getInstance();
-    }
-
-    @After
-    public void tearDown() {
-
     }
 
 
@@ -77,7 +71,7 @@ public class EscapeRoomTests {
     @Test
     public void resumeGameNotCaseSensitive() {
         escapeRoom.login("hadenr61", "password61");
-        assertFalse(escapeRoom.resumeGame("haden"));
+        assertTrue(escapeRoom.resumeGame("haden"));
     }
 
     @Test
@@ -163,7 +157,7 @@ public class EscapeRoomTests {
 
     @Test
     public void logoutAlreadyLoggedOut() {
-        assertTrue(escapeRoom.logout());
+        assertFalse(escapeRoom.logout());
     }
 
 
