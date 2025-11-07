@@ -6,16 +6,14 @@ import java.util.UUID;
 import org.junit.After;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 
 public class CharacterTests {
     private final ArrayList<Character> testCharacters = new ArrayList<>();
-    //private final ArrayList<Room> rooms = RoomList.getRooms();
-    //private final ArrayList<Item> testItems = new ArrayList<>();
 
     @Before
     public void setup() {
@@ -27,6 +25,7 @@ public class CharacterTests {
         testCharacters.clear();
     }
 
+
     // new constructor -- Character(String name, Difficulty difficulty)
 
     @Test
@@ -37,28 +36,27 @@ public class CharacterTests {
 
     @Test
     public void emptyCharacterName() {
-        Character ch = new Character("", Difficulty.Beginner);
-        assertNotEquals("", ch.getName());
+        IllegalArgumentException message = assertThrows(IllegalArgumentException.class, () -> new Character("", Difficulty.Beginner));
+        assertEquals(message.getMessage(), "character name must be 1-20 characters");
     }
 
     @Test
     public void characterNameTooLong() {
-        Character ch = new Character("abcdefghijklmnopqrstuvwxyz", Difficulty.Beginner);
-        assertNotEquals("abcdefghijklmnopqrstuvwxyz", ch.getName());
+        IllegalArgumentException message = assertThrows(IllegalArgumentException.class, () -> new Character("abcdefghijklmnopqrstuvwxyz", Difficulty.Beginner));
+        assertEquals(message.getMessage(), "character name must be 1-20 characters");
     }
 
     @Test
     public void nullCharacterName() {
-        Character ch = new Character(null, Difficulty.Intermediate);
-        assertNotEquals(null, ch.getName());
+        IllegalArgumentException message = assertThrows(IllegalArgumentException.class, () -> new Character(null, Difficulty.Beginner));
+        assertEquals(message.getMessage(), "character name cannot be null");
     }
 
     @Test
     public void nullCharacterDifficulty() {
-        Character ch = new Character("John", null);
-        assertNotEquals(null, ch.getDifficulty());
+        IllegalArgumentException message = assertThrows(IllegalArgumentException.class, () -> new Character("John", null));
+        assertEquals(message.getMessage(), "character difficulty cannot be null");
     }
-
 
 
     // addToInventory(Item item)

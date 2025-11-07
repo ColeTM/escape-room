@@ -92,12 +92,38 @@ public class User {
     public User(UUID userID, String firstName, String lastName, String email, 
                 String username, String password, Difficulty skillLevel, 
                 ArrayList<Character> characters, LeaderboardEntry personalRecord) {
+
+        // first name argument validation
+        if (firstName == null)
+            throw new IllegalArgumentException("first name cannot be null");
+        if (!firstName.matches("^[\\p{L}\\s-]{1,20}$"))
+            throw new IllegalArgumentException("first name must be 1-20 characters and can only contain letters, spaces, hyphens, and apostrophes");
+        // last name argument validation
+        if (lastName == null)
+            throw new IllegalArgumentException("last name cannot be null");
+        if (!lastName.matches("^[\\p{L}\\s-]{1,20}$"))
+            throw new IllegalArgumentException("last name must be 1-20 characters and can only contain letters, spaces, hyphens, and apostrophes");
+        // email argument validation
+        if (email == null)
+            throw new IllegalArgumentException("email cannot be null");
+        if (!email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$") || !email.contains("@"))
+            throw new IllegalArgumentException("invalid email");
+        // username argument validation
+        if (username == null)
+            throw new IllegalArgumentException("username cannot be null");
+        if (!username.trim().matches("^[A-Za-z0-9_]{1,20}$"))
+            throw new IllegalArgumentException("username must be 1-20 characters and can only contain letters, numbers, and underscores");
+        // password argument validation
+        if (password == null)
+            throw new IllegalArgumentException("password cannot be null");
+        if (!password.matches("^(?=.*[A-Za-z])(?=.*\\d).{6,20}$"))
+            throw new IllegalArgumentException("password must be 6-20 characters and include a letter and a number");
         
         this.userID = userID;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.username = username;
+        this.firstName = firstName.trim();
+        this.lastName = lastName.trim();
+        this.email = email.trim();
+        this.username = username.trim();
         this.password = password;
         this.skillLevel = skillLevel;
         this.characters = characters;
