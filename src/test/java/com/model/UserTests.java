@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 import org.junit.After;
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,8 +44,8 @@ public class UserTests {
 
     @Test
     public void invalidFirstName() {
-        User user = new User("12345", "Clark", "bobclark@gmail.com", "bobby123", "apassword1");
-        assertNotEquals("12345", user.getFirstName());
+        IllegalArgumentException message = assertThrows(IllegalArgumentException.class, () -> new User("12345", "Clark", "bobclark@gmail.com", "bobby123", "apassword1"));
+        assertEquals(message.getMessage(), "first name must be 1-20 characters and can only contain letters, spaces, hyphens, and apostrophes");
     }
 
     @Test
@@ -56,8 +56,8 @@ public class UserTests {
 
     @Test
     public void invalidLastName() {
-        User user = new User("Bob", "12345", "bobclark@gmail.com", "bobby123", "apassword1");
-        assertNotEquals("12345", user.getLastName());
+        IllegalArgumentException message = assertThrows(IllegalArgumentException.class, () -> new User("Bob", "12345", "bobclark@gmail.com", "bobby123", "apassword1"));
+        assertEquals(message.getMessage(), "last name must be 1-20 characters and can only contain letters, spaces, hyphens, and apostrophes");
     }
 
     @Test
@@ -68,8 +68,8 @@ public class UserTests {
 
     @Test
     public void invalidEmail() {
-        User user = new User("Bob", "Clark", "bobclarkATgmail.com", "bobby123", "apassword1");
-        assertNotEquals("bobclarkATgmail.com", user.getEmail());
+        IllegalArgumentException message = assertThrows(IllegalArgumentException.class, () -> new User("Bob", "Clark", "bobclarkATgmail.com", "bobby123", "apassword1"));
+        assertEquals(message.getMessage(), "invalid email");
     }
 
     @Test
@@ -80,20 +80,20 @@ public class UserTests {
 
     @Test
     public void invalidUsernameIllegalCharacters() {
-        User user = new User("Bob", "Clark", "bobclark@gmail.com", "{bobby123}", "apassword1");
-        assertNotEquals("{bobby123}", user.getUsername());
+        IllegalArgumentException message = assertThrows(IllegalArgumentException.class, () -> new User("Bob", "Clark", "bobclark@gmail.com", "{bobby123}", "apassword1"));
+        assertEquals(message.getMessage(), "username must be 1-20 characters and can only contain letters, numbers, and underscores");
     }
 
     @Test
     public void emptyUsername() {
-        User user = new User("", "Clark", "bobclark@gmail.com", "bobby123", "apassword1");
-        assertNotEquals("", user.getUsername());
+        IllegalArgumentException message = assertThrows(IllegalArgumentException.class, () -> new User("Bob", "Clark", "bobclark@gmail.com", "", "apassword1"));
+        assertEquals(message.getMessage(), "username must be 1-20 characters and can only contain letters, numbers, and underscores");
     }
 
     @Test
     public void invalidUsernameTooLong() {
-        User user = new User("Bob", "Clark", "bobclark@gmail.com", "bobbybobbybobbybobbybobbybobbybobby", "apassword1");
-        assertNotEquals("bobbybobbybobbybobbybobbybobbybobby", user.getUsername());
+        IllegalArgumentException message = assertThrows(IllegalArgumentException.class, () -> new User("Bob", "Clark", "bobclark@gmail.com", "bobbybobbybobbybobbybobbybobbybobby", "apassword1"));
+        assertEquals(message.getMessage(), "username must be 1-20 characters and can only contain letters, numbers, and underscores");
     }
 
     @Test
@@ -104,26 +104,26 @@ public class UserTests {
 
     @Test
     public void invalidPasswordTooShort() {
-        User user = new User("Bob", "Clark", "bobclark@gmail.com", "bobby123", "m3");
-        assertNotEquals("m3", user.getPassword());
+        IllegalArgumentException message = assertThrows(IllegalArgumentException.class, () -> new User("Bob", "Clark", "bobclark@gmail.com", "bobby123", "m3"));
+        assertEquals(message.getMessage(), "password must be 6-20 characters and include a letter and a number");
     }
 
     @Test
     public void invalidPasswordTooLong() {
-        User user = new User("Bob", "Clark", "bobclark@gmail.com", "bobby123", "bobbybobbybobbybobbybobbybobby12345");
-        assertNotEquals("bobbybobbybobbybobbybobbybobby12345", user.getPassword());
+        IllegalArgumentException message = assertThrows(IllegalArgumentException.class, () -> new User("Bob", "Clark", "bobclark@gmail.com", "bobby123", "bobbybobbybobbybobbybobbybobby12345"));
+        assertEquals(message.getMessage(), "password must be 6-20 characters and include a letter and a number");
     }
 
     @Test
     public void invalidPasswordNoLetters() {
-        User user = new User("Bob", "Clark", "bobclark@gmail.com", "bobby123", "123456789");
-        assertNotEquals("123456789", user.getPassword());
+        IllegalArgumentException message = assertThrows(IllegalArgumentException.class, () -> new User("Bob", "Clark", "bobclark@gmail.com", "bobby123", "123456789"));
+        assertEquals(message.getMessage(), "password must be 6-20 characters and include a letter and a number");
     }
 
     @Test
     public void invalidPasswordNoNumbers() {
-        User user = new User("Bob", "Clark", "bobclark@gmail.com", "bobby123", "abcdefghij");
-        assertNotEquals("abcdefghij", user.getPassword());
+        IllegalArgumentException message = assertThrows(IllegalArgumentException.class, () -> new User("Bob", "Clark", "bobclark@gmail.com", "bobby123", "abcdefghij"));
+        assertEquals(message.getMessage(), "password must be 6-20 characters and include a letter and a number");
     }
     
 

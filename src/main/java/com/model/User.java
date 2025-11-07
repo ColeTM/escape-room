@@ -40,12 +40,38 @@ public class User {
      */
     public User(String firstName, String lastName, String email,
                 String username, String password) {
+
+        // first name argument validation
+        if (firstName == null)
+            throw new IllegalArgumentException("first name cannot be null");
+        if (!firstName.matches("^[\\p{L}\\s-]{1,20}$"))
+            throw new IllegalArgumentException("first name must be 1-20 characters and can only contain letters, spaces, hyphens, and apostrophes");
+        // last name argument validation
+        if (lastName == null)
+            throw new IllegalArgumentException("last name cannot be null");
+        if (!lastName.matches("^[\\p{L}\\s-]{1,20}$"))
+            throw new IllegalArgumentException("last name must be 1-20 characters and can only contain letters, spaces, hyphens, and apostrophes");
+        // email argument validation
+        if (email == null)
+            throw new IllegalArgumentException("email cannot be null");
+        if (!email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$") || !email.contains("@"))
+            throw new IllegalArgumentException("invalid email");
+        // username argument validation
+        if (username == null)
+            throw new IllegalArgumentException("username cannot be null");
+        if (!username.trim().matches("^[A-Za-z0-9_]{1,20}$"))
+            throw new IllegalArgumentException("username must be 1-20 characters and can only contain letters, numbers, and underscores");
+        // password argument validation
+        if (password == null)
+            throw new IllegalArgumentException("password cannot be null");
+        if (!password.matches("^(?=.*[A-Za-z])(?=.*\\d).{6,20}$"))
+            throw new IllegalArgumentException("password must be 6-20 characters and include a letter and a number");
         
         this.userID = UUID.randomUUID();
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.username = username;
+        this.firstName = firstName.trim();
+        this.lastName = lastName.trim();
+        this.email = email.trim();
+        this.username = username.trim();
         this.password = password;
         this.skillLevel = Difficulty.Beginner;
         this.characters = new ArrayList<>();
@@ -99,7 +125,15 @@ public class User {
      * @param username String -- the new username
      */
     public void setUsername(String username) {
-        this.username = username;
+        if (username == null) {
+            System.out.println("username cannot be null");
+            return;
+        }
+        if (!username.trim().matches("^[A-Za-z0-9_]{1,20}$")) {
+            System.out.println("username must be 1-20 characters and can only contain letters, numbers, and underscores");
+            return;
+        }
+            this.username = username;
     }
     
     /**
@@ -115,6 +149,14 @@ public class User {
      * @param password String -- the new password
      */
     public void setPassword(String password) {
+        if (password == null) {
+            System.out.println("password cannot be null");
+            return;
+        }
+        if (!password.matches("^(?=.*[A-Za-z])(?=.*\\d).{6,20}$")) {
+            System.out.println("password must be 6-20 characters and include a letter and a number");
+            return;
+        }
         this.password = password;
     }
 
@@ -131,6 +173,14 @@ public class User {
      * @param firstName String -- the new first name
      */
     public void setFirstName(String firstName) {
+        if (firstName == null) {
+            System.out.println("first name cannot be null");
+            return;
+        }
+        if (!firstName.matches("^[\\p{L}\\s-]{1,20}$")) {
+            System.out.println("first name must be 1-20 characters and can only contain letters, spaces, hyphens, and apostrophes");
+            return;
+        }
         this.firstName = firstName;
     }
 
@@ -147,6 +197,14 @@ public class User {
      * @param lastName String -- the new last name
      */
     public void setLastName(String lastName) {
+        if (lastName == null) {
+            System.out.println("last name cannot be null");
+            return;
+        }
+        if (!lastName.matches("^[\\p{L}\\s-]{1,20}$")) {
+            System.out.println("last name must be 1-20 characters and can only contain letters, spaces, hyphens, and apostrophes");
+            return;
+        }
         this.lastName = lastName;
     }
 
@@ -163,6 +221,14 @@ public class User {
      * @param email String -- the new email address
      */
     public void setEmail(String email) {
+        if (email == null) {
+            System.out.println("email cannot be null");
+            return;
+        }
+        if (!email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$") || !email.contains("@")) {
+            System.out.println("invalid email");
+            return;
+        }
         this.email = email;
     }
     
