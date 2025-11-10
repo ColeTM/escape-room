@@ -5,5 +5,8 @@ This project is a virtual escape room designed to be played solo or collaborativ
 
 Created by Nick, James, Cole, Nathan, and Kelly
 
-video link:
+backend presentation video link:
 youtube.com/watch?v=zrhqg5YBXDk&feature=youtu.be
+
+prototype presentation video link:
+https://youtu.be/oXZr6KUkBpY
