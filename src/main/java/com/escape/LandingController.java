@@ -3,10 +3,10 @@ package com.escape;
 import java.io.IOException;
 import javafx.fxml.FXML;
 
-public class PrimaryController {
+public class LandingController {
 
     @FXML
-    private void switchToSecondary() throws IOException {
+    private void switchToLogin() throws IOException {
         App.setRoot("secondary");
     }
 }

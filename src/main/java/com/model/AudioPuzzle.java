@@ -37,7 +37,7 @@ public class AudioPuzzle extends Puzzle
 
     public AudioPuzzle(UUID randomUUID, Difficulty intermediate, int i, Clue clue, ArrayList<Hint> arrayList, boolean b,
             String string, int j) {
-        //TODO Auto-generated constructor stub
+        super(randomUUID, string, intermediate, j, clue, arrayList, b);
     }
 
     /**

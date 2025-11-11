@@ -36,9 +36,9 @@ public class PicturePuzzle extends Puzzle
         this.type = Type.Picture;
     }
 
-    public PicturePuzzle(UUID randomUUID, Difficulty pro, int i, Clue clue, ArrayList<Hint> arrayList, boolean b,
+    public PicturePuzzle(UUID randomUUID,  Difficulty pro, int i, Clue clue, ArrayList<Hint> arrayList, boolean b,
             File file, char c) {
-        //TODO Auto-generated constructor stub
+        super(randomUUID, "pictureSolution", pro, c, clue, arrayList, b);
     }
 
     /**
