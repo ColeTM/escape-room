@@ -29,27 +29,27 @@ public class UserListTests {
 
     @Test
     public void testAddUserSuccessfully() {
-        boolean added = userList.addUser("John", "Doe", "john@example.com", "johnny101", "password");
+        boolean added = userList.addUser("John", "Doe", "john@example.com", "jjohnny101", "password1");
         assertTrue(added);
     }
 
     @Test
     public void testAddUserandUsernameTakenSuccessfully() {
-        boolean added = userList.addUser("John", "Doe", "john@example.com", "johnny101", "password");
+        boolean added = userList.addUser("John", "Doe", "john@example.com", "johnny101", "password1");
         assertTrue(added);
         assertTrue(userList.usernameTaken("johnny101"));
     }
 
     @Test
     public void testAddDifferentUsernameSameOthersSuccessfully() {
-        userList.addUser("John", "Doe", "john@example.com", "johnny101", "password");
-        boolean result = userList.addUser("John", "Doe", "john@example.com", "johnnyjohn", "password");
+        userList.addUser("John", "Doe", "john@example.com", "johnny101", "password1");
+        boolean result = userList.addUser("John", "Doe", "john@example.com", "johnnyjohn", "password1");
         assertTrue(result);
     }
 
     @Test
     public void testAddDuplicateUsernameFails() {
-        userList.addUser("John", "Doe", "john@example.com", "johnny", "secret");
+        userList.addUser("John", "Doe", "john@example.com", "johnny", "secret1");
         boolean result = userList.addUser("Jane", "Doe", "jane@example.com", "johnny", "password");
         assertFalse(result);
     }
@@ -57,14 +57,14 @@ public class UserListTests {
     //null username should fail
     @Test
     public void testNullUsernameFails() {
-        boolean result =userList.addUser("John", "Doe", "john@example.com", null, "password");
+        boolean result =userList.addUser("John", "Doe", "john@example.com", null, "password1");
         assertFalse(result);
     }
 
     //null name should fail
     @Test
     public void testNullFirstNameLastNameFails() {
-        boolean result =userList.addUser(null, null, "john@example.com", "johnny", "password");
+        boolean result =userList.addUser(null, null, "john@example.com", "johnny", "password1");
         assertFalse(result);
     }
 
@@ -73,6 +73,7 @@ public class UserListTests {
     public void testNullPasswordFails() {
         boolean result =userList.addUser("John", "Doe", "john@example.com", "johnny", null);
         assertFalse(result);
+        
     }
 
     //null email should fail
@@ -84,36 +85,36 @@ public class UserListTests {
 
     @Test
     public void testGetUserByUsernameAndPassword() {
-        userList.addUser("Sam", "Rogers", "sam@example.com", "samr", "mypassword");
-        User found = userList.getUser("samr", "mypassword");
+        userList.addUser("Sam", "Rogers", "sam@example.com", "samr", "mypassword1");
+        User found = userList.getUser("samr", "mypassword1");
         assertNotNull(found);
         assertEquals("samr", found.getUsername());
     }
 
     @Test
     public void testGetUserByNullUsernameAndPassword() {
-        userList.addUser("Sam", "Rogers", "sam@example.com", "samr", "mypassword");
-        User found = userList.getUser(null, "mypassword");
+        userList.addUser("Sam", "Rogers", "sam@example.com", "samr", "mypassword1");
+        User found = userList.getUser(null, "mypassword1");
         assertNull(found);
     }
 
     @Test
     public void testGetUserByUsernameAndNullPassword() {
-        userList.addUser("Sam", "Rogers", "sam@example.com", "samr", "mypassword");
+        userList.addUser("Sam", "Rogers", "sam@example.com", "samr", "mypassword1");
         User found = userList.getUser("samr", null);
         assertNull(found);
     }
 
     @Test
     public void testGetUserByUsernameAndPasswordCaseSensitive() {
-        userList.addUser("Sam", "Rogers", "sam@example.com", "samr", "myPassword");
-        User found = userList.getUser("samr", "mypassword");
+        userList.addUser("Sam", "Rogers", "sam@example.com", "samr", "myPassword1");
+        User found = userList.getUser("samr", "mypassword1");
         assertNull(found);
     }
 
     @Test
     public void testGetUserByUUID() {
-        userList.addUser("Alex", "Turner", "alex@example.com", "alext", "beatles");
+        userList.addUser("Alex", "Turner", "alex@example.com", "alext", "beatles8");
         User u = userList.getUser("alext", "beatles");
         User found = userList.getUserByUUID(u.getUserID());
         assertEquals(u, found);
@@ -121,7 +122,7 @@ public class UserListTests {
 
     @Test
     public void testUsernameTakenIsCaseInsensitive() {
-        userList.addUser("Mia", "Jones", "mia@example.com", "MIAJ", "abc");
+        userList.addUser("Mia", "Jones", "mia@example.com", "MIAJ", "abcdef1");
         assertTrue(userList.usernameTaken("miaj"));
     }
 

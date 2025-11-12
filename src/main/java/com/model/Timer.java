@@ -80,18 +80,23 @@ public class Timer {
      * method to pause the timer
      */
     public void pause() {
-        updateTime();
-        isRunning = false;
-        stopTime = Instant.now();
+        //updateTime();
+        if(isRunning == true) {
+            isRunning = false;
+            stopTime = Instant.now();
+            updateTime();
+        }
     }
 
     /**
      * method to restart the timer after pausing
      */
     public void resume() {
-        if (timeRemaining < 0){
-            isRunning = true;
-            initialTime = Instant.now();
+        if(isRunning == false){
+            if (timeRemaining > 0){
+                isRunning = true;
+                initialTime = Instant.now();
+            }
         }
     }
 
@@ -128,9 +133,11 @@ public class Timer {
             Instant now = Instant.now();
             Duration passed = Duration.between(initialTime, now);
             timeRemaining -= passed.toSeconds();
-        } 
-        Duration passed = Duration.between(initialTime, stopTime);
-        timeRemaining -= passed.toSeconds();
+        }
+        else if (initialTime != null && stopTime != null){ 
+            Duration passed = Duration.between(initialTime, stopTime);
+           timeRemaining -= passed.toSeconds();
+        }
     }
 
     /**

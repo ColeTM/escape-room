@@ -33,12 +33,22 @@ public class LeaderboardEntry {
      */
     public LeaderboardEntry(String username, Duration time, LocalDate date, 
                             int hintsUsed, Difficulty difficulty, double score) {
+        if (username == null) {
+            throw new IllegalArgumentException("username cannot be null");
+        } else if (time == null) {
+            throw new IllegalArgumentException("time cannot be null");
+        } else if (date == null) {
+            throw new IllegalArgumentException("date cannot be null");
+        } else if (difficulty == null) {
+            throw new IllegalArgumentException("difficulty cannot be null");
+        } else{ 
         this.time = time;
         this.date = date;
         this.hintsUsed = hintsUsed;
         this.difficulty = difficulty;
         this.username = username;
         this.score = score;
+        }
     }
 
     /**

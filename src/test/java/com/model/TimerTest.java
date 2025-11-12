@@ -149,17 +149,17 @@ public class TimerTest {
     }
     
     @Test
-    public void testResumeStartsIfTimeRemainingNegative() {
+    public void testResumeStartsIfTimeRemainingNegativeFails() {
         Timer t = new Timer(-5, false);
         t.resume();
-        assertTrue(t.getIsRunning());
-        assertNotNull(t.getInitialTime());
+        assertFalse(t.getIsRunning());
     }
 
     //issue with timer logic
     @Test
-    public void testUpdateTimeReducesTimeWhenRunning() {
+    public void testUpdateTimeReducesTimeWhenRunning() throws InterruptedException{
         timer.start();
+        Thread.sleep(2000);
         timer.updateTime();
         assertTrue(timer.getTimeRemaining() < 1800.0);
     }

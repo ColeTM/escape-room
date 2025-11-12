@@ -56,7 +56,9 @@ public class Leaderboard {
      * method to sort the entires in the leaderboard
      */
     public void sortEntries(){
-        Collections.sort(globalEntries, Comparator.comparing(LeaderboardEntry::getTime));
+        Collections.sort(globalEntries, Comparator.comparing(LeaderboardEntry::getDifficulty, Comparator.reverseOrder())
+        .thenComparing(LeaderboardEntry::getTime)
+        .thenComparing(LeaderboardEntry::getScore, Comparator.reverseOrder()));
     }
     
     /**
