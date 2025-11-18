@@ -4,4 +4,6 @@
 
 .button {
     -fx-text-fill: black;
+    -fx-font: Averia Serif Libre;
+    -fx-font-size: 72;
 }
