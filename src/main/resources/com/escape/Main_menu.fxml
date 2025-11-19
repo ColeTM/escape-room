@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.*?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox styleClass="menu-background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.MenuController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="menu-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.MenuController">
    <children>
       <Pane prefHeight="405.0" prefWidth="600.0">
          <children>
-            <Button layoutX="260.0" layoutY="220.0" mnemonicParsing="false" text="New Game" onAction="#switchToNew"/>
-            <Button layoutX="260.0" layoutY="250.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="79.0" text="Continue" onAction="#switchToContinue" />
-            <Button layoutX="260.0" layoutY="280.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="79.0" text="Settings" onAction="#switchToSettings" />
-            <Label layoutX="57.0" layoutY="69.0" text="HOUSE OF HORRORS">
+            <Button fx:id="newGameButton" layoutX="195.0" layoutY="153.0" mnemonicParsing="false" onAction="#switchToNew" prefHeight="56.0" prefWidth="210.0" text="New Game" />
+            <Button fx:id="continueGameButton" layoutX="195.0" layoutY="224.0" mnemonicParsing="false" onAction="#switchToContinue" prefHeight="56.0" prefWidth="210.0" text="Continue" />
+            <Button fx:id="leaderboardButton" layoutX="195.0" layoutY="295.0" mnemonicParsing="false" onAction="#switchToLeaderboard" prefHeight="56.0" prefWidth="210.0" text="Leaderboard" />
+            <Label layoutX="57.0" layoutY="56.0" text="HOUSE OF HORRORS" textFill="#951d1d">
                <font>
                   <Font size="51.0" />
                </font>
             </Label>
+            <Button fx:id="settingsButton" layoutX="543.0" layoutY="260.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchToSettings" prefHeight="40.0" prefWidth="40.0" />
+            <Button fx:id="profileButton" layoutX="543.0" layoutY="311.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchToProfile" prefHeight="40.0" prefWidth="40.0" />
          </children>
       </Pane>
    </children>

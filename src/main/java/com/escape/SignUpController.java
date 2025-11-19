@@ -35,9 +35,9 @@ public class SignUpController {
 
         try {
             escapeRoom.registerUser(registerFirstName.getText(), registerLastName.getText(), registerEmail.getText(), registerUsername.getText(), registerPassword.getText());
-        
             switchToMainMenu();
-        } catch (IllegalArgumentException e) {
+        }
+        catch (IllegalArgumentException e) {
             registerErrorLabel.setText(e.getMessage());
         }
     }
@@ -53,7 +53,7 @@ public class SignUpController {
 
     @FXML
     private void switchToMainMenu() throws IOException {
-        App.setRoot("Main_menu");
+        App.setRoot("main_menu");
     }
 
     @FXML

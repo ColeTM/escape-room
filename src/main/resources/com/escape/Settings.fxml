@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" styleClass="menu-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="settingsBack" layoutX="10.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#btnBackPressed" prefHeight="40.0" prefWidth="40.0">
+         <graphic>
+            <ImageView fitHeight="57.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/back_icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="ttsButton" layoutX="205.0" layoutY="215.0" mnemonicParsing="false" onAction="#toggleTTS" prefHeight="60.0" prefWidth="230.0" text="Text-To-Speech: On" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dee5eb" height="60.0" layoutX="205.0" layoutY="129.0" stroke="BLACK" strokeType="INSIDE" width="230.0" />
+      <Slider fx:id="volumeSlider" layoutX="275.0" layoutY="152.0" onMouseDragged="#updateVolume" prefHeight="14.0" prefWidth="105.0" value="100.0" />
+      <Text layoutX="222.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Volume:" />
+      <Label fx:id="volumeLabel" layoutX="388.0" layoutY="151.0" text="100%" />
+      <Text fill="#951d1d" layoutX="209.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
+         <font>
+            <Font name="Cinzel Decorative Black" size="40.0" />
+         </font>
+      </Text>
+   </children>
+   <stylesheets>
+      <URL value="@styles.css" />
+   </stylesheets>
+</Pane>

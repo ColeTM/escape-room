@@ -7,7 +7,7 @@ public class NewGameController {
 
     @FXML
     private void switchToMainMenu() throws IOException {
-        App.setRoot("Main_menu");
+        App.setRoot("main_menu");
     }
     
 }

@@ -12,11 +12,11 @@ public class MenuController {
 
     @FXML
     public void switchToContinue() throws IOException {
-        App.setRoot("Continue");
+        App.setRoot("continue_game");
     }
 
     @FXML
     public void switchToSettings() throws IOException {
-        App.setRoot("Settings");
+        App.setRoot("settings");
     }
 }
