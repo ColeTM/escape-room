@@ -7,7 +7,7 @@ public class LandingController {
 
     @FXML
     private void switchToLogin() throws IOException {
-        App.setRoot("secondary");
+        App.setRoot("login");
     }
 
     @FXML
