@@ -9,4 +9,9 @@ public class LandingController {
     private void switchToLogin() throws IOException {
         App.setRoot("secondary");
     }
+
+    @FXML
+    private void switchToSignUp() throws IOException {
+        App.setRoot("signup");
+    }
 }

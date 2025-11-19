@@ -147,8 +147,9 @@ public class EscapeRoom {
      */
     public boolean registerUser(String firstName, String lastName, String email, 
                                     String username, String password) {
-        user = UserList.getInstance().getUser(username, password);
-        return UserList.getInstance().addUser(firstName, lastName, email, username, password);
+        if (!UserList.getInstance().addUser(firstName, lastName, email, username, password))
+            return false;
+        return login(username, password);
     }
 
     /**
