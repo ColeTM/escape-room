@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 public class MenuController {
     @FXML
     public void switchToNew() throws IOException {
-        App.setRoot("NewGame");
+        App.setRoot("new_game");
     }
 
     @FXML

@@ -29,7 +29,7 @@
       <TextField fx:id="registerLastName" layoutX="360.0" layoutY="117.0" />
       <TextField fx:id="registerUsername" layoutX="120.0" layoutY="171.0" />
       <TextField fx:id="registerEmail" layoutX="120.0" layoutY="225.0" />
-      <Button fx:id="registerButton" layoutX="259.0" layoutY="306.0" mnemonicParsing="false" onAction="#switchToMainMenu" text="Register" >
+      <Button fx:id="registerButton" layoutX="259.0" layoutY="306.0" mnemonicParsing="false" onAction="#switchToMainMenu" text="Register">
          <font>
             <Font name="SansSerif Regular" size="24.0" />
          </font>
