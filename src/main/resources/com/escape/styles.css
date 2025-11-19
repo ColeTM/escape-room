@@ -1,13 +1,11 @@
 .menu-background {
-    -fx-background-image:url("../../images/menu_background.png");
+    -fx-background-image: url("images/menu_background.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: cover;
 }
 
 .label {
-    -fx-text-fill: white;
 }
 
 .button {
-    -fx-text-fill: black;
-    -fx-font: Averia Serif Libre;
-    -fx-font-size: 72;
 }
