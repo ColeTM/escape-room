@@ -11,9 +11,9 @@
    <children>
       <Pane prefHeight="405.0" prefWidth="600.0">
          <children>
-            <Button layoutX="260.0" layoutY="220.0" mnemonicParsing="false" text="New Game" />
-            <Button layoutX="260.0" layoutY="250.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="79.0" text="Continue" />
-            <Button layoutX="260.0" layoutY="280.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="79.0" text="Settings" />
+            <Button layoutX="260.0" layoutY="220.0" mnemonicParsing="false" text="New Game" onAction="#switchToNew"/>
+            <Button layoutX="260.0" layoutY="250.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="79.0" text="Continue" onAction="#switchToContinue" />
+            <Button layoutX="260.0" layoutY="280.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="79.0" text="Settings" onAction="#switchToSettings" />
             <Label layoutX="57.0" layoutY="69.0" text="HOUSE OF HORRORS">
                <font>
                   <Font size="51.0" />
