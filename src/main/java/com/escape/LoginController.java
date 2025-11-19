@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 public class LoginController {
 
     @FXML
-    private void switchToLanding() throws IOException {
-        App.setRoot("primary");
+    private void switchToMainMenu() throws IOException {
+        App.setRoot("Main_menu");
     }
 }

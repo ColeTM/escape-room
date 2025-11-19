@@ -14,7 +14,7 @@
       <TextField promptText="Username:" />
       <Label text="Enter Password" />
       <PasswordField promptText="Password:" />
-        <Button fx:id="secondaryButton" onAction="#switchToLanding" text="Log In" />
+        <Button fx:id="secondaryButton" onAction="#switchToMainMenu" text="Log In" />
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
