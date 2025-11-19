@@ -3,36 +3,42 @@
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" style="-fx-background-image: url(&quot;images/menu_background.png&quot;); -fx-background-size: cover; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.LoginController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" style="-fx-background-image: url(&quot;images/menu_background.png&quot;); -fx-background-size: cover; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.SignUpController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#60717b" height="185.0" layoutX="57.0" layoutY="99.0" opacity="0.88" stroke="BLACK" strokeType="INSIDE" width="527.0" />
-      <Label layoutX="212.0" layoutY="20.0" text="REGISTER" textFill="#951d1d">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#60717b" height="222.0" layoutX="57.0" layoutY="75.0" opacity="0.88" stroke="BLACK" strokeType="INSIDE" width="527.0" />
+      <Label layoutX="211.0" text="REGISTER" textFill="#951d1d">
          <font>
             <Font name="Cinzel Decorative Bold" size="40.0" />
          </font>
       </Label>
-      <Label layoutX="120.0" layoutY="111.0" text="first name:" textFill="WHITE" />
-      <Label layoutX="360.0" layoutY="111.0" text="last name:" textFill="WHITE" />
-      <Label layoutX="120.0" layoutY="170.0" text="username:" textFill="WHITE" />
-      <Label layoutX="360.0" layoutY="170.0" text="password:" textFill="WHITE" />
-      <Label layoutX="120.0" layoutY="224.0" text="email:" textFill="WHITE" />
-      <Label layoutX="360.0" layoutY="224.0" text="confirm password:" textFill="WHITE" />
-      <TextField fx:id="registerFirstName" layoutX="120.0" layoutY="128.0" />
-      <TextField fx:id="registerLastName" layoutX="360.0" layoutY="128.0" />
-      <TextField fx:id="registerUsername" layoutX="120.0" layoutY="187.0" />
-      <TextField fx:id="registerPassword" layoutX="360.0" layoutY="187.0" />
-      <TextField fx:id="registerEmail" layoutX="120.0" layoutY="241.0" />
-      <TextField fx:id="registerConfirmPassword" layoutX="360.0" layoutY="241.0" />
-      <Button fx:id="registerButton" layoutX="259.0" layoutY="292.0" mnemonicParsing="false" onAction="#switchToMainMenu" text="Register">
+      <Label layoutX="120.0" layoutY="100.0" text="first name:" textFill="WHITE" />
+      <Label layoutX="360.0" layoutY="100.0" text="last name:" textFill="WHITE" />
+      <Label layoutX="120.0" layoutY="154.0" text="username:" textFill="WHITE" />
+      <Label layoutX="360.0" layoutY="154.0" text="password:" textFill="WHITE" />
+      <Label layoutX="120.0" layoutY="208.0" text="email:" textFill="WHITE" />
+      <Label layoutX="360.0" layoutY="208.0" text="confirm password:" textFill="WHITE" />
+      <TextField fx:id="registerFirstName" layoutX="120.0" layoutY="117.0" />
+      <TextField fx:id="registerLastName" layoutX="360.0" layoutY="117.0" />
+      <TextField fx:id="registerUsername" layoutX="120.0" layoutY="171.0" />
+      <TextField fx:id="registerEmail" layoutX="120.0" layoutY="225.0" />
+      <Button fx:id="registerButton" layoutX="259.0" layoutY="306.0" mnemonicParsing="false" onAction="#btnRegisterClicked" text="Register">
          <font>
             <Font name="SansSerif Regular" size="24.0" />
          </font>
       </Button>
       <Accordion />
+      <Label fx:id="registerErrorLabel" layoutX="117.0" layoutY="252.0" maxWidth="400.0" prefWidth="400.0" textFill="#951d1d" wrapText="true">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="registerPassword" layoutX="360.0" layoutY="171.0" />
+      <PasswordField fx:id="registerConfirmPassword" layoutX="360.0" layoutY="225.0" />
    </children>
 </Pane>

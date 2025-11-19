@@ -5,7 +5,7 @@ public abstract class DataConstants {
     // data constants for user
     protected static final String TEMP_USER_FILE_NAME = "src/main/java/com/json/users_temp.json";
     protected static final String USER_FILE_NAME = "src/main/java/com/json/users.json";
-    protected static final String USER_FILE_NAME_JUNIT = "src/test/java/recources/data/testUsers.json";
+    protected static final String USER_FILE_NAME_JUNIT = "src/test/java/recources/data/testUsers2.json";
     protected static final String USER_ID = "userID";
     protected static final String FIRST_NAME = "firstName";
     protected static final String LAST_NAME = "lastName";

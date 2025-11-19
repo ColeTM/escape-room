@@ -46,6 +46,7 @@ public class UserList {
         if(usernameTaken(username))
             return false;
         users.add(new User(firstName, lastName, email, username, password));
+        saveUsers();
         return true;
     }
 
@@ -100,8 +101,9 @@ public class UserList {
      */
     public boolean usernameTaken(String username) {
         for(User user : users) {
-            if(user.getUsername().equalsIgnoreCase(username))
-                return true;
+            if(user.getUsername().equalsIgnoreCase(username)) {
+                throw new IllegalArgumentException("this username is already taken");
+            }
         }
         return false;
     }

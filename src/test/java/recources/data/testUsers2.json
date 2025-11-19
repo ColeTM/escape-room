@@ -1,1 +1,222 @@
-[{"firstName":"Haden","lastName":"Rush","characters":[{"difficulty":"Pro","currentRoom":"9aae693f-83a4-427e-9822-b150f44ba171","timer":{"initialTime":null,"isRunning":false,"timeRemaining":223.0},"numHintsUsed":0,"name":"Haden","inventory":[{"name":"flashlight","description":"A flashlight"}],"hintsUsed":{"b18be69b-be68-4fb5-9bc4-2641bd58ce68":false,"0b63808f-20c5-4755-9cdf-72396bfe205e":false,"c2d4454b-8ce9-48d4-9734-49eee6168b23":false,"6ad175b8-c795-4184-9602-5b347d7e0d31":false,"be0a15dc-bfdb-49f4-807f-bd679a7f5dbd":false,"e24d25e1-ee56-47e5-8b8d-d4effbd18d23":false,"a40f6444-51e6-46da-bf39-f7d86c730586":false,"9345822d-d48e-4f13-9d8c-dfbd70094050":false},"puzzlesCompleted":{"0d5e7f35-f314-425d-9c0c-072295edee1e":false,"e50b53c7-6bbf-4849-af1a-350adb9afcf3":false,"6c9f6273-be95-470d-8d43-5792c7737c82":false,"f6a8b2fa-a3f7-41ef-a622-dc116aa4a9bd":false,"56e5af6b-0295-48a9-b57e-b0670e025379":false,"bee765a8-d881-4d3f-809b-9a91b8ace119":false}}],"password":"password61","userID":"87d8dbb5-bb79-438e-934f-fab282c27ca0","skillLevel":"Pro","email":"hadenr@gmail.com","personalRecord":{"date":"2025-09-01","difficulty":"Intermediate","score":693.6,"time":"PT23M12S","hintsUsed":3,"username":"hadenr61"},"username":"hadenr61"},{"firstName":"Markus","lastName":"Pastora","characters":[{"difficulty":"Intermediate","currentRoom":"9aae693f-83a4-427e-9822-b150f44ba171","timer":{"initialTime":null,"isRunning":false,"timeRemaining":1220.0},"numHintsUsed":0,"name":"Mark","inventory":[{"name":"flashlight","description":"A flashlight"},{"name":"key","description":"Key 1"},{"name":"key","description":"Key 3"},{"name":"paper","description":"Morse code manual"}],"hintsUsed":{"b18be69b-be68-4fb5-9bc4-2641bd58ce68":false,"0b63808f-20c5-4755-9cdf-72396bfe205e":false,"c2d4454b-8ce9-48d4-9734-49eee6168b23":false,"6ad175b8-c795-4184-9602-5b347d7e0d31":false,"be0a15dc-bfdb-49f4-807f-bd679a7f5dbd":false,"e24d25e1-ee56-47e5-8b8d-d4effbd18d23":false,"a40f6444-51e6-46da-bf39-f7d86c730586":false,"9345822d-d48e-4f13-9d8c-dfbd70094050":false},"puzzlesCompleted":{"0d5e7f35-f314-425d-9c0c-072295edee1e":false,"e50b53c7-6bbf-4849-af1a-350adb9afcf3":true,"6c9f6273-be95-470d-8d43-5792c7737c82":false,"f6a8b2fa-a3f7-41ef-a622-dc116aa4a9bd":false,"56e5af6b-0295-48a9-b57e-b0670e025379":true,"bee765a8-d881-4d3f-809b-9a91b8ace119":true}}],"password":"password3","userID":"615e4722-9acf-45af-b921-da553f3527c7","skillLevel":"Intermediate","email":"markusp@gmail.com","personalRecord":{"date":"2025-06-01","difficulty":"Beginner","score":116.1,"time":"PT27M51S","hintsUsed":2,"username":"markp3"},"username":"markp3"},{"firstName":"Vick","lastName":"Astor","characters":[{"difficulty":"Beginner","currentRoom":"1030c684-0ceb-4f2b-a71e-f5846697d8d7","timer":{"initialTime":null,"isRunning":true,"timeRemaining":203.4},"numHintsUsed":0,"name":"Vick","inventory":[{"name":"flashlight","description":"A flashlight"},{"name":"key","description":"Key 1"},{"name":"key","description":"Key 3"},{"name":"key","description":"Key 2"},{"name":"key","description":"Key 4"}],"hintsUsed":{"b18be69b-be68-4fb5-9bc4-2641bd58ce68":false,"0b63808f-20c5-4755-9cdf-72396bfe205e":false,"c2d4454b-8ce9-48d4-9734-49eee6168b23":false,"6ad175b8-c795-4184-9602-5b347d7e0d31":false,"be0a15dc-bfdb-49f4-807f-bd679a7f5dbd":false,"e24d25e1-ee56-47e5-8b8d-d4effbd18d23":false,"a40f6444-51e6-46da-bf39-f7d86c730586":true,"9345822d-d48e-4f13-9d8c-dfbd70094050":false},"puzzlesCompleted":{"0d5e7f35-f314-425d-9c0c-072295edee1e":true,"e50b53c7-6bbf-4849-af1a-350adb9afcf3":true,"6c9f6273-be95-470d-8d43-5792c7737c82":true,"f6a8b2fa-a3f7-41ef-a622-dc116aa4a9bd":false,"56e5af6b-0295-48a9-b57e-b0670e025379":true,"bee765a8-d881-4d3f-809b-9a91b8ace119":true}},{"difficulty":"Beginner","currentRoom":"26767fe2-e8b1-47c4-b4eb-5f9aec77fb85","timer":{"initialTime":null,"isRunning":false,"timeRemaining":1800.0},"numHintsUsed":0,"name":"Haden","inventory":[],"hintsUsed":{"b18be69b-be68-4fb5-9bc4-2641bd58ce68":false,"0b63808f-20c5-4755-9cdf-72396bfe205e":false,"c2d4454b-8ce9-48d4-9734-49eee6168b23":false,"6ad175b8-c795-4184-9602-5b347d7e0d31":false,"be0a15dc-bfdb-49f4-807f-bd679a7f5dbd":false,"e24d25e1-ee56-47e5-8b8d-d4effbd18d23":false,"a40f6444-51e6-46da-bf39-f7d86c730586":false,"9345822d-d48e-4f13-9d8c-dfbd70094050":false},"puzzlesCompleted":{"0d5e7f35-f314-425d-9c0c-072295edee1e":false,"e50b53c7-6bbf-4849-af1a-350adb9afcf3":false,"6c9f6273-be95-470d-8d43-5792c7737c82":false,"f6a8b2fa-a3f7-41ef-a622-dc116aa4a9bd":false,"56e5af6b-0295-48a9-b57e-b0670e025379":false,"bee765a8-d881-4d3f-809b-9a91b8ace119":false}}],"password":"password59","userID":"b3bad6a4-e3e4-4a45-95ec-7fdbb64ed389","skillLevel":"Intermediate","email":"vicka@gmail.com","personalRecord":{"date":"2025-11-07","difficulty":"Beginner","score":1800.0,"time":"PT30M","hintsUsed":0,"username":"vicka59"},"username":"vicka59"}]
+[
+    {
+        "firstName": "Haden",
+        "lastName": "Rush",
+        "characters": [
+            {
+                "difficulty": "Pro",
+                "currentRoom": "9aae693f-83a4-427e-9822-b150f44ba171",
+                "timer": {
+                    "initialTime": null,
+                    "isRunning": false,
+                    "timeRemaining": 223.0
+                },
+                "numHintsUsed": 0,
+                "name": "Haden",
+                "inventory": [
+                    {
+                        "name": "flashlight",
+                        "description": "A flashlight"
+                    }
+                ],
+                "hintsUsed": {
+                    "b18be69b-be68-4fb5-9bc4-2641bd58ce68": false,
+                    "0b63808f-20c5-4755-9cdf-72396bfe205e": false,
+                    "c2d4454b-8ce9-48d4-9734-49eee6168b23": false,
+                    "6ad175b8-c795-4184-9602-5b347d7e0d31": false,
+                    "be0a15dc-bfdb-49f4-807f-bd679a7f5dbd": false,
+                    "e24d25e1-ee56-47e5-8b8d-d4effbd18d23": false,
+                    "a40f6444-51e6-46da-bf39-f7d86c730586": false,
+                    "9345822d-d48e-4f13-9d8c-dfbd70094050": false
+                },
+                "puzzlesCompleted": {
+                    "0d5e7f35-f314-425d-9c0c-072295edee1e": false,
+                    "e50b53c7-6bbf-4849-af1a-350adb9afcf3": false,
+                    "6c9f6273-be95-470d-8d43-5792c7737c82": false,
+                    "f6a8b2fa-a3f7-41ef-a622-dc116aa4a9bd": false,
+                    "56e5af6b-0295-48a9-b57e-b0670e025379": false,
+                    "bee765a8-d881-4d3f-809b-9a91b8ace119": false
+                }
+            }
+        ],
+        "password": "password61",
+        "userID": "87d8dbb5-bb79-438e-934f-fab282c27ca0",
+        "skillLevel": "Pro",
+        "email": "hadenr@gmail.com",
+        "personalRecord": {
+            "date": "2025-09-01",
+            "difficulty": "Intermediate",
+            "score": 693.6,
+            "time": "PT23M12S",
+            "hintsUsed": 3,
+            "username": "hadenr61"
+        },
+        "username": "hadenr61"
+    },
+    {
+        "firstName": "Markus",
+        "lastName": "Pastora",
+        "characters": [
+            {
+                "difficulty": "Intermediate",
+                "currentRoom": "9aae693f-83a4-427e-9822-b150f44ba171",
+                "timer": {
+                    "initialTime": null,
+                    "isRunning": false,
+                    "timeRemaining": 1220.0
+                },
+                "numHintsUsed": 0,
+                "name": "Mark",
+                "inventory": [
+                    {
+                        "name": "flashlight",
+                        "description": "A flashlight"
+                    },
+                    {
+                        "name": "key",
+                        "description": "Key 1"
+                    },
+                    {
+                        "name": "key",
+                        "description": "Key 3"
+                    },
+                    {
+                        "name": "paper",
+                        "description": "Morse code manual"
+                    }
+                ],
+                "hintsUsed": {
+                    "b18be69b-be68-4fb5-9bc4-2641bd58ce68": false,
+                    "0b63808f-20c5-4755-9cdf-72396bfe205e": false,
+                    "c2d4454b-8ce9-48d4-9734-49eee6168b23": false,
+                    "6ad175b8-c795-4184-9602-5b347d7e0d31": false,
+                    "be0a15dc-bfdb-49f4-807f-bd679a7f5dbd": false,
+                    "e24d25e1-ee56-47e5-8b8d-d4effbd18d23": false,
+                    "a40f6444-51e6-46da-bf39-f7d86c730586": false,
+                    "9345822d-d48e-4f13-9d8c-dfbd70094050": false
+                },
+                "puzzlesCompleted": {
+                    "0d5e7f35-f314-425d-9c0c-072295edee1e": false,
+                    "e50b53c7-6bbf-4849-af1a-350adb9afcf3": true,
+                    "6c9f6273-be95-470d-8d43-5792c7737c82": false,
+                    "f6a8b2fa-a3f7-41ef-a622-dc116aa4a9bd": false,
+                    "56e5af6b-0295-48a9-b57e-b0670e025379": true,
+                    "bee765a8-d881-4d3f-809b-9a91b8ace119": true
+                }
+            }
+        ],
+        "password": "password3",
+        "userID": "615e4722-9acf-45af-b921-da553f3527c7",
+        "skillLevel": "Intermediate",
+        "email": "markusp@gmail.com",
+        "personalRecord": {
+            "date": "2025-06-01",
+            "difficulty": "Beginner",
+            "score": 116.1,
+            "time": "PT27M51S",
+            "hintsUsed": 2,
+            "username": "markp3"
+        },
+        "username": "markp3"
+    },
+    {
+        "firstName": "Vick",
+        "lastName": "Astor",
+        "characters": [
+            {
+                "difficulty": "Beginner",
+                "currentRoom": "1030c684-0ceb-4f2b-a71e-f5846697d8d7",
+                "timer": {
+                    "initialTime": null,
+                    "isRunning": true,
+                    "timeRemaining": 203.4
+                },
+                "numHintsUsed": 0,
+                "name": "Vick",
+                "inventory": [
+                    {
+                        "name": "flashlight",
+                        "description": "A flashlight"
+                    },
+                    {
+                        "name": "key",
+                        "description": "Key 1"
+                    },
+                    {
+                        "name": "key",
+                        "description": "Key 3"
+                    },
+                    {
+                        "name": "key",
+                        "description": "Key 2"
+                    },
+                    {
+                        "name": "key",
+                        "description": "Key 4"
+                    }
+                ],
+                "hintsUsed": {
+                    "b18be69b-be68-4fb5-9bc4-2641bd58ce68": false,
+                    "0b63808f-20c5-4755-9cdf-72396bfe205e": false,
+                    "c2d4454b-8ce9-48d4-9734-49eee6168b23": false,
+                    "6ad175b8-c795-4184-9602-5b347d7e0d31": false,
+                    "be0a15dc-bfdb-49f4-807f-bd679a7f5dbd": false,
+                    "e24d25e1-ee56-47e5-8b8d-d4effbd18d23": false,
+                    "a40f6444-51e6-46da-bf39-f7d86c730586": true,
+                    "9345822d-d48e-4f13-9d8c-dfbd70094050": false
+                },
+                "puzzlesCompleted": {
+                    "0d5e7f35-f314-425d-9c0c-072295edee1e": true,
+                    "e50b53c7-6bbf-4849-af1a-350adb9afcf3": true,
+                    "6c9f6273-be95-470d-8d43-5792c7737c82": true,
+                    "f6a8b2fa-a3f7-41ef-a622-dc116aa4a9bd": false,
+                    "56e5af6b-0295-48a9-b57e-b0670e025379": true,
+                    "bee765a8-d881-4d3f-809b-9a91b8ace119": true
+                }
+            },
+            {
+                "difficulty": "Beginner",
+                "currentRoom": "26767fe2-e8b1-47c4-b4eb-5f9aec77fb85",
+                "timer": {
+                    "initialTime": null,
+                    "isRunning": false,
+                    "timeRemaining": 1800.0
+                },
+                "numHintsUsed": 0,
+                "name": "Haden",
+                "inventory": [],
+                "hintsUsed": {
+                    "b18be69b-be68-4fb5-9bc4-2641bd58ce68": false,
+                    "0b63808f-20c5-4755-9cdf-72396bfe205e": false,
+                    "c2d4454b-8ce9-48d4-9734-49eee6168b23": false,
+                    "6ad175b8-c795-4184-9602-5b347d7e0d31": false,
+                    "be0a15dc-bfdb-49f4-807f-bd679a7f5dbd": false,
+                    "e24d25e1-ee56-47e5-8b8d-d4effbd18d23": false,
+                    "a40f6444-51e6-46da-bf39-f7d86c730586": false,
+                    "9345822d-d48e-4f13-9d8c-dfbd70094050": false
+                },
+                "puzzlesCompleted": {
+                    "0d5e7f35-f314-425d-9c0c-072295edee1e": false,
+                    "e50b53c7-6bbf-4849-af1a-350adb9afcf3": false,
+                    "6c9f6273-be95-470d-8d43-5792c7737c82": false,
+                    "f6a8b2fa-a3f7-41ef-a622-dc116aa4a9bd": false,
+                    "56e5af6b-0295-48a9-b57e-b0670e025379": false,
+                    "bee765a8-d881-4d3f-809b-9a91b8ace119": false
+                }
+            }
+        ],
+        "password": "password59",
+        "userID": "b3bad6a4-e3e4-4a45-95ec-7fdbb64ed389",
+        "skillLevel": "Intermediate",
+        "email": "vicka@gmail.com",
+        "personalRecord": {
+            "date": "2025-11-07",
+            "difficulty": "Beginner",
+            "score": 1800.0,
+            "time": "PT30M",
+            "hintsUsed": 0,
+            "username": "vicka59"
+        },
+        "username": "vicka59"
+    }
+]
