@@ -30,6 +30,11 @@ public class LoginController {
     }
 
     @FXML
+    private void switchToLanding() throws IOException {
+        App.setRoot("primary");
+    }
+
+    @FXML
     private void switchToEntry() throws IOException {
         App.setRoot("Entry");
     }

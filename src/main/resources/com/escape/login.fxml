@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.LoginController">
    <children>
       <Pane prefHeight="439.0" prefWidth="600.0">
          <children>
@@ -37,7 +37,7 @@
                   <Font name="Averia Serif Libre Regular" size="24.0" />
                </font>
             </Button>
-            <Button id="loginBackButton" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="39.0" text="&lt;-" />
+            <Button id="loginBackButton" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="39.0" text="&lt;-" onAction="#switchToLanding" />
             <Label layoutX="196.0" layoutY="241.0" />
             <Label id="loginErrorLabel" layoutX="210.0" layoutY="239.0" prefHeight="21.0" prefWidth="179.0" />
          </children>
