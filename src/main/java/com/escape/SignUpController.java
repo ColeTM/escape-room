@@ -56,4 +56,9 @@ public class SignUpController {
         App.setRoot("Main_menu");
     }
 
+    @FXML
+    private void switchToLanding() throws IOException {
+        App.setRoot("primary");
+    }
+
 }
