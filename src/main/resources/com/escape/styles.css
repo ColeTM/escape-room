@@ -1,3 +1,7 @@
+.menu-background {
+    -fx-background-image:url("../../images/menu_background.png");
+}
+
 .label {
     -fx-text-fill: white;
 }
