@@ -20,7 +20,7 @@ public class LoginController {
     private void loginButtonClicked() throws IOException {
         
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
-        if (escapeRoom.login(loginUsername.getText(), loginUsername.getText())){
+        if (escapeRoom.login(loginUsername.getText(), loginPassword.getText())){
             switchToMainMenu();
         } else {
             loginErrorLabel.setText("Username or password incorrect");
@@ -39,6 +39,6 @@ public class LoginController {
     
     @FXML
     private void switchToMainMenu() throws IOException {
-        App.setRoot("main_menu");
+        App.setRoot("Main_menu");
     }
 }
