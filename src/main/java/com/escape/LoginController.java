@@ -38,6 +38,7 @@ public class LoginController {
     private void switchToEntry() throws IOException {
         App.setRoot("Entry");
     }
+    
     @FXML
     private void switchToMainMenu() throws IOException {
         App.setRoot("main_menu");
