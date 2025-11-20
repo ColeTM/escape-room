@@ -1,11 +1,18 @@
 package com.escape;
 
 import java.io.IOException;
+
+import com.model.EscapeRoom;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.fxml.Initializable;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-public class ProfileController {
+public class ProfileController implements Initializable {
 
     @FXML
     private Button accountSettingsButton;
@@ -25,6 +32,12 @@ public class ProfileController {
     private Label timeLabel;
     @FXML
     private Label usernameLabel;
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        usernameLabel.setText(escapeRoom.getCurrentUser().getUsername());
+    }
 
     @FXML
     void switchToMainMenu() throws IOException {
