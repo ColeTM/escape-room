@@ -10,6 +10,12 @@
     -fx-background-size: cover;
 }
 
+.boxes-background {
+    -fx-background-image: url("../../images/boxes_background.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: cover;
+}
+
 .label {
 }
 
