@@ -20,11 +20,9 @@ public class LoginController {
     private void loginButtonClicked() throws IOException {
         
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
-        try {
-            if (escapeRoom.login(loginUsername.getText(), loginUsername.getText())){
-                switchToMainMenu();
-            }
-        } catch (IllegalArgumentException e) {
+        if (escapeRoom.login(loginUsername.getText(), loginUsername.getText())){
+            switchToMainMenu();
+        } else {
             loginErrorLabel.setText("Username or password incorrect");
         }
     }
