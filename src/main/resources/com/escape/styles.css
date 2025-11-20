@@ -4,6 +4,12 @@
     -fx-background-size: cover;
 }
 
+.library-background {
+    -fx-background-image: url("../../images/library_background.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: cover;
+}
+
 .label {
 }
 
