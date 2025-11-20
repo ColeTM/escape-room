@@ -21,13 +21,13 @@
                   <Font name="Cinzel Decorative Regular" size="37.0" />
                </font>
             </Text>
-            <TextField id="loginUsername" layoutX="220.0" layoutY="137.0" />
+            <TextField id="loginUsername" fx:id="loginUsername" layoutX="220.0" layoutY="137.0" />
             <Text layoutX="221.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <TextField id="loginPassword" layoutX="220.0" layoutY="199.0" />
+            <TextField id="loginPassword" fx:id="loginPassword" layoutX="220.0" layoutY="199.0" />
             <Text layoutX="221.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" wrappingWidth="81.73828125">
                <font>
                   <Font size="18.0" />
@@ -40,7 +40,7 @@
             </Button>
             <Button layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#switchToLanding" prefHeight="33.0" prefWidth="39.0" text="&lt;-" />
             <Label layoutX="196.0" layoutY="241.0" />
-            <Label id="loginErrorLabel" layoutX="210.0" layoutY="239.0" prefHeight="21.0" prefWidth="179.0" />
+            <Label id="loginErrorLabel" fx:id="loginErrorLabel" layoutX="210.0" layoutY="239.0" prefHeight="21.0" prefWidth="179.0" />
          </children>
       </Pane>
    </children>

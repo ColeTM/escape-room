@@ -24,7 +24,7 @@ public class DataWriter extends DataConstants{
         for(int i = 0; i < userList.size(); ++i)
             jsonUsers.add(getUserJSON(userList.get(i)));
 
-        try (FileWriter file = new FileWriter(USER_FILE_NAME_JUNIT)) {
+        try (FileWriter file = new FileWriter(TEMP_USER_FILE_NAME)) {
             file.append(jsonUsers.toJSONString());
             file.flush();
         } catch (IOException e) {
