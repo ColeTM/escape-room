@@ -16,6 +16,10 @@
     -fx-background-size: cover;
 }
 
+.back-button {
+    -fx-image: url("../../images/back_icon.png");
+}
+
 .label {
 }
 

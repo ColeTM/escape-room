@@ -1,14 +1,13 @@
 package com.escape;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import com.model.EscapeRoom;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
-
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
@@ -37,6 +36,17 @@ public class ProfileController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
         usernameLabel.setText(escapeRoom.getCurrentUser().getUsername());
+        if (escapeRoom.getCurrentUser().getPersonalRecord() == null) {
+            scoreLabel.setText("score: N/A");
+            timeLabel.setText("time: N/A");
+            difficultyLabel.setText("difficulty: N/A");
+            hintsLabel.setText("hints: N/A");
+        } else {
+            scoreLabel.setText("score: " + escapeRoom.getCurrentUser().getPersonalRecord().getScore());
+            timeLabel.setText("time: " + escapeRoom.getCurrentUser().getPersonalRecord().getFormatDuration());
+            difficultyLabel.setText("difficulty: " + escapeRoom.getCurrentUser().getPersonalRecord().getDifficulty());
+            hintsLabel.setText("hints: " + escapeRoom.getCurrentUser().getPersonalRecord().getHintsUsed());
+        }
     }
 
     @FXML

@@ -5,43 +5,48 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="menu-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.LoginController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" styleClass="menu-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.LoginController">
    <children>
-      <Pane prefHeight="439.0" prefWidth="600.0">
+      <Pane prefHeight="360.0" prefWidth="640.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#60717b" height="50.0" layoutX="220.0" layoutY="44.0" opacity="0.88" stroke="BLACK" strokeType="INSIDE" width="159.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#60717b" height="247.0" layoutX="180.0" layoutY="109.0" opacity="0.88" stroke="BLACK" strokeType="INSIDE" width="239.0" />
-            <Text fill="#951d1d" layoutX="235.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log In" textAlignment="CENTER">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#60717b" height="50.0" layoutX="241.0" layoutY="30.0" opacity="0.88" stroke="BLACK" strokeType="INSIDE" width="159.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#60717b" height="247.0" layoutX="201.0" layoutY="99.0" opacity="0.88" stroke="BLACK" strokeType="INSIDE" width="239.0" />
+            <Text fill="#951d1d" layoutX="256.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log In" textAlignment="CENTER">
                <font>
                   <Font name="Cinzel Decorative Regular" size="37.0" />
                </font>
             </Text>
-            <TextField id="loginUsername" fx:id="loginUsername" layoutX="220.0" layoutY="137.0" />
-            <Text layoutX="221.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
+            <TextField id="loginUsername" fx:id="loginUsername" layoutX="241.0" layoutY="127.0" />
+            <Text layoutX="242.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text layoutX="221.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" wrappingWidth="81.73828125">
+            <Text layoutX="242.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" wrappingWidth="81.73828125">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Button layoutX="220.0" layoutY="274.0" mnemonicParsing="false" onAction="#loginButtonClicked" prefHeight="55.0" prefWidth="159.0" text="Log in">
+            <Button layoutX="241.0" layoutY="264.0" mnemonicParsing="false" onAction="#loginButtonClicked" prefHeight="55.0" prefWidth="159.0" text="Log in">
                <font>
                   <Font name="Averia Serif Libre Regular" size="24.0" />
                </font>
             </Button>
-            <Button layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#switchToLanding" prefHeight="33.0" prefWidth="39.0" text="&lt;-" />
-            <Label layoutX="196.0" layoutY="241.0" />
-            <Label id="loginErrorLabel" fx:id="loginErrorLabel" layoutX="210.0" layoutY="239.0" prefHeight="21.0" prefWidth="179.0" />
-            <PasswordField id="loginPassword" fx:id="loginPassword" layoutX="220.0" layoutY="200.0" />
+            <Button layoutX="10.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchToLanding" prefHeight="40.0" prefWidth="40.0">
+               <graphic>
+                  <ImageView fitHeight="57.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" styleClass="back-button" />
+               </graphic>
+            </Button>
+            <Label layoutX="217.0" layoutY="231.0" />
+            <Label id="loginErrorLabel" fx:id="loginErrorLabel" layoutX="231.0" layoutY="229.0" prefHeight="21.0" prefWidth="179.0" />
+            <PasswordField id="loginPassword" fx:id="loginPassword" layoutX="241.0" layoutY="190.0" />
          </children>
       </Pane>
    </children>

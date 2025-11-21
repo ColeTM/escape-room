@@ -31,12 +31,9 @@
       </ChoiceBox>
       <Button fx:id="newGameBack" layoutX="10.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchToMainMenu" prefHeight="40.0" prefWidth="40.0">
          <graphic>
-            <ImageView fitHeight="57.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images\back_icon.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
+            <ImageView fitHeight="57.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" styleClass="back-button" />
+         </graphic>
+      </Button>
       <Button fx:id="beginButton" layoutX="259.0" layoutY="255.0" mnemonicParsing="false" onAction="#beginButtonPressed" prefHeight="43.0" prefWidth="122.0" text="Begin">
          <font>
             <Font size="24.0" />

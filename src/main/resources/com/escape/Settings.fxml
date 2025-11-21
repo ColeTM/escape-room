@@ -16,11 +16,7 @@
    <children>
       <Button fx:id="settingsBack" layoutX="10.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#btnBackPressed" prefHeight="40.0" prefWidth="40.0">
          <graphic>
-            <ImageView fitHeight="57.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/back_icon.png" />
-               </image>
-            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" styleClass="back-button" />
          </graphic>
       </Button>
       <Button fx:id="ttsButton" layoutX="205.0" layoutY="215.0" mnemonicParsing="false" onAction="#toggleTTS" prefHeight="60.0" prefWidth="230.0" text="Text-To-Speech: On" />

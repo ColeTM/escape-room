@@ -40,11 +40,7 @@
       </Label>
       <Button fx:id="accountSettingsBack" layoutX="10.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchToProfile" prefHeight="40.0" prefWidth="40.0">
          <graphic>
-            <ImageView fitHeight="57.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/back_icon.png" />
-               </image>
-            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" styleClass="back-button" />
          </graphic>
       </Button>
       <Text fx:id="changeUsername" fill="WHITE" layoutX="205.0" layoutY="243.0" onMouseClicked="#changeUsername" strokeType="OUTSIDE" strokeWidth="0.0" text="change username" underline="true">

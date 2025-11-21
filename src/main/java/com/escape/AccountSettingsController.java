@@ -1,7 +1,7 @@
 package com.escape;
 
 import java.io.IOException;
-
+import com.model.EscapeRoom;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -30,6 +30,15 @@ public class AccountSettingsController {
 
 
     // need method to set all labels when screen opens
+
+    @FXML
+    public void initialize() {
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        firstNameLabel.setText("first name: " + escapeRoom.getCurrentUser().getFirstName());
+        lastNameLabel.setText("last name: " + escapeRoom.getCurrentUser().getLastName());
+        usernameLabel.setText("username: " + escapeRoom.getCurrentUser().getUsername());
+        emailLabel.setText("email: " + escapeRoom.getCurrentUser().getEmail());
+    }
 
     @FXML
     void changeEmail() {
