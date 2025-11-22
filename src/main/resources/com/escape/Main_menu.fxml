@@ -7,20 +7,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="menu-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.MenuController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" styleClass="menu-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.MenuController">
    <children>
-      <Pane prefHeight="405.0" prefWidth="600.0">
+      <Pane prefHeight="360.0" prefWidth="640.0">
          <children>
-            <Button fx:id="newGameButton" layoutX="195.0" layoutY="153.0" mnemonicParsing="false" onAction="#switchToNew" prefHeight="56.0" prefWidth="210.0" text="New Game" />
-            <Button fx:id="continueGameButton" layoutX="195.0" layoutY="224.0" mnemonicParsing="false" onAction="#switchToContinue" prefHeight="56.0" prefWidth="210.0" text="Continue" />
-            <Button fx:id="leaderboardButton" layoutX="195.0" layoutY="295.0" mnemonicParsing="false" onAction="#switchToLeaderboard" prefHeight="56.0" prefWidth="210.0" text="Leaderboard" />
-            <Label layoutX="57.0" layoutY="56.0" text="HOUSE OF HORRORS" textFill="#951d1d">
+            <Button fx:id="newGameButton" layoutX="215.0" layoutY="148.0" mnemonicParsing="false" onAction="#switchToNew" prefHeight="56.0" prefWidth="210.0" text="New Game" />
+            <Button fx:id="continueGameButton" layoutX="215.0" layoutY="219.0" mnemonicParsing="false" onAction="#switchToContinue" prefHeight="56.0" prefWidth="210.0" text="Continue" />
+            <Button fx:id="leaderboardButton" layoutX="215.0" layoutY="290.0" mnemonicParsing="false" onAction="#switchToLeaderboard" prefHeight="56.0" prefWidth="210.0" text="Leaderboard" />
+            <Label layoutX="77.0" layoutY="51.0" text="HOUSE OF HORRORS" textFill="#951d1d">
                <font>
                   <Font size="51.0" />
                </font>
             </Label>
-            <Button fx:id="settingsButton" layoutX="543.0" layoutY="260.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchToSettings" prefHeight="40.0" prefWidth="40.0" />
-            <Button fx:id="profileButton" layoutX="543.0" layoutY="311.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchToProfile" prefHeight="40.0" prefWidth="40.0" />
+            <Button fx:id="settingsButton" layoutX="590.0" layoutY="260.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchToSettings" prefHeight="40.0" prefWidth="40.0" />
+            <Button fx:id="profileButton" layoutX="590.0" layoutY="310.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchToProfile" prefHeight="40.0" prefWidth="40.0" />
          </children>
       </Pane>
    </children>

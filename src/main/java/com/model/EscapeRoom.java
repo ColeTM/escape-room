@@ -97,6 +97,7 @@ public class EscapeRoom {
         }
         character = user.getCharacter(characterName);
         currentRoom = RoomList.getRoomByUUID(character.getCurrentRoom());
+        character.setCurrentRoom(currentRoom.getRoomID());
         currentDifficulty = character.getDifficulty();
         timer = character.getTimer();
         timer.resume();
@@ -264,5 +265,13 @@ public class EscapeRoom {
 
     public void setCurrentPuzzle(Puzzle puzzle){
         currentPuzzle = puzzle;
+    }
+
+    /**
+     * accessor for the current character
+     * @return Character -- the current character
+     */
+    public Character getCurrentCharacter() {
+        return character;
     }
 }

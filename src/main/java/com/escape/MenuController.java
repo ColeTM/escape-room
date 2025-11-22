@@ -1,6 +1,9 @@
 package com.escape;
 
 import java.io.IOException;
+
+import com.model.EscapeRoom;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
@@ -18,13 +21,20 @@ public class MenuController {
     private Button settingsButton;
 
     @FXML
+    public void initialize() {
+        if (EscapeRoom.getInstance().getCurrentUser().getCharacters().isEmpty())
+            continueGameButton.setOpacity(0.5);
+    }
+
+    @FXML
     public void switchToNew() throws IOException {
         App.setRoot("new_game");
     }
 
     @FXML
     public void switchToContinue() throws IOException {
-        App.setRoot("continue_game");
+        if (!EscapeRoom.getInstance().getCurrentUser().getCharacters().isEmpty())
+            App.setRoot("continue_game");
     }
 
     @FXML
