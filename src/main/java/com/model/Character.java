@@ -196,7 +196,7 @@ public class Character
         // jigsaw
         // minesweeper and morse code
         // wall message
-            }
+        }
 
     /**
      * Gets the name of the character.

@@ -26,7 +26,7 @@ public class EscapeRoom {
         userList.getUsers();
         currentRoom = null;
         currentPuzzle = null;
-        currentDifficulty = Difficulty.Beginner;
+        currentDifficulty = null;
         timer = new Timer();
     }
 
@@ -43,47 +43,43 @@ public class EscapeRoom {
 
     /**
      * Starts a new game for the current user with the specified character 
-     * @param characterName The name of the character to be used in the game  
-     * @return boolean -- whether a new save was successfully created  
+     * @param characterName The name of the character to be used in the game
+     * @param difficulty The difficulty of the game being created
      */
-    public boolean startNewGame(String characterName) {
+    public void startNewGame(String characterName, Difficulty difficulty) {
 
         // conditions validation
         if (user == null) {
-            System.out.println("error: no user currently logged in!");
-            return false;
+            throw new IllegalArgumentException("no user currently logged in!");
         }
         if (characterName == null) {
-            System.out.println("error: character name cannot be null");
-            return false;
+            throw new IllegalArgumentException("character name cannot be null");
         }
         if (characterName.trim().isEmpty()) {
-            System.out.println("error: no character name chosen");
-            return false;
+            throw new IllegalArgumentException("no character name entered");
         }
-        if (currentDifficulty == null) {
-            System.out.println("error: cannot start game with null difficulty");
-            return false;
+        if (difficulty == null) {
+            throw new IllegalArgumentException("select a difficulty");
+        }
+        if (user.getCharacter(characterName) != null) {
+            throw new IllegalArgumentException("a save with this name already exists");
         }
 
-        if(user.getCharacter(characterName) != null) {
-            System.out.println("You've already used this character name!");
-            return false;
-        }
-        character = new Character(characterName, currentDifficulty);
-        user.addCharacter(character);
-        
+        Character temp = new Character(characterName, difficulty);
+        user.addCharacter(temp);
+        character = temp;
+        /*
         String intro = "You are trick-or-treating on Halloween when you pass by a house you don't recognize. \n"
                            + "When you enter the house, the door closes behind you; you're trapped! \n"
                            + "Solve the puzzles in each of the 4 open rooms to unlock the room at the end of the hallway. \n"
                            + "Solve the final challenge to leave! \n"
                            + "You have 30 minutes to escape this house of horrors before your soul is stuck here FOREVER!!! \n";
-        System.out.println(intro);
+        // System.out.println(intro);
         //Speech.speak(intro);
-        timer.start();
+        // timer.start();
+        */
         currentRoom = RoomList.getInstance().getRoomByUUID(UUID.fromString("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85"));
         character.setCurrentRoom(UUID.fromString("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85"));
-        return true;
     }
 
     /**

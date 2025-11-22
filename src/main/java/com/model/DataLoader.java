@@ -193,23 +193,24 @@ public class DataLoader extends DataConstants {
             Type type = Type.valueOf((String)puzzleJSON.get(TYPE));
 
             switch(type) {
-                case Text:
+                case Text -> {
                     String textContent = (String)puzzleJSON.get(TEXT_CONTENT);
                     String textSolution = (String)puzzleJSON.get(TEXT_SOLUTION);
                     puzzles.add(new TextPuzzle(puzzleID, name, difficulty, attempts, clue, hints,
                                                 isSequential, textContent, textSolution));
-                    break;
-                case Audio:
+                }
+                case Audio -> {
                     String audioContent = (String)puzzleJSON.get(AUDIO_CONTENT);
                     String audioSolution = ((String)puzzleJSON.get(AUDIO_SOLUTION));
                     puzzles.add(new AudioPuzzle(puzzleID, name, difficulty, attempts, clue, hints,
                                                 isSequential, audioContent, audioSolution));
-                    break;
-                case Picture:
+                }
+                case Picture -> {
                     File pictureContent = new File((String)puzzleJSON.get(PICTURE_CONTENT));
                     String pictureSolution = (String)puzzleJSON.get(PICTURE_SOLUTION);
                     puzzles.add(new PicturePuzzle(puzzleID, name, difficulty, attempts, clue, hints,
                                                     isSequential, pictureContent, pictureSolution));
+                }
             }
         }
         return puzzles;

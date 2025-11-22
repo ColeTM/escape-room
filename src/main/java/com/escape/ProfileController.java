@@ -63,11 +63,9 @@ public class ProfileController implements Initializable {
     void switchToLanding() throws IOException {
 
         // should probably add a dialog to confirm logout
-
-        App.setRoot("landing");
+        if (EscapeRoom.getInstance().logout())
+            App.setRoot("landing");
     }
-
-    // will need more methods for setting labels
 
 }
 

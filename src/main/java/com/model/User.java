@@ -302,6 +302,8 @@ public class User {
      * @param character Character -- the character to be added
      */
     public void addCharacter(Character character) {
+        if (characters.size() == 3)
+            throw new IllegalArgumentException("you already have the maximum three saves");
         characters.add(character);
     }
 

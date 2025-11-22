@@ -3,7 +3,7 @@ package com.model;
 import java.util.ArrayList;
 
 public class UI {
-
+    /* 
     public void runScenarios() {
         duplicateUser();
         //successfulRegister();
@@ -217,11 +217,12 @@ public class UI {
         (new UI()).runScenarios();
              
 
-        /*if(scenario.submitPuzzleAnswer("teapot")){
+        if(scenario.submitPuzzleAnswer("teapot")){
             System.out.println("correct answer!");
             System.out.println("You have earned your first key!");
         } else {
             System.out.println("wrong answer.");
-        }*/
+        }
     }
+    */
 }
