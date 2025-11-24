@@ -16,6 +16,12 @@
     -fx-background-size: cover;
 }
 
+.certificate-background {
+    -fx-background-image: url("../../images/certificate_background.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: cover;
+}
+
 .back-button {
     -fx-image: url("../../images/back_icon.png");
 }
