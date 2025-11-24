@@ -33,8 +33,43 @@ public class LibraryController {
     @FXML
     private Button redBook;
 
+     @FXML
+    void goToHallwayFromLibrary(ActionEvent event) {
+
+    }
+
+    @FXML
+    void goToInventory(ActionEvent event) {
+
+    }
+
     @FXML
     void goToPause(ActionEvent event) {
+
+    }
+
+    @FXML
+    void goToPuzzle(ActionEvent event) {
+
+    }
+
+    @FXML
+    void openClue(ActionEvent event) {
+
+    }
+
+    @FXML
+    void showBlueBook(ActionEvent event) {
+
+    }
+
+    @FXML
+    void showGreenBook(ActionEvent event) {
+
+    }
+
+    @FXML
+    void showRedBook(ActionEvent event) {
 
     }
     
