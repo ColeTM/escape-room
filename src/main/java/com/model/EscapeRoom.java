@@ -117,20 +117,20 @@ public class EscapeRoom {
      */
     public void endGame() {
         //timer.pause();
-        if(user.getPersonalRecord() != null) {
-            if (character.calculateScore(currentDifficulty) > user.getPersonalRecord().getScore())
-        user.setPersonalRecord(new LeaderboardEntry(user.getUsername(), Timer.secondsToDuration(timer.getTimeRemaining()), 
-                                                        LocalDate.now(), character.getNumHintsUsed(), currentDifficulty,
-                                                        character.calculateScore(currentDifficulty)));
-        }else {
-            user.setPersonalRecord(new LeaderboardEntry(user.getUsername(), Timer.secondsToDuration(timer.getTimeRemaining()), 
-                                                        LocalDate.now(), character.getNumHintsUsed(), currentDifficulty,
-                                                        character.calculateScore(currentDifficulty)));
+        if (user.getPersonalRecord() != null) {
+            if (character.calculateScore() > user.getPersonalRecord().getScore())
+                user.setPersonalRecord(new LeaderboardEntry(user.getUsername(), Timer.secondsToDuration(timer.getTimeRemaining()), 
+                                                        LocalDate.now(), character.getNumHintsUsed(), character.getDifficulty(),
+                                                        character.calculateScore()));
+            } else {
+                user.setPersonalRecord(new LeaderboardEntry(user.getUsername(), Timer.secondsToDuration(timer.getTimeRemaining()), 
+                                                        LocalDate.now(), character.getNumHintsUsed(), character.getDifficulty(),
+                                                        character.calculateScore()));
         }
-        user.upgradeSkillLevel(currentDifficulty);
+        user.upgradeSkillLevel(character.getDifficulty());
         userList.saveUsers();
-        character.certificateOfCompletion(currentDifficulty);
-        displayLeaderboard();
+        character.certificateOfCompletion();
+        character = null;
     }
 
     /**
