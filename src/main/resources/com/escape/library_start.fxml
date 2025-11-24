@@ -64,7 +64,7 @@
       <Button fx:id="redBook" layoutX="74.0" layoutY="325.0" mnemonicParsing="false" onAction="#showRedBook" opacity="0.42" text="red" />
       <Button fx:id="blueBook" layoutX="206.0" layoutY="325.0" mnemonicParsing="false" onAction="#showBlueBook" opacity="0.42" text="blue" />
       <Button fx:id="greenBook" layoutX="464.0" layoutY="312.0" mnemonicParsing="false" onAction="#showGreenBook" opacity="0.42" text="green" />
-      <Button fx:id="blackBook" layoutX="546.0" layoutY="325.0" mnemonicParsing="false" onAction="#showGreenBook" opacity="0.42" text="black" />
+      <Button fx:id="blackBook" layoutX="546.0" layoutY="325.0" mnemonicParsing="false" onAction="#showBlackBook" opacity="0.42" text="black" />
       <Button fx:id="puzzleLibrary" layoutX="295.0" layoutY="225.0" mnemonicParsing="false" onAction="#goToPuzzle" opacity="0.42" prefHeight="65.0" prefWidth="97.0" text="puzzle" />
    </children>
 </Pane>

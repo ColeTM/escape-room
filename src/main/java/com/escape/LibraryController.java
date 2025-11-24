@@ -1,5 +1,7 @@
 package com.escape;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -34,43 +36,53 @@ public class LibraryController {
     private Button redBook;
 
      @FXML
-    void goToHallwayFromLibrary(ActionEvent event) {
+    public void goToHallwayFromLibrary() throws IOException {
+        App.setRoot("hallway");
 
     }
 
     @FXML
-    void goToInventory(ActionEvent event) {
+    public void goToInventory() throws IOException {
+        //App.setRoot("inventory");
 
     }
 
     @FXML
-    void goToPause(ActionEvent event) {
+    public void goToPause() throws IOException {
+        //App.setRoot("pause_menu");
 
     }
 
     @FXML
-    void goToPuzzle(ActionEvent event) {
+    public void goToPuzzle() throws IOException {
+        //App.setRoot("puzzle");
 
     }
 
     @FXML
-    void openClue(ActionEvent event) {
+    public void openClue() throws IOException {
+        //App.setRoot("livrary_clue");
 
     }
 
     @FXML
-    void showBlueBook(ActionEvent event) {
-
+    public void showBlueBook() throws IOException {
+        //App.setRoot("blue_book");
     }
 
     @FXML
-    void showGreenBook(ActionEvent event) {
-
+    public void showGreenBook() throws IOException {
+        //App.setRoot("_book");
     }
 
     @FXML
-    void showRedBook(ActionEvent event) {
+    public void showRedBook() throws IOException {
+        //App.setRoot("_book");
+    }
 
+    @FXML
+    public void showBlackBook() throws IOException {
+        //App.setRoot("_book");
     }
     
 }
