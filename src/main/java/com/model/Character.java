@@ -362,7 +362,7 @@ public class Character
      * @param difficulty Difficulty -- the difficulty the game was beaten in
      * @return double -- the final score
      */
-    public double calculateScore(Difficulty difficulty) {
+    public double calculateScore() {
         double score = timer.getTimeRemaining();
         if (difficulty.equals(Difficulty.Intermediate))
             score *= 2;
@@ -378,7 +378,7 @@ public class Character
      * @param difficulty Difficulty - the difficulty at which the game was completed
      */
     @SuppressWarnings({"ConvertToTryWithResources", "UseSpecificCatch", "CallToPrintStackTrace"})
-    public void certificateOfCompletion(Difficulty difficulty) {
+    public void certificateOfCompletion() {
         try {
             FileWriter output = new FileWriter(new File("certificate.txt"));
             output.write("Escape Room - Certificate of Completion\n");
@@ -387,7 +387,7 @@ public class Character
                             + " dare to return.\nEscaping alive won't be as easy next time.\n");
             output.write("\nHints Used: " + getNumHintsUsed());
             output.write("\nDifficulty: " + difficulty.toString());
-            output.write("\nFinal Score: " + calculateScore(difficulty));
+            output.write("\nFinal Score: " + calculateScore());
             output.close();
         } catch (Exception e) {
             e.printStackTrace();
