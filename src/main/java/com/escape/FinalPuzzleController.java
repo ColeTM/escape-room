@@ -14,7 +14,7 @@ import javafx.scene.text.Text;
 
 
 public class FinalPuzzleController {
-    private static final double MIN_X = 167;
+    private static final double MIN_X = 217;
     private static final double MAX_X = 443;
     @FXML
     private Pane finalPane;
@@ -52,7 +52,7 @@ public class FinalPuzzleController {
     public void initialize() {
         coverRectangle.setLayoutX(0);
         coverRectangle.setLayoutY(0);
-        cutoutCircle.setLayoutX(167);
+        cutoutCircle.setLayoutX(320);
         cutoutCircle.setLayoutY(166);
         cutoutCircle.setOpacity(0.0); 
         coverRectangle.setOpacity(0.0);
