@@ -208,8 +208,8 @@ public class EscapeRoom {
     /**
      * Requests a hint for the current puzzle
      */
-    public void requestHint() {
-        character.requestHint();
+    public String requestHint() {
+        return character.requestHint();
     }
 
     /**
