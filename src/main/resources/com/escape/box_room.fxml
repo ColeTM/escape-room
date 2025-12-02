@@ -10,8 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<Pane styleClass="boxes-background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.BoxRoomController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" styleClass="boxes-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.BoxRoomController">
    <children>
       <Button fx:id="boxesBack" layoutX="10.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchToHallway" prefHeight="40.0" prefWidth="40.0">
          <graphic>
@@ -21,7 +20,14 @@
       <Button fx:id="boxesHint" layoutX="66.0" layoutY="18.0" mnemonicParsing="false" onAction="#requestHint" text="hint" />
       <Button fx:id="boxesPause" layoutX="590.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchToPause" prefHeight="40.0" prefWidth="40.0" text="pause" />
       <Label fx:id="boxesTimer" layoutX="541.0" layoutY="22.0" text="xx:xx" />
-      <Button fx:id="boxesInventory" layoutX="300.0" layoutY="310.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#openInventory" prefHeight="40.0" prefWidth="40.0" text="inv" />
+      <Button fx:id="boxesInventory" layoutX="300.0" layoutY="310.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#openInventory" prefHeight="40.0" prefWidth="40.0">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/inventory_icon.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
       <TextField fx:id="boxesAnswerText" layoutX="50.0" layoutY="250.0" prefHeight="50.0" prefWidth="450.0" text="answer puzzle" />
       <Button fx:id="boxesAnswerButton" layoutX="500.0" layoutY="250.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="50.0" prefWidth="90.0" text="Enter" />
       <Text fill="WHITE" layoutX="256.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[puzzle text]">
@@ -29,6 +35,7 @@
             <Font size="24.0" />
          </font>
       </Text>
+      <Text fx:id="hintLabel" fill="#641013" layoutX="295.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[hint text]" />
    </children>
    <stylesheets>
       <URL value="@styles.css" />

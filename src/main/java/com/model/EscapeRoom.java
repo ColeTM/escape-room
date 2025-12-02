@@ -79,8 +79,7 @@ public class EscapeRoom {
         //Speech.speak(intro);
         // timer.start();
         */
-        currentRoom = RoomList.getInstance().getRoomByUUID(UUID.fromString("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85"));
-        character.setCurrentRoom(UUID.fromString("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85"));
+        setRoom(UUID.fromString("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85"));
     }
 
     /**
