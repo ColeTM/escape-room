@@ -2,6 +2,7 @@
 package com.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.UUID;
 
 /**
@@ -225,6 +226,10 @@ public class EscapeRoom {
      */
     public void displayLeaderboard() {
         System.out.println(Leaderboard.getInstance().displayGlobal().toString());
+    }
+
+    public ArrayList<LeaderboardEntry> getLeaderBoard() {
+        return Leaderboard.getInstance().displayGlobal();
     }
 
     /**

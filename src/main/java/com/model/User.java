@@ -128,6 +128,9 @@ public class User {
         this.skillLevel = skillLevel;
         this.characters = characters;
         this.personalRecord = personalRecord;
+        if (personalRecord != null) {
+            Leaderboard.getInstance().addEntry(personalRecord);
+        }
     }
 
     /**

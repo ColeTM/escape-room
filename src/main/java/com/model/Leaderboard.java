@@ -20,7 +20,7 @@ public class Leaderboard {
     /**
      * constructor for leaderboard
      */
-    public Leaderboard() {
+    private Leaderboard() {
         this.globalEntries = new ArrayList<>();
     }
 
