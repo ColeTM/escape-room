@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" styleClass="menu-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="360.0" opacity="0.2" stroke="BLACK" strokeType="INSIDE" width="640.0" />
+      <ImageView fitHeight="65.0" fitWidth="181.0" layoutX="240.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/old-torn-paper-11552768455virlr91wms.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="181.0" layoutX="239.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/old-torn-paper-11552768455virlr91wms.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="286.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resume">
+         <font>
+            <Font name="Averia Serif Libre Regular" size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="277.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
+         <font>
+            <Font name="Averia Serif Libre Regular" size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="resumeButton" layoutX="242.0" layoutY="90.0" mnemonicParsing="false" onAction="#resumeGame" opacity="0.0" prefHeight="56.0" prefWidth="156.0" text="Resume" />
+      <Button fx:id="settingssButton" layoutX="250.0" layoutY="171.0" mnemonicParsing="false" onAction="#goToSettings" opacity="0.0" prefHeight="56.0" prefWidth="156.0" text="Settings" />
+      <Button fx:id="saveandquit" layoutX="256.0" layoutY="246.0" mnemonicParsing="false" onAction="#saveThenQuit" opacity="0.0" prefHeight="56.0" prefWidth="156.0" text="Save and Quit" />
+      <ImageView fitHeight="65.0" fitWidth="181.0" layoutX="240.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/old-torn-paper-11552768455virlr91wms.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="256.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Save and Quit">
+         <font>
+            <Font name="Averia Serif Libre Regular" size="24.0" />
+         </font>
+      </Text>
+      <Text fill="#951d1d" layoutX="137.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Paused">
+         <font>
+            <Font name="Cinzel Decorative Black" size="48.0" />
+         </font>
+      </Text>
+   </children>
+   <stylesheets>
+      <URL value="@styles.css" />
+   </stylesheets>
+</Pane>
