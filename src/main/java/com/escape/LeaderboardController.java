@@ -55,6 +55,13 @@ public class LeaderboardController implements Initializable {
         Label hintsHeader = new Label("Hints");
         Label scoreHeader = new Label("Score");
         
+        rankHeader.getStyleClass().add("leaderboard-label");
+        userHeader.getStyleClass().add("leaderboard-label");
+        dateHeader.getStyleClass().add("leaderboard-label");
+        timeHeader.getStyleClass().add("leaderboard-label");
+        hintsHeader.getStyleClass().add("leaderboard-label");
+        scoreHeader.getStyleClass().add("leaderboard-label");
+        
         grid_leaderboard.add(rankHeader, 0, 0);
         grid_leaderboard.add(userHeader, 1, 0);
         grid_leaderboard.add(dateHeader, 2, 0);
@@ -79,6 +86,13 @@ public class LeaderboardController implements Initializable {
             Label timeLabel = new Label(entry.getFormatDuration());         // getFormatDuration()
             Label hintsLabel = new Label(String.valueOf(entry.getHintsUsed())); // getHintsUsed()
             Label scoreLabel = new Label(String.valueOf(entry.getScore())); // getScore()
+
+            rankLabel.getStyleClass().add("leaderboard-label");
+            userLabel.getStyleClass().add("leaderboard-label");
+            dateLabel.getStyleClass().add("leaderboard-label");
+            timeLabel.getStyleClass().add("leaderboard-label");
+            hintsLabel.getStyleClass().add("leaderboard-label");
+            scoreLabel.getStyleClass().add("leaderboard-label");
 
             grid_leaderboard.add(rankLabel, 0, row);
             grid_leaderboard.add(userLabel, 1, row);

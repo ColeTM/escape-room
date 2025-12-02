@@ -35,5 +35,13 @@
 .label {
 }
 
+.leaderboard-label {
+    -fx-text-fill: #000000;
+    -fx-font-size: 14;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-padding: 8 12;
+    -fx-alignment: center;
+}
+
 .button {
 }
