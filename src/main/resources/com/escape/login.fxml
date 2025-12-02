@@ -18,9 +18,9 @@
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#60717b" height="50.0" layoutX="241.0" layoutY="30.0" opacity="0.88" stroke="BLACK" strokeType="INSIDE" width="159.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#60717b" height="247.0" layoutX="201.0" layoutY="99.0" opacity="0.88" stroke="BLACK" strokeType="INSIDE" width="239.0" />
-            <Text fill="#951d1d" layoutX="256.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log In" textAlignment="CENTER">
+            <Text fill="#951d1d" layoutX="252.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log In" textAlignment="CENTER">
                <font>
-                  <Font name="Cinzel Decorative Regular" size="37.0" />
+                  <Font name="Cinzel Decorative Bold" size="37.0" />
                </font>
             </Text>
             <TextField id="loginUsername" fx:id="loginUsername" layoutX="241.0" layoutY="127.0" />
