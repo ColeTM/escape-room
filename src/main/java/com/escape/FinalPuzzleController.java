@@ -1,5 +1,7 @@
 package com.escape;
 
+import com.model.EscapeRoom;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -92,6 +94,7 @@ public class FinalPuzzleController {
 
         }
     }
+
     @FXML
     private void handleMoveRight(ActionEvent event) {
         if(cutoutCircle.getLayoutX() < MAX_X) {
@@ -109,6 +112,8 @@ public class FinalPuzzleController {
     void requestHint(ActionEvent event) {
         finalHintBox.setVisible(true);
         finalHintText.setVisible(true);
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        finalHintText.setText(escapeRoom.requestHint());
     }
 
     @FXML
