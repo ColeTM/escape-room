@@ -3,12 +3,14 @@
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" styleClass="menu-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.IntroController">
    <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#60717b" height="289.0" layoutX="25.0" layoutY="34.0" opacity="0.88" stroke="BLACK" strokeType="INSIDE" width="589.0" />
       <Button fx:id="enterButton" layoutX="225.0" layoutY="245.0" mnemonicParsing="false" onAction="#switchToHallway" prefHeight="60.0" prefWidth="190.0" text="Enter" />
-      <Text fx:id="introText" fill="WHITE" layoutX="279.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[intro message]" />
+      <Text fx:id="introText" fill="WHITE" layoutX="40.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-style: Cinzel Decorative;" styleClass="label" text="You are trick-or-treating on Halloween when you pass by a house you don't recognize. When you enter the house, the door closes behind you; you're trapped! Solve the puzzles in each of the 4 open rooms to unlock the room at the end of the hallway. Solve the final challenge to leave! You have 30 minutes to escape this house of horrors before your soul is stuck here FOREVER!!!" wrappingWidth="559.3384704589844" />
    </children>
    <stylesheets>
       <URL value="@styles.css" />
