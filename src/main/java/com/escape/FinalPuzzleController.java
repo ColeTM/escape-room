@@ -1,5 +1,7 @@
 package com.escape;
 
+import java.io.IOException;
+
 import com.model.EscapeRoom;
 
 import javafx.event.ActionEvent;
@@ -122,13 +124,13 @@ public class FinalPuzzleController {
     }
 
     @FXML
-    void switchToHallway(ActionEvent event) {
-        // App.setRoot("hallway");
+    void switchToHallway(ActionEvent event) throws IOException {
+        App.setRoot("hallway");
     }
 
     @FXML
-    void switchToPause(ActionEvent event) {
-        // App.setRoot("pause_menu");
+    void switchToPause(ActionEvent event) throws IOException {
+        App.setRoot("pause_menu");
     }
     
 }

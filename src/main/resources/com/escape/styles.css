@@ -4,6 +4,12 @@
     -fx-background-size: cover;
 }
 
+.hallway-background {
+    -fx-background-image: url("../../images/HallwayImage.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: cover;
+}
+
 .library-background {
     -fx-background-image: url("../../images/library_background.png");
     -fx-background-repeat: stretch;
@@ -27,8 +33,6 @@
 }
 
 .label {
-    -fx-text-fill: black;
-    -fx-font-size: 14;
 }
 
 .button {
