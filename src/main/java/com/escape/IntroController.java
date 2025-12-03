@@ -2,6 +2,7 @@ package com.escape;
 
 import java.io.IOException;
 import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 
 import java.util.UUID;
 
@@ -15,7 +16,7 @@ public class IntroController {
     @FXML
     private Button enterButton;
     @FXML
-    private Label introText; 
+    private Text introText; 
 
 
 
