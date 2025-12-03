@@ -6,15 +6,21 @@ import com.model.EscapeRoom;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 
@@ -57,6 +63,8 @@ public class FinalPuzzleController {
     private ImageView flashlight;
     @FXML
     private Button flashlightButton;
+    @FXML
+    private VBox inventoryList;
 
 
     private Shape currentCutout;
@@ -129,6 +137,8 @@ public class FinalPuzzleController {
         finalAnswerButton.setVisible(false);
         finalAnswerText.setVisible(false);
         finalInventory.setVisible(false);
+        inventoryList.setVisible(true);
+        loadInventoryItems();
     }
     
     @FXML
@@ -140,6 +150,7 @@ public class FinalPuzzleController {
         finalAnswerButton.setVisible(true);
         finalAnswerText.setVisible(true);
         finalInventory.setVisible(true);
+        inventoryList.setVisible(false);
     }
 
     @FXML
@@ -169,5 +180,48 @@ public class FinalPuzzleController {
     void switchToPause(ActionEvent event) throws IOException {
         App.setRoot("pause_menu");
     }
-    
+
+    private void loadInventoryItems() {
+    inventoryList.getChildren().clear();
+
+    EscapeRoom escapeRoom = EscapeRoom.getInstance();
+    java.util.function.Function<String, Text> makeErrorText = msg -> {
+        Text t = new Text(msg);
+        t.setFill(Color.web("#641013")); 
+        t.setWrappingWidth(401);
+        t.setTextAlignment(TextAlignment.CENTER);
+        t.setFont(Font.font("Caveat Brush", 24));
+        return t;
+    };
+    if (escapeRoom.getCurrentUser() == null) {
+        inventoryList.getChildren().add(makeErrorText.apply("No user logged in."));
+        return;
+    }
+    var character = escapeRoom.getCurrentUser().getCharacter("Leni");
+
+    if (character == null) {
+        inventoryList.getChildren().add(makeErrorText.apply("No character found."));
+        return;
+    }
+    for (var item : character.getInventory()) {
+        HBox row = new HBox(3);  
+        row.setAlignment(Pos.CENTER_LEFT);
+        ImageView imgView = new ImageView();
+        if (item.getImagePath() != null) {
+            try {
+                imgView.setImage(new Image(item.getImagePath()));
+                imgView.setFitWidth(40);
+                imgView.setFitHeight(40);
+                imgView.setPreserveRatio(true);
+            } catch (Exception e) {
+                System.out.println("Failed to load item image: " + item.getImagePath());
+            }
+        }
+        row.getChildren().add(imgView);
+        inventoryList.getChildren().add(row);
+    }
+    if (character.getInventory().isEmpty()) {
+        inventoryList.getChildren().add(makeErrorText.apply("Inventory is empty."));
+    }
+}
 }

@@ -12,11 +12,15 @@
                 "name": "Logan",
                 "inventory": [
                     {
-                        "name": "Jade key",
-                        "description": "A key that opens a jade door."
+                        "name": "Flashlight",
+                        "description": "A flashlight to help you see. Obtained upon game start.",
+                        "isUsed": false,
+                        "imagePath": "@../../images/flashlight.png"
                     },{
-                        "name": "Bobby pin",
-                        "description": "Could be used to unlock a box."
+                        "name": "Key 1",
+                        "description": "A key to unlock one of the locks on the final room. Obtained upon completion of the first room.",
+                        "isUsed": false,
+                        "imagePath": "@../../images/key1.png"
                     }
                 ],
                 "currentRoom":"a91b9a37-d41d-4d93-b553-895ffd04723a",
@@ -71,12 +75,15 @@
                 "name": "Bobby",
                 "inventory": [
                     {
-                        "name": "Jade key",
-                        "description": "A key that opens a jade door."
-                    },
-                    {
-                        "name": "Bobby pin",
-                        "description": "Could be used to unlock a box."
+                        "name": "Flashlight",
+                        "description": "A flashlight to help you see. Obtained upon game start.",
+                        "isUsed": false,
+                        "imagePath": "@../../images/flashlight.png"
+                    },{
+                        "name": "Key 1",
+                        "description": "A key to unlock one of the locks on the final room. Obtained upon completion of the first room.",
+                        "isUsed": false,
+                        "imagePath": "@../../images/key1.png"
                     }
                 ],
                 "hintsUsed": {
@@ -127,8 +134,15 @@
                 "name": "Ozzy",
                 "inventory": [
                     {
-                        "name": "Jade key",
-                        "description": "A key that opens a jade door."
+                        "name": "Flashlight",
+                        "description": "A flashlight to help you see. Obtained upon game start.",
+                        "isUsed": false,
+                        "imagePath": "@../../images/flashlight.png"
+                    },{
+                        "name": "Key 1",
+                        "description": "A key to unlock one of the locks on the final room. Obtained upon completion of the first room.",
+                        "isUsed": false,
+                        "imagePath": "@../../images/key1.png"
                     }
                 ],
                 "currentRoom": "08ea2518-a310-492c-b925-4d929a398ba4",
