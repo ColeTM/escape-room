@@ -15,6 +15,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 import javafx.scene.text.Text;
+import javafx.scene.image.ImageView;
 
 
 public class FinalPuzzleController {
@@ -48,6 +49,15 @@ public class FinalPuzzleController {
     private Circle cutoutCircle;
     @FXML
     private Rectangle coverRectangle;
+    @FXML
+    private Rectangle inventoryBox;
+    @FXML
+    private Button closeInventoryButton;
+    @FXML
+    private ImageView flashlight;
+    @FXML
+    private Button flashlightButton;
+
 
     private Shape currentCutout;
 
@@ -58,11 +68,16 @@ public class FinalPuzzleController {
         coverRectangle.setLayoutY(0);
         cutoutCircle.setLayoutX(320);
         cutoutCircle.setLayoutY(166);
-        cutoutCircle.setOpacity(0.0); 
-        coverRectangle.setOpacity(0.0);
+        cutoutCircle.setOpacity(1.0); 
+        coverRectangle.setOpacity(1.0);
         finalHintBox.setVisible(false);
         finalHintText.setVisible(false);
+        flashlight.setVisible(false);
+        flashlightButton.setVisible(false);
+        closeInventoryButton.setVisible(false);
+        inventoryBox.setVisible(false);
         updateCutout();
+
     }
 
     private void updateCutout() {
@@ -107,7 +122,29 @@ public class FinalPuzzleController {
 
     @FXML
     void openInventory(ActionEvent event) {
-        // open inventory
+        flashlight.setVisible(true);
+        flashlightButton.setVisible(true);
+        closeInventoryButton.setVisible(true);
+        inventoryBox.setVisible(true);
+        finalAnswerButton.setVisible(false);
+        finalAnswerText.setVisible(false);
+        finalInventory.setVisible(false);
+    }
+    
+    @FXML
+    void closeInventory(ActionEvent event) {
+        flashlight.setVisible(false);
+        flashlightButton.setVisible(false);
+        closeInventoryButton.setVisible(false);
+        inventoryBox.setVisible(false);
+        finalAnswerButton.setVisible(true);
+        finalAnswerText.setVisible(true);
+        finalInventory.setVisible(true);
+    }
+
+    @FXML
+    void flashlightPage(ActionEvent event) throws IOException {
+        App.setRoot("flashlight");
     }
 
     @FXML
