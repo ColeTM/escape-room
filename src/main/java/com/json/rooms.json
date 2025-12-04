@@ -53,7 +53,7 @@
             {
                 "interactableID": "c6a006dc-a3c4-436f-b149-5d732a953d2d",
                 "name": "flashlight",
-                "description": "A flashlight",
+                "description": "A flashlight to help you see. Obtained upon game start.",
                 "isHighlighted": false,
                 "soundEffect": "src/sounds/flashlight.wav",
                 "clueText": "Will you need a flashlight?",
@@ -106,8 +106,8 @@
             },
             {
                 "interactableID": "9a314754-c54f-4a23-868c-f6478a0c5df2",
-                "name": "key",
-                "description": "Key 1",
+                "name": "key 1",
+                "description": "key obtained from completing the library puzzle",
                 "isHighlighted": false,
                 "soundEffect": "src/sounds/door.wav",
                 "clueText": "One of the keys to the final room!",
@@ -191,8 +191,8 @@
             },
             {
                 "interactableID": "2bba7c74-ca56-4b8e-9176-3808a3b70804",
-                "name": "key",
-                "description": "Key 2",
+                "name": "key 2",
+                "description": "key obtained from completing the box room puzzle",
                 "isHighlighted": false,
                 "soundEffect": "src/sounds/door.wav",
                 "clueText": "One of the keys to the final room!",

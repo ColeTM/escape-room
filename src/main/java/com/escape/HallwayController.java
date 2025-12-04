@@ -1,11 +1,10 @@
 package com.escape;
 
-import javafx.scene.control.Label;
-
 import java.io.IOException;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 public class HallwayController {
     
@@ -19,7 +18,7 @@ public class HallwayController {
     private Button puzzleBox;
 
     @FXML
-    private Button invintory;
+    private Button inventory;
 
     @FXML
     private Button pause;

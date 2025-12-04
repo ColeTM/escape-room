@@ -12,13 +12,13 @@
                 "name": "Logan",
                 "inventory": [
                     {
-                        "name": "Flashlight",
+                        "name": "flashlight",
                         "description": "A flashlight to help you see. Obtained upon game start.",
                         "isUsed": false,
                         "imagePath": "@../../images/flashlight.png"
                     },{
-                        "name": "Key 1",
-                        "description": "A key to unlock one of the locks on the final room. Obtained upon completion of the first room.",
+                        "name": "key 1",
+                        "description": "key obtained from completing the library puzzle",
                         "isUsed": false,
                         "imagePath": "@../../images/key1.png"
                     }

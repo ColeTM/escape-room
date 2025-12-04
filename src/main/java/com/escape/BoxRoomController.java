@@ -3,12 +3,14 @@ package com.escape;
 import java.util.UUID;
 
 import com.model.EscapeRoom;
+import com.model.Item;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import javafx.scene.image.ImageView;
 
 public class BoxRoomController {
 
@@ -42,6 +44,12 @@ public class BoxRoomController {
     private Button inventorySlotThree;
     @FXML
     private Label puzzleText;
+    @FXML
+    private ImageView inventorySlotOnePicture;
+    @FXML
+    private ImageView inventorySlotTwoPicture;
+    @FXML
+    private ImageView inventorySlotThreePicture;
 
 
     @FXML
@@ -53,6 +61,10 @@ public class BoxRoomController {
         puzzleText.setText(escapeRoom.getCurrentPuzzle().getClue().getText());  // this still needs to be styled
         hintLabel.setText("");
         incorrectLabel.setText("");
+
+        if (!escapeRoom.getCurrentCharacter().getInventory().isEmpty()) {
+            
+        }
     }
 
     @FXML
