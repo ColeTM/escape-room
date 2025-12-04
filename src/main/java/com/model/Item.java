@@ -12,6 +12,8 @@ public class Item {
      */
     private String name; 
     private String description;
+    private boolean isUsed;
+    private String imagePath;
 
     /**
      * construtor for an item
@@ -21,6 +23,7 @@ public class Item {
     public Item(String name, String description){
         this.name = name;
         this.description = description;
+        this.isUsed = false;
     }
     /**
      * getter for name
@@ -51,9 +54,39 @@ public class Item {
         this.description = description;
     }
     /**
+     * getter for is used
+     * @return- boolean if used
+     */
+    public boolean getIsUsed() {
+        return isUsed;
+    }
+    /**
+     * getter for is used
+     * param isUsed - boolean if used
+     */
+    public void setIsUsed(boolean isUsed) {
+        this.isUsed = isUsed;
+    }
+    /**
+     * getter for is used
+     * @return- boolean if used
+     */
+    public String getImagePath() {
+        return imagePath;
+    }
+    /**
+     * getter for is used
+     * param isUsed - boolean if used
+     */
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+        
+    }
+    /**
      * method to handle the item usage
      */
     public void use(){
+        isUsed = true;
         // wait until we have some items and make a switch case or something for use
 
     }
@@ -63,7 +96,7 @@ public class Item {
      * @return string rep of item
      */
     public String toString() {
-        return name + ": " + description;
+        return name + ": " + description + "This item has " + (isUsed ? "been used." : "not been used.");
     }
     
 }

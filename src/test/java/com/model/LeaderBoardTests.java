@@ -14,7 +14,7 @@ public class LeaderBoardTests {
 
     @BeforeEach
     public void setUp() {
-        leaderboard = new Leaderboard();
+        leaderboard = Leaderboard.getInstance();
 
     }
 

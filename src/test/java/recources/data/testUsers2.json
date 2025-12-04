@@ -15,8 +15,15 @@
                 "name": "Haden",
                 "inventory": [
                     {
-                        "name": "flashlight",
-                        "description": "A flashlight"
+                        "name": "Flashlight",
+                        "description": "A flashlight to help you see. Obtained upon game start.",
+                        "isUsed": false,
+                        "imagePath": "@../../images/flashlight.png"
+                    },{
+                        "name": "Key 1",
+                        "description": "A key to unlock one of the locks on the final room. Obtained upon completion of the first room.",
+                        "isUsed": false,
+                        "imagePath": "@../../images/key1.png"
                     }
                 ],
                 "hintsUsed": {
@@ -69,20 +76,15 @@
                 "name": "Mark",
                 "inventory": [
                     {
-                        "name": "flashlight",
-                        "description": "A flashlight"
-                    },
-                    {
-                        "name": "key",
-                        "description": "Key 1"
-                    },
-                    {
-                        "name": "key",
-                        "description": "Key 3"
-                    },
-                    {
-                        "name": "paper",
-                        "description": "Morse code manual"
+                        "name": "Flashlight",
+                        "description": "A flashlight to help you see. Obtained upon game start.",
+                        "isUsed": false,
+                        "imagePath": "@../../images/flashlight.png"
+                    },{
+                        "name": "Key 1",
+                        "description": "A key to unlock one of the locks on the final room. Obtained upon completion of the first room.",
+                        "isUsed": false,
+                        "imagePath": "@../../images/key1.png"
                     }
                 ],
                 "hintsUsed": {
@@ -135,24 +137,15 @@
                 "name": "Vick",
                 "inventory": [
                     {
-                        "name": "flashlight",
-                        "description": "A flashlight"
-                    },
-                    {
-                        "name": "key",
-                        "description": "Key 1"
-                    },
-                    {
-                        "name": "key",
-                        "description": "Key 3"
-                    },
-                    {
-                        "name": "key",
-                        "description": "Key 2"
-                    },
-                    {
-                        "name": "key",
-                        "description": "Key 4"
+                        "name": "Flashlight",
+                        "description": "A flashlight to help you see. Obtained upon game start.",
+                        "isUsed": false,
+                        "imagePath": "@../../images/flashlight.png"
+                    },{
+                        "name": "Key 1",
+                        "description": "A key to unlock one of the locks on the final room. Obtained upon completion of the first room.",
+                        "isUsed": false,
+                        "imagePath": "@../../images/key1.png"
                     }
                 ],
                 "hintsUsed": {

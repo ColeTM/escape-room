@@ -1,7 +1,8 @@
 package com.escape;
 
 import java.io.IOException;
-import java.lang.classfile.Label;
+import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 
 import java.util.UUID;
 
@@ -15,15 +16,14 @@ public class IntroController {
     @FXML
     private Button enterButton;
     @FXML
-    private Label introText; 
+    private Text introText; 
 
 
 
     @FXML
     void switchToHallway() throws IOException {
-        EscapeRoom escapeRoom = EscapeRoom.getInstance();
-        escapeRoom.setRoom(UUID.fromString("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85"));
-        App.setRoot("hallway");
+        EscapeRoom.getInstance().setRoom(UUID.fromString("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85"));
+        App.setRoot("main_hallway");
     }
 
 }

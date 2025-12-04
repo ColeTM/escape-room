@@ -1,88 +1,138 @@
 package com.escape;
 
 import java.io.IOException;
+import java.util.UUID;
 
-import javafx.event.ActionEvent;
+import com.model.EscapeRoom;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.shape.Rectangle;
 
 public class LibraryController {
 
     @FXML
     private Button backLibrary;
-
     @FXML
-    private Button blackBook;
-
+    private Rectangle blackBook;
     @FXML
-    private Button blueBook;
-
+    private Rectangle blueBook;
     @FXML
-    private Button greenBook;
-
+    private Rectangle greenBook;
     @FXML
     private Button hintLibrary;
-
     @FXML
     private Button inventoryLibrary;
-
+    @FXML
+    private Label libraryTimer;
     @FXML
     private Button pauseLibrary;
+    @FXML
+    private Rectangle puzzleLibrary;
+    @FXML
+    private Rectangle redBook;
 
     @FXML
-    private Button puzzleLibrary;
+    public void initialize() {
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        escapeRoom.setRoom(UUID.fromString("9aae693f-83a4-427e-9822-b150f44ba171"));
+        escapeRoom.setCurrentPuzzle(escapeRoom.getCurrentRoom().getPuzzles().get(0));
+    }
 
     @FXML
-    private Button redBook;
+    void goToHallwayFromLibrary() throws IOException {
+        App.setRoot("main_hallway");
+    }
 
-     @FXML
-    public void goToHallwayFromLibrary() throws IOException {
-        App.setRoot("hallway");
+    @FXML
+    void goToInventory() {
 
     }
 
     @FXML
-    public void goToInventory() throws IOException {
-        //App.setRoot("inventory");
+    void goToPause() {
 
     }
 
     @FXML
-    public void goToPause() throws IOException {
-        //App.setRoot("pause_menu");
+    void goToPuzzle() {
 
     }
 
     @FXML
-    public void goToPuzzle() throws IOException {
-        //App.setRoot("puzzle");
+    void highlightBlack() {
+        blackBook.setOpacity(0.75);
+    }
+
+    @FXML
+    void highlightBlue() {
+        blueBook.setOpacity(0.6);
+    }
+
+    @FXML
+    void highlightDesk() {
+        puzzleLibrary.setOpacity(0.4);
+    }
+
+    @FXML
+    void highlightGreen() {
+        greenBook.setOpacity(0.5);
+    }
+
+    @FXML
+    void highlightRed() {
+        redBook.setOpacity(0.5);
+    }
+
+    @FXML
+    void openClue() {
 
     }
 
     @FXML
-    public void openClue() throws IOException {
-        //App.setRoot("livrary_clue");
+    void showBlackBook() {
 
     }
 
     @FXML
-    public void showBlueBook() throws IOException {
-        //App.setRoot("blue_book");
+    void showBlueBook() {
+
     }
 
     @FXML
-    public void showGreenBook() throws IOException {
-        //App.setRoot("_book");
+    void showGreenBook() {
+
     }
 
     @FXML
-    public void showRedBook() throws IOException {
-        //App.setRoot("_book");
+    void showRedBook() {
+
     }
 
     @FXML
-    public void showBlackBook() throws IOException {
-        //App.setRoot("_book");
+    void unhighlightBlack() {
+        blackBook.setOpacity(0.0);
     }
-    
+
+    @FXML
+    void unhighlightBlue() {
+        blueBook.setOpacity(0.0);
+    }
+
+    @FXML
+    void unhighlightDesk() {
+        puzzleLibrary.setOpacity(0.0);
+    }
+
+    @FXML
+    void unhighlightGreen() {
+        greenBook.setOpacity(0.0);
+    }
+
+    @FXML
+    void unhighlightRed() {
+        redBook.setOpacity(0.0);
+    }
+
 }

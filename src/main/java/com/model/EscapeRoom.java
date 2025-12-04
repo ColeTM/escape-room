@@ -2,6 +2,7 @@
 package com.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.UUID;
 
 /**
@@ -78,8 +79,7 @@ public class EscapeRoom {
         //Speech.speak(intro);
         // timer.start();
         */
-        currentRoom = RoomList.getInstance().getRoomByUUID(UUID.fromString("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85"));
-        character.setCurrentRoom(UUID.fromString("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85"));
+        setRoom(UUID.fromString("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85"));
     }
 
     /**
@@ -227,6 +227,10 @@ public class EscapeRoom {
         System.out.println(Leaderboard.getInstance().displayGlobal().toString());
     }
 
+    public ArrayList<LeaderboardEntry> getLeaderBoard() {
+        return Leaderboard.getInstance().displayGlobal();
+    }
+
     /**
      * Gets and returns the current user
      * @return The current user
@@ -273,5 +277,21 @@ public class EscapeRoom {
      */
     public Character getCurrentCharacter() {
         return character;
+    }
+
+    /**
+     * accessor for the current room
+     * @return Room -- the current room
+     */
+    public Room getCurrentRoom() {
+        return currentRoom;
+    }
+
+    /**
+     * accessor for the current puzzle
+     * @return Puzzle -- the current puzzle
+     */
+    public Puzzle getCurrentPuzzle() {
+        return currentPuzzle;
     }
 }
