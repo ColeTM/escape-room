@@ -43,8 +43,8 @@ public class ContinueGameController {
             // set screen to appropriate screen based on current room
             String roomID = EscapeRoom.getInstance().getCurrentCharacter().getCurrentRoom().toString();
             switch (roomID) {
-                case "26767fe2-e8b1-47c4-b4eb-5f9aec77fb85" -> switchToLibrary();
-                case "9aae693f-83a4-427e-9822-b150f44ba171" -> switchToHallway();
+                case "26767fe2-e8b1-47c4-b4eb-5f9aec77fb85" -> switchToHallway();
+                case "9aae693f-83a4-427e-9822-b150f44ba171" -> switchToLibrary();
                 case "a91b9a37-d41d-4d93-b553-895ffd04723a" -> switchToBoxRoom();
                 case "c6b98566-e4e9-445c-8da2-9ef6b92ce815" -> switchToJigsawRoom();
                 case "150c985e-0e90-4c28-bd96-e658b4bc1c20" -> switchToMinesweeper();

@@ -24,6 +24,8 @@ public class LibraryController {
     @FXML
     private Rectangle greenBook;
     @FXML
+    private Label hintLabel;
+    @FXML
     private Button hintLibrary;
     @FXML
     private Button inventoryLibrary;
@@ -104,7 +106,7 @@ public class LibraryController {
 
     @FXML
     void requestHint() {
-        hintLibrary.setText(EscapeRoom.getInstance().requestHint());
+        hintLabel.setText(EscapeRoom.getInstance().requestHint());
     }
 
     @FXML
@@ -150,6 +152,21 @@ public class LibraryController {
     @FXML
     void unhighlightRed() {
         redBook.setOpacity(0.0);
+    }
+
+    @FXML
+    void viewItemOne() {
+        // check if there is an item in slot then change to its info screen
+    }
+
+    @FXML
+    void viewItemTwo() {
+        // check if there is an item in slot then change to its info screen
+    }
+
+    @FXML
+    void viewItemThree() {
+        // check if there is an item in slot then change to its info screen
     }
 
 }

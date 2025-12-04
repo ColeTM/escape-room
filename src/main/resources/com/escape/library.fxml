@@ -36,7 +36,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="hintLibrary" layoutX="64.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#openClue" opacity="0.69" prefHeight="40.0" prefWidth="40.0">
+            <Button fx:id="hintLibrary" layoutX="64.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#requestHint" opacity="0.69" prefHeight="40.0" prefWidth="40.0">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -73,7 +73,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane fx:id="inventory" prefHeight="200.0" prefWidth="200.0">
+      <Pane fx:id="inventory" prefHeight="200.0" prefWidth="640.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#606f78" height="135.0" layoutY="225.0" stroke="BLACK" strokeType="INSIDE" width="640.0" />
             <Button fx:id="inventorySlotOne" layoutX="42.0" layoutY="248.0" mnemonicParsing="false" onAction="#viewItemOne" prefHeight="93.0" prefWidth="104.0" text="inv item 1" />
