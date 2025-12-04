@@ -7,18 +7,19 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" styleClass="menu-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.MenuController">
    <children>
       <Pane prefHeight="360.0" prefWidth="640.0">
          <children>
-            <Button fx:id="newGameButton" layoutX="215.0" layoutY="148.0" mnemonicParsing="false" onAction="#switchToNew" prefHeight="56.0" prefWidth="210.0" text="New Game" />
-            <Button fx:id="continueGameButton" layoutX="215.0" layoutY="219.0" mnemonicParsing="false" onAction="#switchToContinue" prefHeight="56.0" prefWidth="210.0" text="Continue" />
-            <Button fx:id="leaderboardButton" layoutX="215.0" layoutY="290.0" mnemonicParsing="false" onAction="#switchToLeaderboard" prefHeight="56.0" prefWidth="210.0" text="Leaderboard" />
-            <Label layoutX="77.0" layoutY="51.0" text="HOUSE OF HORRORS" textFill="#951d1d">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="360.0" opacity="0.2" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="640.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#60717b" height="69.0" layoutX="21.0" layoutY="29.0" opacity="0.88" stroke="BLACK" strokeType="INSIDE" width="601.0" />
+            <Label layoutX="26.0" layoutY="7.0" text="HOUSE OF HORRORS" textFill="#951d1d">
                <font>
-                  <Font size="51.0" />
+                  <Font name="Cinzel Decorative Bold" size="51.0" />
                </font>
             </Label>
             <Button fx:id="settingsButton" layoutX="590.0" layoutY="260.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchToSettings" prefHeight="40.0" prefWidth="40.0">
@@ -37,6 +38,39 @@
                      </image>
                   </ImageView>
                </graphic></Button>
+            <ImageView fitHeight="69.0" fitWidth="200.0" layoutX="227.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/old-torn-paper-11552768455virlr91wms.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="69.0" fitWidth="200.0" layoutX="229.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/old-torn-paper-11552768455virlr91wms.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="69.0" fitWidth="200.0" layoutX="230.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/old-torn-paper-11552768455virlr91wms.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="272.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Continue">
+               <font>
+                  <Font name="Averia Serif Libre Regular" size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="263.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Game">
+               <font>
+                  <Font name="Averia Serif Libre Regular" size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="254.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leaderboard">
+               <font>
+                  <Font name="Averia Serif Libre Regular" size="24.0" />
+               </font>
+            </Text>
+            <Button fx:id="leaderboardButton" layoutX="216.0" layoutY="286.0" mnemonicParsing="false" onAction="#switchToLeaderboard" opacity="0.0" prefHeight="56.0" prefWidth="210.0" text="Leaderboard" />
+            <Button fx:id="continueGameButton" layoutX="215.0" layoutY="206.0" mnemonicParsing="false" onAction="#switchToContinue" opacity="0.0" prefHeight="56.0" prefWidth="210.0" text="Continue" />
+            <Button fx:id="newGameButton" layoutX="215.0" layoutY="126.0" mnemonicParsing="false" onAction="#switchToNew" opacity="0.0" prefHeight="56.0" prefWidth="210.0" text="New Game" />
          </children>
       </Pane>
    </children>
