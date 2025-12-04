@@ -16,6 +16,7 @@
    <children>
       <Pane prefHeight="360.0" prefWidth="640.0">
          <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="360.0" opacity="0.2" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="640.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#60717b" height="50.0" layoutX="241.0" layoutY="30.0" opacity="0.88" stroke="BLACK" strokeType="INSIDE" width="159.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#60717b" height="247.0" layoutX="201.0" layoutY="99.0" opacity="0.88" stroke="BLACK" strokeType="INSIDE" width="239.0" />
             <Text fill="#951d1d" layoutX="252.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log In" textAlignment="CENTER">
