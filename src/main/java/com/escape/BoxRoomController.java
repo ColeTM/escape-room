@@ -112,18 +112,39 @@ public class BoxRoomController {
     }
 
     @FXML
-    void viewItemOne() {
-        // check if there is an item in slot then change to its info screen
+    void viewItemOne() throws IOException {
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        if (!escapeRoom.getCurrentCharacter().getInventory().isEmpty()) {
+            switch (escapeRoom.getCurrentCharacter().getInventory().get(0).getName()) {
+                case "flashlight" -> App.setRoot("flashlight");
+                // case "key 1" -> App.setRoot("key1");
+                // case "key 2" -> App.setRoot("key2");
+            }
+        }
     }
 
     @FXML
-    void viewItemTwo() {
-        // check if there is an item in slot then change to its info screen
+    void viewItemTwo() throws IOException {
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        if (escapeRoom.getCurrentCharacter().getInventory().size() > 1) {
+            switch (escapeRoom.getCurrentCharacter().getInventory().get(1).getName()) {
+                case "flashlight" -> App.setRoot("flashlight");
+                // case "key 1" -> App.setRoot("key1");
+                // case "key 2" -> App.setRoot("key2");
+            }
+        }
     }
 
     @FXML
-    void viewItemThree() {
-        // check if there is an item in slot then change to its info screen
+    void viewItemThree() throws IOException{
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        if (escapeRoom.getCurrentCharacter().getInventory().size() > 2) {
+            switch (escapeRoom.getCurrentCharacter().getInventory().get(2).getName()) {
+                case "flashlight" -> App.setRoot("flashlight");
+                // case "key 1" -> App.setRoot("key1");
+                // case "key 2" -> App.setRoot("key2");
+            }
+        }
     }
 
 }
