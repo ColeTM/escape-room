@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" styleClass="library-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.LibraryController">
     <stylesheets>
@@ -86,7 +87,27 @@
                         <Image url="@../../images/close_inventory_icon.png" />
                      </image>
                   </ImageView>
-               </graphic></Button>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="bookPane" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="backOnBook" layoutX="11.0" layoutY="64.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#backToLibrary" prefHeight="40.0" prefWidth="40.0">
+               <graphic>
+                  <ImageView fitHeight="57.0" fitWidth="64.0" onMouseClicked="#backToLibrary" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/back_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ImageView fitHeight="199.0" fitWidth="288.0" layoutX="163.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/book.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="253.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Text For each Book)" />
          </children>
       </Pane>
    </children>

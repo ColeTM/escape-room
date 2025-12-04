@@ -6,7 +6,7 @@ import com.model.EscapeRoom;
 import com.model.Character;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import java.fx.scene.control.Label;
+//import java.fx.scene.control.Label;
 
 public class LosingScreenController {
     

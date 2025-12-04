@@ -16,6 +16,8 @@ public class LibraryController {
     @FXML
     private Button backLibrary;
     @FXML
+    private Button backOnBook;
+    @FXML
     private Rectangle blackBook;
     @FXML
     private Rectangle blueBook;
@@ -34,6 +36,8 @@ public class LibraryController {
     @FXML
     private Pane inventory;
     @FXML
+    private Pane bookPane;
+    @FXML
     private Button inventorySlotOne;
     @FXML
     private Button inventorySlotTwo;
@@ -49,9 +53,16 @@ public class LibraryController {
     @FXML
     public void initialize() {
         inventory.setVisible(false);
+        bookPane.setVisible(false);
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
         escapeRoom.setRoom(UUID.fromString("9aae693f-83a4-427e-9822-b150f44ba171"));
         escapeRoom.setCurrentPuzzle(escapeRoom.getCurrentRoom().getPuzzles().get(0));
+    }
+
+    @FXML
+    void backToLibrary() throws IOException {
+        bookPane.setVisible(false);
+
     }
 
     @FXML
@@ -111,22 +122,22 @@ public class LibraryController {
 
     @FXML
     void showBlackBook() {
-
+        bookPane.setVisible(true);
     }
 
     @FXML
     void showBlueBook() {
-
+        bookPane.setVisible(true);
     }
 
     @FXML
     void showGreenBook() {
-
+        bookPane.setVisible(true);
     }
 
     @FXML
     void showRedBook() {
-
+        bookPane.setVisible(true);
     }
 
     @FXML
