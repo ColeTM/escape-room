@@ -34,8 +34,14 @@ public class LibraryController {
     private Rectangle redBook;
 
     @FXML
+    public void initialize() {
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        escapeRoom.setRoom(UUID.fromString("9aae693f-83a4-427e-9822-b150f44ba171"));
+        escapeRoom.setCurrentPuzzle(escapeRoom.getCurrentRoom().getPuzzles().get(0));
+    }
+
+    @FXML
     void goToHallwayFromLibrary() throws IOException {
-        EscapeRoom.getInstance().setRoom(UUID.fromString("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85"));
         App.setRoot("main_hallway");
     }
 

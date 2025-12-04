@@ -61,7 +61,7 @@ public class ContinueGameController {
 
     @FXML
     void switchToHallway() throws IOException {
-        // App.setRoot("hallway");
+        App.setRoot("main_hallway");
     }
 
     @FXML

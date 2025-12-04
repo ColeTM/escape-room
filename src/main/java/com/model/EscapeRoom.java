@@ -278,4 +278,20 @@ public class EscapeRoom {
     public Character getCurrentCharacter() {
         return character;
     }
+
+    /**
+     * accessor for the current room
+     * @return Room -- the current room
+     */
+    public Room getCurrentRoom() {
+        return currentRoom;
+    }
+
+    /**
+     * accessor for the current puzzle
+     * @return Puzzle -- the current puzzle
+     */
+    public Puzzle getCurrentPuzzle() {
+        return currentPuzzle;
+    }
 }

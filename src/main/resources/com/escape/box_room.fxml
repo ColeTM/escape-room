@@ -7,37 +7,78 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" styleClass="boxes-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.BoxRoomController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" styleClass="boxes-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.BoxRoomController">
    <children>
-      <Button fx:id="boxesBack" layoutX="10.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchToHallway" prefHeight="40.0" prefWidth="40.0">
-         <graphic>
-            <ImageView fitHeight="57.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" styleClass="back-button" />
-         </graphic>
-      </Button>
-      <Button fx:id="boxesHint" layoutX="66.0" layoutY="18.0" mnemonicParsing="false" onAction="#requestHint" text="hint" />
-      <Button fx:id="boxesPause" layoutX="590.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchToPause" prefHeight="40.0" prefWidth="40.0" text="pause" />
-      <Label fx:id="boxesTimer" layoutX="541.0" layoutY="22.0" text="xx:xx" />
-      <Button fx:id="boxesInventory" layoutX="300.0" layoutY="310.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#openInventory" prefHeight="40.0" prefWidth="40.0">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/inventory_icon.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
-      <TextField fx:id="boxesAnswerText" layoutX="50.0" layoutY="250.0" prefHeight="50.0" prefWidth="450.0" text="answer puzzle" />
-      <Button fx:id="boxesAnswerButton" layoutX="500.0" layoutY="250.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="50.0" prefWidth="90.0" text="Enter" />
-      <Text fill="WHITE" layoutX="256.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[puzzle text]">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
-      <Text fx:id="hintLabel" fill="#641013" layoutX="295.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[hint text]" />
+      <Pane prefHeight="360.0" prefWidth="640.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="64.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="640.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4e9e9" height="32.0" layoutX="496.0" layoutY="17.0" opacity="0.69" stroke="BLACK" strokeType="INSIDE" width="67.0" />
+            <Button fx:id="boxesBack" layoutX="10.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchToHallway" prefHeight="40.0" prefWidth="40.0">
+               <graphic>
+                  <ImageView fitHeight="57.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" styleClass="back-button" />
+               </graphic>
+            </Button>
+            <Button fx:id="boxesHint" layoutX="66.0" layoutY="18.0" mnemonicParsing="false" onAction="#requestHint" text="hint" />
+            <Button fx:id="boxesPause" layoutX="590.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchToPause" prefHeight="40.0" prefWidth="40.0">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/pause_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Label fx:id="boxesTimer" layoutX="505.0" layoutY="15.0" text="xx:xx">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Button fx:id="boxesInventory" layoutX="300.0" layoutY="310.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#openInventory" prefHeight="40.0" prefWidth="40.0">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/inventory_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <TextField fx:id="boxesAnswerText" layoutX="50.0" layoutY="250.0" prefHeight="50.0" prefWidth="450.0" text="answer puzzle" />
+            <Button fx:id="boxesAnswerButton" layoutX="500.0" layoutY="250.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="50.0" prefWidth="90.0" text="Enter" />
+            <Label fx:id="hintLabel" layoutX="250.0" layoutY="15.0" text="[hint text]" textFill="#641013">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label fx:id="incorrectLabel" layoutX="50.0" layoutY="302.0" textFill="#e4151f">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="puzzleText" layoutX="256.0" layoutY="135.0" text="[puzzle text]" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="inventory" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#606f78" height="135.0" layoutY="225.0" stroke="BLACK" strokeType="INSIDE" width="640.0" />
+            <Button fx:id="inventorySlotOne" layoutX="42.0" layoutY="248.0" mnemonicParsing="false" onAction="#viewItemOne" prefHeight="93.0" prefWidth="104.0" text="inv item 1" />
+            <Button fx:id="inventorySlotTwo" layoutX="182.0" layoutY="248.0" mnemonicParsing="false" onAction="#viewItemTwo" prefHeight="93.0" prefWidth="104.0" text="inv item 2" />
+            <Button fx:id="inventorySlotThree" layoutX="320.0" layoutY="248.0" mnemonicParsing="false" onAction="#viewItemThree" prefHeight="93.0" prefWidth="104.0" text="inv item 3" />
+            <Button fx:id="closeInventoryButton" layoutX="300.0" layoutY="185.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#closeInventory" prefHeight="40.0" prefWidth="40.0">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/close_inventory_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </children>
+      </Pane>
    </children>
    <stylesheets>
       <URL value="@styles.css" />
    </stylesheets>
-</Pane>
+</StackPane>
