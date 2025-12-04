@@ -6,11 +6,9 @@ import com.model.EscapeRoom;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -21,6 +19,7 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 
 
 public class FinalPuzzleController {
@@ -62,6 +61,20 @@ public class FinalPuzzleController {
     private ImageView flashlight;
     @FXML
     private Button flashlightButton;
+    @FXML
+    private Button inventorySlot1;
+    @FXML
+    private Button inventorySlot2;
+    @FXML
+    private Button inventorySlot3;
+    @FXML
+    private ImageView inventoryImage1;
+    @FXML
+    private ImageView inventoryImage2;
+    @FXML
+    private ImageView inventoryImage3;
+    @FXML
+    private GridPane gridInventory;
 
     private Shape currentCutout;
 
@@ -76,10 +89,9 @@ public class FinalPuzzleController {
         coverRectangle.setOpacity(1.0);
         finalHintBox.setVisible(false);
         finalHintText.setVisible(false);
-        flashlight.setVisible(false);
-        flashlightButton.setVisible(false);
         closeInventoryButton.setVisible(false);
         inventoryBox.setVisible(false);
+        gridInventory.setVisible(false);
         updateCutout();
 
     }
@@ -126,19 +138,17 @@ public class FinalPuzzleController {
 
     @FXML
     void openInventory(ActionEvent event) {
-        flashlight.setVisible(true);
-        flashlightButton.setVisible(true);
         closeInventoryButton.setVisible(true);
         inventoryBox.setVisible(true);
         finalAnswerButton.setVisible(false);
         finalAnswerText.setVisible(false);
         finalInventory.setVisible(false);
+        gridInventory.setVisible(true);
+        loadInventoryItems();
     }
     
     @FXML
     void closeInventory(ActionEvent event) {
-        flashlight.setVisible(false);
-        flashlightButton.setVisible(false);
         closeInventoryButton.setVisible(false);
         inventoryBox.setVisible(false);
         finalAnswerButton.setVisible(true);
@@ -173,5 +183,47 @@ public class FinalPuzzleController {
     void switchToPause(ActionEvent event) throws IOException {
         App.setRoot("pause_menu");
     }
+
+    private void loadInventoryItems() {
+    gridInventory.getChildren().clear();
+
+    EscapeRoom escapeRoom = EscapeRoom.getInstance();
+    java.util.function.Function<String, Text> makeErrorText = msg -> {
+        Text t = new Text(msg);
+        t.setFill(Color.web("#641013")); 
+        t.setWrappingWidth(401);
+        t.setTextAlignment(TextAlignment.CENTER);
+        t.setFont(Font.font("Caveat Brush", 24));
+        return t;
+    };
+    if (escapeRoom.getCurrentUser() == null) {
+        gridInventory.getChildren().add(makeErrorText.apply("No user logged in."));
+        return;
+    }
+    var character = escapeRoom.getCurrentCharacter();
+
+    if (character == null) {
+        gridInventory.getChildren().add(makeErrorText.apply("No character found."));
+        return;
+    }
+    for (var item : character.getInventory()) {
+        
+        if (item.getImagePath() != null) {
+            try {
+                inventoryImage1.setImage(new Image(item.getImagePath()));
+                inventoryImage1.setFitWidth(212);
+                inventoryImage1.setFitHeight(172);
+                inventoryImage1.setPreserveRatio(true);
+            } catch (Exception e) {
+                System.out.println("Failed to load item image: " + item.getImagePath());
+            }
+        }
+        //row.getChildren().add(inventoryImage1);
+        //gridInventory.getChildren().add(row);
+    }
+    if (character.getInventory().isEmpty()) {
+        gridInventory.getChildren().add(makeErrorText.apply("Inventory is empty."));
+    }
+}
 
 }

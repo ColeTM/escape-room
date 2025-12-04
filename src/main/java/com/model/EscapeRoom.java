@@ -69,6 +69,8 @@ public class EscapeRoom {
         Character temp = new Character(characterName, difficulty);
         user.addCharacter(temp);
         character = temp;
+        Item flashlight = new Item("Flashlight", "A flashlight to help you see. Obtained upon game start.");
+        character.addToInventory(flashlight);
         /*
         String intro = "You are trick-or-treating on Halloween when you pass by a house you don't recognize. \n"
                            + "When you enter the house, the door closes behind you; you're trapped! \n"
@@ -82,6 +84,7 @@ public class EscapeRoom {
         setRoom(UUID.fromString("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85"));
     }
 
+    
     /**
      * sets the current character to passed character
      * @param characterName String -- name of the character to play
