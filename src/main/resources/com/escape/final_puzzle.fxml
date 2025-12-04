@@ -89,6 +89,5 @@
          </image>
       </ImageView>
       <Button fx:id="flashlightButton" layoutX="28.0" layoutY="212.0" mnemonicParsing="false" onAction="#flashlightPage" opacity="0.0" prefHeight="125.0" prefWidth="162.0" text="Button" />
-      <HBox fx:id="inventoryList" layoutY="180.0" prefHeight="184.0" prefWidth="643.0" spacing="8.0" visible="false" />
    </children>
 </Pane>

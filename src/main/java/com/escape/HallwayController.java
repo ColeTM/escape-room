@@ -29,7 +29,7 @@ public class HallwayController {
 
     @FXML
     void goToLibraryPuzzle() throws IOException {
-        App.setRoot("final_puzzle");
+        App.setRoot("library");
     }
 
     @FXML
