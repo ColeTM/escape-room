@@ -6,69 +6,88 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" styleClass="library-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.LibraryController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" styleClass="library-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.LibraryController">
     <stylesheets>
         <URL value="@styles.css" />
     </stylesheets>
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" opacity="0.46" stroke="BLACK" strokeType="INSIDE" width="640.0" />
-      <Button fx:id="pauseLibrary" layoutX="590.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#goToPause" prefHeight="40.0" prefWidth="40.0">
-         <graphic>
-            <ImageView fitHeight="64.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/pause_icon.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4e9e9" height="32.0" layoutX="496.0" layoutY="17.0" opacity="0.69" stroke="BLACK" strokeType="INSIDE" width="67.0" />
-      <Button fx:id="backLibrary" layoutX="10.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#goToHallwayFromLibrary" prefHeight="40.0" prefWidth="40.0">
-         <graphic>
-            <ImageView fitHeight="57.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/back_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button fx:id="hintLibrary" layoutX="64.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#openClue" opacity="0.69" prefHeight="40.0" prefWidth="40.0">
-         <graphic>
-            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/hint_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Rectangle fx:id="blueBook" arcHeight="5.0" arcWidth="5.0" fill="#1a2fff" height="25.0" layoutX="196.0" layoutY="336.0" onMouseClicked="#showBlueBook" onMouseEntered="#highlightBlue" onMouseExited="#unhighlightBlue" opacity="0.0" stroke="#1a2fff" strokeType="INSIDE" width="56.0" />
-      <Text fill="RED" layoutX="177.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click around the library to explore" wrappingWidth="285.35992431640625">
-         <font>
-            <Font name="Cinzel Decorative Black" size="12.0" />
-         </font>
-      </Text>
-      <Rectangle fx:id="redBook" arcHeight="5.0" arcWidth="5.0" fill="RED" height="32.0" layoutX="38.0" layoutY="330.0" onMouseClicked="#showRedBook" onMouseEntered="#highlightRed" onMouseExited="#unhighlightRed" opacity="0.0" stroke="RED" strokeType="INSIDE" width="97.0" />
-      <Rectangle fx:id="greenBook" arcHeight="5.0" arcWidth="5.0" fill="#24c312" height="32.0" layoutX="462.0" layoutY="313.0" onMouseClicked="#showGreenBook" onMouseEntered="#highlightGreen" onMouseExited="#unhighlightGreen" opacity="0.0" stroke="#24c312" strokeType="INSIDE" width="40.0" />
-      <Rectangle fx:id="blackBook" arcHeight="5.0" arcWidth="5.0" height="32.0" layoutX="535.0" layoutY="326.0" onMouseClicked="#showBlackBook" onMouseEntered="#highlightBlack" onMouseExited="#unhighlightBlack" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="56.0" />
-      <Rectangle fx:id="puzzleLibrary" arcHeight="5.0" arcWidth="5.0" fill="#f6ff00" height="88.0" layoutX="276.0" layoutY="226.0" onMouseClicked="#goToPuzzle" onMouseEntered="#highlightDesk" onMouseExited="#unhighlightDesk" opacity="0.0" stroke="#f6ff00" strokeType="INSIDE" width="146.0" />
-      <Button fx:id="inventoryLibrary" layoutX="300.0" layoutY="310.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#goToInventory" opacity="0.96" prefHeight="40.0" prefWidth="40.0">
-         <font>
-            <Font size="22.0" />
-         </font>
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/inventory_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Label fx:id="libraryTimer" layoutX="505.0" layoutY="15.0" text="xx:xx">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
+      <Pane prefHeight="360.0" prefWidth="640.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" opacity="0.46" stroke="BLACK" strokeType="INSIDE" width="640.0" />
+            <Button fx:id="pauseLibrary" layoutX="590.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#goToPause" prefHeight="40.0" prefWidth="40.0">
+               <graphic>
+                  <ImageView fitHeight="64.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/pause_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4e9e9" height="32.0" layoutX="496.0" layoutY="17.0" opacity="0.69" stroke="BLACK" strokeType="INSIDE" width="67.0" />
+            <Button fx:id="backLibrary" layoutX="10.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#goToHallwayFromLibrary" prefHeight="40.0" prefWidth="40.0">
+               <graphic>
+                  <ImageView fitHeight="57.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/back_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="hintLibrary" layoutX="64.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#openClue" opacity="0.69" prefHeight="40.0" prefWidth="40.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/hint_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Rectangle fx:id="blueBook" arcHeight="5.0" arcWidth="5.0" fill="#1a2fff" height="25.0" layoutX="196.0" layoutY="336.0" onMouseClicked="#showBlueBook" onMouseEntered="#highlightBlue" onMouseExited="#unhighlightBlue" opacity="0.0" stroke="#1a2fff" strokeType="INSIDE" width="56.0" />
+            <Label fx:id="hintLabel" layoutX="160.0" layoutY="15.0" text="Click around the library to explore" textFill="#d7111b">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Rectangle fx:id="redBook" arcHeight="5.0" arcWidth="5.0" fill="RED" height="32.0" layoutX="38.0" layoutY="330.0" onMouseClicked="#showRedBook" onMouseEntered="#highlightRed" onMouseExited="#unhighlightRed" opacity="0.0" stroke="RED" strokeType="INSIDE" width="97.0" />
+            <Rectangle fx:id="greenBook" arcHeight="5.0" arcWidth="5.0" fill="#24c312" height="32.0" layoutX="462.0" layoutY="313.0" onMouseClicked="#showGreenBook" onMouseEntered="#highlightGreen" onMouseExited="#unhighlightGreen" opacity="0.0" stroke="#24c312" strokeType="INSIDE" width="40.0" />
+            <Rectangle fx:id="blackBook" arcHeight="5.0" arcWidth="5.0" height="32.0" layoutX="535.0" layoutY="326.0" onMouseClicked="#showBlackBook" onMouseEntered="#highlightBlack" onMouseExited="#unhighlightBlack" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="56.0" />
+            <Rectangle fx:id="puzzleLibrary" arcHeight="5.0" arcWidth="5.0" fill="#f6ff00" height="88.0" layoutX="276.0" layoutY="226.0" onMouseClicked="#goToPuzzle" onMouseEntered="#highlightDesk" onMouseExited="#unhighlightDesk" opacity="0.0" stroke="#f6ff00" strokeType="INSIDE" width="146.0" />
+            <Button fx:id="inventoryLibrary" layoutX="300.0" layoutY="310.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#goToInventory" opacity="0.96" prefHeight="40.0" prefWidth="40.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/inventory_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label fx:id="libraryTimer" layoutX="505.0" layoutY="15.0" text="xx:xx">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="inventory" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#606f78" height="135.0" layoutY="225.0" stroke="BLACK" strokeType="INSIDE" width="640.0" />
+            <Button fx:id="inventorySlotOne" layoutX="42.0" layoutY="248.0" mnemonicParsing="false" onAction="#viewItemOne" prefHeight="93.0" prefWidth="104.0" text="inv item 1" />
+            <Button fx:id="inventorySlotTwo" layoutX="182.0" layoutY="248.0" mnemonicParsing="false" onAction="#viewItemTwo" prefHeight="93.0" prefWidth="104.0" text="inv item 2" />
+            <Button fx:id="inventorySlotThree" layoutX="320.0" layoutY="248.0" mnemonicParsing="false" onAction="#viewItemThree" prefHeight="93.0" prefWidth="104.0" text="inv item 3" />
+            <Button fx:id="closeInventoryButton" layoutX="300.0" layoutY="185.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#closeInventory" prefHeight="40.0" prefWidth="40.0">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/close_inventory_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </children>
+      </Pane>
    </children>
-</Pane>
+</StackPane>

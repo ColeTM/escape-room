@@ -8,6 +8,7 @@ import com.model.EscapeRoom;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 
 public class LibraryController {
@@ -19,6 +20,8 @@ public class LibraryController {
     @FXML
     private Rectangle blueBook;
     @FXML
+    private Button closeInventoryButton;
+    @FXML
     private Rectangle greenBook;
     @FXML
     private Button hintLibrary;
@@ -26,6 +29,14 @@ public class LibraryController {
     private Button inventoryLibrary;
     @FXML
     private Label libraryTimer;
+    @FXML
+    private Pane inventory;
+    @FXML
+    private Button inventorySlotOne;
+    @FXML
+    private Button inventorySlotTwo;
+    @FXML
+    private Button inventorySlotThree;
     @FXML
     private Button pauseLibrary;
     @FXML
@@ -35,6 +46,7 @@ public class LibraryController {
 
     @FXML
     public void initialize() {
+        inventory.setVisible(false);
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
         escapeRoom.setRoom(UUID.fromString("9aae693f-83a4-427e-9822-b150f44ba171"));
         escapeRoom.setCurrentPuzzle(escapeRoom.getCurrentRoom().getPuzzles().get(0));
@@ -47,12 +59,17 @@ public class LibraryController {
 
     @FXML
     void goToInventory() {
-
+        inventory.setVisible(true);
     }
 
     @FXML
-    void goToPause() {
+    void closeInventory() {
+        inventory.setVisible(false);
+    }
 
+    @FXML
+    void goToPause() throws IOException {
+        App.setRoot("pause");
     }
 
     @FXML
@@ -86,8 +103,8 @@ public class LibraryController {
     }
 
     @FXML
-    void openClue() {
-
+    void requestHint() {
+        hintLibrary.setText(EscapeRoom.getInstance().requestHint());
     }
 
     @FXML
