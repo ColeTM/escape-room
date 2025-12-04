@@ -12,7 +12,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
@@ -64,7 +63,7 @@ public class FinalPuzzleController {
     @FXML
     private Button flashlightButton;
     @FXML
-    private VBox inventoryList;
+    private HBox inventoryList;
 
 
     private Shape currentCutout;
