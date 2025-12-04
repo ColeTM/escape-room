@@ -1,16 +1,17 @@
 package com.escape;
 
+import java.io.IOException;
 import java.util.UUID;
 
 import com.model.EscapeRoom;
-import com.model.Item;
-import java.io.IOException;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 
 public class BoxRoomController {
 
@@ -63,7 +64,12 @@ public class BoxRoomController {
         incorrectLabel.setText("");
 
         if (!escapeRoom.getCurrentCharacter().getInventory().isEmpty()) {
-            
+            inventorySlotOnePicture.setImage(new Image(getClass().getResource(escapeRoom.getCurrentCharacter().getInventory().get(0).getImagePath()).toExternalForm()));
+            if (escapeRoom.getCurrentCharacter().getInventory().size() > 1) {
+                inventorySlotTwoPicture.setImage(new Image(getClass().getResource(escapeRoom.getCurrentCharacter().getInventory().get(1).getImagePath()).toExternalForm()));
+                if (escapeRoom.getCurrentCharacter().getInventory().size() > 2)
+                    inventorySlotThreePicture.setImage(new Image(getClass().getResource(escapeRoom.getCurrentCharacter().getInventory().get(2).getImagePath()).toExternalForm()));
+            }
         }
     }
 

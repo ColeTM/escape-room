@@ -26,9 +26,9 @@ public class Item {
         this.isUsed = false;
 
         switch (name) {
-            case "flashlight" -> this.imagePath = "@../../images/flashlight.png";
-            case "key 1" -> this.imagePath = "@../../images/key1.png";
-            case "key 2" -> this.imagePath = "@../../images/key2.png";
+            case "flashlight" -> this.imagePath = "/images/flashlight.png";
+            case "key 1" -> this.imagePath = "/images/key1.png";
+            case "key 2" -> this.imagePath = "/images/key2.png";
         }
     }
     /**
