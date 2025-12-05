@@ -136,7 +136,7 @@
                   <Image url="@../../images/libraryTable.png" />
                </image>
             </ImageView>
-            <TextField fx:id="bookAnswerText" layoutX="34.0" layoutY="250.0" prefHeight="50.0" prefWidth="450.0" text="answer puzzle" />
+            <TextField fx:id="bookAnswerText" layoutX="34.0" layoutY="250.0" prefHeight="50.0" prefWidth="450.0" promptText="answer puzzle" />
             <Button fx:id="bookAnswerButton" layoutX="484.0" layoutY="250.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="50.0" prefWidth="90.0" text="Enter" />
             <Button fx:id="backOnAnswer" layoutX="115.0" layoutY="66.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#backToLibrary" prefHeight="40.0" prefWidth="40.0" />
             <ImageView fitHeight="57.0" fitWidth="64.0" layoutX="107.0" layoutY="58.0" onMouseClicked="#backToLibrary" pickOnBounds="true" preserveRatio="true">
@@ -144,7 +144,7 @@
                   <Image url="@../../images/back_icon.png" />
                </image>
             </ImageView>
-            <Label fx:id="incorrectLabel" layoutX="329.0" layoutY="260.0" prefHeight="30.0" prefWidth="146.0" textFill="#e4151f">
+            <Label fx:id="incorrectLabel" layoutX="34.0" layoutY="300.0" prefHeight="30.0" prefWidth="146.0" textFill="#d7111b">
                <font>
                   <Font size="20.0" />
                </font>

@@ -17,12 +17,12 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#60717b" height="289.0" layoutX="33.0" layoutY="60.0" opacity="0.88" stroke="BLACK" strokeType="INSIDE" width="577.0" />
       <GridPane fx:id="grid_leaderboard" gridLinesVisible="true" layoutX="48.0" layoutY="80.0" prefHeight="30.0" prefWidth="546.0">
         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.199951171875" minWidth="10.0" prefWidth="70.99998779296875" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="119.60001220703126" minWidth="10.0" prefWidth="107.999951171875" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="102.40003662109376" minWidth="10.0" prefWidth="96.00004882812499" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.20001220703125" minWidth="10.0" prefWidth="90.39996337890625" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="99.00001220703126" minWidth="10.0" prefWidth="96.59998779296876" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.2000122070313" minWidth="10.0" prefWidth="86.2000122070313" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints />
