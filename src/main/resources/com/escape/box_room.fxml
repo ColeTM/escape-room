@@ -46,7 +46,7 @@
                </graphic></Button>
             <TextField fx:id="boxesAnswerText" layoutX="50.0" layoutY="250.0" prefHeight="50.0" prefWidth="450.0" text="enter the box # containing the key" />
             <Button fx:id="boxesAnswerButton" layoutX="500.0" layoutY="250.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="50.0" prefWidth="90.0" text="Enter" />
-            <Label fx:id="hintLabel" layoutX="250.0" layoutY="15.0" text="[hint text]" textFill="#641013">
+            <Label fx:id="hintLabel" layoutX="240.0" layoutY="17.0" text="[hint text]" textFill="#f21722">
                <font>
                   <Font size="20.0" />
                </font></Label>
