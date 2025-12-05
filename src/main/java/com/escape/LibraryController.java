@@ -102,27 +102,40 @@ public class LibraryController {
         App.setRoot("main_hallway");
     }
     @FXML
-    void flashlightPage(ActionEvent event) throws IOException {
-        if (EscapeRoom.getInstance().getCurrentCharacter().getItem("flashlight") == null) {
-            return;
+    void inventorySlot1(ActionEvent event) throws IOException {
+    EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        if (escapeRoom.getCurrentCharacter().getInventory().size() > 2) {
+            switch (escapeRoom.getCurrentCharacter().getInventory().get(0).getName()) {
+                case "flashlight" -> App.setRoot("flashlight");
+                case "key 1" -> App.setRoot("key1");
+                case "key 2" -> App.setRoot("key2");
+            }
         }
-        App.setRoot("flashlight");
+    }
+    
+
+    @FXML
+    void inventorySlot2(ActionEvent event) throws IOException {
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        if (escapeRoom.getCurrentCharacter().getInventory().size() > 2) {
+            switch (escapeRoom.getCurrentCharacter().getInventory().get(1).getName()) {
+                case "flashlight" -> App.setRoot("flashlight");
+                case "key 1" -> App.setRoot("key1");
+                case "key 2" -> App.setRoot("key2");
+            }
+        }
     }
 
     @FXML
-    void key1Page(ActionEvent event) throws IOException {
-        if (EscapeRoom.getInstance().getCurrentCharacter().getItem("key 1") == null) {
-            return;
+    void inventorySlot3(ActionEvent event) throws IOException {
+    EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        if (escapeRoom.getCurrentCharacter().getInventory().size() > 2) {
+            switch (escapeRoom.getCurrentCharacter().getInventory().get(2).getName()) {
+                case "flashlight" -> App.setRoot("flashlight");
+                case "key 1" -> App.setRoot("key1");
+                case "key 2" -> App.setRoot("key2");
+            }
         }
-        App.setRoot("key1");
-    }
-
-    @FXML
-    void key2Page(ActionEvent event) throws IOException {
-        if (EscapeRoom.getInstance().getCurrentCharacter().getItem("key 2") == null) {
-            return;
-        }
-        App.setRoot("key2");
     }
 
     @FXML

@@ -80,8 +80,8 @@
             <Font name="Caveat Brush" size="24.0" />
          </font>
       </Text>
-      <Rectangle fx:id="inventoryBox" arcHeight="5.0" arcWidth="5.0" fill="#60717b" height="178.0" layoutX="-2.0" layoutY="184.0" stroke="WHITE" strokeType="INSIDE" width="646.0" />
-      <GridPane fx:id="gridInventory" gridLinesVisible="true" layoutX="4.0" layoutY="187.0" prefHeight="172.0" prefWidth="634.0">
+      <Rectangle fx:id="inventoryBox" arcHeight="5.0" arcWidth="5.0" fill="#606f78" height="178.0" layoutX="-2.0" layoutY="184.0" stroke="WHITE" strokeType="INSIDE" width="646.0" />
+      <GridPane fx:id="gridInventory" layoutY="187.0" prefHeight="172.0" prefWidth="634.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -94,9 +94,9 @@
             <ImageView fx:id="inventoryImage1" fitHeight="175.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="inventoryImage2" fitHeight="175.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
             <ImageView fx:id="inventoryImage3" fitHeight="178.0" fitWidth="214.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
-            <Button fx:id="inventorySlot1" mnemonicParsing="false" onAction="#flashlightPage" opacity="0.0" prefHeight="172.0" prefWidth="216.0" text="inventorySlot1" />
-            <Button fx:id="inventorySlot2" mnemonicParsing="false" onAction="#key1Page" opacity="0.0" prefHeight="172.0" prefWidth="216.0" text="inventorySlot2" GridPane.columnIndex="1" />
-            <Button fx:id="key2Page" mnemonicParsing="false" onAction="#key2Page" opacity="0.0" prefHeight="172.0" prefWidth="216.0" text="inventorySlot3" GridPane.columnIndex="2" />
+            <Button fx:id="inventorySlot1" mnemonicParsing="false" onAction="#inventorySlot1" opacity="0.0" prefHeight="172.0" prefWidth="216.0" text="inventorySlot1" />
+            <Button fx:id="inventorySlot2" mnemonicParsing="false" onAction="#inventorySlot2" opacity="0.0" prefHeight="172.0" prefWidth="216.0" text="inventorySlot2" GridPane.columnIndex="1" />
+            <Button fx:id="inventorySlot3" mnemonicParsing="false" onAction="#inventorySlot3" opacity="0.0" prefHeight="172.0" prefWidth="216.0" text="inventorySlot3" GridPane.columnIndex="2" />
          </children>
       </GridPane>
       <Button fx:id="closeInventoryButton" layoutX="300.0" layoutY="145.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#closeInventory" prefHeight="40.0" prefWidth="40.0">
