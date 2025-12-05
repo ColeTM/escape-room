@@ -30,16 +30,12 @@
                   <Image url="@../../images/back_icon.png" />
                </image></ImageView>
          </graphic></Button>
-      <Button fx:id="finalHint" layoutX="64.0" layoutY="13.0" mnemonicParsing="false" onAction="#requestHint" prefHeight="32.0" prefWidth="36.0">
-         <graphic>
-            <ImageView fitHeight="32.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/hint_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Label fx:id="finalTimer" layoutX="545.0" layoutY="23.0" text="xx:xx" />
+      <Button fx:id="finalHint" layoutX="60.0" layoutY="10.0" mnemonicParsing="false" onAction="#requestHint" opacity="0.69" prefHeight="40.0" prefWidth="40.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="32.0" layoutX="517.0" layoutY="15.0" opacity="0.69" stroke="BLACK" strokeType="INSIDE" width="67.0" />
+      <Label fx:id="finalTimer" layoutX="525.0" layoutY="15.0" text="xx:xx">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
       <Button fx:id="finalInventory" layoutX="300.0" layoutY="318.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#openInventory" prefHeight="40.0" prefWidth="40.0">
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
@@ -81,8 +77,8 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Rectangle fx:id="finalHintBox" arcHeight="5.0" arcWidth="5.0" fill="#ffffffe0" height="40.0" layoutX="120.0" layoutY="13.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.25" width="401.0" />
-      <Text fx:id="finalHintText" fill="#641013" layoutX="120.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="hint text" textAlignment="CENTER" wrappingWidth="401.0">
+      <Rectangle fx:id="finalHintBox" arcHeight="5.0" arcWidth="5.0" fill="#ffffffe0" height="40.0" layoutX="109.0" layoutY="11.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.25" width="401.0" />
+      <Text fx:id="finalHintText" fill="#641013" layoutX="106.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="hint text" textAlignment="CENTER" wrappingWidth="401.0">
          <font>
             <Font name="Caveat Brush" size="24.0" />
          </font>
@@ -115,5 +111,10 @@
             </ImageView>
          </graphic>
       </Button>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="60.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/hint_icon.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
