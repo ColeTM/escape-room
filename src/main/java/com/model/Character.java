@@ -119,8 +119,11 @@ public class Character
      * Removes an item from the character's inventory.
      * @param item The item to remove.
      */
-    public void removeFromInventory(Item item) {
-        this.inventory.remove(item);
+    public void removeFromInventory(String itemName) {
+        for (Item item : inventory) {
+            if (item.getName().equals(itemName))
+                this.inventory.remove(item);
+        }
     }
 
     /**

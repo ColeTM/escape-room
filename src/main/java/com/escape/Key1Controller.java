@@ -30,11 +30,13 @@ public class Key1Controller {
 
     @FXML
     void useItem() throws IOException{
-        if (!EscapeRoom.getInstance().getCurrentRoom().getRoomID().toString().equals("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85")) {
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        if (!escapeRoom.getCurrentRoom().getRoomID().toString().equals("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85")) {
             errorLabel.setText("this item has no use here");
             return;
         }
-        EscapeRoom.getInstance().getCurrentCharacter().getPuzzlesCompleted().put(UUID.fromString("e50b53c7-6bbf-4849-af1a-350adb9afcf3"), true);
+        escapeRoom.getCurrentCharacter().getPuzzlesCompleted().put(UUID.fromString("e50b53c7-6bbf-4849-af1a-350adb9afcf3"), true);
+        escapeRoom.getCurrentCharacter().removeFromInventory("key 1");
         App.setRoot("main_hallway");
     }
 

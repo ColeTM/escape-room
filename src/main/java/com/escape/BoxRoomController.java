@@ -93,7 +93,7 @@ public class BoxRoomController {
         if (EscapeRoom.getInstance().getCurrentCharacter().getPuzzlesCompleted().get(UUID.fromString("6c9f6273-be95-470d-8d43-5792c7737c82"))) {
             incorrectLabel.setText("you've already solved this puzzle!");
         } else if (EscapeRoom.getInstance().submitPuzzleAnswer(boxesAnswerText.getText())) {
-            EscapeRoom.getInstance().getCurrentCharacter().addToInventory(new com.model.Item("key 1", "key obtained from completing the box room puzzle"));
+            EscapeRoom.getInstance().getCurrentCharacter().addToInventory(new com.model.Item("key 2", "key obtained from completing the box room puzzle"));
             App.setRoot("correct_answer");
         } else {
             incorrectLabel.setText("incorrect!");
