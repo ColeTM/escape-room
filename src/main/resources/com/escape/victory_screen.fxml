@@ -29,7 +29,7 @@
          <font>
             <Font name="Berkshire Swash Regular" size="24.0" />
          </font></Text>
-      <Label fx:id="messageLabel" layoutX="140.0" layoutY="121.0" prefHeight="86.0" prefWidth="360.0" text="[customized message here]">
+      <Label fx:id="messageLabel" layoutX="120.0" layoutY="121.0" prefHeight="102.0" prefWidth="404.0" text="[customized message here]">
          <font>
             <Font name="IM FELL DW Pica Roman" size="14.0" />
          </font>
