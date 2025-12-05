@@ -58,7 +58,7 @@
             <Rectangle fx:id="greenBook" arcHeight="5.0" arcWidth="5.0" fill="#24c312" height="32.0" layoutX="462.0" layoutY="313.0" onMouseClicked="#showGreenBook" onMouseEntered="#highlightGreen" onMouseExited="#unhighlightGreen" opacity="0.0" stroke="#24c312" strokeType="INSIDE" width="40.0" />
             <Rectangle fx:id="blackBook" arcHeight="5.0" arcWidth="5.0" height="32.0" layoutX="535.0" layoutY="326.0" onMouseClicked="#showBlackBook" onMouseEntered="#highlightBlack" onMouseExited="#unhighlightBlack" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="56.0" />
             <Rectangle fx:id="puzzleLibrary" arcHeight="5.0" arcWidth="5.0" fill="#f6ff00" height="88.0" layoutX="276.0" layoutY="226.0" onMouseClicked="#goToPuzzle" onMouseEntered="#highlightDesk" onMouseExited="#unhighlightDesk" opacity="0.0" stroke="#f6ff00" strokeType="INSIDE" width="146.0" />
-            <Button fx:id="inventoryLibrary" layoutX="300.0" layoutY="320.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#goToInventory" opacity="0.96" prefHeight="40.0" prefWidth="40.0">
+            <Button fx:id="inventoryLibrary" layoutX="300.0" layoutY="310.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#goToInventory" opacity="0.96" prefHeight="40.0" prefWidth="40.0">
                <font>
                   <Font size="22.0" />
                </font>
@@ -124,7 +124,7 @@
             </ImageView>
             <Label fx:id="bookText" layoutX="170.0" layoutY="61.0" prefHeight="228.0" prefWidth="299.0" text="Booktext">
                <font>
-                  <Font name="Caveat Brush" size="13.0" />
+                  <Font name="Caveat Brush" size="11.5" />
                </font>
             </Label>
          </children>
