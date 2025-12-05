@@ -136,7 +136,7 @@ public class FinalPuzzleController {
     @FXML
     void inventorySlot1(ActionEvent event) throws IOException {
     EscapeRoom escapeRoom = EscapeRoom.getInstance();
-        if (escapeRoom.getCurrentCharacter().getInventory().size() > 2) {
+        if (!escapeRoom.getCurrentCharacter().getInventory().isEmpty()) {
             switch (escapeRoom.getCurrentCharacter().getInventory().get(0).getName()) {
                 case "flashlight" -> App.setRoot("flashlight");
                 case "key 1" -> App.setRoot("key1");
@@ -149,7 +149,7 @@ public class FinalPuzzleController {
     @FXML
     void inventorySlot2(ActionEvent event) throws IOException {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
-        if (escapeRoom.getCurrentCharacter().getInventory().size() > 2) {
+        if (escapeRoom.getCurrentCharacter().getInventory().size() > 1) {
             switch (escapeRoom.getCurrentCharacter().getInventory().get(1).getName()) {
                 case "flashlight" -> App.setRoot("flashlight");
                 case "key 1" -> App.setRoot("key1");
