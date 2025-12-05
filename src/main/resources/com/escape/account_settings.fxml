@@ -65,9 +65,9 @@
             <Font name="Cinzel Decorative Bold" size="40.0" />
          </font>
       </Text>
-      <TextField fx:id="usernameField" layoutX="328.0" layoutY="220.0" prefWidth="149.0" promptText="New username" onAction="#changeUsername"/>
-      <TextField fx:id="passField" layoutX="328.0" layoutY="250.0" promptText="New password" onAction="#changePassword"/>
-      <TextField fx:id="emailField" layoutX="328.0" layoutY="280.0" promptText="New email" onAction="#changeEmail"/>
+      <TextField fx:id="usernameField" layoutX="326.0" layoutY="220.0" onAction="#changeUsername" prefWidth="149.0" promptText="New username" />
+      <TextField fx:id="passField" layoutX="326.0" layoutY="250.0" onAction="#changePassword" prefHeight="26.0" prefWidth="149.0" promptText="New password" />
+      <TextField fx:id="emailField" layoutX="326.0" layoutY="280.0" onAction="#changeEmail" prefHeight="26.0" prefWidth="150.0" promptText="New email" />
       <Text fx:id="deleteFailsafe" fill="#951d1d" layoutX="332.0" layoutY="328.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Are you sure?" underline="true">
          <font>
             <Font size="16.0" />

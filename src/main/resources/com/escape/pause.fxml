@@ -12,44 +12,45 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" styleClass="menu-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.PauseController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="360.0" opacity="0.2" stroke="BLACK" strokeType="INSIDE" width="640.0" />
-      <ImageView fitHeight="65.0" fitWidth="181.0" layoutX="240.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#60717b" height="65.0" layoutX="128.0" layoutY="25.0" opacity="0.88" stroke="BLACK" strokeType="INSIDE" width="409.0" />
+      <ImageView fitHeight="65.0" fitWidth="181.0" layoutX="232.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/old-torn-paper-11552768455virlr91wms.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="65.0" fitWidth="181.0" layoutX="239.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="65.0" fitWidth="181.0" layoutX="232.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/old-torn-paper-11552768455virlr91wms.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="65.0" fitWidth="181.0" layoutX="240.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="65.0" fitWidth="181.0" layoutX="232.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/old-torn-paper-11552768455virlr91wms.png" />
          </image>
       </ImageView>
-      <Text layoutX="286.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resume">
+      <Text layoutX="277.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resume">
          <font>
             <Font name="Averia Serif Libre Regular" size="24.0" />
          </font>
       </Text>
-      <Text layoutX="277.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
+      <Text layoutX="281.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
          <font>
             <Font name="Averia Serif Libre Regular" size="24.0" />
          </font>
       </Text>
-      <Button fx:id="resumeButton" layoutX="242.0" layoutY="90.0" mnemonicParsing="false" onAction="#resumeGame" opacity="0.0" prefHeight="56.0" prefWidth="156.0" text="Resume" />
-      <Button fx:id="settingsButton" layoutX="250.0" layoutY="171.0" mnemonicParsing="false" onAction="#goToSettings" opacity="0.0" prefHeight="56.0" prefWidth="156.0" text="Settings" />
-      <Button fx:id="saveandquit" layoutX="256.0" layoutY="246.0" mnemonicParsing="false" onAction="#saveThenQuit" opacity="0.0" prefHeight="56.0" prefWidth="156.0" text="Save and Quit" />
-      <Text layoutX="256.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Save and Quit">
+      <Text layoutX="243.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Save and Quit">
          <font>
             <Font name="Averia Serif Libre Regular" size="24.0" />
          </font>
       </Text>
-      <Text fill="#951d1d" layoutX="137.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Paused">
+      <Text fill="#951d1d" layoutX="144.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Paused">
          <font>
-            <Font name="Cinzel Decorative Black" size="48.0" />
+            <Font name="Cinzel Decorative Bold" size="48.0" />
          </font>
       </Text>
+      <Button fx:id="resumeButton" layoutX="247.0" layoutY="108.0" mnemonicParsing="false" onAction="#resumeGame" opacity="0.0" prefHeight="56.0" prefWidth="156.0" text="Resume" />
+      <Button fx:id="settingsButton" layoutX="247.0" layoutY="187.0" mnemonicParsing="false" onAction="#goToSettings" opacity="0.0" prefHeight="56.0" prefWidth="156.0" text="Settings" />
+      <Button fx:id="saveandquit" layoutX="242.0" layoutY="269.0" mnemonicParsing="false" onAction="#saveThenQuit" opacity="0.0" prefHeight="56.0" prefWidth="156.0" text="Save and Quit" />
    </children>
    <stylesheets>
       <URL value="@styles.css" />
