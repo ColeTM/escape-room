@@ -3,6 +3,7 @@
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -122,6 +123,28 @@
                </image>
             </ImageView>
             <Label fx:id="bookText" layoutX="196.0" layoutY="86.0" prefHeight="146.0" prefWidth="225.0" text="Booktext" />
+         </children>
+      </Pane>
+      <Pane fx:id="answerPane" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="178.0" fitWidth="319.0" layoutX="160.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/libraryTable.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="bookAnswerText" layoutX="34.0" layoutY="250.0" prefHeight="50.0" prefWidth="450.0" text="answer puzzle" />
+            <Button fx:id="bookAnswerButton" layoutX="484.0" layoutY="250.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="50.0" prefWidth="90.0" text="Enter" />
+            <Button fx:id="backOnAnswer" layoutX="120.0" layoutY="89.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#backToLibrary" prefHeight="40.0" prefWidth="40.0" />
+            <ImageView fitHeight="57.0" fitWidth="64.0" layoutX="112.0" layoutY="81.0" onMouseClicked="#backToLibrary" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/back_icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="incorrectLabel" layoutX="221.0" layoutY="220.0" prefHeight="30.0" prefWidth="182.0" textFill="#e4151f">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>

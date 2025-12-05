@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -42,6 +43,14 @@ public class LibraryController {
     @FXML
     private Pane bookPane;
     @FXML
+    private Pane answerPane;
+    @FXML
+    private Button backOnAnswer;
+    @FXML
+    private Button bookAnswerButton;
+    @FXML
+    private TextField bookAnswerText;
+    @FXML
     private Button pauseLibrary;
     @FXML
     private Rectangle puzzleLibrary;
@@ -63,21 +72,26 @@ public class LibraryController {
     private Button inventorySlot3;
     @FXML
     private Label bookText;
+    @FXML
+    private Label incorrectLabel;
 
 
     @FXML
     public void initialize() {
         inventory.setVisible(false);
         bookPane.setVisible(false);
+        answerPane.setVisible(false);
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
         escapeRoom.setRoom(UUID.fromString("9aae693f-83a4-427e-9822-b150f44ba171"));
         escapeRoom.setCurrentPuzzle(escapeRoom.getCurrentRoom().getPuzzles().get(0));
         bookText.setText("");
+        incorrectLabel.setText("");
     }
 
     @FXML
     void backToLibrary() throws IOException {
         bookPane.setVisible(false);
+        answerPane.setVisible(false);
 
     }
 
@@ -127,6 +141,22 @@ public class LibraryController {
 
     @FXML
     void goToPuzzle() {
+        answerPane.setVisible(true);
+
+    }
+
+    @FXML
+    void submitAnswer() throws IOException {
+        if (EscapeRoom.getInstance().getCurrentCharacter().getPuzzlesCompleted().get(UUID.fromString("9aae693f-83a4-427e-9822-b150f44ba171"))) {
+            incorrectLabel.setText("you've already solved this puzzle!");
+        } else if (EscapeRoom.getInstance().submitPuzzleAnswer(bookAnswerText.getText())) {
+            EscapeRoom.getInstance().getCurrentCharacter().addToInventory(new com.model.Item("key 1", "key obtained from completing the library puzzle"));
+            App.setRoot("correct_answer");
+        } else {
+            incorrectLabel.setText("incorrect!");
+            // potentially deduct time -- should probably be done in puzzle classes
+        }
+
 
     }
 
