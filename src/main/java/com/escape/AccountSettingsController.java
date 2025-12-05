@@ -2,9 +2,12 @@ package com.escape;
 
 import java.io.IOException;
 import com.model.EscapeRoom;
+import com.model.UserList;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 public class AccountSettingsController {
@@ -27,6 +30,14 @@ public class AccountSettingsController {
     private Label lastNameLabel;
     @FXML
     private Label usernameLabel;
+    @FXML
+    private TextField usernameField;
+    @FXML
+    private TextField passField;
+    @FXML
+    private TextField emailField;
+    @FXML
+    private Text deleteFailsafe;
 
 
     // need method to set all labels when screen opens
@@ -42,22 +53,36 @@ public class AccountSettingsController {
 
     @FXML
     void changeEmail() {
-        // open dialog to change email
+       EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        escapeRoom.getCurrentUser().setEmail(emailField.getText());
+        emailField.clear();
     }
 
     @FXML
     void changePassword() {
-        // open dialog to change password
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        escapeRoom.getCurrentUser().setPassword(passField.getText());
+        passField.clear();
     }
 
     @FXML
     void changeUsername() {
-        // open dialog to change username
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        escapeRoom.getCurrentUser().setUsername(usernameField.getText());
+        usernameField.clear();
     }
 
     @FXML
-    void deleteAccount() {
-        // open dialog to confirm account deletion
+    void deleteAccount() throws IOException {
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        UserList users = UserList.getInstance();
+        if(deleteFailsafe.getOpacity() == 0) {
+            deleteFailsafe.setOpacity(1);
+        } else {
+            users.removeUser(escapeRoom.getCurrentUser());
+            escapeRoom.logout();
+            App.setRoot("landing");
+        }
     }
 
     @FXML

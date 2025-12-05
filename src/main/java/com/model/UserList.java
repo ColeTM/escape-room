@@ -107,5 +107,10 @@ public class UserList {
         }
         return false;
     }
+
+    public void removeUser(User user) {
+        users.remove(user);
+        saveUsers();
+    }
     
 }
