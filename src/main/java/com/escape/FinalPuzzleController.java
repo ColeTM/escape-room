@@ -132,7 +132,26 @@ public class FinalPuzzleController {
 
     @FXML
     void flashlightPage(ActionEvent event) throws IOException {
+        if (EscapeRoom.getInstance().getCurrentCharacter().getItem("flashlight") == null) {
+            return;
+        }
         App.setRoot("flashlight");
+    }
+
+    @FXML
+    void key1Page(ActionEvent event) throws IOException {
+        if (EscapeRoom.getInstance().getCurrentCharacter().getItem("key 1") == null) {
+            return;
+        }
+        App.setRoot("key1");
+    }
+
+    @FXML
+    void key2Page(ActionEvent event) throws IOException {
+        if (EscapeRoom.getInstance().getCurrentCharacter().getItem("key 2") == null) {
+            return;
+        }
+        App.setRoot("key2");
     }
 
     @FXML
@@ -185,6 +204,7 @@ public class FinalPuzzleController {
     void switchToPause(ActionEvent event) throws IOException {
         App.setRoot("pause_menu");
     }
+
     private void loadInventoryItems() {
         inventoryImage1.setImage(null);
         inventoryImage2.setImage(null);
@@ -215,3 +235,4 @@ public class FinalPuzzleController {
     
 
 }
+

@@ -5,11 +5,15 @@ import java.util.UUID;
 
 import com.model.EscapeRoom;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.image.ImageView;
 
 public class LibraryController {
 
@@ -38,17 +42,26 @@ public class LibraryController {
     @FXML
     private Pane bookPane;
     @FXML
-    private Button inventorySlotOne;
-    @FXML
-    private Button inventorySlotTwo;
-    @FXML
-    private Button inventorySlotThree;
-    @FXML
     private Button pauseLibrary;
     @FXML
     private Rectangle puzzleLibrary;
     @FXML
     private Rectangle redBook;
+    @FXML
+    private GridPane gridInventory;
+    @FXML
+    private ImageView inventoryImage1;
+    @FXML
+    private ImageView inventoryImage2;
+    @FXML
+    private ImageView inventoryImage3;
+    @FXML
+    private Button inventorySlot1;
+    @FXML
+    private Button inventorySlot2;
+    @FXML
+    private Button inventorySlot3;
+
 
     @FXML
     public void initialize() {
@@ -69,10 +82,34 @@ public class LibraryController {
     void goToHallwayFromLibrary() throws IOException {
         App.setRoot("main_hallway");
     }
+    @FXML
+    void flashlightPage(ActionEvent event) throws IOException {
+        if (EscapeRoom.getInstance().getCurrentCharacter().getItem("flashlight") == null) {
+            return;
+        }
+        App.setRoot("flashlight");
+    }
+
+    @FXML
+    void key1Page(ActionEvent event) throws IOException {
+        if (EscapeRoom.getInstance().getCurrentCharacter().getItem("key 1") == null) {
+            return;
+        }
+        App.setRoot("key1");
+    }
+
+    @FXML
+    void key2Page(ActionEvent event) throws IOException {
+        if (EscapeRoom.getInstance().getCurrentCharacter().getItem("key 2") == null) {
+            return;
+        }
+        App.setRoot("key2");
+    }
 
     @FXML
     void goToInventory() {
         inventory.setVisible(true);
+        loadInventoryItems();
     }
 
     @FXML
@@ -164,20 +201,33 @@ public class LibraryController {
     void unhighlightRed() {
         redBook.setOpacity(0.0);
     }
+    
+    private void loadInventoryItems() {
+        inventoryImage1.setImage(null);
+        inventoryImage2.setImage(null);
+        inventoryImage3.setImage(null);
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        var character = escapeRoom.getCurrentCharacter();
 
-    @FXML
-    void viewItemOne() {
-        // check if there is an item in slot then change to its info screen
-    }
+        if (character == null) return;
+        var items = character.getInventory();
+        int size = items.size();
+        for (int i = 0; i < size; i++) {
+            var item = items.get(i);
 
-    @FXML
-    void viewItemTwo() {
-        // check if there is an item in slot then change to its info screen
-    }
-
-    @FXML
-    void viewItemThree() {
-        // check if there is an item in slot then change to its info screen
+            if (item.getImagePath() != null) {
+                try {
+                    Image img = new Image(getClass().getResourceAsStream(item.getImagePath()));
+                    switch (i) {
+                        case 0 -> inventoryImage1.setImage(img);
+                        case 1 -> inventoryImage2.setImage(img);
+                        case 2 -> inventoryImage3.setImage(img);
+                    }
+                } catch (Exception e) {
+                    System.out.println("Failed to load: " + item.getImagePath());
+                }
+            }
+        }
     }
 
 }
