@@ -54,6 +54,8 @@ public class BoxRoomController {
     private ImageView inventorySlotThreePicture;
     @FXML
     private Rectangle hintBackdrop;
+    @FXML
+    private Label alreadySolvedLabel;
 
 
     @FXML
@@ -64,18 +66,11 @@ public class BoxRoomController {
         escapeRoom.setCurrentPuzzle(escapeRoom.getCurrentRoom().getPuzzles().get(0));
         puzzleText.setText(escapeRoom.getCurrentPuzzle().getClue().getText());  // this still needs to be styled
         hintLabel.setText("");
-        incorrectLabel.setText("");
+        incorrectLabel.setVisible(false);
+        alreadySolvedLabel.setVisible(false);
         hintBackdrop.setVisible(false);
 
-        /*if (!escapeRoom.getCurrentCharacter().getInventory().isEmpty()) {
-            inventorySlotOnePicture.setImage(new Image(getClass().getResource(escapeRoom.getCurrentCharacter().getInventory().get(0).getImagePath()).toExternalForm()));
-            if (escapeRoom.getCurrentCharacter().getInventory().size() > 1) {
-                inventorySlotTwoPicture.setImage(new Image(getClass().getResource(escapeRoom.getCurrentCharacter().getInventory().get(1).getImagePath()).toExternalForm()));
-                if (escapeRoom.getCurrentCharacter().getInventory().size() > 2)
-                    inventorySlotThreePicture.setImage(new Image(getClass().getResource(escapeRoom.getCurrentCharacter().getInventory().get(2).getImagePath()).toExternalForm()));
-            }
-        }*/
-       loadInventoryItems();
+        loadInventoryItems();
     }
 
     @FXML
@@ -96,13 +91,15 @@ public class BoxRoomController {
 
     @FXML
     void submitAnswer() throws IOException {
-        if (EscapeRoom.getInstance().getCurrentCharacter().getPuzzlesCompleted().get(UUID.fromString("6c9f6273-be95-470d-8d43-5792c7737c82"))) {
-            incorrectLabel.setText("you've already solved this puzzle!");
-        } else if (EscapeRoom.getInstance().submitPuzzleAnswer(boxesAnswerText.getText())) {
-            EscapeRoom.getInstance().getCurrentCharacter().addToInventory(new com.model.Item("key 2", "key obtained from completing the box room puzzle"));
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        if (escapeRoom.getCurrentCharacter().getPuzzlesCompleted().get(UUID.fromString("6c9f6273-be95-470d-8d43-5792c7737c82"))) {
+            alreadySolvedLabel.setVisible(true);
+        } else if (escapeRoom.submitPuzzleAnswer(boxesAnswerText.getText())) {
+            escapeRoom.getCurrentCharacter().getPuzzlesCompleted().put(UUID.fromString("6c9f6273-be95-470d-8d43-5792c7737c82"), true);
+            escapeRoom.getCurrentCharacter().addToInventory(new com.model.Item("key 2", "key obtained from completing the box room puzzle"));
             App.setRoot("correct_answer");
         } else {
-            incorrectLabel.setText("incorrect!");
+            incorrectLabel.setVisible(true);
             // potentially deduct time -- should probably be done in puzzle classes
         }
 
