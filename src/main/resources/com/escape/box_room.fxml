@@ -26,7 +26,15 @@
                   <ImageView fitHeight="57.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" styleClass="back-button" />
                </graphic>
             </Button>
-            <Button fx:id="boxesHint" layoutX="66.0" layoutY="18.0" mnemonicParsing="false" onAction="#requestHint" text="hint" />
+            <Button fx:id="boxesHint" layoutX="64.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#requestHint" prefHeight="40.0" prefWidth="40.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/hint_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
             <Button fx:id="boxesPause" layoutX="590.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchToPause" prefHeight="40.0" prefWidth="40.0">
                <graphic>
                   <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
@@ -47,15 +55,20 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <TextField fx:id="boxesAnswerText" layoutX="50.0" layoutY="250.0" prefHeight="50.0" prefWidth="450.0" text="enter the box # containing the key" />
+            <TextField fx:id="boxesAnswerText" layoutX="50.0" layoutY="250.0" prefHeight="50.0" prefWidth="450.0" promptText="enter the box # containing the key" />
             <Button fx:id="boxesAnswerButton" layoutX="500.0" layoutY="250.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="50.0" prefWidth="90.0" text="Enter" />
-            <Label fx:id="hintLabel" layoutX="240.0" layoutY="17.0" text="[hint text]" textFill="#f21722">
+            <Label fx:id="hintLabel" layoutX="240.0" layoutY="17.0" text="[hint text]" textFill="#d7111b">
                <font>
                   <Font size="20.0" />
                </font></Label>
-            <Label fx:id="incorrectLabel" layoutX="50.0" layoutY="302.0" textFill="#e4151f">
+            <Label fx:id="incorrectLabel" layoutX="50.0" layoutY="302.0" text="incorrect!" textFill="#d7111b">
                <font>
                   <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="alreadySolvedLabel" layoutX="60.0" layoutY="312.0" text="you already solved this puzzle!" textFill="#d7111b">
+               <font>
+                  <Font size="16.0" />
                </font>
             </Label>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#64656f" height="160.0" layoutX="50.0" layoutY="77.0" opacity="0.6" stroke="BLACK" strokeType="INSIDE" width="540.0" />
@@ -66,7 +79,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane fx:id="inventory" prefHeight="200.0" prefWidth="200.0">
+      <Pane fx:id="inventory" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#606f78" height="178.0" layoutY="183.0" stroke="BLACK" strokeType="INSIDE" width="640.0" />
             <GridPane fx:id="gridInventory" layoutY="187.0" prefHeight="172.0" prefWidth="634.0">
@@ -94,7 +107,8 @@
                         <Image url="@../../images/close_inventory_icon.png" />
                      </image>
                   </ImageView>
-               </graphic></Button>
+               </graphic>
+            </Button>
          </children>
       </Pane>
    </children>
