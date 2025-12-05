@@ -125,10 +125,10 @@ public class EscapeRoom {
                 user.setPersonalRecord(new LeaderboardEntry(user.getUsername(), Timer.secondsToDuration(timer.getTimeRemaining()), 
                                                         LocalDate.now(), character.getNumHintsUsed(), character.getDifficulty(),
                                                         character.calculateScore()));
-            } else {
-                user.setPersonalRecord(new LeaderboardEntry(user.getUsername(), Timer.secondsToDuration(timer.getTimeRemaining()), 
-                                                        LocalDate.now(), character.getNumHintsUsed(), character.getDifficulty(),
-                                                        character.calculateScore()));
+        } else {
+            user.setPersonalRecord(new LeaderboardEntry(user.getUsername(), Timer.secondsToDuration(timer.getTimeRemaining()), 
+                                                    LocalDate.now(), character.getNumHintsUsed(), character.getDifficulty(),
+                                                    character.calculateScore()));
         }
         user.upgradeSkillLevel(character.getDifficulty());
         userList.saveUsers();

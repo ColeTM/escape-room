@@ -20,11 +20,6 @@ public class MenuController {
     @FXML
     private Button settingsButton;
 
-    @FXML
-    public void initialize() {
-        if (EscapeRoom.getInstance().getCurrentUser().getCharacters().isEmpty())
-            continueGameButton.setOpacity(0.5);
-    }
 
     @FXML
     public void switchToNew() throws IOException {
