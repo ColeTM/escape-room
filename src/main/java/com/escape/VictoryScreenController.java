@@ -30,7 +30,7 @@ public class VictoryScreenController {
         messageLabel.setText("The Halloween ghosts hereby begrudgingly congratulate " + ch.getName() +
                                 " for evading their clutches... but they ask that you do not " +
                                 "dare to return. Escaping alive won't be as easy next time.");
-        hintsUsedLabel.setText("Hints Used: " + ch.getHintsUsed());
+        hintsUsedLabel.setText("Hints Used: " + ch.getNumHintsUsed());
         difficultyLabel.setText("Difficulty: " + ch.getDifficulty());
         finalScoreLabel.setText("Final Score: " + ch.calculateScore());
     }

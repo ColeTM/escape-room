@@ -86,6 +86,8 @@ public class LibraryController {
         escapeRoom.setCurrentPuzzle(escapeRoom.getCurrentRoom().getPuzzles().get(0));
         bookText.setText("");
         incorrectLabel.setText("");
+        bookText.setWrapText(true);
+        bookText.setMaxWidth(295);
     }
 
     @FXML
@@ -147,10 +149,12 @@ public class LibraryController {
 
     @FXML
     void submitAnswer() throws IOException {
-        if (EscapeRoom.getInstance().getCurrentCharacter().getPuzzlesCompleted().get(UUID.fromString("9aae693f-83a4-427e-9822-b150f44ba171"))) {
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        if (escapeRoom.getCurrentCharacter().getPuzzlesCompleted().get(UUID.fromString("e50b53c7-6bbf-4849-af1a-350adb9afcf3"))) {
             incorrectLabel.setText("you've already solved this puzzle!");
-        } else if (EscapeRoom.getInstance().submitPuzzleAnswer(bookAnswerText.getText())) {
-            EscapeRoom.getInstance().getCurrentCharacter().addToInventory(new com.model.Item("key 1", "key obtained from completing the library puzzle"));
+        } else if (escapeRoom.submitPuzzleAnswer(bookAnswerText.getText())) {
+            escapeRoom.getCurrentCharacter().getPuzzlesCompleted().put(UUID.fromString("e50b53c7-6bbf-4849-af1a-350adb9afcf3"), true);
+            escapeRoom.getCurrentCharacter().addToInventory(new com.model.Item("key 1", "key obtained from completing the library puzzle"));
             App.setRoot("correct_answer");
         } else {
             incorrectLabel.setText("incorrect!");
@@ -193,25 +197,73 @@ public class LibraryController {
     @FXML
     void showBlackBook() {
         bookPane.setVisible(true);
-        bookText.setText("The old house stood on the hill, silhouetted by the moon.We pushed open the creaking door, dust motes dancing in our lights.Every portrait on the wall seemed to follow us with its eyes.The library was quiet, filled with the scent of leather and age.A small, ornate box sat upon the central desk, locked tight.We searched for hours, looking for the one, single, intricate, hidden key.It wasn't in the drawer, nor under the heavy velvet curtain.Finally, behind a loose brick in the fireplace, we felt it.A cold piece of metal, promising to unlock the final secret.The mystery was almost solved; the answer was within reach.");
+        String text = """
+                The old house stood on the hill, silhouetted by the moon.
+                We pushed open the creaking door, dust motes dancing in our lights.
+                Every portrait on the wall seemed to follow us with its eyes.
+                The library was quiet, filled with the scent of leather and age.
+                A small, ornate box sat upon the central desk, locked tight.
+                We searched for hours, looking for the one, single, intricate, hidden key.
+                It wasn't in the drawer, nor under the heavy velvet curtain.
+                Finally, behind a loose brick in the fireplace, we felt it.
+                A cold piece of metal, promising to unlock the final secret.
+                The mystery was almost solved; the answer was within reach.
+                """;
+        bookText.setText(text);
     }
 
     @FXML
     void showBlueBook() {
         bookPane.setVisible(true);
-        bookText.setText("The vessel cut through the midnight sea, leaving a phosphorescent trail.A cold wind whipped the sails, threatening to tear the canvas apart.We hadn't seen land in seven days, just endless, shifting waves.The captain checked his charts again, frowning at the complex readings.All the instruments were unreliable after the sudden electrical storm.Our only hope was to rely on celestial navigation, old methods.We desperately searched for a single star to guide us back home.Through a momentary gap in the clouds, a brilliant point appeared.It was low on the horizon, but it was enough to correct our course.With renewed purpose, the crew adjusted the rudder, aiming east.");
+        String text = """
+                The vessel cut through the midnight sea, leaving a phosphorescent trail.
+                A cold wind whipped the sails, threatening to tear the canvas apart.
+                We hadn't seen land in seven days, just endless, shifting waves.
+                The captain checked his charts again, frowning at the complex readings.
+                All the instruments were unreliable after the sudden electrical storm.
+                Our only hope was to rely on celestial navigation, old methods.
+                We desperately searched for a single star to guide us back home.
+                Through a momentary gap in the clouds, a brilliant point appeared.
+                It was low on the horizon, but it was enough to correct our course.
+                With renewed purpose, the crew adjusted the rudder, aiming east.
+                """;
+        bookText.setText(text);
     }
 
     @FXML
     void showGreenBook() {
         bookPane.setVisible(true);
-        bookText.setText("The air grew thick and humid as we crossed the final paved road.Ahead of us lay a dense, unexplored jungle, the vast, silent forest.We consulted the weathered map, marking the start of our journey.Giant ferns towered over us, blocking out the sun's warm, golden light.Every sound was muffled by hanging vines and mossy trees.The ground beneath our boots was soft and damp, smelling of rich earth.We followed the barely visible tracks of an animal, moving deeper inside.This place was completely untamed, a world untouched by humanity.Our mission was simple: find the hidden temple and document its ruins.The canopy above was an unbroken roof of leaves, beautiful yet strange.");
+        String text = """
+                The air grew thick and humid as we crossed the final paved road.
+                Ahead of us lay a dense, unexplored jungle, the vast, silent forest.
+                We consulted the weathered map, marking the start of our journey.
+                Giant ferns towered over us, blocking out the sun's warm, golden light.
+                Every sound was muffled by hanging vines and mossy trees.
+                The ground beneath our boots was soft and damp, smelling of rich earth.
+                We followed the barely visible tracks of an animal, moving deeper inside.
+                This place was completely untamed, a world untouched by humanity.
+                Our mission was simple: find the hidden temple and document its ruins.
+                The canopy above was an unbroken roof of leaves, beautiful yet strange.
+                """;
+        bookText.setText(text);
     }
 
     @FXML
     void showRedBook() {
         bookPane.setVisible(true);
-        bookText.setText("The bunker door slammed shut with a heavy sound, sealing us inside.All light vanished instantly, plunging the room into absolute shadow.The air grew stale, thick with the smell of damp concrete and fear.Darkness was total; you couldn't tell if your eyes were open or closed.I fumbled for the lantern, my hands shaking violently with unease.A small, distant scratching sound echoed, making the silence feel deeper.We held our breath, waiting for the battery to kick in and light the room.This ancient refuge was supposed to be safe, but it felt like a grave.A single click, and then a weak yellow beam pierced the oppressive void.We had found the switch, but the terror of the unknown lingered close.");
+        String text = """
+                The bunker door slammed shut with a heavy sound, sealing us inside.
+                All light vanished instantly, plunging the room into absolute shadow.
+                The air grew stale, thick with the smell of damp concrete and fear.
+                Darkness was total; you couldn't tell if your eyes were open or closed.
+                I fumbled for the lantern, my hands shaking violently with unease.
+                A small, distant scratching sound echoed, making the silence feel deeper.
+                We held our breath, waiting for the battery to kick in and light the room.
+                This ancient refuge was supposed to be safe, but it felt like a grave.
+                A single click, and then a weak yellow beam pierced the oppressive void.
+                We had found the switch, but the terror of the unknown lingered close.
+                """;
+        bookText.setText(text);
     }
 
     @FXML
