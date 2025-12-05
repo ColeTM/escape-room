@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.shape.Rectangle;
 
 public class BoxRoomController {
 
@@ -51,6 +52,8 @@ public class BoxRoomController {
     private ImageView inventorySlotTwoPicture;
     @FXML
     private ImageView inventorySlotThreePicture;
+    @FXML
+    private Rectangle hintBackdrop;
 
 
     @FXML
@@ -62,6 +65,7 @@ public class BoxRoomController {
         puzzleText.setText(escapeRoom.getCurrentPuzzle().getClue().getText());  // this still needs to be styled
         hintLabel.setText("");
         incorrectLabel.setText("");
+        hintBackdrop.setVisible(false);
 
         if (!escapeRoom.getCurrentCharacter().getInventory().isEmpty()) {
             inventorySlotOnePicture.setImage(new Image(getClass().getResource(escapeRoom.getCurrentCharacter().getInventory().get(0).getImagePath()).toExternalForm()));
@@ -85,6 +89,7 @@ public class BoxRoomController {
 
     @FXML
     void requestHint() {
+        hintBackdrop.setVisible(true);
         hintLabel.setText(EscapeRoom.getInstance().requestHint());
     }
 

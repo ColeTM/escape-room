@@ -17,6 +17,7 @@
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="64.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="640.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4e9e9" height="32.0" layoutX="496.0" layoutY="17.0" opacity="0.69" stroke="BLACK" strokeType="INSIDE" width="67.0" />
+            <Rectangle fx:id="hintBackdrop" arcHeight="5.0" arcWidth="5.0" fill="#64656f" height="40.0" layoutX="200.0" layoutY="12.0" opacity="0.6" stroke="BLACK" strokeType="INSIDE" width="255.0" />
             <Button fx:id="boxesBack" layoutX="10.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchToHallway" prefHeight="40.0" prefWidth="40.0">
                <graphic>
                   <ImageView fitHeight="57.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" styleClass="back-button" />
@@ -54,9 +55,10 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="puzzleText" layoutX="256.0" layoutY="135.0" text="[puzzle text]" textFill="WHITE">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#64656f" height="160.0" layoutX="50.0" layoutY="77.0" opacity="0.6" stroke="BLACK" strokeType="INSIDE" width="540.0" />
+            <Label fx:id="puzzleText" layoutX="65.0" layoutY="80.0" prefHeight="153.0" prefWidth="510.0" text="[puzzle text]" textFill="WHITE" wrapText="true">
                <font>
-                  <Font size="24.0" />
+                  <Font size="20.0" />
                </font>
             </Label>
          </children>
