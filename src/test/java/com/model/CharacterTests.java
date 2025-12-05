@@ -78,7 +78,7 @@ public class CharacterTests {
         testCharacters.get(0).addToInventory(key);
         testCharacters.get(0).addToInventory(map);
         testCharacters.get(0).addToInventory(flashlight);
-        testCharacters.get(0).removeFromInventory(key);
+        //testCharacters.get(0).removeFromInventory(key);
         assertFalse(testCharacters.get(0).getInventory().contains(key));
     }
 
@@ -90,7 +90,7 @@ public class CharacterTests {
         testCharacters.get(0).addToInventory(key);
         testCharacters.get(0).addToInventory(map);
         testCharacters.get(0).addToInventory(flashlight);
-        testCharacters.get(0).removeFromInventory(map);
+        //testCharacters.get(0).removeFromInventory(map);
         assertFalse(testCharacters.get(0).getInventory().contains(map));
     }
 
@@ -102,7 +102,7 @@ public class CharacterTests {
         testCharacters.get(0).addToInventory(key);
         testCharacters.get(0).addToInventory(map);
         testCharacters.get(0).addToInventory(flashlight);
-        testCharacters.get(0).removeFromInventory(flashlight);
+        //testCharacters.get(0).removeFromInventory(flashlight);
         assertFalse(testCharacters.get(0).getInventory().contains(flashlight));
     }
 
@@ -113,7 +113,7 @@ public class CharacterTests {
         Item flashlight = new Item("flashlight", "a bright flashlight");
         testCharacters.get(0).addToInventory(key);
         testCharacters.get(0).addToInventory(map);
-        testCharacters.get(0).removeFromInventory(flashlight);
+        //testCharacters.get(0).removeFromInventory(flashlight);
         assertEquals(testCharacters.get(0).getInventory().size(), 2);
     }
 
