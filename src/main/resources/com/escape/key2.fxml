@@ -18,7 +18,7 @@
          <graphic>
             <ImageView fitHeight="57.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" styleClass="back-button" />
          </graphic></Button>
-      <ImageView fitHeight="150.0" fitWidth="167.0" layoutX="81.0" layoutY="105.0" pickOnBounds="true" styleClass="key2" />
+      <ImageView fitHeight="227.0" fitWidth="258.0" layoutX="41.0" layoutY="75.0" pickOnBounds="true" styleClass="key2" />
       <Text fill="#951d1c" layoutX="335.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Box Room Key">
          <font>
             <Font name="Cinzel Decorative Bold" size="30.0" />
