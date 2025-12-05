@@ -26,13 +26,18 @@ public class VictoryScreenController {
     @FXML
     public void initialize() {
         Character ch = EscapeRoom.getInstance().getCurrentCharacter();
-        EscapeRoom.getInstance().endGame();
-        messageLabel.setText("The Halloween ghosts hereby begrudgingly congratulate " + ch.getName() +
-                                " for evading their clutches... but they ask that you do not " +
-                                "dare to return. Escaping alive won't be as easy next time.");
+        
+        String text = """
+                The Halloween ghosts hereby begrudgingly congratulate %s
+                for evading their clutches... but they ask that you do not
+                dare to return. Escaping alive won't be as easy next time.
+                """.formatted(ch.getName());
+        messageLabel.setText(text);
         hintsUsedLabel.setText("Hints Used: " + ch.getNumHintsUsed());
         difficultyLabel.setText("Difficulty: " + ch.getDifficulty());
         finalScoreLabel.setText("Final Score: " + ch.calculateScore());
+
+        EscapeRoom.getInstance().endGame();
     }
 
     @FXML

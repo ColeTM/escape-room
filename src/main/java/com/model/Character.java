@@ -138,13 +138,13 @@ public class Character
                 if (!hintsUsed.get(UUID.fromString("b18be69b-be68-4fb5-9bc4-2641bd58ce68"))) {
                     hintsUsed.put(UUID.fromString("b18be69b-be68-4fb5-9bc4-2641bd58ce68"), true);
                     ++numHintsUsed;
-                    return "You'll have to use the stories to piece together a message";
-                } else if (!hintsUsed.get(UUID.fromString("e24d25e1-ee56-47e5-8b8d-d4effbd18d23"))) {
-                    hintsUsed.put(UUID.fromString("e24d25e1-ee56-47e5-8b8d-d4effbd18d23"), true);
-                    ++numHintsUsed;
-                    return "[book color, page number, line number, word number]";
+                    return "Use the stories to piece together a message";
                 } else {
-                    return "no hints available!";
+                    if (!hintsUsed.get(UUID.fromString("e24d25e1-ee56-47e5-8b8d-d4effbd18d23"))) {
+                        hintsUsed.put(UUID.fromString("e24d25e1-ee56-47e5-8b8d-d4effbd18d23"), true);
+                        ++numHintsUsed;
+                    }
+                    return "[book color, line number, word number]";
                 }
             }
             case "a91b9a37-d41d-4d93-b553-895ffd04723a" -> {
@@ -152,12 +152,12 @@ public class Character
                     hintsUsed.put(UUID.fromString("0b63808f-20c5-4755-9cdf-72396bfe205e"), true);
                     ++numHintsUsed;
                     return "Box #2 is not empty";
-                } else if (!hintsUsed.get(UUID.fromString("be0a15dc-bfdb-49f4-807f-bd679a7f5dbd"))) {
-                    hintsUsed.put(UUID.fromString("be0a15dc-bfdb-49f4-807f-bd679a7f5dbd"), true);
-                    ++numHintsUsed;
-                    return "The doll is in box #1";
                 } else {
-                    return "no hints available!";
+                    if (!hintsUsed.get(UUID.fromString("be0a15dc-bfdb-49f4-807f-bd679a7f5dbd"))) {
+                        hintsUsed.put(UUID.fromString("be0a15dc-bfdb-49f4-807f-bd679a7f5dbd"), true);
+                        ++numHintsUsed;
+                    }
+                    return "The doll is in box #1";
                 }
             }
             case "c6b98566-e4e9-445c-8da2-9ef6b92ce815" -> System.out.println("no hints available!");
@@ -183,12 +183,12 @@ public class Character
                     hintsUsed.put(UUID.fromString("9345822d-d48e-4f13-9d8c-dfbd70094050"), true);
                     ++numHintsUsed;
                     return "What can you hear in an empty room?";
-                } else if (!hintsUsed.get(UUID.fromString("6ad175b8-c795-4184-9602-5b347d7e0d31"))) {
-                    hintsUsed.put(UUID.fromString("6ad175b8-c795-4184-9602-5b347d7e0d31"), true);
-                    ++numHintsUsed;
-                    return "It repeats what you say!";
                 } else {
-                    return "no hints available!";
+                    if (!hintsUsed.get(UUID.fromString("6ad175b8-c795-4184-9602-5b347d7e0d31"))) {
+                        hintsUsed.put(UUID.fromString("6ad175b8-c795-4184-9602-5b347d7e0d31"), true);
+                        ++numHintsUsed;
+                    }
+                    return "It repeats what you say!";
                 }
             }
         }
