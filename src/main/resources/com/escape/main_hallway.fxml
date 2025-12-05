@@ -5,51 +5,75 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" styleClass="hallway-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.HallwayController">
-    <stylesheets>
-        <URL value="@styles.css" />
-    </stylesheets>
-   <children>
-      <Button fx:id="puzzleLight" layoutX="249.0" layoutY="150.0" mnemonicParsing="false" onAction="#goToFinalPuzzle" opacity="0.0" prefHeight="116.0" prefWidth="89.0" text="Locked Door" />
-      <ImageView fx:id="lock1" fitHeight="21.0" fitWidth="19.0" layoutX="265.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../images/lock2.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="lock2" fitHeight="21.0" fitWidth="19.0" layoutX="297.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../images/lock.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="pause" layoutX="571.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToPause" prefHeight="47.0" prefWidth="55.0">
-         <graphic>
-            <ImageView fitHeight="64.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/pause_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button fx:id="puzzleLibrary" layoutX="122.0" layoutY="98.0" mnemonicParsing="false" onAction="#goToLibraryPuzzle" opacity="0.0" prefHeight="248.0" prefWidth="57.0" text="Library" />
-      <Button fx:id="puzzleBox" layoutX="398.0" layoutY="93.0" mnemonicParsing="false" onAction="#goToBoxPuzzle" opacity="0.0" prefHeight="260.0" prefWidth="56.0" text="Box room" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" opacity="0.46" stroke="BLACK" strokeType="INSIDE" width="640.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4e9e9" height="32.0" layoutX="496.0" layoutY="17.0" opacity="0.69" stroke="BLACK" strokeType="INSIDE" width="67.0" />
-      <Button fx:id="inventory" layoutX="292.0" layoutY="313.0" mnemonicParsing="false" opacity="0.96" prefHeight="48.0" prefWidth="56.0">
-         <font>
-            <Font size="22.0" />
-         </font>
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/inventory_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Text fx:id="lockedText" fill="#951d1d" layoutX="240.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="this door is locked..." />
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" styleClass="hallway-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.HallwayController">
+    <children>
+      <Pane prefHeight="360.0" prefWidth="640.0">
+      <children>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" opacity="0.46" stroke="BLACK" strokeType="INSIDE" width="640.0" />
+         <Button fx:id="puzzleLight" layoutX="249.0" layoutY="150.0" mnemonicParsing="false" onAction="#goToFinalPuzzle" opacity="0.0" prefHeight="116.0" prefWidth="89.0" />
+         <ImageView fx:id="lock1" fitHeight="21.0" fitWidth="19.0" layoutX="265.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../images/lock2.png" />
+            </image>
+         </ImageView>
+         <ImageView fx:id="lock2" fitHeight="21.0" fitWidth="19.0" layoutX="297.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../images/lock.png" />
+            </image>
+         </ImageView>
+         <Button fx:id="boxesPause" layoutX="590.0" layoutY="10.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchToPause" prefHeight="40.0" prefWidth="40.0">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/pause_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         <Button fx:id="puzzleLibrary" layoutX="122.0" layoutY="98.0" mnemonicParsing="false" onAction="#goToLibraryPuzzle" opacity="0.0" prefHeight="248.0" prefWidth="57.0" text="Library" />
+         <Button fx:id="puzzleBox" layoutX="398.0" layoutY="93.0" mnemonicParsing="false" onAction="#goToBoxPuzzle" opacity="0.0" prefHeight="260.0" prefWidth="56.0" text="Box room" />
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4e9e9" height="32.0" layoutX="496.0" layoutY="17.0" opacity="0.69" stroke="BLACK" strokeType="INSIDE" width="67.0" />
+         <Button fx:id="inventoryButton" layoutX="300.0" layoutY="310.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#openInventory" prefHeight="40.0" prefWidth="40.0">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/inventory_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         <Text fx:id="lockedText" fill="#951d1d" layoutX="210.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="this door is locked...">
+               <font>
+                  <Font size="24.0" />
+               </font></Text>
+         </children>
+      </Pane>
+      <Pane fx:id="inventory" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#606f78" height="135.0" layoutY="225.0" stroke="BLACK" strokeType="INSIDE" width="640.0" />
+            <Button fx:id="inventorySlotOne" layoutX="42.0" layoutY="242.0" maxHeight="100.0" maxWidth="100.0" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#viewItemOne" prefHeight="100.0" prefWidth="100.0" text="inv item 1" />
+            <Button fx:id="inventorySlotTwo" layoutX="182.0" layoutY="242.0" mnemonicParsing="false" onAction="#viewItemTwo" prefHeight="100.0" prefWidth="100.0" text="inv item 2" />
+            <Button fx:id="inventorySlotThree" layoutX="320.0" layoutY="242.0" mnemonicParsing="false" onAction="#viewItemThree" prefHeight="100.0" prefWidth="100.0" text="inv item 3" />
+            <Button fx:id="closeInventoryButton" layoutX="300.0" layoutY="185.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#closeInventory" prefHeight="40.0" prefWidth="40.0">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/close_inventory_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <ImageView fx:id="inventorySlotOnePicture" fitHeight="100.0" fitWidth="100.0" layoutX="42.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="inventorySlotTwoPicture" fitHeight="100.0" fitWidth="100.0" layoutX="182.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="inventorySlotThreePicture" fitHeight="100.0" fitWidth="100.0" layoutX="320.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
    </children>
-</Pane>
+   <stylesheets>
+      <URL value="@styles.css" />
+   </stylesheets>
+</StackPane>
