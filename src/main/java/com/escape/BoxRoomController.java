@@ -63,14 +63,15 @@ public class BoxRoomController {
         hintLabel.setText("");
         incorrectLabel.setText("");
 
-        if (!escapeRoom.getCurrentCharacter().getInventory().isEmpty()) {
+        /*if (!escapeRoom.getCurrentCharacter().getInventory().isEmpty()) {
             inventorySlotOnePicture.setImage(new Image(getClass().getResource(escapeRoom.getCurrentCharacter().getInventory().get(0).getImagePath()).toExternalForm()));
             if (escapeRoom.getCurrentCharacter().getInventory().size() > 1) {
                 inventorySlotTwoPicture.setImage(new Image(getClass().getResource(escapeRoom.getCurrentCharacter().getInventory().get(1).getImagePath()).toExternalForm()));
                 if (escapeRoom.getCurrentCharacter().getInventory().size() > 2)
                     inventorySlotThreePicture.setImage(new Image(getClass().getResource(escapeRoom.getCurrentCharacter().getInventory().get(2).getImagePath()).toExternalForm()));
             }
-        }
+        }*/
+       loadInventoryItems();
     }
 
     @FXML
@@ -145,6 +146,33 @@ public class BoxRoomController {
                 case "flashlight" -> App.setRoot("flashlight");
                 case "key 1" -> App.setRoot("key1");
                 case "key 2" -> App.setRoot("key2");
+            }
+        }
+    }
+    private void loadInventoryItems() {
+        inventorySlotOnePicture.setImage(null);
+        inventorySlotTwoPicture.setImage(null);
+        inventorySlotThreePicture.setImage(null);
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        var character = escapeRoom.getCurrentCharacter();
+
+        if (character == null) return;
+        var items = character.getInventory();
+        int size = items.size();
+        for (int i = 0; i < size; i++) {
+            var item = items.get(i);
+
+            if (item.getImagePath() != null) {
+                try {
+                    Image img = new Image(getClass().getResourceAsStream(item.getImagePath()));
+                    switch (i) {
+                        case 0 -> inventorySlotOnePicture.setImage(img);
+                        case 1 -> inventorySlotTwoPicture.setImage(img);
+                        case 2 -> inventorySlotThreePicture.setImage(img);
+                    }
+                } catch (Exception e) {
+                    System.out.println("Failed to load: " + item.getImagePath());
+                }
             }
         }
     }
