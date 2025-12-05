@@ -58,7 +58,7 @@
             <Rectangle fx:id="greenBook" arcHeight="5.0" arcWidth="5.0" fill="#24c312" height="32.0" layoutX="462.0" layoutY="313.0" onMouseClicked="#showGreenBook" onMouseEntered="#highlightGreen" onMouseExited="#unhighlightGreen" opacity="0.0" stroke="#24c312" strokeType="INSIDE" width="40.0" />
             <Rectangle fx:id="blackBook" arcHeight="5.0" arcWidth="5.0" height="32.0" layoutX="535.0" layoutY="326.0" onMouseClicked="#showBlackBook" onMouseEntered="#highlightBlack" onMouseExited="#unhighlightBlack" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="56.0" />
             <Rectangle fx:id="puzzleLibrary" arcHeight="5.0" arcWidth="5.0" fill="#f6ff00" height="88.0" layoutX="276.0" layoutY="226.0" onMouseClicked="#goToPuzzle" onMouseEntered="#highlightDesk" onMouseExited="#unhighlightDesk" opacity="0.0" stroke="#f6ff00" strokeType="INSIDE" width="146.0" />
-            <Button fx:id="inventoryLibrary" layoutX="300.0" layoutY="310.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#goToInventory" opacity="0.96" prefHeight="40.0" prefWidth="40.0">
+            <Button fx:id="inventoryLibrary" layoutX="300.0" layoutY="320.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#goToInventory" opacity="0.96" prefHeight="40.0" prefWidth="40.0">
                <font>
                   <Font size="22.0" />
                </font>
@@ -111,31 +111,35 @@
       </Pane>
       <Pane fx:id="bookPane" prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Button fx:id="backOnBook" layoutX="118.0" layoutY="60.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#backToLibrary" prefHeight="40.0" prefWidth="40.0" />
-            <ImageView fitHeight="199.0" fitWidth="288.0" layoutX="163.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/book.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="57.0" fitWidth="64.0" layoutX="109.0" layoutY="51.0" onMouseClicked="#backToLibrary" pickOnBounds="true" preserveRatio="true">
+            <Button fx:id="backOnBook" layoutX="80.0" layoutY="60.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#backToLibrary" prefHeight="40.0" prefWidth="40.0" />
+            <ImageView fitHeight="57.0" fitWidth="64.0" layoutX="72.0" layoutY="52.0" onMouseClicked="#backToLibrary" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/back_icon.png" />
                </image>
             </ImageView>
-            <Label fx:id="bookText" layoutX="196.0" layoutY="86.0" prefHeight="146.0" prefWidth="225.0" text="Booktext" />
+            <ImageView fitHeight="273.0" fitWidth="410.0" layoutX="118.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/book.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="bookText" layoutX="170.0" layoutY="61.0" prefHeight="228.0" prefWidth="299.0" text="Booktext">
+               <font>
+                  <Font name="Caveat Brush" size="13.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Pane fx:id="answerPane" prefHeight="200.0" prefWidth="200.0">
          <children>
-            <ImageView fitHeight="178.0" fitWidth="319.0" layoutX="160.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="228.0" fitWidth="428.0" layoutX="107.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/libraryTable.png" />
                </image>
             </ImageView>
             <TextField fx:id="bookAnswerText" layoutX="34.0" layoutY="250.0" prefHeight="50.0" prefWidth="450.0" text="answer puzzle" />
             <Button fx:id="bookAnswerButton" layoutX="484.0" layoutY="250.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="50.0" prefWidth="90.0" text="Enter" />
-            <Button fx:id="backOnAnswer" layoutX="120.0" layoutY="89.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#backToLibrary" prefHeight="40.0" prefWidth="40.0" />
-            <ImageView fitHeight="57.0" fitWidth="64.0" layoutX="112.0" layoutY="81.0" onMouseClicked="#backToLibrary" pickOnBounds="true" preserveRatio="true">
+            <Button fx:id="backOnAnswer" layoutX="115.0" layoutY="66.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#backToLibrary" prefHeight="40.0" prefWidth="40.0" />
+            <ImageView fitHeight="57.0" fitWidth="64.0" layoutX="107.0" layoutY="58.0" onMouseClicked="#backToLibrary" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/back_icon.png" />
                </image>

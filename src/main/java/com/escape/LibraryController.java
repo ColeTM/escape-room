@@ -14,6 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.TextAlignment;
 import javafx.scene.image.ImageView;
 
 public class LibraryController {
@@ -86,6 +87,8 @@ public class LibraryController {
         escapeRoom.setCurrentPuzzle(escapeRoom.getCurrentRoom().getPuzzles().get(0));
         bookText.setText("");
         incorrectLabel.setText("");
+        bookText.setWrapText(true);
+        bookText.setMaxWidth(295);
     }
 
     @FXML
