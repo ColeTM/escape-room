@@ -24,7 +24,7 @@
             <Font name="Cinzel Decorative Bold" size="30.0" />
          </font>
       </Text>
-      <Text layoutX="376.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You know what a flashlight does." wrappingWidth="167.607421875">
+      <Text layoutX="376.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A flashlight to help you see. Obtained upon game start." wrappingWidth="167.607421875">
          <font>
             <Font name="SansSerif Regular" size="16.0" />
          </font>
