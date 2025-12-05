@@ -77,12 +77,12 @@
                   <RowConstraints />
                </rowConstraints>
                <children>
-                  <ImageView fx:id="inventorySlotOnePicture1" fitHeight="175.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="inventorySlotTwoPicture1" fitHeight="175.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
-                  <ImageView fx:id="inventorySlotThreePicture1" fitHeight="178.0" fitWidth="214.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
-                  <Button fx:id="inventorySlotOne1" mnemonicParsing="false" onAction="#viewItemOne" opacity="0.0" prefHeight="172.0" prefWidth="216.0" text="inventorySlot1" />
-                  <Button fx:id="inventorySlotTwo1" mnemonicParsing="false" onAction="#viewItemTwo" opacity="0.0" prefHeight="172.0" prefWidth="216.0" text="inventorySlot2" GridPane.columnIndex="1" />
-                  <Button fx:id="inventorySlotThree1" mnemonicParsing="false" onAction="#viewItemThree" opacity="0.0" prefHeight="172.0" prefWidth="216.0" text="inventorySlot3" GridPane.columnIndex="2" />
+                  <ImageView fx:id="inventorySlotOnePicture" fitHeight="175.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="inventorySlotTwoPicture" fitHeight="175.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+                  <ImageView fx:id="inventorySlotThreePicture" fitHeight="178.0" fitWidth="214.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
+                  <Button fx:id="inventorySlotOne" mnemonicParsing="false" onAction="#viewItemOne" opacity="0.0" prefHeight="172.0" prefWidth="216.0" text="inventorySlot1" />
+                  <Button fx:id="inventorySlotTwo" mnemonicParsing="false" onAction="#viewItemTwo" opacity="0.0" prefHeight="172.0" prefWidth="216.0" text="inventorySlot2" GridPane.columnIndex="1" />
+                  <Button fx:id="inventorySlotThree" mnemonicParsing="false" onAction="#viewItemThree" opacity="0.0" prefHeight="172.0" prefWidth="216.0" text="inventorySlot3" GridPane.columnIndex="2" />
                </children>
             </GridPane>
          </children>
