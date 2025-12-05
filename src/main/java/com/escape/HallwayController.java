@@ -7,8 +7,8 @@ import com.model.EscapeRoom;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 
 public class HallwayController {
     
@@ -23,7 +23,7 @@ public class HallwayController {
     @FXML
     private Button pause;
     @FXML
-    private Label lockedText;
+    private Text lockedText;
     @FXML
     private ImageView lock1;
     @FXML
