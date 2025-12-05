@@ -36,7 +36,7 @@ public class Key2Controller {
             return;
         }
         escapeRoom.getCurrentCharacter().getPuzzlesCompleted().put(UUID.fromString("6c9f6273-be95-470d-8d43-5792c7737c82"), true);
-        escapeRoom.getCurrentCharacter().removeFromInventory("key 2");
+        escapeRoom.getCurrentCharacter().getItem("key 2").use();
         App.setRoot("main_hallway");
     }
 

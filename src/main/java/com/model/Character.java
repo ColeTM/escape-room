@@ -226,6 +226,19 @@ public class Character
     }
 
     /**
+     * Gets an item from the inventory.
+     * @param name the name of the item
+     * @return the item.
+     */
+    public Item getItem(String name) {
+        for (Item item : inventory) {
+            if (item.getName().equalsIgnoreCase(name)) {
+                return item;
+            }
+        }
+        return null;
+    }
+    /**
      * Gets the ID of the character's current room.
      * @return The UUID of the current room.
      */

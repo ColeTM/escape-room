@@ -1,6 +1,8 @@
 package com.escape;
 
 import java.io.IOException;
+import java.util.UUID;
+
 import com.model.EscapeRoom;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,9 +17,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 import javafx.scene.text.Text;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import javafx.scene.image.Image;
 
 
@@ -75,18 +74,25 @@ public class FinalPuzzleController {
 
     @FXML
     public void initialize() {
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        escapeRoom.setRoom(UUID.fromString("1030c684-0ceb-4f2b-a71e-f5846697d8d7"));
         coverRectangle.setLayoutX(0);
         coverRectangle.setLayoutY(0);
         cutoutCircle.setLayoutX(320);
         cutoutCircle.setLayoutY(166);
-        cutoutCircle.setOpacity(1.0); 
-        coverRectangle.setOpacity(1.0);
         finalHintBox.setVisible(false);
         finalHintText.setVisible(false);
         closeInventoryButton.setVisible(false);
         inventoryBox.setVisible(false);
         gridInventory.setVisible(false);
         updateCutout();
+        if(escapeRoom.getCurrentCharacter().getItem("flashlight").getIsUsed()){
+            cutoutCircle.setOpacity(0.0); 
+            coverRectangle.setOpacity(0.0);
+        } else {
+            cutoutCircle.setOpacity(1.0); 
+            coverRectangle.setOpacity(1.0);
+        }
 
     }
 
@@ -189,8 +195,6 @@ public class FinalPuzzleController {
         if (character == null) return;
         var items = character.getInventory();
         int size = items.size();
-        System.out.println(getClass().getResource("/images/flashlight.png"));
-
         for (int i = 0; i < size; i++) {
             var item = items.get(i);
 

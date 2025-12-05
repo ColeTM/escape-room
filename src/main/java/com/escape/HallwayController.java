@@ -52,8 +52,16 @@ public class HallwayController {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
         escapeRoom.setRoom(UUID.fromString("26767fe2-e8b1-47c4-b4eb-5f9aec77fb85"));
         escapeRoom.setCurrentPuzzle(null);
-        lock1.setVisible(!escapeRoom.getCurrentCharacter().getPuzzlesCompleted().get(UUID.fromString("e50b53c7-6bbf-4849-af1a-350adb9afcf3")));
-        lock2.setVisible(!escapeRoom.getCurrentCharacter().getPuzzlesCompleted().get(UUID.fromString("6c9f6273-be95-470d-8d43-5792c7737c82")));
+        if (escapeRoom.getCurrentCharacter().getItem("key 1") != null && escapeRoom.getCurrentCharacter().getItem("key 1").getIsUsed()) {
+            lock1.setVisible(false);
+        } else {
+            lock1.setVisible(true);
+        }
+         if (escapeRoom.getCurrentCharacter().getItem("key 2") != null && escapeRoom.getCurrentCharacter().getItem("key 2").getIsUsed()) {
+            lock1.setVisible(false);
+        } else {
+            lock1.setVisible(true);
+        }
         lockedText.setVisible(false);
         inventory.setVisible(false);
 

@@ -29,9 +29,14 @@ public class FlashlightController {
 
     @FXML
     void useItem() {
-        if (!EscapeRoom.getInstance().getCurrentRoom().getRoomID().toString().equals("1030c684-0ceb-4f2b-a71e-f5846697d8d7")) {
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        escapeRoom.getCurrentCharacter().getItem("flashlight").use();
+        if (escapeRoom.getCurrentRoom().getRoomID().toString().equals("1030c684-0ceb-4f2b-a71e-f5846697d8d7")) {
             errorLabel.setText("this item has no use here");
             return;
+        } else {
+            escapeRoom.getCurrentCharacter().getItem("flashlight").use();
+            errorLabel.setText("this item has no use here");
         }
         // light up the final room
     }
