@@ -182,7 +182,7 @@ public class Character
                 if (!hintsUsed.get(UUID.fromString("9345822d-d48e-4f13-9d8c-dfbd70094050"))) {
                     hintsUsed.put(UUID.fromString("9345822d-d48e-4f13-9d8c-dfbd70094050"), true);
                     ++numHintsUsed;
-                    return "What can you hear in an empty room?";
+                    return "If only you had a flashlight...";
                 } else {
                     if (!hintsUsed.get(UUID.fromString("6ad175b8-c795-4184-9602-5b347d7e0d31"))) {
                         hintsUsed.put(UUID.fromString("6ad175b8-c795-4184-9602-5b347d7e0d31"), true);

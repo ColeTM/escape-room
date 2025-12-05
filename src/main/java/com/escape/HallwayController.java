@@ -56,16 +56,7 @@ public class HallwayController {
         lock2.setVisible(escapeRoom.getCurrentCharacter().getItem("key 2") == null || !escapeRoom.getCurrentCharacter().getItem("key 2").getIsUsed());
         lockedText.setVisible(false);
         inventory.setVisible(false);
-
-        /*if (!escapeRoom.getCurrentCharacter().getInventory().isEmpty()) {
-            inventorySlotOnePicture.setImage(new Image(getClass().getResource(escapeRoom.getCurrentCharacter().getInventory().get(0).getImagePath()).toExternalForm()));
-            if (escapeRoom.getCurrentCharacter().getInventory().size() > 1) {
-                inventorySlotTwoPicture.setImage(new Image(getClass().getResource(escapeRoom.getCurrentCharacter().getInventory().get(1).getImagePath()).toExternalForm()));
-                if (escapeRoom.getCurrentCharacter().getInventory().size() > 2)
-                    inventorySlotThreePicture.setImage(new Image(getClass().getResource(escapeRoom.getCurrentCharacter().getInventory().get(2).getImagePath()).toExternalForm()));
-            }
-        }*/
-       loadInventoryItems();
+        loadInventoryItems();
     }
 
     @FXML
@@ -79,13 +70,10 @@ public class HallwayController {
     }
 
     @FXML
-    void goToFinalPuzzle() throws IOException {
-        /* commenting out for ease of testing
-        
+    void goToFinalPuzzle() throws IOException {        
         if (lock1.isVisible() || lock2.isVisible())
             lockedText.setVisible(true);
         else
-        */
             App.setRoot("final_puzzle");
     }
     @FXML
