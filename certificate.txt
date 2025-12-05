@@ -1,10 +1,10 @@
 Escape Room - Certificate of Completion
 
 The Halloween ghosts hereby begrudgingly congratulate
-yay for evading their clutches...
+i for evading their clutches...
 but they ask that you do not dare to return.
 Escaping alive won't be as easy next time.
 
 Hints Used: 0
-Difficulty: Beginner
-Final Score: 1800.0
+Difficulty: Intermediate
+Final Score: 3600.0
