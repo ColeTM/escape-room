@@ -133,6 +133,7 @@ public class EscapeRoom {
         user.upgradeSkillLevel(character.getDifficulty());
         userList.saveUsers();
         character.certificateOfCompletion();
+        user.getCharacters().remove(character);
         character = null;
     }
 
