@@ -74,6 +74,10 @@ public class LibraryController {
     private Label bookText;
     @FXML
     private Label incorrectLabel;
+    @FXML
+    private Rectangle alreadyAnsweredBackdrop;
+    @FXML
+    private Rectangle incorrectBackdrop;
 
 
     @FXML
@@ -165,12 +169,14 @@ public class LibraryController {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
         if (escapeRoom.getCurrentCharacter().getPuzzlesCompleted().get(UUID.fromString("e50b53c7-6bbf-4849-af1a-350adb9afcf3"))) {
             incorrectLabel.setText("you've already solved this puzzle!");
+            alreadyAnsweredBackdrop.setOpacity(0.8);
         } else if (escapeRoom.submitPuzzleAnswer(bookAnswerText.getText())) {
             escapeRoom.getCurrentCharacter().getPuzzlesCompleted().put(UUID.fromString("e50b53c7-6bbf-4849-af1a-350adb9afcf3"), true);
             escapeRoom.getCurrentCharacter().addToInventory(new com.model.Item("key 1", "key obtained from completing the library puzzle"));
             App.setRoot("correct_answer");
         } else {
             incorrectLabel.setText("incorrect!");
+            incorrectBackdrop.setOpacity(0.8);
             // potentially deduct time -- should probably be done in puzzle classes
         }
 
