@@ -90,8 +90,10 @@ public class BoxRoomController {
 
     @FXML
     void submitAnswer() {
-        if (EscapeRoom.getInstance().submitPuzzleAnswer(boxesAnswerText.getText())) {
-            // add key to inventory
+        if (EscapeRoom.getInstance().getCurrentCharacter().getPuzzlesCompleted().get(UUID.fromString("6c9f6273-be95-470d-8d43-5792c7737c82"))) {
+            incorrectLabel.setText("you've already solved this puzzle!");
+        } else if (EscapeRoom.getInstance().submitPuzzleAnswer(boxesAnswerText.getText())) {
+            EscapeRoom.getInstance().getCurrentCharacter().addToInventory(new com.model.Item("key 1", "key obtained from completing the box room puzzle"));
             // switch to correct answer screen
         } else {
             incorrectLabel.setText("incorrect!");
@@ -117,8 +119,8 @@ public class BoxRoomController {
         if (!escapeRoom.getCurrentCharacter().getInventory().isEmpty()) {
             switch (escapeRoom.getCurrentCharacter().getInventory().get(0).getName()) {
                 case "flashlight" -> App.setRoot("flashlight");
-                // case "key 1" -> App.setRoot("key1");
-                // case "key 2" -> App.setRoot("key2");
+                case "key 1" -> App.setRoot("key1");
+                case "key 2" -> App.setRoot("key2");
             }
         }
     }
@@ -129,8 +131,8 @@ public class BoxRoomController {
         if (escapeRoom.getCurrentCharacter().getInventory().size() > 1) {
             switch (escapeRoom.getCurrentCharacter().getInventory().get(1).getName()) {
                 case "flashlight" -> App.setRoot("flashlight");
-                // case "key 1" -> App.setRoot("key1");
-                // case "key 2" -> App.setRoot("key2");
+                case "key 1" -> App.setRoot("key1");
+                case "key 2" -> App.setRoot("key2");
             }
         }
     }
@@ -141,8 +143,8 @@ public class BoxRoomController {
         if (escapeRoom.getCurrentCharacter().getInventory().size() > 2) {
             switch (escapeRoom.getCurrentCharacter().getInventory().get(2).getName()) {
                 case "flashlight" -> App.setRoot("flashlight");
-                // case "key 1" -> App.setRoot("key1");
-                // case "key 2" -> App.setRoot("key2");
+                case "key 1" -> App.setRoot("key1");
+                case "key 2" -> App.setRoot("key2");
             }
         }
     }

@@ -15,12 +15,12 @@
     </stylesheets>
    <children>
       <Button fx:id="puzzleLight" layoutX="249.0" layoutY="150.0" mnemonicParsing="false" onAction="#goToFinalPuzzle" opacity="0.0" prefHeight="116.0" prefWidth="89.0" text="Locked Door" />
-      <ImageView fitHeight="21.0" fitWidth="19.0" layoutX="265.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="lock1" fitHeight="21.0" fitWidth="19.0" layoutX="265.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/lock2.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="21.0" fitWidth="19.0" layoutX="297.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="lock2" fitHeight="21.0" fitWidth="19.0" layoutX="297.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/lock.png" />
          </image>

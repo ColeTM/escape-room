@@ -69,7 +69,7 @@ public class EscapeRoom {
         Character temp = new Character(characterName, difficulty);
         user.addCharacter(temp);
         character = temp;
-        Item flashlight = new Item("Flashlight", "A flashlight to help you see. Obtained upon game start.");
+        Item flashlight = new Item("flashlight", "A flashlight to help you see. Obtained upon game start.");
         character.addToInventory(flashlight);
         /*
         String intro = "You are trick-or-treating on Halloween when you pass by a house you don't recognize. \n"
