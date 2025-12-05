@@ -28,15 +28,15 @@ public class FlashlightController {
     }
 
     @FXML
-    void useItem() {
+    void useItem() throws IOException {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
-        escapeRoom.getCurrentCharacter().getItem("flashlight").use();
         if (escapeRoom.getCurrentRoom().getRoomID().toString().equals("1030c684-0ceb-4f2b-a71e-f5846697d8d7")) {
-            errorLabel.setText("this item has no use here");
+            escapeRoom.getCurrentCharacter().getItem("flashlight").use();
+            App.setRoot("final_puzzle");
             return;
         } else {
-            escapeRoom.getCurrentCharacter().getItem("flashlight").use();
             errorLabel.setText("this item has no use here");
+            
         }
         // light up the final room
     }

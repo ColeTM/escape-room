@@ -52,6 +52,11 @@
       <Circle fx:id="cutoutCircle" fill="#000000d1" layoutX="320.0" layoutY="166.0" radius="81.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
       <Button fx:id="finalPause" layoutX="590.0" layoutY="11.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchToPause" prefHeight="40.0" prefWidth="40.0" text="pause" />
       <TextField fx:id="finalAnswerText" layoutX="50.0" layoutY="262.0" prefHeight="50.0" prefWidth="450.0" promptText="answer puzzle" />
+      <Label fx:id="incorrectLabel" layoutX="60.0" layoutY="312.0" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
       <Button fx:id="finalAnswerButton" layoutX="500.0" layoutY="262.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="50.0" prefWidth="90.0" text="Enter" />
       <Button fx:id="finalMoveLightLeft" layoutX="10.0" layoutY="145.0" mnemonicParsing="false" onAction="#handleMoveLeft" prefHeight="42.0" prefWidth="14.0">
          <graphic>
@@ -91,7 +96,7 @@
             <ImageView fx:id="inventoryImage3" fitHeight="178.0" fitWidth="214.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
             <Button fx:id="inventorySlot1" mnemonicParsing="false" onAction="#flashlightPage" opacity="0.0" prefHeight="172.0" prefWidth="216.0" text="inventorySlot1" />
             <Button fx:id="inventorySlot2" mnemonicParsing="false" onAction="#key1Page" opacity="0.0" prefHeight="172.0" prefWidth="216.0" text="inventorySlot2" GridPane.columnIndex="1" />
-            <Button fx:id="key2Page" mnemonicParsing="false" onAction="#itemPage" opacity="0.0" prefHeight="172.0" prefWidth="216.0" text="inventorySlot3" GridPane.columnIndex="2" />
+            <Button fx:id="key2Page" mnemonicParsing="false" onAction="#key2Page" opacity="0.0" prefHeight="172.0" prefWidth="216.0" text="inventorySlot3" GridPane.columnIndex="2" />
          </children>
       </GridPane>
       <Button fx:id="closeInventoryButton" layoutX="300.0" layoutY="145.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#closeInventory" prefHeight="40.0" prefWidth="40.0">

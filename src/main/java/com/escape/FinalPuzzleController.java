@@ -54,6 +54,8 @@ public class FinalPuzzleController {
     @FXML
     private Label finalTimer;
     @FXML
+    private Label incorrectLabel;
+    @FXML
     private GridPane gridInventory;
     @FXML
     private Rectangle inventoryBox;
@@ -76,6 +78,7 @@ public class FinalPuzzleController {
     public void initialize() {
         EscapeRoom escapeRoom = EscapeRoom.getInstance();
         escapeRoom.setRoom(UUID.fromString("1030c684-0ceb-4f2b-a71e-f5846697d8d7"));
+        escapeRoom.setCurrentPuzzle(escapeRoom.getCurrentRoom().getPuzzles().get(0));
         coverRectangle.setLayoutX(0);
         coverRectangle.setLayoutY(0);
         cutoutCircle.setLayoutX(320);
@@ -191,8 +194,16 @@ public class FinalPuzzleController {
     }
 
     @FXML
-    void submitAnswer(ActionEvent event) {
-        //sub
+    void submitAnswer() throws IOException {
+        //EscapeRoom.getInstance().setRoom(UUID.fromString("1030c684-0ceb-4f2b-a71e-f5846697d8d7"));
+        if (EscapeRoom.getInstance().submitPuzzleAnswer(finalAnswerText.getText())) {
+            App.setRoot("victory_screen");
+        } else {
+            incorrectLabel.setText("incorrect!");
+            // potentially deduct time -- should probably be done in puzzle classes
+        }
+
+
     }
 
     @FXML
