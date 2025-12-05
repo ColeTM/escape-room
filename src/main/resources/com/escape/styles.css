@@ -32,6 +32,18 @@
     -fx-image: url("../../images/back_icon.png");
 }
 
+.flashlight {
+    -fx-image: url("../../images/flashlight.png");
+}
+
+.key1 {
+    -fx-image: url("../../images/key1.png");
+}
+
+.key2 {
+    -fx-image: url("../../images/key2.png");
+}
+
 .label {
 }
 

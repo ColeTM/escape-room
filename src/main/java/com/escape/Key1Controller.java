@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-public class FlashlightController {
+public class Key1Controller {
 
     @FXML
     private Button backButton;

@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" styleClass="certificate-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.FlashlightController" >
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" styleClass="certificate-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.escape.Key1Controller" >
    <children>
       <Button fx:id="useButton" layoutX="400.0" layoutY="250.0" mnemonicParsing="false" onAction="#useItem" prefHeight="50.0" prefWidth="120.0" text="Use">
          <font>
@@ -18,13 +18,13 @@
          <graphic>
             <ImageView fitHeight="57.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" styleClass="back-button" />
          </graphic></Button>
-      <ImageView fitHeight="200.0" fitWidth="400.0" layoutY="80.0" pickOnBounds="true" styleClass="flashlight" />
-      <Text fill="#951d1c" layoutX="361.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FLASHLIGHT">
+      <ImageView fitHeight="150.0" fitWidth="167.0" layoutX="81.0" layoutY="105.0" pickOnBounds="true" styleClass="key1" />
+      <Text fill="#951d1c" layoutX="335.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Librarian's Key">
          <font>
             <Font name="Cinzel Decorative Bold" size="30.0" />
          </font>
       </Text>
-      <Text layoutX="376.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You know what a flashlight does." wrappingWidth="167.607421875">
+      <Text layoutX="335.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Obtained after completing the library puzzle. This can be used to open one of the padlocks on the final door." wrappingWidth="227.607421875">
          <font>
             <Font name="SansSerif Regular" size="16.0" />
          </font>
