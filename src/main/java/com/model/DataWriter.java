@@ -73,6 +73,8 @@ public class DataWriter extends DataConstants{
             JSONObject itemJSON = new JSONObject();
             itemJSON.put(ITEM_NAME, item.getName());
             itemJSON.put(ITEM_DESCRIPTION, item.getDescription());
+            itemJSON.put(ITEM_IMAGE_PATH, item.getImagePath());
+            itemJSON.put(ITEM_IS_USED, item.getIsUsed());
             inventoryJSON.add(itemJSON);
         }
         return inventoryJSON;

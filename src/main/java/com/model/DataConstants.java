@@ -20,6 +20,8 @@ public abstract class DataConstants {
             // data constants for nested inventory JSON
             protected static final String ITEM_NAME = "name";
             protected static final String ITEM_DESCRIPTION = "description";
+            protected static final String ITEM_IMAGE_PATH = "imagePath";
+            protected static final String ITEM_IS_USED = "isUsed";
         protected static final String CURRENT_ROOM = "currentRoom";
         protected static final String NUM_HINTS_USED = "numHintsUsed";
         protected static final String HINTS_USED = "hintsUsed";

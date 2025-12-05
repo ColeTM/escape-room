@@ -1,32 +1,35 @@
 package com.escape;
 
 import java.io.IOException;
-
 import com.model.EscapeRoom;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
+import javafx.scene.text.Text;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
 
 
 public class FinalPuzzleController {
     private static final double MIN_X = 217;
     private static final double MAX_X = 443;
     @FXML
-    private Pane finalPane;
+    private Button closeInventoryButton;
+    @FXML
+    private Rectangle coverRectangle;
+    @FXML
+    private Circle cutoutCircle;
     @FXML
     private Button finalAnswerButton;
     @FXML
@@ -42,31 +45,19 @@ public class FinalPuzzleController {
     @FXML
     private Button finalInventory;
     @FXML
-    private Button finalPause;
-    @FXML
-    private Label finalTimer;
-    @FXML
     private Button finalMoveLightLeft;
     @FXML
     private Button finalMoveLightRight;
     @FXML
-    private Circle cutoutCircle;
+    private Pane finalPane;
     @FXML
-    private Rectangle coverRectangle;
+    private Button finalPause;
+    @FXML
+    private Label finalTimer;
+    @FXML
+    private GridPane gridInventory;
     @FXML
     private Rectangle inventoryBox;
-    @FXML
-    private Button closeInventoryButton;
-    @FXML
-    private ImageView flashlight;
-    @FXML
-    private Button flashlightButton;
-    @FXML
-    private Button inventorySlot1;
-    @FXML
-    private Button inventorySlot2;
-    @FXML
-    private Button inventorySlot3;
     @FXML
     private ImageView inventoryImage1;
     @FXML
@@ -74,10 +65,13 @@ public class FinalPuzzleController {
     @FXML
     private ImageView inventoryImage3;
     @FXML
-    private GridPane gridInventory;
+    private Button inventorySlot1;
+    @FXML
+    private Button inventorySlot2;
+    @FXML
+    private Button inventorySlot3;
 
     private Shape currentCutout;
-
 
     @FXML
     public void initialize() {
@@ -106,7 +100,7 @@ public class FinalPuzzleController {
         currentCutout = newCutout;
         updateButtonVisibile();    
     }
-    
+
     private void updateButtonVisibile() {
         if (cutoutCircle.getLayoutX() <= MIN_X) {
             finalMoveLightLeft.setVisible(false);
@@ -119,6 +113,22 @@ public class FinalPuzzleController {
             finalMoveLightRight.setVisible(true);
         }
     }
+
+    @FXML
+    void closeInventory(ActionEvent event) {
+        closeInventoryButton.setVisible(false);
+        inventoryBox.setVisible(false);
+        finalAnswerButton.setVisible(true);
+        finalAnswerText.setVisible(true);
+        finalInventory.setVisible(true);
+        gridInventory.setVisible(false);
+    }
+
+    @FXML
+    void flashlightPage(ActionEvent event) throws IOException {
+        App.setRoot("flashlight");
+    }
+
     @FXML
     private void handleMoveLeft(ActionEvent event) {
         if(cutoutCircle.getLayoutX() > MIN_X) {
@@ -146,20 +156,6 @@ public class FinalPuzzleController {
         gridInventory.setVisible(true);
         loadInventoryItems();
     }
-    
-    @FXML
-    void closeInventory(ActionEvent event) {
-        closeInventoryButton.setVisible(false);
-        inventoryBox.setVisible(false);
-        finalAnswerButton.setVisible(true);
-        finalAnswerText.setVisible(true);
-        finalInventory.setVisible(true);
-    }
-
-    @FXML
-    void flashlightPage(ActionEvent event) throws IOException {
-        App.setRoot("flashlight");
-    }
 
     @FXML
     void requestHint(ActionEvent event) {
@@ -171,7 +167,7 @@ public class FinalPuzzleController {
 
     @FXML
     void submitAnswer(ActionEvent event) {
-        // submit answer
+        //sub
     }
 
     @FXML
@@ -183,47 +179,35 @@ public class FinalPuzzleController {
     void switchToPause(ActionEvent event) throws IOException {
         App.setRoot("pause_menu");
     }
-
     private void loadInventoryItems() {
-    gridInventory.getChildren().clear();
+        inventoryImage1.setImage(null);
+        inventoryImage2.setImage(null);
+        inventoryImage3.setImage(null);
+        EscapeRoom escapeRoom = EscapeRoom.getInstance();
+        var character = escapeRoom.getCurrentCharacter();
 
-    EscapeRoom escapeRoom = EscapeRoom.getInstance();
-    java.util.function.Function<String, Text> makeErrorText = msg -> {
-        Text t = new Text(msg);
-        t.setFill(Color.web("#641013")); 
-        t.setWrappingWidth(401);
-        t.setTextAlignment(TextAlignment.CENTER);
-        t.setFont(Font.font("Caveat Brush", 24));
-        return t;
-    };
-    if (escapeRoom.getCurrentUser() == null) {
-        gridInventory.getChildren().add(makeErrorText.apply("No user logged in."));
-        return;
-    }
-    var character = escapeRoom.getCurrentCharacter();
+        if (character == null) return;
+        var items = character.getInventory();
+        int size = items.size();
+        System.out.println(getClass().getResource("/images/flashlight.png"));
 
-    if (character == null) {
-        gridInventory.getChildren().add(makeErrorText.apply("No character found."));
-        return;
-    }
-    for (var item : character.getInventory()) {
-        
-        if (item.getImagePath() != null) {
-            try {
-                inventoryImage1.setImage(new Image(item.getImagePath()));
-                inventoryImage1.setFitWidth(212);
-                inventoryImage1.setFitHeight(172);
-                inventoryImage1.setPreserveRatio(true);
-            } catch (Exception e) {
-                System.out.println("Failed to load item image: " + item.getImagePath());
+        for (int i = 0; i < size; i++) {
+            var item = items.get(i);
+
+            if (item.getImagePath() != null) {
+                try {
+                    Image img = new Image(getClass().getResourceAsStream(item.getImagePath()));
+                    switch (i) {
+                        case 0 -> inventoryImage1.setImage(img);
+                        case 1 -> inventoryImage2.setImage(img);
+                        case 2 -> inventoryImage3.setImage(img);
+                    }
+                } catch (Exception e) {
+                    System.out.println("Failed to load: " + item.getImagePath());
+                }
             }
         }
-        //row.getChildren().add(inventoryImage1);
-        //gridInventory.getChildren().add(row);
     }
-    if (character.getInventory().isEmpty()) {
-        gridInventory.getChildren().add(makeErrorText.apply("Inventory is empty."));
-    }
-}
+    
 
 }

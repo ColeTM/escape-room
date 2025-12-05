@@ -24,8 +24,8 @@ public class Item {
         this.name = name;
         this.description = description;
         this.isUsed = false;
-
-        switch (name) {
+        String lower = name.toLowerCase();
+        switch (lower) {
             case "flashlight" -> this.imagePath = "/images/flashlight.png";
             case "key 1" -> this.imagePath = "/images/key1.png";
             case "key 2" -> this.imagePath = "/images/key2.png";
