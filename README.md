@@ -13,3 +13,6 @@ https://youtu.be/oXZr6KUkBpY
 
 prototype website link:
 https://mockitt.com/proto/design/pb2mhrc59deoynzxd
+
+final presentation video:
+https://youtu.be/u-EV-cPnRMU
